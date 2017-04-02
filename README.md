@@ -67,6 +67,16 @@ Configurando o pom.xml
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.9.Final</version>
 		</dependency>
+
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java Conector Mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.6</version>
+		</dependency>
+
+
+
 	</dependencies>
 </project>
 
