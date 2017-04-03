@@ -10,6 +10,7 @@ public class HibernateUtilTest {
 		
 		Session sessao = HibernateUtil.getFabricaDeSessao().openSession();
 		sessao.close();
+		HibernateUtil.getFabricaDeSessao().close();
 	}
 
 }
