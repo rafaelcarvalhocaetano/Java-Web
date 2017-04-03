@@ -61,21 +61,26 @@ Configurando o pom.xml
 
 	<!-- Dependências necessárias -->
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<!-- Hibernate Core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.9.Final</version>
 		</dependency>
 
-<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java Conector Mysql -->
+		<!-- Conector MySql -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>6.0.6</version>
 		</dependency>
 
-
+		<!-- Junit na Versão 4.12 e 11 aparecem erros-->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>  
+		</dependency>
 
 	</dependencies>
 </project>
@@ -83,6 +88,7 @@ Configurando o pom.xml
 ```
 
 ## Hibernate Config.
+
 
 Configurando o arquivo hibernate.cfg.xml que fica dentro de src/main/resources
 
