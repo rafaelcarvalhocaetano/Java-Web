@@ -98,6 +98,8 @@ Configurando o arquivo hibernate.cfg.xml que fica dentro de src/main/resources
 
         <!-- Configurações com banco de dados -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+	<!-- Linha de baixo corrige o erro de data e hora apresentado durante os teste da class HibernateUtil -->
+	<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/newdrogaria?useTimezone=true&amp;serverTimezone=UTC&amp;useSSL=false</property>	
         <property name="connection.url">jdbc:mysql://127.0.0.1:3306/newdrogaria</property>
         <property name="connection.username">root</property>
         <property name="connection.password">q1w2e3r4</property>
