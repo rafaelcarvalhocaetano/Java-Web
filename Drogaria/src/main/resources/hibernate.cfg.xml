@@ -41,6 +41,7 @@
 		<mapping class="br.com.drogaria.domain.Produto"/>
 		<mapping class="br.com.drogaria.domain.Cliente" />
 		<mapping class="br.com.drogaria.domain.Funcionario" />
+		<mapping class="br.com.drogaria.domain.Usuario"/>
 		
 	</session-factory>
 
