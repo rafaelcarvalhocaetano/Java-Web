@@ -32,6 +32,10 @@
 		<!-- Cria as tabelas do banco de dados -->
 		<property name="hbm2ddl.auto">create</property>
 		
+		<!-- Mapeamento das entidades -->
+		<mapping class="br.com.drogaria.domain.Estado"/>
+		<mapping class="br.com.drogaria.domain.Cidade" />
+		
 	</session-factory>
 
 </hibernate-configuration>
