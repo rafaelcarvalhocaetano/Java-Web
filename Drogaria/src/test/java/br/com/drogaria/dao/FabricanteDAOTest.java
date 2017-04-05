@@ -78,12 +78,23 @@ public class FabricanteDAOTest {
 	@Test
 	public void editar(){
 		
-		Long codigo = 3L;
+		Long codigo = 2L;
 		
 		FabricanteDAO dao = new FabricanteDAO();
 		Fabricante fabricante = dao.buscar(codigo);
 		
-		fabricante.setDescricao("");
+		if(fabricante == null){
+			System.out.println("Nenhum resultado encontrado...");
+		}else{
+			System.out.println(fabricante.getCodigo()+" "+fabricante.getDescricao());
+			
+			fabricante.setDescricao("HINODE");
+			dao.editar(fabricante);
+			
+			System.out.println(fabricante.getCodigo()+" "+fabricante.getDescricao());
+			
+		}
+		
 		
 	}
 }
