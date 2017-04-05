@@ -1,6 +1,13 @@
 # Projeto Front-End com java.
 
 ## Instalando o java 8
+
+
+Acesse o link http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html
+
+Clique em Java Platform (JDK) e escolha seu sistema operacional.
+
+
 ## Instalando o eclipse
 ## Instalando o MySql
 ## Baixando os jar necessários através do Maven
