@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import br.com.drogaria.domain.Estado;
 import br.com.drogaria.domain.Fabricante;
 
 public class FabricanteDAOTest {
@@ -26,6 +27,7 @@ public class FabricanteDAOTest {
 	}
 	
 	@Test
+	@Ignore
 	public void listar(){
 		FabricanteDAO dao = new FabricanteDAO();
 		
@@ -37,5 +39,18 @@ public class FabricanteDAOTest {
 			System.out.println(fabricante.getCodigo()+" "+fabricante.getDescricao());
 		}
 	}
-	
+	@Test
+	public void buscar(){
+		
+		Long codigo = 2L;
+		
+		FabricanteDAO dao = new FabricanteDAO();
+		Fabricante fb = dao.buscar(codigo);
+		
+		if(fb == null){
+			System.out.println("Nenhum resultado");
+		}
+		
+		System.out.println(fb.getCodigo()+" "+fb.getDescricao());
+	}
 }

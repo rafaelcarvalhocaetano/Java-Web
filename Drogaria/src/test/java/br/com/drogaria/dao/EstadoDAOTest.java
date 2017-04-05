@@ -35,5 +35,19 @@ public class EstadoDAOTest {
 			System.out.println(estado.getCodigo()+" "+estado.getSigla()+" - "+estado.getNome());
 		}
 	}
+	@Test
+	public void buscar(){
+		
+		Long codigo = 2L;
+		
+		EstadoDAO dao = new EstadoDAO();		
+		Estado estado = dao.buscar(codigo);
+		
+		if(estado == null){
+			System.out.println("Nenhum resultado");
+		}
+		
+		System.out.println(estado.getCodigo()+" "+estado.getSigla()+" - "+estado.getNome());
+	}
 
 }
