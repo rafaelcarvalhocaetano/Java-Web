@@ -1,11 +1,21 @@
 package br.com.drogaria.dao;
 
+import java.lang.reflect.ParameterizedType;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import br.com.drogaria.util.HibernateUtil;
 
 public class GenericDAO<Entidade> {
+
+	private Class<Entidade> classe;
+	
+	@SuppressWarnings("unchecked")
+	public GenericDAO() {
+		this.classe = (Class<Entidade>)((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+		
+	}
 	
 	public void salvar(Entidade entidade){
 		
@@ -32,4 +42,5 @@ public class GenericDAO<Entidade> {
 		}
 	}
 
+	
 }
