@@ -21,7 +21,7 @@ CONFIGURAÇÔES AVANÇADAS DO SISTEMA - VARIÁVEIS DE AMBIENTE
 Criando Variáveis de ambiente
 
 ```
-Clique em ` NOVO `
+Clique em "Novo"
  
  Nome da variável: JAVA_HOME
  Valor da Variável: C:\Program Files\Java\jdk1.8.0_111   (Caminho da Instalação do java)
