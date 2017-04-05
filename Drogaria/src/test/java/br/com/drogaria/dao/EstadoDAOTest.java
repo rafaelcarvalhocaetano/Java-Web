@@ -36,6 +36,7 @@ public class EstadoDAOTest {
 		}
 	}
 	@Test
+	@Ignore
 	public void buscar(){
 		
 		Long codigo = 2L;
@@ -48,6 +49,26 @@ public class EstadoDAOTest {
 		}
 		
 		System.out.println(estado.getCodigo()+" "+estado.getSigla()+" - "+estado.getNome());
+	}
+	
+	@Test
+	public void excluir(){
+
+		Long codigo = 4L;
+		
+		EstadoDAO dao = new EstadoDAO();		
+		Estado estado = dao.buscar(codigo);
+		
+		if(estado == null){
+			System.out.println("Nenhum resultado encontrado");
+		}else{
+			dao.excluir(estado);
+			System.out.println("Removido com sucesso:");
+			System.out.println(estado.getCodigo()+" "+estado.getSigla()+" - "+estado.getNome());
+		}
+		
+		
+		
 	}
 
 }

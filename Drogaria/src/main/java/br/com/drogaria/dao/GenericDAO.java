@@ -78,5 +78,30 @@ public class GenericDAO<Entidade> {
 			sessao.close();
 		}
 	}
+	
+	public void excluir(Entidade entidade) {
+
+		Session sessao = HibernateUtil.getFabricaDeSessao().openSession();
+		Transaction transacao = null;
+
+		try {
+
+			transacao = sessao.beginTransaction();
+			sessao.delete(entidade);
+			transacao.commit();
+
+		} catch (RuntimeException e) {
+
+			if (transacao != null) {
+				transacao.rollback();
+			}
+
+			throw e;
+
+		} finally {
+
+			sessao.close();
+		}
+	}
 
 }
