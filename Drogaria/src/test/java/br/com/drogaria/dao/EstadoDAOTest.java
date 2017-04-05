@@ -6,6 +6,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import br.com.drogaria.domain.Estado;
+import br.com.drogaria.domain.Fabricante;
 
 public class EstadoDAOTest {
 
@@ -52,6 +53,7 @@ public class EstadoDAOTest {
 	}
 	
 	@Test
+	@Ignore
 	public void excluir(){
 
 		Long codigo = 4L;
@@ -65,8 +67,27 @@ public class EstadoDAOTest {
 			dao.excluir(estado);
 			System.out.println("Removido com sucesso:");
 			System.out.println(estado.getCodigo()+" "+estado.getSigla()+" - "+estado.getNome());
-		}
+		}	
+	}
+	
+	@Test
+	public void editar(){
 		
+		Long codigo = 3L;
+		
+		EstadoDAO dao = new EstadoDAO();
+		Estado estado = dao.buscar(codigo);
+		
+		if(estado == null){
+			System.out.println("Nenhum resultado encontrado...");
+		}else{
+			System.out.println(estado.getCodigo()+" "+estado.getSigla()+" - "+estado.getNome());
+			
+			estado.setSigla("RS");
+			dao.editar(estado);
+			
+			System.out.println(estado.getCodigo()+" "+estado.getSigla()+" - "+estado.getNome());
+		}
 		
 		
 	}

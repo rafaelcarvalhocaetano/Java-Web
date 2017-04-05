@@ -58,6 +58,7 @@ public class FabricanteDAOTest {
 
 	
 	@Test
+	@Ignore
 	public void excluir() {
 
 		Long codigo = 4L;
@@ -72,6 +73,17 @@ public class FabricanteDAOTest {
 			System.out.println("Removido com sucesso:");
 			System.out.println(fabricante.getCodigo() + " " + fabricante.getDescricao());
 		}
-
+	}
+	
+	@Test
+	public void editar(){
+		
+		Long codigo = 3L;
+		
+		FabricanteDAO dao = new FabricanteDAO();
+		Fabricante fabricante = dao.buscar(codigo);
+		
+		fabricante.setDescricao("");
+		
 	}
 }
