@@ -63,6 +63,7 @@ public class ProdutoDAOTest {
 		}
 	}
 	@Test
+	@Ignore
 	public void buscar(){
 		
 		Long codigo = 2L;
