@@ -46,6 +46,7 @@ public class ProdutoDAOTest {
 		}
 	}
 	@Test
+	@Ignore
 	public void editar(){
 		Long codigo = 2L;
 		
@@ -59,8 +60,24 @@ public class ProdutoDAOTest {
 			produto.setDescricao("Novalgina com 30 mg");
 			dao.editar(produto);
 			System.out.println(produto.getCodigo()+" "+produto.getDescricao()+" "+produto.getQuantidade()+" "+produto.getFabricante()+" "+produto.getPreco());
-			
 		}
 	}
+	@Test
+	public void buscar(){
+		
+		Long codigo = 2L;
+		
+		ProdutoDAO dao = new ProdutoDAO();
+		Produto produto = dao.buscar(codigo);
+		
+		FabricanteDAO fabricanteDAO = new FabricanteDAO();
+		
+		if(produto == null){
+			System.out.println("Nenhum produto encontrado...");
+		}else{
+			System.out.println(produto.getCodigo()+" "+produto.getDescricao()+" "+produto.getQuantidade()+" "+produto.getFabricante().getCodigo()+" "+produto.getPreco());
+		}
+	}
+	
 
 }

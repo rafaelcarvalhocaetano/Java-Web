@@ -92,9 +92,6 @@ public class FabricanteDAOTest {
 			dao.editar(fabricante);
 			
 			System.out.println(fabricante.getCodigo()+" "+fabricante.getDescricao());
-			
 		}
-		
-		
 	}
 }
