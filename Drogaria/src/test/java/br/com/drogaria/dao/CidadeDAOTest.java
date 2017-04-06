@@ -63,6 +63,7 @@ public class CidadeDAOTest {
 	}
 
 	@Test
+	@Ignore
 	public void excluir() {
 
 		Long codigo = 1L;
@@ -80,14 +81,44 @@ public class CidadeDAOTest {
 		
 		dao.excluir(cidade);
 		
-		System.out.println("Depois da remoção --");
+	}
+	
+	@Test
+	public void editar(){
+		
+		Long codigo = 2L;
+		Long codigoEstado = 1L;
+		
+		EstadoDAO estadoDAO = new EstadoDAO();
+		Estado estado = estadoDAO.buscar(codigoEstado);
+		
+		System.out.println("Código da cidade: " + estado.getCodigo());
+		System.out.println("Nome da cidade: " + estado.getSigla());
+		System.out.println("Código do Estado: " + estado.getNome());
+
+		CidadeDAO dao = new CidadeDAO();
+		Cidade cidade = dao.buscar(codigo);
+		
+		System.out.println("Cidade a ser editada");
 		System.out.println("Código da cidade: " + cidade.getCodigo());
 		System.out.println("Nome da cidade: " + cidade.getNome());
 		System.out.println("Código do Estado: " + cidade.getEstado().getCodigo());
-
 		System.out.println("Sigla do Estado: " + cidade.getEstado().getSigla());
 		System.out.println("Nome do Estado: " + cidade.getEstado().getNome());
-
+		
+		cidade.setNome("Jandira");
+		cidade.setEstado(estado);
+		dao.editar(cidade);
+		
+		System.out.println("Cidade editada");
+		System.out.println("Código da cidade: " + cidade.getCodigo());
+		System.out.println("Nome da cidade: " + cidade.getNome());
+		System.out.println("Código do Estado: " + cidade.getEstado().getCodigo());
+		System.out.println("Sigla do Estado: " + cidade.getEstado().getSigla());
+		System.out.println("Nome do Estado: " + cidade.getEstado().getNome());
+	
+		
+		
 	}
 
 }
