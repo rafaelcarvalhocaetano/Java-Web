@@ -13,14 +13,17 @@ public class ProdutoDAOTest {
 	public void salvar(){
 		Produto produto = new Produto();
 		
-		Long codigo = 3L;
+		Long codigo = 1L;
 		FabricanteDAO dao = new FabricanteDAO();
 		Fabricante fabricante = dao.buscar(codigo);
 		
 		produto.setDescricao("Cataflam 50 mg 20 comprimidos");
-		produto.setFabricante(fabricante);
-		produto.setPreco(new BigDecimal(13.70));
+		produto.setPreco(new BigDecimal("13.70"));
 		produto.setQuantidade(new Short("3"));
+		produto.setFabricante(fabricante);
+		
+		ProdutoDAO dao2 = new ProdutoDAO();
+		dao2.salvar(produto);
 		
 	}
 
