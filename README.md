@@ -5,26 +5,26 @@
 
 Acesse o link http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html
 
-Clique em Java Platform (JDK), escolha seu sistema operacional para instalação.
+Clique em Java Platform (JDK), escolha seu sistema operacional para instalaÃ§Ã£o.
 
  ` Windows ` - Somente siga clicando em Next.
 
-Configurando as Variáveis de ambiente.
+Configurando as VariÃ¡veis de ambiente.
  
 ```
-INICIAR - (clique com o botão direito do mouse sobre simbolo do computador e escolha) PROPRIEDADE
+INICIAR - (clique com o botÃ£o direito do mouse sobre simbolo do computador e escolha) PROPRIEDADE
 
-CONFIGURAÇÔES AVANÇADAS DO SISTEMA - VARIÁVEIS DE AMBIENTE
+CONFIGURAÃ‡Ã”ES AVANÃ‡ADAS DO SISTEMA - VARIÃVEIS DE AMBIENTE
 
 
 ```
-Criando Variáveis de ambiente
+Criando VariÃ¡veis de ambiente
 
 ```
 Clique em "Novo"
  
- Nome da variável: JAVA_HOME
- Valor da Variável: C:\Program Files\Java\jdk1.8.0_111   (Caminho da Instalação do java)
+ Nome da variÃ¡vel: JAVA_HOME
+ Valor da VariÃ¡vel: C:\Program Files\Java\jdk1.8.0_111   (Caminho da InstalaÃ§Ã£o do java)
 
 ```
 
@@ -33,7 +33,13 @@ Clique em "Novo"
 
 ## Instalando o eclipse
 ## Instalando o MySql
-## Baixando os jar necessários através do Maven
+
+ Acesse o link https://dev.mysql.com/downloads/workbench/
+ 
+ ApÃ³s ter baixado, siga clicando em next
+ 
+ 
+## Baixando os jar necessÃ¡rios atravÃ©s do Maven
 
 Criar um pasta `WEB-INF` para conter `web.xml`
 
@@ -44,13 +50,13 @@ Criar um pasta `WEB-INF` para conter `web.xml`
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
 
-	<!-- Nome da Aplicação -->
+	<!-- Nome da AplicaÃ§Ã£o -->
 	<display-name>Drogaria</display-name>
 </web-app>
 
 ``` 
 
-Gerando aplicação para final `Maven Install`
+Gerando aplicaÃ§Ã£o para final `Maven Install`
 
 
 Configurando o pom.xml
@@ -64,12 +70,12 @@ Configurando o pom.xml
 	<version>1.0</version>
 	<packaging>war</packaging>
 
-	<!-- Codificação dos caracteres -->
+	<!-- CodificaÃ§Ã£o dos caracteres -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<!-- Parâmetros de execução -->
+	<!-- ParÃ¢metros de execuÃ§Ã£o -->
 	<build>
 		<!-- Nome do projeto empacotado -->
 		<finalName>Drogaria</finalName>
@@ -89,7 +95,7 @@ Configurando o pom.xml
 		</plugins>
 	</build>
 
-	<!-- Dependências necessárias -->
+	<!-- DependÃªncias necessÃ¡rias -->
 	<dependencies>
 		<!-- Hibernate Core -->
 		<dependency>
@@ -105,7 +111,7 @@ Configurando o pom.xml
 			<version>6.0.6</version>
 		</dependency>
 
-		<!-- Junit na Versão 4.12 e 11 aparecem erros-->
+		<!-- Junit na VersÃ£o 4.12 e 11 aparecem erros-->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -133,22 +139,22 @@ Configurando o arquivo hibernate.cfg.xml que fica dentro de src/main/resources
 
 	<session-factory>
 
-		<!-- Configurações de Conexão com o Banco de Dados -->
+		<!-- ConfiguraÃ§Ãµes de ConexÃ£o com o Banco de Dados -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/newdrogaria?useTimezone=true&amp;serverTimezone=UTC&amp;useSSL=false</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">q1w2e3r4</property>
 
-		<!-- Pool de Conexões -->
+		<!-- Pool de ConexÃµes -->
 		<property name="connection.pool_size">1</property>
 
 		<!-- SQL dialect -->
 		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
 
-		<!-- Gerenciamento do Contexto das Sessões -->
+		<!-- Gerenciamento do Contexto das SessÃµes -->
 		<property name="current_session_context_class">thread</property>
 
-		<!-- Cache de Segundo Nível -->
+		<!-- Cache de Segundo NÃ­vel -->
 		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
 
 		<!-- Mostra as SQLs Geradas -->
