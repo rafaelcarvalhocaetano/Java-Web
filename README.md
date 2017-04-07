@@ -32,6 +32,11 @@ Clique em "Novo"
 
 
 ## Instalando o eclipse
+ 
+ Acesse o link https://www.eclipse.org/downloads/
+ 
+ Escolha seu sistema operacional e a IDE eclipse JEE e siga clicando em next.
+
 ## Instalando o MySql
 
  Acesse o link https://dev.mysql.com/downloads/workbench/
