@@ -24,7 +24,7 @@ public class PessoaDAOTest {
 		pessoa.setCelular("99999999");
 		pessoa.setEmail("teteste.com");
 				
-		Long codigo = 5L;
+		Long codigo = 1L;
 		
 		CidadeDAO cidadeDAO = new CidadeDAO();
 		Cidade cidade = cidadeDAO.buscar(codigo);
