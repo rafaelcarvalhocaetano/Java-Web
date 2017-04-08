@@ -2,21 +2,29 @@ package br.com.drogaria.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.Columns;
+import org.hibernate.annotations.ManyToAny;
 
 @SuppressWarnings("serial")
 @Entity
 public class Pessoa extends GenericDomain{
 	
-	@Column(length = 20, nullable = false)
+	@Column(length = 50, nullable = false)
 	private String nome;
 	
-	@Column(length = 30, nullable = false)
+	@Column(length = 50, nullable = false)
 	private String cpf;
 	
-	@Column(length = 15, nullable = false)
+	@Column(length = 45, nullable = false)
 	private String rg;
 	
-	@Column(length = 30, nullable = false)
+	@Column(length = 50, nullable = false)
 	private String rua;
 	
 	@Column(nullable = false)
@@ -25,22 +33,23 @@ public class Pessoa extends GenericDomain{
 	@Column(length = 50, nullable = false)
 	private String bairro;
 	
-	@Column(length = 12, nullable = false)
+	@Column(length = 52, nullable = false)
 	private String cep;
 	
-	@Column(length = 30, nullable = false)
+	@Column(length = 50)
 	private String complemento;
 	
-	@Column(length = 10, nullable = false)
+	@Column(length = 50, nullable = false)
 	private String telefone;
 	
-	@Column(length = 10, nullable = false)
+	@Column(length = 50, nullable = false)
 	private String celular;
 	
-	@Column(length = 30, nullable = false)
+	@Column(length = 50, nullable = false)
 	private String email;
 	
-	@Column(nullable = false)
+	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Cidade cidade;
 
 	public String getNome() {
@@ -138,6 +147,5 @@ public class Pessoa extends GenericDomain{
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
-
-	
+		
 }
