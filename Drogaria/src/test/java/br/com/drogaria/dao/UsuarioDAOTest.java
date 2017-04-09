@@ -1,5 +1,7 @@
 package br.com.drogaria.dao;
 
+import java.util.List;
+
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -39,19 +41,40 @@ public class UsuarioDAOTest {
 	}
 	@SuppressWarnings("unused")
 	@Test
+	@Ignore
 	public void buscar(){
 		
-		Long codigo = 4L;
+		Long codigo = 1L;
 		
-		ClienteDAO dao = new ClienteDAO();
-		Cliente ca = new Cliente();
+		UsuarioDAO dao = new UsuarioDAO();
+		Usuario ca = new Usuario();
 		
 		if(ca == null){
 			System.out.println("Nenhum usuário encontrado");
 		}else{
 			dao.buscar(codigo);
-			//System.out.println(ca.getCodigo()+" "+ca.getDataCadastro()+" "+ca.getLiberado()+" "+ca.getPessoa().getNome());
+			//System.out.println(ca.getCodigo()+" "+ca.getSenha()+" "+ca.getTipo()+" "+ca.getAtivo()+" "+ca.getPessoa().getNome());
 		}
+	}
+	@Test
+	
+	public void listar(){
+		
+		Long codigo = 2L;
+		UsuarioDAO dao = new UsuarioDAO();
+		
+		List<Usuario> lista = dao.listar();
+		
+		System.out.println("Total "+lista.size());
+		
+		for(Usuario listas : lista){
+			System.out.println(listas.getSenha());
+			System.out.println(listas.getAtivo());
+			System.out.println(listas.getCodigo());
+			System.out.println(listas.getPessoa().getNome());
+		}
+		
+		
 	}
 
 }
