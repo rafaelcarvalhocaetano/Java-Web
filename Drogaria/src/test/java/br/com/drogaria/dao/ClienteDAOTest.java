@@ -8,6 +8,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import br.com.drogaria.domain.Cliente;
+import br.com.drogaria.domain.Estado;
 import br.com.drogaria.domain.Pessoa;
 
 public class ClienteDAOTest {
@@ -18,7 +19,7 @@ public class ClienteDAOTest {
 		
 		Cliente cliente = new Cliente();
 		
-		cliente.setDataCadastro(new SimpleDateFormat("dd/mm/yyyy").parse("09/04/2017"));
+		cliente.setDataCadastro(new SimpleDateFormat("dd/mm/yyyy").parse("04/04/2017"));
 		cliente.setLiberado(false);
 		
 		Long codigo = 1L;
@@ -51,6 +52,7 @@ public class ClienteDAOTest {
 	}
 	
 	@Test
+	@Ignore
 	public void listar(){
 		
 		ClienteDAO dao = new ClienteDAO();
@@ -61,6 +63,22 @@ public class ClienteDAOTest {
 			System.out.println(cliente.getCodigo()+" "+cliente.getDataCadastro()+" "+cliente.getLiberado());
 			System.out.println(cliente.getPessoa().getNome());
 		}
+	}
+	
+	@Test
+	public void excluir(){
+
+		Long codigo = 2L;
+		
+		ClienteDAO dao = new ClienteDAO();	
+		Cliente c = dao.buscar(codigo);
+		
+		if(c == null){
+			System.out.println("Nenhum resultado encontrado");
+		}else{
+			dao.excluir(c);
+			System.out.println("Removido com sucesso:");
+		}	
 	}
 
 }
