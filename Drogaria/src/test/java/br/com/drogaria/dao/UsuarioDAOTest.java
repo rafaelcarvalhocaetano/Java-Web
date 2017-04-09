@@ -5,7 +5,6 @@ import java.util.List;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import br.com.drogaria.domain.Cliente;
 import br.com.drogaria.domain.Pessoa;
 import br.com.drogaria.domain.Usuario;
 
@@ -27,7 +26,7 @@ public class UsuarioDAOTest {
 
 		us.setPessoa(pessoa);
 		us.setAtivo(true);
-		us.setSenha("2222222");
+		us.setSenha("121212322");
 		us.setTipo('M');
 
 		UsuarioDAO dao = new UsuarioDAO();
@@ -57,7 +56,7 @@ public class UsuarioDAOTest {
 		}
 	}
 	@Test
-	
+	@Ignore
 	public void listar(){
 		
 		Long codigo = 2L;
@@ -72,9 +71,24 @@ public class UsuarioDAOTest {
 			System.out.println(listas.getAtivo());
 			System.out.println(listas.getCodigo());
 			System.out.println(listas.getPessoa().getNome());
+		}		
+	}
+	
+	@Test
+	@Ignore
+	public void excluir(){
+		
+		Long codigo = 3L;
+		
+		UsuarioDAO dao = new UsuarioDAO();
+		Usuario us = dao.buscar(codigo);
+		
+		if(us == null){
+			System.out.println("Nenhum usuário encontrado");
+		}else{
+			dao.excluir(us);
+			System.out.println("Usuário excluido com sucesso");
 		}
-		
-		
 	}
 
 }
