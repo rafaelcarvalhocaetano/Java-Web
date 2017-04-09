@@ -66,6 +66,7 @@ public class ClienteDAOTest {
 	}
 	
 	@Test
+	@Ignore
 	public void excluir(){
 
 		Long codigo = 2L;
@@ -79,6 +80,25 @@ public class ClienteDAOTest {
 			dao.excluir(c);
 			System.out.println("Removido com sucesso:");
 		}	
+	}
+	@Test
+	public void editar(){
+		
+		Long codigo = 3L;
+		
+		ClienteDAO dao = new ClienteDAO();	
+		Cliente c = dao.buscar(codigo);
+		
+		if(c == null){
+			System.out.println("Nenhum resultado encontrado...");
+		}else{
+			System.out.println(c.getCodigo()+" "+c.getDataCadastro()+" - "+c.getLiberado()+" - "+c.getPessoa().getNome());
+			
+			c.setLiberado(true);
+			dao.editar(c);
+			
+			System.out.println(c.getCodigo()+" "+c.getDataCadastro()+" - "+c.getLiberado()+" - "+c.getPessoa().getNome());
+		}
 	}
 
 }
