@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import br.com.drogaria.domain.Fabricante;
 import br.com.drogaria.domain.Pessoa;
 import br.com.drogaria.domain.Usuario;
 
@@ -88,6 +89,25 @@ public class UsuarioDAOTest {
 		}else{
 			dao.excluir(us);
 			System.out.println("Usuário excluido com sucesso");
+		}
+	}
+	@Test
+	@Ignore
+	public void editar(){
+
+		Long codigo = 2L;
+		
+		UsuarioDAO dao = new UsuarioDAO();
+		Usuario us = dao.buscar(codigo);
+		
+		if(us == null){
+			System.out.println("Nenhum resultado encontrado...");
+		}else{
+						
+			us.setSenha("788888888");
+			dao.editar(us);
+			
+			System.out.println("Alterações feitas com sucesso ...");
 		}
 	}
 
