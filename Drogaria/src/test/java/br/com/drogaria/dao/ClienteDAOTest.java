@@ -2,6 +2,7 @@ package br.com.drogaria.dao;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -32,6 +33,7 @@ public class ClienteDAOTest {
 		System.out.println("Cliente Salvo com sucesso ...");
 	}
 	
+	@SuppressWarnings("unused")
 	@Test
 	@Ignore
 	public void buscar(){
@@ -45,9 +47,20 @@ public class ClienteDAOTest {
 		}else{
 			Cliente cliente = clienteDAO.buscar(codigo);
 			System.out.println("Cliente "+cliente.getCodigo()+" "+cliente.getDataCadastro()+" "+cliente.getLiberado());
+		}	
+	}
+	
+	@Test
+	public void listar(){
+		
+		ClienteDAO dao = new ClienteDAO();
+		List<Cliente> lista = dao.listar();
+		
+		for(Cliente cliente : lista){
+			
+			System.out.println(cliente.getCodigo()+" "+cliente.getDataCadastro()+" "+cliente.getLiberado());
+			System.out.println(cliente.getPessoa().getNome());
 		}
-		
-		
 	}
 
 }
