@@ -146,6 +146,16 @@ Configurando o pom.xml
 			<artifactId>javax.faces</artifactId>
 			<version>2.2.12</version>
 		</dependency>
+		
+		<!--PrimeFaces -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>5.2</version>
+		</dependency>
+
+
+
 
 	</dependencies>
 </project>
