@@ -1,4 +1,4 @@
-# Projeto Front-End com java.
+﻿# Projeto Front-End com java.
 
 ## Instalando o java 8
 
@@ -57,6 +57,23 @@ Criar um pasta `WEB-INF` para conter `web.xml`
 
 	<!-- Nome da Aplicação -->
 	<display-name>Drogaria</display-name>
+	
+	<!-- Estágio do Projeto -->
+	<context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+    
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+
 </web-app>
 
 ``` 
@@ -121,6 +138,13 @@ Configurando o pom.xml
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.10</version>  
+		</dependency>
+		
+		<!-- JSF -->
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.faces</artifactId>
+			<version>2.2.12</version>
 		</dependency>
 
 	</dependencies>
