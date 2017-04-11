@@ -9,6 +9,27 @@
 	<title>Produto</title>
 </h:head>
 <h:body>
+	<h:form>
+		<p:panel header="Produto - Listagem">
+			<p:dataTable emptyMessage="Nenhum Produto Encontrado"
+				paginator="true">
 
+			</p:dataTable>
+			<f:facet name="footer">
+				<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" />
+			</f:facet>
+			<p:column headerText="Descrição">
+			</p:column>
+
+			<p:column headerText="preço">
+			</p:column>
+
+			<p:column headerText="Fabricante">
+			</p:column>
+
+			<p:column headerText="Opções">
+			</p:column>
+		</p:panel>
+	</h:form>
 </h:body>
 </html>
