@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding= "ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://xmlns.jcp.org/jsf/html"
-	  xmlns:p="http://primefaces.org/ui"
-	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Cidade</title>
 </h:head>
 <h:body>
-	
+	<h:form>
+		<p:panel header="Cidades - Listagem">
+			<p:dataTable emptyMessage="Nenhuma Cidade encontrada"
+				paginator="true">
+				<f:facet name="footer">
+					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" />
+				</f:facet>
+				<p:column headerText="Nome">
+				</p:column>
+
+				<p:column headerText="Estado">
+				</p:column>
+
+				<p:column headerText="Opções">
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+	</h:form>
+	<p:dialog header="Cidade - Cadastro" widgetVar="dialogo" closable="false" draggable="false" resizable="false" modal="true">
+		<h:form>
+		<p:panelGrid columns="2">
+			<p:outputLabel value="Nome: "/>
+			<p:inputText size="30" maxlength="30"/>
+			
+			<p:outputLabel value="Estado: "/>
+			<p:selectOneMenu filter="true">
+				<f:selectItem itemValue="" itemLabel="Selecione um Cidade"/>
+			</p:selectOneMenu>
+		</p:panelGrid>
+		
+		<p:panelGrid columns="2">
+			<p:commandButton value="Novo"/>
+			<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();"/>
+		</p:panelGrid>
+		</h:form>
+	</p:dialog>
 </h:body>
 </html>
