@@ -5,7 +5,6 @@ import java.util.List;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import br.com.drogaria.domain.Fabricante;
 import br.com.drogaria.domain.Pessoa;
 import br.com.drogaria.domain.Usuario;
 
@@ -60,7 +59,6 @@ public class UsuarioDAOTest {
 	@Ignore
 	public void listar(){
 		
-		Long codigo = 2L;
 		UsuarioDAO dao = new UsuarioDAO();
 		
 		List<Usuario> lista = dao.listar();
