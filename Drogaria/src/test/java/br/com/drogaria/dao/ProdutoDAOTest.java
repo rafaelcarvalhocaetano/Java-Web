@@ -71,7 +71,6 @@ public class ProdutoDAOTest {
 		ProdutoDAO dao = new ProdutoDAO();
 		Produto produto = dao.buscar(codigo);
 		
-		FabricanteDAO fabricanteDAO = new FabricanteDAO();
 		
 		if(produto == null){
 			System.out.println("Nenhum produto encontrado...");
