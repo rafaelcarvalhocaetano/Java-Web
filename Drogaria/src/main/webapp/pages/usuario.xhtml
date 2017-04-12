@@ -11,7 +11,8 @@
 <h:body>
 	<h:form>
 		<p:panel header="Usuários - Listagem">
-			<p:dataTable emptyMessage="Nenhum usuário encontrado" paginator="true">
+			<p:dataTable emptyMessage="Nenhum usuário encontrado"
+				paginator="true">
 				<f:facet name="footer">
 					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" />
 				</f:facet>
@@ -41,20 +42,20 @@
 				<p:selectOneMenu filter="true">
 					<f:selectItem itemLabel="Selecione uma pessoa" itemValue="" />
 				</p:selectOneMenu>
-				
-				<p:outputLabel value="Senha: "/>
-				<p:password maxlength="10" size="10"/>
-				
-				<p:outputLabel value="Tipo: "/>
-				<p:selectOneRadio >
-					<f:selectItem itemLabel="Administrador" itemValue="A"/>
-					<f:selectItem itemLabel="Gerente" itemValue="G"/>
-					<f:selectItem itemLabel="Balconista" itemValue="B"/>					
+
+				<p:outputLabel value="Senha: " />
+				<p:password maxlength="10" size="10" />
+
+				<p:outputLabel value="Tipo: " />
+				<p:selectOneRadio>
+					<f:selectItem itemLabel="Administrador" itemValue="A" />
+					<f:selectItem itemLabel="Gerente" itemValue="G" />
+					<f:selectItem itemLabel="Balconista" itemValue="B" />
 				</p:selectOneRadio>
-				
-				<p:outputLabel value="Ativo: "/>
+
+				<p:outputLabel value="Ativo: " />
 				<p:selectBooleanCheckbox />
-				
+
 			</h:panelGrid>
 			<h:panelGrid columns="2">
 				<p:commandButton value="Novo" />
