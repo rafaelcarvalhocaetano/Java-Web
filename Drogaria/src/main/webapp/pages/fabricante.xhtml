@@ -11,15 +11,36 @@
 <h:body>
 	<h:form>
 		<p:panel header="Fabricante - Listagem">
-			<p:dataTable emptyMessage="Nenhum fabricante encontrado" paginator="true">
+			<p:dataTable emptyMessage="Nenhum fabricante encontrado"
+				paginator="true">
 				<f:facet name="footer">
-					<p:commandButton value="Novo"/>
+					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" />
 				</f:facet>
-				<p:column>
-				
+				<p:column headerText="Descrição">
+				</p:column>
+				<p:column headerText="Opções">
 				</p:column>
 			</p:dataTable>
 		</p:panel>
 	</h:form>
+	<p:dialog header="Fabricante - Cadastro" widgetVar="dialogo"
+		closable="false" resizable="false" draggable="false" modal="true">
+		<h:form>
+			<h:panelGrid columns="2">
+				<p:outputLabel value="Descrição: " />
+				<p:inputText maxlength="20" size="30" />
+
+				<p:outputLabel value="Pessoa: " />
+				<p:selectOneMenu filter="true">
+					<f:selectItem itemLabel="Selecione uma Pessoa" itemValue="" />
+				</p:selectOneMenu>
+
+			</h:panelGrid>
+			<h:panelGrid columns="2">
+				<p:commandButton value="Novo" />
+				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
+			</h:panelGrid>
+		</h:form>
+	</p:dialog>
 </h:body>
 </html>
