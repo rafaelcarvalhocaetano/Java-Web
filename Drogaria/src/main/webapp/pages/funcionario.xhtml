@@ -29,22 +29,22 @@
 			</p:dataTable>
 		</p:panel>
 	</h:form>
-	<p:dialog widgetVar="dialogo" header="Funcionário - Cadastro" closable="false"
-		resizable="false" draggable="false" modal="true" >
+	<p:dialog widgetVar="dialogo" header="Funcionário - Cadastro"
+		closable="false" resizable="false" draggable="false" modal="true">
 		<h:form>
 			<h:panelGrid columns="2">
 				<p:outputLabel value="Pessoa: " />
 				<p:selectOneMenu filter="true">
 					<f:selectItem itemLabel="Selecione uma pessoa" itemValue="" />
 				</p:selectOneMenu>
-				
-				
-				<p:outputLabel value="Carteira de trabalho: "/>
-				<p:inputText maxlength="30" size="30"/>
-				
-				<p:outputLabel value="Data de Admissão: "/>
+
+
+				<p:outputLabel value="Carteira de trabalho: " />
+				<p:inputText maxlength="30" size="30" />
+
+				<p:outputLabel value="Data de Admissão: " />
 				<p:calendar />
-			
+
 			</h:panelGrid>
 			<h:panelGrid columns="2">
 				<p:commandButton value="Novo" />
