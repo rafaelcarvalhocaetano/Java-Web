@@ -27,22 +27,23 @@
 			</p:dataTable>
 		</p:panel>
 	</h:form>
-	<p:dialog header="Cidade - Cadastro" widgetVar="dialogo" closable="false" draggable="false" resizable="false" modal="true">
+	<p:dialog header="Cidade - Cadastro" widgetVar="dialogo"
+		closable="false" draggable="false" resizable="false" modal="true">
 		<h:form>
-		<p:panelGrid columns="2">
-			<p:outputLabel value="Nome: "/>
-			<p:inputText size="30" maxlength="30"/>
-			
-			<p:outputLabel value="Estado: "/>
-			<p:selectOneMenu filter="true">
-				<f:selectItem itemValue="" itemLabel="Selecione um Cidade"/>
-			</p:selectOneMenu>
-		</p:panelGrid>
-		
-		<p:panelGrid columns="2">
-			<p:commandButton value="Novo"/>
-			<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();"/>
-		</p:panelGrid>
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Nome: " />
+				<p:inputText size="30" maxlength="30" />
+
+				<p:outputLabel value="Estado: " />
+				<p:selectOneMenu filter="true">
+					<f:selectItem itemValue="" itemLabel="Selecione um Cidade" />
+				</p:selectOneMenu>
+			</p:panelGrid>
+
+			<p:panelGrid columns="2">
+				<p:commandButton value="Novo" />
+				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
+			</p:panelGrid>
 		</h:form>
 	</p:dialog>
 </h:body>
