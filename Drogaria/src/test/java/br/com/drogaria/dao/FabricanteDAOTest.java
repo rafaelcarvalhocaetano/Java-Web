@@ -96,11 +96,17 @@ public class FabricanteDAOTest {
 	}
 	@Test
 	public void merge() {
-
+		/*
 		Fabricante fabricante = new Fabricante();
 		fabricante.setDescricao("Fabricante A");
 
 		FabricanteDAO dao = new FabricanteDAO();
 		dao.merge(fabricante);
+		*/
+		FabricanteDAO dao = new FabricanteDAO();;
+		Fabricante fb = dao.buscar(4L);
+		fb.setDescricao("Fabricante B");
+		dao.merge(fb);
+		
 	}
 }
