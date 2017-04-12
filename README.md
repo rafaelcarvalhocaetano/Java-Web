@@ -154,6 +154,13 @@ Configurando o pom.xml
 			<version>5.2</version>
 		</dependency>
 
+		<!-- OMNIFACES -->
+		<dependency>
+			<groupId>org.omnifaces</groupId>
+			<artifactId>omnifaces</artifactId>
+			<version>1.11</version>
+		</dependency>
+
 
 
 
