@@ -75,6 +75,7 @@ public class FabricanteDAOTest {
 	}
 	
 	@Test
+	@Ignore
 	public void editar(){
 		
 		Long codigo = 2L;
@@ -92,5 +93,14 @@ public class FabricanteDAOTest {
 			
 			System.out.println(fabricante.getCodigo()+" "+fabricante.getDescricao());
 		}
+	}
+	@Test
+	public void merge() {
+
+		Fabricante fabricante = new Fabricante();
+		fabricante.setDescricao("Fabricante A");
+
+		FabricanteDAO dao = new FabricanteDAO();
+		dao.merge(fabricante);
 	}
 }
