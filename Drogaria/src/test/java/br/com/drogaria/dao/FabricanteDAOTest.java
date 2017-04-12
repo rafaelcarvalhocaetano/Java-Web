@@ -5,7 +5,6 @@ import java.util.List;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import br.com.drogaria.domain.Estado;
 import br.com.drogaria.domain.Fabricante;
 
 public class FabricanteDAOTest {

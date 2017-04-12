@@ -15,9 +15,6 @@ public class ItemVendaDAOTest {
 		ItemVendaDAO dao = new ItemVendaDAO();
 		ItemVenda itemVenda = dao.buscar(codigo);
 		
-		ProdutoDAO produtoDAO = new ProdutoDAO();
-		
-		
 		if(itemVenda == null){
 			System.out.println("Nenhum item de venda encontrado");
 		}else{
@@ -33,7 +30,6 @@ public class ItemVendaDAOTest {
 		ItemVendaDAO dao = new ItemVendaDAO();
 		ItemVenda itemVenda = dao.buscar(codigo);
 		
-		ProdutoDAO produtoDAO = new ProdutoDAO();
 		
 		if(itemVenda == null){
 			System.out.println("nenhum item de venda encontrado para ser excluido...");

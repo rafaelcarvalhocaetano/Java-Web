@@ -8,7 +8,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import br.com.drogaria.domain.Cliente;
-import br.com.drogaria.domain.Estado;
 import br.com.drogaria.domain.Pessoa;
 
 public class ClienteDAOTest {
