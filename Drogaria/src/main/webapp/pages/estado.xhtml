@@ -16,7 +16,7 @@
 			<p:dataTable emptyMessage="Nenhum registro encontrado"
 				paginator="true">
 				<f:facet name="footer">
-					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" actionListener="#{estadoBean.novo()}"/>
+					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" actionListener="#{estadoBean.novo()}" update=":formCadastro:painel"/>
 				</f:facet>
 				<p:column headerText="Nome do Estado">
 				</p:column>
@@ -30,8 +30,8 @@
 	</h:form>
 	<p:dialog header="Estado - Cadastro" widgetVar="dialogo"
 		draggable="false" closable="false" resizable="false" modal="true">
-		<h:form>
-			<h:panelGrid columns="2">
+		<h:form id="formCadastro">
+			<h:panelGrid id="painel" columns="2">
 				<p:outputLabel value="Nome: " />
 				<p:inputText maxlength="30" size="30" value="#{estadoBean.estado.nome}"/>
 
