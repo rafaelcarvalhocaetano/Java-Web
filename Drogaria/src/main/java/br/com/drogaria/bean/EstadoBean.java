@@ -8,6 +8,7 @@ import javax.faces.bean.ViewScoped;
 
 import org.omnifaces.util.Messages;
 
+import br.com.drogaria.dao.EstadoDAO;
 import br.com.drogaria.domain.Estado;
 //import org.omnifaces.util.Messages.Message;
 //import javax.faces.context.FacesContext;
@@ -31,6 +32,18 @@ public class EstadoBean implements Serializable{
 	}
 	
 	public void salvar(){
+		
+		try{
+		EstadoDAO dao = new EstadoDAO();
+		dao.salvar(estado);
+		
+		novo();
+		
+		Messages.addGlobalInfo("Estado salvo com sucesso");
+		}catch(RuntimeException e){
+			Messages.addGlobalError("Ocorreu um erro ao salvar o Estado");
+			e.printStackTrace();
+		}
 		/*
 		String texto = "Programação web com java";
 		FacesMessage mensagem = new FacesMessage(FacesMessage.SEVERITY_INFO, texto, texto);
@@ -38,8 +51,6 @@ public class EstadoBean implements Serializable{
 		FacesContext contexto = FacesContext.getCurrentInstance();
 		contexto.addMessage(null, mensagem);
 		*/
-		Messages.addGlobalInfo("Nome: "+estado.getNome()+" Sigla: "+estado.getSigla());
-		
 		
 	}
 
