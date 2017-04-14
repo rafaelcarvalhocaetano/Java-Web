@@ -1,6 +1,7 @@
 package br.com.drogaria.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -15,8 +16,17 @@ import br.com.drogaria.domain.Fabricante;
 @ViewScoped
 public class FabricanteBean implements Serializable {
 	
+	private List<Fabricante> fabricantes;
 	
 	private Fabricante fabricante;
+	
+	
+	public List<Fabricante> getFabricantes() {
+		return fabricantes;
+	}
+	public void setFabricantes(List<Fabricante> fabricantes) {
+		this.fabricantes = fabricantes;
+	}
 	
 	public Fabricante getFabricante() {
 		return fabricante;
@@ -27,6 +37,17 @@ public class FabricanteBean implements Serializable {
 	
 	public void novo(){
 		fabricante = new Fabricante();
+	}
+	
+	public void listar(){
+		try {
+			FabricanteDAO dao = new FabricanteDAO();
+			fabricantes = dao.listar();
+			
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Fabricante não encontrado");
+			e.printStackTrace();
+		}
 	}
 	
 	public void salvar(){
