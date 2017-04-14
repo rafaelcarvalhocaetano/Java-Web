@@ -1,7 +1,9 @@
 package br.com.drogaria.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.annotation.PostConstruct;
 //import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -18,6 +20,16 @@ import br.com.drogaria.domain.Estado;
 @ViewScoped
 public class EstadoBean implements Serializable{
 	
+	private List<Estado> estados;
+	
+	public List<Estado> getEstados() {
+		return estados;
+	}
+	
+	public void setEstados(List<Estado> estados) {
+		this.estados = estados;
+	}
+	
 	private Estado estado;
 	
 	public Estado getEstado() {
@@ -29,6 +41,16 @@ public class EstadoBean implements Serializable{
 	
 	public void novo(){
 		estado = new Estado();
+	}
+	
+	@PostConstruct
+	public void listar(){
+		try {
+			EstadoDAO dao = new EstadoDAO();
+			estados = dao.listar();
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao acessar o Estado");
+		}
 	}
 	
 	public void salvar(){
