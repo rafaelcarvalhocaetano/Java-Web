@@ -18,10 +18,10 @@
 				<f:facet name="footer">
 					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" actionListener="#{estadoBean.novo()}" update=":formCadastro:painel"/>
 				</f:facet>
-				<p:column headerText="Nome do Estado">
+				<p:column headerText="Nome do Estado" sortBy="#{estado.nome}" filterBy="#{estado.nome}">
 					<h:outputText value="#{estado.nome}" />
 				</p:column>
-				<p:column headerText="Sigla do Estado">
+				<p:column headerText="Sigla do Estado" sortBy="#{estado.sigla}" filterBy="#{estado.sigla}">
 					<h:outputText value="#{estado.sigla}" />
 				</p:column>
 				<p:column headerText="Opções">
