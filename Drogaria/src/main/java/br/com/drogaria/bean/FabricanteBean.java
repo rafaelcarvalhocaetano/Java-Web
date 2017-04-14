@@ -3,6 +3,7 @@ package br.com.drogaria.bean;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -39,6 +40,7 @@ public class FabricanteBean implements Serializable {
 		fabricante = new Fabricante();
 	}
 	
+	@PostConstruct
 	public void listar(){
 		try {
 			FabricanteDAO dao = new FabricanteDAO();
