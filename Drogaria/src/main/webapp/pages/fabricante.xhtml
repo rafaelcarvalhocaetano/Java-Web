@@ -13,7 +13,7 @@
 	<h:form>
 		<p:panel header="Fabricante - Listagem">
 			<p:dataTable emptyMessage="Nenhum fabricante encontrado"
-				paginator="true" value="#{fabricanteBean.fabricantes}" var="fabric">
+				paginator="true" value="#{fabricanteBean.fabricantes}" var="fabric" rows="3">
 				<f:facet name="footer">
 					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();"
 						actionListener="#{fabricanteBean.novo()}"
