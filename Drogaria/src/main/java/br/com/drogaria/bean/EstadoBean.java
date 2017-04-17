@@ -59,7 +59,7 @@ public class EstadoBean implements Serializable {
 
 		try {
 			EstadoDAO dao = new EstadoDAO();
-			dao.salvar(estado);
+			dao.merge(estado);
 
 			estado = new Estado();
 			estados = dao.listar();
