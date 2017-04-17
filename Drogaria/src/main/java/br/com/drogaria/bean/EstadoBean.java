@@ -95,5 +95,17 @@ public class EstadoBean implements Serializable {
 			e.printStackTrace();
 		}
 	}
+	public void editar(ActionEvent event){
+		try {
+			
+			estado = (Estado)event.getComponent().getAttributes().get("estadoSelecionado");
+			
+			Messages.addGlobalInfo("Estado: "+estado.getNome()+" Sigla: "+estado.getSigla());
+			
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao editar o estado");
+		}
+		
+	}
 
 }

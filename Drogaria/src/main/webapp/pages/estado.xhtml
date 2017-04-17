@@ -30,7 +30,7 @@
 						<f:attribute name="estadoSelecionado" value="#{estado}"/>
 					</p:commandButton>
 					
-					<p:commandButton icon="ui-icon-pencil">
+					<p:commandButton icon="ui-icon-pencil" actionListener="#{estadoBean.editar}" update=":mensagem" >
 						<f:attribute name="estadoSelecionado" value="#{estado}"/>
 					</p:commandButton>
 					
