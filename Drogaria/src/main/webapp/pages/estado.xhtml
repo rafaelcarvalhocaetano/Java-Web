@@ -29,6 +29,11 @@
 						<p:confirm  header="Confirmação" message="Deseja realmente excluir o Estado" icon="ui-icon-alert"/>
 						<f:attribute name="estadoSelecionado" value="#{estado}"/>
 					</p:commandButton>
+					
+					<p:commandButton icon="ui-icon-pencil">
+						<f:attribute name="estadoSelecionado" value="#{estado}"/>
+					</p:commandButton>
+					
 				</p:column>
 				<p:commandButton />
 			</p:dataTable>
