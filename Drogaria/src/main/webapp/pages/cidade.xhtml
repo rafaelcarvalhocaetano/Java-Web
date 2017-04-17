@@ -12,14 +12,18 @@
 	<h:form>
 		<p:panel header="Cidades - Listagem">
 			<p:dataTable emptyMessage="Nenhuma Cidade encontrada"
-				paginator="true" value="#{cidadeBean.cidades}">
+				paginator="true" value="#{cidadeBean.cidades}" var="cidade" rows="5">
 				<f:facet name="footer">
 					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" />
 				</f:facet>
-				<p:column headerText="Nome">
+				<p:column headerText="Nome" filterBy="#{cidade.nome}" sortBy="#{cidade.nome}">
+					<h:outputText value="#{cidade.nome}" />
 				</p:column>
 
-				<p:column headerText="Estado">
+				<p:column headerText="Estado" filterBy="#{cidade.estado.nome}" sortBy="#{cidade.estado.nome}">
+					<h:outputText value="#{cidade.estado.nome}" />
+					<h:outputText value=" - " />
+					<h:outputText value="#{cidade.estado.sigla}" />
 				</p:column>
 
 				<p:column headerText="Opções">
