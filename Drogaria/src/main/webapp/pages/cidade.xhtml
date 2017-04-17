@@ -12,7 +12,7 @@
 	<h:form>
 		<p:panel header="Cidades - Listagem">
 			<p:dataTable emptyMessage="Nenhuma Cidade encontrada"
-				paginator="true">
+				paginator="true" value="#{cidadeBean.cidades}">
 				<f:facet name="footer">
 					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" />
 				</f:facet>
