@@ -21,6 +21,7 @@ import br.com.drogaria.domain.Estado;
 @ViewScoped
 public class EstadoBean implements Serializable {
 
+	private Estado estado;
 	private List<Estado> estados;
 
 	public List<Estado> getEstados() {
@@ -30,8 +31,6 @@ public class EstadoBean implements Serializable {
 	public void setEstados(List<Estado> estados) {
 		this.estados = estados;
 	}
-
-	private Estado estado;
 
 	public Estado getEstado() {
 		return estado;

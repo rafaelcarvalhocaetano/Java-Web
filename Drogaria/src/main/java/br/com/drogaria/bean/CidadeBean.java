@@ -22,6 +22,13 @@ public class CidadeBean implements Serializable {
 	private Cidade cidade;
 	private List<Cidade> cidades;
 	private List<Estado> estados;
+	
+	public Cidade getCidade() {
+		return cidade;
+	}
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
+	}
 
 	public List<Cidade> getCidades() {
 		return cidades;
@@ -29,14 +36,6 @@ public class CidadeBean implements Serializable {
 
 	public void setCidades(List<Cidade> cidades) {
 		this.cidades = cidades;
-	}
-
-	public Cidade getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(Cidade cidade) {
-		this.cidade = cidade;
 	}
 
 	public List<Estado> getEstados() {
