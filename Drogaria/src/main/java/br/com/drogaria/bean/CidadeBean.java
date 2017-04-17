@@ -17,6 +17,7 @@ import br.com.drogaria.domain.Cidade;
 @ViewScoped
 public class CidadeBean implements Serializable{
 	
+	private Cidade cidade;
 	private List<Cidade> cidades;
 	
 	public List<Cidade> getCidades() {
@@ -25,6 +26,13 @@ public class CidadeBean implements Serializable{
 	
 	public void setCidades(List<Cidade> cidades) {
 		this.cidades = cidades;
+	}
+	
+	public Cidade getCidade() {
+		return cidade;
+	}
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
 	}
 	
 	@PostConstruct
@@ -37,6 +45,9 @@ public class CidadeBean implements Serializable{
 			Messages.addGlobalError("Erro ao editar a cidade");
 			e.printStackTrace();
 		}
+	}
+	public void novo(){
+		cidade = new Cidade();
 	}
 
 }
