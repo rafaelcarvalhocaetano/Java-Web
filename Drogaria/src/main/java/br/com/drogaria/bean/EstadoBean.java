@@ -80,8 +80,20 @@ public class EstadoBean implements Serializable {
 	}
 
 	public void excluir(ActionEvent event) {
+		try{
 		estado = (Estado) event.getComponent().getAttributes().get("estadoSelecionado");
-		Messages.addGlobalInfo("Nome: " + estado.getNome() + " Sigla: " + estado.getSigla());
+		
+		
+		EstadoDAO dao = new EstadoDAO();
+		dao.excluir(estado);
+		
+		estados = dao.listar();
+		
+		Messages.addGlobalInfo("Estado excluído com sucesso");
+		}catch(RuntimeException e){
+			Messages.addGlobalError("Erro ao tentar excluir o Estado");
+			e.printStackTrace();
+		}
 	}
 
 }
