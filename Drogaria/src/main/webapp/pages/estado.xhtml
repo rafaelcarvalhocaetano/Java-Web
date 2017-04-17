@@ -25,10 +25,14 @@
 					<h:outputText value="#{estado.sigla}" />
 				</p:column>
 				<p:column headerText="Opções">
-	
+					<p:commandButton icon="ui-icon-trash"/>
 				</p:column>
 				<p:commandButton />
 			</p:dataTable>
+			<p:confirmDialog global="true">
+				<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes"/>
+				<p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-yes"/>
+			</p:confirmDialog>
 		</p:panel>
 	</h:form>
 	<p:dialog header="Estado - Cadastro" widgetVar="dialogo"
