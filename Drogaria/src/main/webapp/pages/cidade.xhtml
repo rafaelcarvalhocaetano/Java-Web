@@ -11,9 +11,9 @@
 <h:body>
 	<p:growl id="mensagem" />
 
-	<h:form>
+	<h:form id="formListagem">
 		<p:panel header="Cidades - Listagem">
-			<p:dataTable emptyMessage="Nenhum registro encontrado."
+			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
 				paginator="true" value="#{cidadeBean.cidades}" var="cidade" rows="5">
 				<f:facet name="footer">
 					<p:commandButton value="Novo" actionListener="#{cidadeBean.novo}"
@@ -56,7 +56,7 @@
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
-				<p:commandButton value="Salvar" actionListener="#{cidadeBean.salvar}"/>
+				<p:commandButton value="Salvar" actionListener="#{cidadeBean.salvar}" update=":mensagem :formListagem:tabela :formCadastro:painel"/>
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 		</h:form>

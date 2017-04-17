@@ -75,7 +75,14 @@ public class CidadeBean implements Serializable {
 	public void salvar(){
 		try {
 			CidadeDAO dao = new CidadeDAO();
+			dao.merge(cidade);
 			
+			
+			EstadoDAO sdao = new EstadoDAO();
+			estados = sdao.listar();
+			
+			cidade = new Cidade();
+			cidades = dao.listar();			
 			
 			
 			Messages.addGlobalInfo("Cidade salva com sucesso");
