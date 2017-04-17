@@ -11,9 +11,9 @@
 <h:body>
 	<p:growl id="mensagem" />
 
-	<h:form>
+	<h:form id="formListagem">
 		<p:panel header="Estado - Listagem">
-			<p:dataTable emptyMessage="Nenhum registro encontrado"
+			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado"
 				paginator="true" value="#{estadoBean.estados}" var="estado" rows="3">
 				<f:facet name="footer">
 					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" actionListener="#{estadoBean.novo()}" update=":formCadastro:painel"/>
@@ -51,7 +51,7 @@
 
 			<h:panelGrid columns="2">
 				<p:commandButton value="Salvar"
-					actionListener="#{estadoBean.salvar()}" update=":mensagem :formCadastro:painel"/>
+					actionListener="#{estadoBean.salvar()}" update=":mensagem :formCadastro:painel :formListagem:tabela"/>
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 		</h:form>
