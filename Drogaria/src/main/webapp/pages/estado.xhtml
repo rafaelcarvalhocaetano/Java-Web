@@ -25,8 +25,9 @@
 					<h:outputText value="#{estado.sigla}" />
 				</p:column>
 				<p:column headerText="Opções">
-					<p:commandButton icon="ui-icon-trash">
-						<p:confirm  header="Confirmação" message="Deseja realmente excluir o Estado" icon="ui-icon-alert" />
+					<p:commandButton icon="ui-icon-trash" actionListener="#{estadoBean.excluir}" update=":mensagem">
+						<p:confirm  header="Confirmação" message="Deseja realmente excluir o Estado" icon="ui-icon-alert"/>
+						<f:attribute name="estadoSelecionado" value="#{estado}"/>
 					</p:commandButton>
 				</p:column>
 				<p:commandButton />

@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 //import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.ActionEvent;
 
 import org.omnifaces.util.Messages;
 
@@ -74,6 +75,10 @@ public class EstadoBean implements Serializable{
 		contexto.addMessage(null, mensagem);
 		*/
 		
+	}
+	public void excluir(ActionEvent event){
+		estado = (Estado) event.getComponent().getAttributes().get("estadoSelecionado");
+		Messages.addGlobalInfo("Nome: "+estado.getNome()+" Sigla: "+estado.getSigla());
 	}
 
 }
