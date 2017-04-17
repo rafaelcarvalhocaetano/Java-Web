@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.ActionEvent;
 
 import org.omnifaces.util.Messages;
 
@@ -22,10 +23,11 @@ public class CidadeBean implements Serializable {
 	private Cidade cidade;
 	private List<Cidade> cidades;
 	private List<Estado> estados;
-	
+
 	public Cidade getCidade() {
 		return cidade;
 	}
+
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
@@ -71,24 +73,37 @@ public class CidadeBean implements Serializable {
 			e.printStackTrace();
 		}
 	}
-	
-	public void salvar(){
+
+	public void salvar() {
 		try {
 			CidadeDAO dao = new CidadeDAO();
 			dao.merge(cidade);
-			
-			
+
 			EstadoDAO sdao = new EstadoDAO();
 			estados = sdao.listar();
-			
+
 			cidade = new Cidade();
-			cidades = dao.listar();			
-			
-			
+			cidades = dao.listar();
+
 			Messages.addGlobalInfo("Cidade salva com sucesso");
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Erro ao tentar salvar");
 			e.printStackTrace();
+		}
+	}
+
+	public void excluir(ActionEvent event) {
+		try {
+			cidade = (Cidade) event.getComponent().getAttributes().get("cidadeSelecionada");
+
+			CidadeDAO dao = new CidadeDAO();
+			dao.excluir(cidade);
+
+			cidades = dao.listar();
+
+			Messages.addGlobalInfo("Cidade excluida com sucesso");
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao excluir a cidade");
 		}
 	}
 

@@ -34,12 +34,16 @@
 				</p:column>
 
 				<p:column headerText="Opções">
-					<p:commandButton icon="ui-icon-trash" actionListener="#{cidadeBean}" update=":mensagem :formListagem:tabela">
+					<p:commandButton icon="ui-icon-trash" actionListener="#{cidadeBean.excluir}" update=":mensagem :formListagem:tabela">
 						<p:confirm header="Confirmação" message="Deseja excluir a Cidade ?" icon="ui-icon-alert" />
 						<f:attribute name="cidadeSelecionada" value="#{cidade}"/>
 					</p:commandButton>
 				</p:column>
 			</p:dataTable>
+			<p:confirmDialog global="true">
+				<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+				<p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+			</p:confirmDialog>
 		</p:panel>
 	</h:form>
 
