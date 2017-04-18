@@ -106,5 +106,9 @@ public class CidadeBean implements Serializable {
 			Messages.addGlobalError("Erro ao excluir a cidade");
 		}
 	}
-
+	
+	public void editar(ActionEvent event){
+		
+	}
+	
 }
