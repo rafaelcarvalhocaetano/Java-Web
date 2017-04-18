@@ -11,9 +11,10 @@
 </h:head>
 <h:body>
 	<p:growl id="mensagem" />
+
 	<h:form id="formListagem">
 		<p:panel header="Produtos - Listagem">
-			<p:dataTable emptyMessage="Nenhum registro encontrado."
+			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
 				paginator="true" value="#{produtoBean.produtos}" var="produto"
 				rows="5">
 				<f:facet name="footer">
@@ -21,7 +22,7 @@
 						oncomplete="PF('dialogo').show();"
 						update=":mensagem :formCadastro:painel">
 						<f:actionListener
-							type="org.omnifaces.eventListener.ResetInputAjaxActionListener" />
+							type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
 					</p:commandButton>
 				</f:facet>
 
@@ -43,16 +44,15 @@
 
 				<p:column headerText="Opções">
 					<p:commandButton icon="ui-icon-trash"
-						actionListener="#{produtoBean.excluir()}"
+						actionListener="#{produtoBean.excluir}"
 						update=":mensagem :formListagem:tabela">
 						<p:confirm header="Confirmação"
-							message="Deseja realmente excluir o produto ?"
-							icon="ui-icon-alert" />
+							message="Deseja excluir o produto?" icon="ui-icon-alert" />
 						<f:attribute name="produtoSelecionado" value="#{produto}" />
 					</p:commandButton>
 
 					<p:commandButton icon="ui-icon-pencil"
-						actionListener="#{produtoBean.editar()}"
+						actionListener="#{produtoBean.editar}"
 						update=":mensagem :formCadastro:painel"
 						oncomplete="PF('dialogo').show();">
 						<f:attribute name="produtoSelecionado" value="#{produto}" />
@@ -62,7 +62,7 @@
 				</p:column>
 			</p:dataTable>
 
-			<p:confirmDialog>
+			<p:confirmDialog global="true">
 				<p:commandButton value="Sim" type="button"
 					styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
 				<p:commandButton value="Não" type="button"
@@ -78,32 +78,37 @@
 				<p:outputLabel value="Descrição:" />
 				<p:inputText maxlength="50" size="30"
 					value="#{produtoBean.produto.descricao}" required="true"
-					requiredMessage="Campo obrigatório" />
+					requiredMessage="O campo 'Descrição' é obrigatório" />
 
 				<p:outputLabel value="Quantidade:" />
 				<p:inputText maxlength="5" size="10"
 					value="#{produtoBean.produto.quantidade}" required="true"
-					requiredMessage="Campo obrigatório"
-					converterMessage="Informe um valor valido para 'Quantidade'" />
+					requiredMessage="O campo 'Quantidade' é obrigatório"
+					converterMessage="Informe um valor válido para o campo 'Quantidade'" />
 
 				<p:outputLabel value="Preço:" />
-				<p:inputText maxlength="7" size="10" required="true"
-					requiredMessage="Campo obrigatório"
-					converterMessage="Informe um valor valido para 'Preço'" />
+				<p:inputText maxlength="7" size="10"
+					value="#{produtoBean.produto.preco}" required="true"
+					requiredMessage="O campo 'Preço' é obrigatório"
+					converterMessage="Informe um valor válido para o campo 'Preço''" />
 
 				<p:outputLabel value="Fabricante:" />
 				<p:selectOneMenu filter="true"
 					value="#{produtoBean.produto.fabricante}"
 					converter="omnifaces.SelectItemsConverter" required="true"
-					requiredMessage="Campo obrigatório">
-					<f:selectItem noSelectionOption="true" itemLabel="Selecione um fabricante" />
-					<f:selectItems value="#{produtoBean.fabricantes}" var="fabricante" itemValue="#{fabricante}" itemLabel="#{fabricante.descricao}"/>
+					requiredMessage="O campo 'Fabricante' é obrigatório">
+					<f:selectItem noSelectionOption="true"
+						itemLabel="Selecione um fabricante" />
+					<f:selectItems value="#{produtoBean.fabricantes}" var="fabricante"
+						itemValue="#{fabricante}" itemLabel="#{fabricante.descricao}" />
 				</p:selectOneMenu>
 
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
-				<p:commandButton value="Salvar" actionListener="#{produtoBean.salvar()}" update=":mensagem :formCadastro:painel :formListagem:tabela"/>
+				<p:commandButton value="Salvar"
+					actionListener="#{produtoBean.salvar}"
+					update=":mensagem :formCadastro:painel :formListagem:tabela" />
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 		</h:form>

@@ -112,16 +112,16 @@ public class ProdutoBean implements Serializable {
 	}
 
 	public void excluir(ActionEvent e) {
-		
+
 		try {
-			
+
 			produto = (Produto) e.getComponent().getAttributes().get("produtoSelecionado");
-			
+
 			ProdutoDAO dao = new ProdutoDAO();
 			dao.excluir(produto);
-			
+
 			produtos = dao.listar();
-			
+
 		} catch (RuntimeException e2) {
 			Messages.addGlobalError("Erro ao tentar excluir o produto");
 			e2.printStackTrace();
