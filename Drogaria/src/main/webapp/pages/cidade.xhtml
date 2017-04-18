@@ -18,7 +18,9 @@
 				<f:facet name="footer">
 					<p:commandButton value="Novo" actionListener="#{cidadeBean.novo}"
 						oncomplete="PF('dialogo').show();"
-						update=":mensagem :formCadastro:painel" />
+						update=":mensagem :formCadastro:painel">
+						 <f:actionListener type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
+					</p:commandButton>
 				</f:facet>
 
 				<p:column headerText="Nome" filterBy="#{cidade.nome}"
