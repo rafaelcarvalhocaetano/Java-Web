@@ -87,18 +87,23 @@
 					converterMessage="Informe um valor valido para 'Quantidade'" />
 
 				<p:outputLabel value="Preço:" />
-				<p:inputText maxlength="7" size="10" required="true" requiredMessage="Campo obrigatório"
+				<p:inputText maxlength="7" size="10" required="true"
+					requiredMessage="Campo obrigatório"
 					converterMessage="Informe um valor valido para 'Preço'" />
 
 				<p:outputLabel value="Fabricante:" />
-				<p:selectOneMenu filter="true">
-					<f:selectItem itemValue="" itemLabel="Selecione um fabricante" />
+				<p:selectOneMenu filter="true"
+					value="#{produtoBean.produto.fabricante}"
+					converter="omnifaces.SelectItemsConverter" required="true"
+					requiredMessage="Campo obrigatório">
+					<f:selectItem noSelectionOption="true" itemLabel="Selecione um fabricante" />
+					<f:selectItems value="#{produtoBean.fabricantes}" var="fabricante" itemValue="#{fabricante}" itemLabel="#{fabricante.descricao}"/>
 				</p:selectOneMenu>
 
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
-				<p:commandButton value="Salvar" />
+				<p:commandButton value="Salvar" actionListener="#{produtoBean.salvar()}" update=":mensagem :formCadastro:painel :formListagem:tabela"/>
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 		</h:form>

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.ActionEvent;
 
 import org.omnifaces.util.Messages;
 
@@ -82,8 +83,16 @@ public class ProdutoBean implements Serializable {
 	public void salvar(){
 		
 	}
-	public void editar(){
-		
+	public void editar(ActionEvent event){
+		try {
+			produto =(Produto) event.getComponent().getAttributes().get("produtoSelecionado");
+			
+			FabricanteDAO dao = new FabricanteDAO();
+			fabricantes = dao.listar();
+			
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao tentar editar o produto");
+		}
 	}
 
 }
