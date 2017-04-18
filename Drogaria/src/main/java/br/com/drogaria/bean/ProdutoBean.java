@@ -77,39 +77,56 @@ public class ProdutoBean implements Serializable {
 		}
 
 	}
-	public void excluir(){
-		
-	}
-	public void salvar(){
+
+	public void salvar() {
 		try {
 			ProdutoDAO dao = new ProdutoDAO();
 			dao.merge(produto);
-			
+
 			produto = new Produto();
-			
+
 			FabricanteDAO fdao = new FabricanteDAO();
 			fabricantes = fdao.listar();
-			
+
 			produtos = dao.listar();
-			
+
 			Messages.addGlobalInfo("Produto Salvo com sucesso");
-			
+
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Erro ao tentar salvar o produto");
 			e.printStackTrace();
 		}
-		
+
 	}
-	public void editar(ActionEvent event){
+
+	public void editar(ActionEvent event) {
 		try {
-			produto =(Produto) event.getComponent().getAttributes().get("produtoSelecionado");
-			
+			produto = (Produto) event.getComponent().getAttributes().get("produtoSelecionado");
+
 			FabricanteDAO dao = new FabricanteDAO();
 			fabricantes = dao.listar();
-			
+
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Erro ao tentar editar o produto");
 		}
+	}
+
+	public void excluir(ActionEvent e) {
+		
+		try {
+			
+			produto = (Produto) e.getComponent().getAttributes().get("produtoSelecionado");
+			
+			ProdutoDAO dao = new ProdutoDAO();
+			dao.excluir(produto);
+			
+			produtos = dao.listar();
+			
+		} catch (RuntimeException e2) {
+			Messages.addGlobalError("Erro ao tentar excluir o produto");
+			e2.printStackTrace();
+		}
+
 	}
 
 }
