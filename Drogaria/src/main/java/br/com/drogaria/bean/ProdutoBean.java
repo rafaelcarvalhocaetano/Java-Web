@@ -76,5 +76,14 @@ public class ProdutoBean implements Serializable {
 		}
 
 	}
+	public void excluir(){
+		
+	}
+	public void salvar(){
+		
+	}
+	public void editar(){
+		
+	}
 
 }
