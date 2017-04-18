@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>HOME</title>
+	<h:outputStylesheet library="css" name="estilo.css" />
+</h:head>
+<h:body>
+<p:growl id="msg"/>
+	<h:form id="pnl">
+		<p:panel header="Ambiente Virtual">
+			<div align="center">
+				<h:panelGrid id="painel" columns="2" cellpadding="3">
+
+					<h:outputLabel for="text" value="RA: " />
+					<p:inputText id="text" required="true" maxlength="10" size="10" value="#{cadastroBean.cadastro.ra}"/>
+
+					<h:outputLabel for="integer" value="Senha: " />
+					<p:password id="integer" maxlength="8" size="10" value="#{cadastroBean.cadastro.senha}"/>
+
+				</h:panelGrid>
+			</div>
+			<br />
+			<div align="center">
+				<p:commandButton value="Entrar" icon="ui-icon-check"
+					validateClient="true" actionListener="#{cadastroBean.autenticar}" update=":msg :pnl:painel"/>
+				<p:commandButton value="Cadastrar" icon="ui-icon-check"
+					validateClient="true" oncomplete="PF('dialogo').show();"/>
+			</div>
+		</p:panel>
+	</h:form>
+	<p:dialog widgetVar="dialogo" header="Funcionário - Cadastro"
+		closable="false" resizable="false" draggable="false" modal="true">
+		<h:form id="formCadastro">
+			<h:panelGrid id="painel2" columns="2">
+				<p:outputLabel value="Nome: " />
+				<p:inputText maxlength="20" size="20" value="#{cadastroBean.cadastro.nome}"/>
+				
+				<p:outputLabel value="RA: " />
+				<p:inputText maxlength="10" size="10" value="#{cadastroBean.cadastro.ra}"/>
+				
+				
+				<p:outputLabel value="Senha: " />
+				<p:password maxlength="8" size="10" value="#{cadastroBean.cadastro.senha}"/>
+			</h:panelGrid>
+			<div align="center">
+			<h:panelGrid columns="2">
+				<p:commandButton value="Salvar" actionListener="#{cadastroBean.salvar}" update=":msg :formCadastro:painel2"/>
+				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
+			</h:panelGrid>
+			</div>
+		</h:form>
+	</p:dialog>
+</h:body>
+</html>

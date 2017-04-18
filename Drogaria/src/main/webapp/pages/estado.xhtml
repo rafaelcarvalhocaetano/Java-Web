@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Estado</title>
-</h:head>
-<h:body>
-	<p:growl id="mensagem" />
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/templates/modelo.xhtml">
 
+	<ui:define name="estado">
+	
 	<h:form id="formListagem">
 		<p:panel header="Estado - Listagem">
 			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado"
-				paginator="true" value="#{estadoBean.estados}" var="estado" rows="3">
+				paginator="true" value="#{estadoBean.estados}" var="estado" rows="3" paginatorPosition="bottom">
 				<f:facet name="footer">
 					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" actionListener="#{estadoBean.novo()}" update=":formCadastro:painel"/>
 				</f:facet>
@@ -43,15 +42,20 @@
 			</p:confirmDialog>
 		</p:panel>
 	</h:form>
+	
 	<p:dialog header="Estado - Cadastro" widgetVar="dialogo"
 		draggable="false" closable="false" resizable="false" modal="true">
 		<h:form id="formCadastro">
 			<h:panelGrid id="painel" columns="2">
 				<p:outputLabel value="Nome: " />
-				<p:inputText maxlength="30" size="30" value="#{estadoBean.estado.nome}"/>
+				<p:inputText id="nome" maxlength="30" size="30" value="#{estadoBean.estado.nome}" converter="upperCaseConverter">
+					<p:ajax event="blur" update="formCadastro:nome"/>
+				</p:inputText>
 
 				<p:outputLabel value="Sigla " />
-				<p:inputText maxlength="2" size="2" value="#{estadoBean.estado.sigla}"/>
+				<p:inputText maxlength="2" size="2" value="#{estadoBean.estado.sigla}" converter="upperCaseConverter">
+					<p:ajax event="blur" update="@this"/>
+				</p:inputText>
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
@@ -61,5 +65,5 @@
 			</h:panelGrid>
 		</h:form>
 	</p:dialog>
-</h:body>
-</html>
+	</ui:define>
+</ui:composition>

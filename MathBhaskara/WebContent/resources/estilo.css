@@ -1,0 +1,56 @@
+@CHARSET "ISO-8859-1";
+*{
+	margin: 0;
+	padding: 0;
+}
+#form{
+	width: 45%;
+	height: 10em;
+	margin-left: 25%;
+	margin-top: 15%;
+	background-color: #ccc;
+}
+#info{
+	margin-left: 10%;
+	background-color: #ccc;
+	font-family: monospace;
+}
+#form h3{
+	color: #000;
+	font-size: 25px;
+	font-family: monospace;
+	margin-left: 28%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+#form button{
+	margin: 4% 0 5% 43%;
+}
+button{
+	width: 20%;
+	height: 4em;
+	background-color: #f44336;
+}
+
+#pos{
+	margin-top: 15%;
+	margin-left:30%;
+	width: 40%;
+	height: 15em;
+	background-color: #ccc;
+}
+#pos h1{
+	font-family: monospace;
+	margin-bottom: 5%;	
+	text-align: center;
+}
+#pos h4{
+	font-family: monospace;
+	margin-bottom: 5%;	
+	text-align: center;
+}
+#pos p{
+	font-family: monospace;
+	margin-bottom: 5%;	
+	text-align: center;
+}

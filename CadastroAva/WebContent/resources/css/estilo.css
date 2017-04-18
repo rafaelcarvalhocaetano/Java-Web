@@ -1,0 +1,17 @@
+@CHARSET "ISO-8859-1";
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #041A27;
+}
+#painel{
+	margin-top: 3%;
+	margin-left: 33%;
+}
+#init{
+	margin-top: 10%;
+	margin-left: 33%;
+}
+

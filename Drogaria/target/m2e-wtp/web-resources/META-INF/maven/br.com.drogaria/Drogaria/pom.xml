@@ -6,6 +6,8 @@
 	<version>1.0</version>
 	<packaging>war</packaging>
 
+
+
 	<!-- Codificação dos caracteres -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,6 +32,17 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<!-- Repositórios -->
+	<repositories>
+		<!-- PrimeFaces Themas ALL -->
+		<repository>
+			<id>prime-repo</id>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
 
 	<!-- Dependências necessárias -->
 	<dependencies>
@@ -68,6 +81,13 @@
 			<version>5.2</version>
 		</dependency>
 
+		<!--PrimeFaces Themas -->
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>1.0.10</version>
+		</dependency>
+
 		<!-- OMNIFACES -->
 		<dependency>
 			<groupId>org.omnifaces</groupId>
@@ -75,7 +95,32 @@
 			<version>1.11</version>
 		</dependency>
 
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
 
+		<!-- JERSEY -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>2.22.1</version>
+		</dependency>
 
+		<!-- GSON -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<!-- shiro-core -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>1.2.4</version>
+		</dependency>
 	</dependencies>
 </project>

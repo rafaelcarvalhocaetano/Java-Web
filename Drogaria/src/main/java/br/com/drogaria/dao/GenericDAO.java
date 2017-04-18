@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import br.com.drogaria.util.HibernateUtil;
@@ -53,6 +54,23 @@ public class GenericDAO<Entidade> {
 		
 		try {
 			Criteria consulta = sessao.createCriteria(classe);
+			List<Entidade> resultado = consulta.list();
+			return resultado;
+		} catch (RuntimeException e) {
+			throw e;
+		}finally {
+			sessao.close();
+		}
+	}
+	//listar ordenado
+	@SuppressWarnings("unchecked")
+	public List<Entidade> listar(String campoOrdenacao){
+		
+		Session sessao = HibernateUtil.getFabricaDeSessao().openSession();
+		
+		try {
+			Criteria consulta = sessao.createCriteria(classe);
+			consulta.addOrder(Order.asc(campoOrdenacao));
 			List<Entidade> resultado = consulta.list();
 			return resultado;
 		} catch (RuntimeException e) {
@@ -128,7 +146,8 @@ public class GenericDAO<Entidade> {
 			sessao.close();
 		}
 	}
-	public void merge(Entidade entidade) {
+	@SuppressWarnings("unchecked")
+	public Entidade merge(Entidade entidade) {
 
 		Session sessao = HibernateUtil.getFabricaDeSessao().openSession();
 		Transaction transacao = null;
@@ -136,9 +155,12 @@ public class GenericDAO<Entidade> {
 		try {
 
 			transacao = sessao.beginTransaction();
-			sessao.merge(entidade);
+			Entidade retorno = (Entidade) sessao.merge(entidade);
 			transacao.commit();
+			
+			return retorno;
 
+			
 		} catch (RuntimeException e) {
 
 			if (transacao != null) {

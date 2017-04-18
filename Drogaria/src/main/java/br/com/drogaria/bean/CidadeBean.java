@@ -67,7 +67,7 @@ public class CidadeBean implements Serializable {
 
 			EstadoDAO dao = new EstadoDAO();
 
-			estados = dao.listar();
+			estados = dao.listar("nome");
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Erro ao gerar uma nova cidade");
 			e.printStackTrace();
@@ -112,7 +112,7 @@ public class CidadeBean implements Serializable {
 			cidade = (Cidade) event.getComponent().getAttributes().get("cidadeSelecionada");
 
 			EstadoDAO dao = new EstadoDAO();
-			estados = dao.listar();
+			estados = dao.listar("nome");
 
 			Messages.addGlobalInfo("Cidade editada com sucesso");
 		} catch (RuntimeException e) {

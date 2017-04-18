@@ -2,6 +2,7 @@ package br.com.drogaria.dao;
 
 import java.util.List;
 
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -14,7 +15,7 @@ public class UsuarioDAOTest {
 	@Ignore
 	public void salvar() {
 
-		Long codigo = 2L;
+		Long codigo = 3L;
 
 		PessoaDAO pd = new PessoaDAO();
 		Pessoa pessoa = pd.buscar(codigo); // usando a referencia do codigo para os dois tipos
@@ -23,11 +24,17 @@ public class UsuarioDAOTest {
 		System.out.println(pessoa.getCpf());
 
 		Usuario us = new Usuario();
+		
+		
 
 		us.setPessoa(pessoa);
 		us.setAtivo(true);
-		us.setSenha("121212322");
-		us.setTipo('M');
+		us.setSenhaSemCriptografia("q1w2e3r4");
+		
+		SimpleHash sh = new SimpleHash("md5", us.getSenhaSemCriptografia());
+		
+		us.setSenha(sh.toHex());
+		us.setTipo('B');
 
 		UsuarioDAO dao = new UsuarioDAO();
 		dao.salvar(us);
@@ -93,7 +100,7 @@ public class UsuarioDAOTest {
 	@Ignore
 	public void editar(){
 
-		Long codigo = 2L;
+		Long codigo = 1L;
 		
 		UsuarioDAO dao = new UsuarioDAO();
 		Usuario us = dao.buscar(codigo);
@@ -101,12 +108,21 @@ public class UsuarioDAOTest {
 		if(us == null){
 			System.out.println("Nenhum resultado encontrado...");
 		}else{
-						
+			us.setTipo('A');
 			us.setSenha("788888888");
 			dao.editar(us);
 			
 			System.out.println("Alterações feitas com sucesso ...");
 		}
+	}
+	public void autenticar(){
+		String cpf = "999.999.999-99";
+		String senha = "q1w2e3r4";
+		
+		UsuarioDAO dao = new UsuarioDAO();
+		Usuario usuario = dao.autenticar(cpf, senha);
+		
+		System.out.println(usuario);
 	}
 
 }

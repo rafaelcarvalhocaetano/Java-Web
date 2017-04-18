@@ -1,7 +1,23 @@
-﻿# Projeto Front-End com java.
+﻿# Projetos JAVA-WEB
 
-## Instalando o java 8
+ Projetos java web com integração de framawork.
+ 
 
+- [Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql](#projeto-front-end-com-java-usando-jsf---primefaces---ajax---hibernate---jarsperreporter---mysql)
+	- [THibernate ](#thibernate)
+	- [Cadastro e Controle de Acesso com Hibernate ](#cadastro-e-controle-de-acesso-com-hibernate)
+	- [Cadastro com Hibernate](#cadastro-com-hibernate)
+	- [Lojinha](#lojinha)
+
+
+- [Projetos Java Web com JSP Bootstrap JQuery e Materialize](#projetos-java-web-com-jsp-bootstrap-jquery-e-materialize)
+  - [JSP Bhaskara](#jsp-bhaskara)
+  - [JSP Cookies e Sessões](#jsp-cookies-e-sessões)
+  - [Materialize - JSP](#materialize---jsp)
+  - [User Authentication](#user-authentication)
+  - [Cadastro Uninove](#cadastro-uninove)
+  
+Instalaço do  Maven no eclipse `http://download.jboss.org/jbosstools/updates/m2eclipse-wtp/`
 
 Acesse o link http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html
 
@@ -28,9 +44,6 @@ Clique em "Novo"
 
 ```
 
-
-
-
 ## Instalando o eclipse
  
  Acesse o link https://www.eclipse.org/downloads/
@@ -43,8 +56,9 @@ Clique em "Novo"
  
  Após ter baixado, siga clicando em next
  
+### Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql
  
-## Baixando os jar necessários através do Maven
+### Baixando os jar necessários através do Maven
 
 Criar um pasta `WEB-INF` para conter `web.xml`
 
@@ -57,22 +71,33 @@ Criar um pasta `WEB-INF` para conter `web.xml`
 
 	<!-- Nome da Aplicação -->
 	<display-name>Drogaria</display-name>
-	
+
 	<!-- Estágio do Projeto -->
 	<context-param>
-        <param-name>javax.faces.PROJECT_STAGE</param-name>
-        <param-value>Development</param-value>
-    </context-param>
-    
-    <servlet>
-        <servlet-name>Faces Servlet</servlet-name>
-        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>*.xhtml</url-pattern>
-    </servlet-mapping>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+
+	<!-- PrimeFaces Temas all -->
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>delta</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+
+	<!-- Carregamento do Hibernate -->
+	<listener>
+		<listener-class>br.com.drogaria.util.HibernateContexto</listener-class>
+	</listener>
 
 </web-app>
 
@@ -117,13 +142,24 @@ Configurando o pom.xml
 		</plugins>
 	</build>
 
+	<!-- Repositórios -->
+	<repositories>
+		<!-- PrimeFaces Themas ALL -->
+		<repository>
+			<id>prime-repo</id>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+
 	<!-- Dependências necessárias -->
 	<dependencies>
 		<!-- Hibernate Core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>5.2.9.Final</version>
+			<version>4.3.3.Final</version>
 		</dependency>
 
 		<!-- Conector MySql -->
@@ -133,25 +169,32 @@ Configurando o pom.xml
 			<version>6.0.6</version>
 		</dependency>
 
-		<!-- Junit na Versão 4.12 e 11 aparecem erros-->
+		<!-- Junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.10</version>  
+			<version>4.10</version>
 		</dependency>
-		
+
 		<!-- JSF -->
 		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.faces</artifactId>
 			<version>2.2.12</version>
 		</dependency>
-		
+
 		<!--PrimeFaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>5.2</version>
+		</dependency>
+
+		<!--PrimeFaces Themas -->
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>1.0.10</version>
 		</dependency>
 
 		<!-- OMNIFACES -->
@@ -161,6 +204,33 @@ Configurando o pom.xml
 			<version>1.11</version>
 		</dependency>
 
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<!-- JERSEY -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>2.22.1</version>
+		</dependency>
+
+		<!-- GSON -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.4</version>
+		</dependency>
+		
+		<!-- shiro-core -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>1.2.4</version>
+		</dependency>
 
 
 
@@ -229,3 +299,67 @@ Configurando o arquivo hibernate.cfg.xml que fica dentro de src/main/resources
 </hibernate-configuration>
 
 ```
+Projetos JSF - Hibernate - MySQl - PrimeFaces - JReport - JUnit.
+### THibernate
+Projeto THibernate é um projeto teste de integração com banco de dados. Sua função é simplesmente um cadastro e visualização dos cadastrados via DB.
+Projeto Finalizado. Cadastro simples e visualização dos cadastrados.
+
+### Cadastro com Hibernate
+
+Projeto de Cadastro de usuário e controle de acesso simples.
+<ul>
+<li><img src="#">teste 1</li>
+<li><img src="#">teste 1</li>
+</ul>
+
+### Cadastro com Hibernate
+
+Projeto que envolve um simples controle de acesso através de um simples cadastro usando hibernate, banco de dados mysql, jsf, primefaces e como teste das classes o junit.
+
+<p>
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/ControleDeAcesso/src/main/webapp/resources/css/f1.png">
+HOME - Está página é simplesmente o home da aplicação, onde o usuário terá a opção de se cadastrar ou entrar no ambiente.
+
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/ControleDeAcesso/src/main/webapp/resources/css/f2.png">
+CADASTRO - Nesta página o usuário criará um cadastro para poder ter acesso ao ambiente.
+</p>
+
+### Lojinha
+Sistema de e-commerce de uma lojinha de biju.
+
+### Projeto JSP - Servlet - Bootstrap - Materialize - JQuery.
+
+Projetos Java Web com JSP Bootstrap JQuery e Materialize
+
+### JSP Bhaskara
+Projeto java web com JSP - BOOTSTRAP - JQUERY. Refere-se em uma calculadora de Bhaskara, onde são lançados os valores e recebe o resultado de delta, x1, x2 e tudo mais.
+
+HOME - Imagem da aplicação rodando
+<img  src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/Bhaskara/WebContent/resources/img/b1.png"/>
+
+CALCULO - Imagem da aplicação fornecendo o resultado ao usuário.
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/Bhaskara/WebContent/resources/img/b2.png"/>
+
+### JSP Cookies e Sessões
+### Materialize - JSP
+### User Authentication
+### Cadastro Uninove
+
+Realizando projeto envolvendo um ambiente virtual de aprendizagem AVA - onde o usuário cadastra-se e acessa sua área restrita.
+<p>
+
+HOME PAGE.
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c1.png">
+
+CADASTRO - Área de Cadastro
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c2.png">
+
+SESSÃO - Página contendo uma simples sessão com os dados fornecido pelo usuário no momento do cadastro.
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c3.png">
+
+ÁREA DE ACESSO.
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c4.png">
+
+Ambiente Virtual de Aprendizagem
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c5.png">
+</p>
