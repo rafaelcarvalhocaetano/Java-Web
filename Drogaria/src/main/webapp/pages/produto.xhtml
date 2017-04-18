@@ -76,13 +76,19 @@
 		<h:form id="formCadastro">
 			<h:panelGrid id="painel" columns="2">
 				<p:outputLabel value="Descrição:" />
-				<p:inputText maxlength="50" size="30" />
+				<p:inputText maxlength="50" size="30"
+					value="#{produtoBean.produto.descricao}" required="true"
+					requiredMessage="Campo obrigatório" />
 
 				<p:outputLabel value="Quantidade:" />
-				<p:inputText maxlength="5" size="10" />
+				<p:inputText maxlength="5" size="10"
+					value="#{produtoBean.produto.quantidade}" required="true"
+					requiredMessage="Campo obrigatório"
+					converterMessage="Informe um valor valido para 'Quantidade'" />
 
 				<p:outputLabel value="Preço:" />
-				<p:inputText maxlength="7" size="10" />
+				<p:inputText maxlength="7" size="10" required="true" requiredMessage="Campo obrigatório"
+					converterMessage="Informe um valor valido para 'Preço'" />
 
 				<p:outputLabel value="Fabricante:" />
 				<p:selectOneMenu filter="true">
