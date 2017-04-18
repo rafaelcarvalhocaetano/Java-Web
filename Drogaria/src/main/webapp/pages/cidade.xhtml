@@ -23,7 +23,7 @@
 
 				<p:column headerText="Nome" filterBy="#{cidade.nome}"
 					sortBy="#{cidade.nome}">
-					<h:outputText value="#{cidade.nome}" />
+					<h:outputText value="#{cidade.nome}" rendered="true"/>
 				</p:column>
 
 				<p:column headerText="Estado" filterBy="#{cidade.estado.nome}"
