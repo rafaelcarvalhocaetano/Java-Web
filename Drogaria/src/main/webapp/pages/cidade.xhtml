@@ -49,6 +49,7 @@
 						actionListener="#{cidadeBean.editar}"
 						oncomplete="PF('dialogo').show();" update=":formCadastro:painel">
 						<f:attribute name="cidadeSelecionada" value="#{cidade}" />
+						 <f:actionListener type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
 					</p:commandButton>
 				</p:column>
 			</p:dataTable>
