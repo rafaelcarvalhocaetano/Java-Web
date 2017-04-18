@@ -23,7 +23,7 @@
 
 				<p:column headerText="Nome" filterBy="#{cidade.nome}"
 					sortBy="#{cidade.nome}">
-					<h:outputText value="#{cidade.nome}" rendered="true"/>
+					<h:outputText value="#{cidade.nome}"/>
 				</p:column>
 
 				<p:column headerText="Estado" filterBy="#{cidade.estado.nome}"
@@ -64,11 +64,12 @@
 			<h:panelGrid id="painel" columns="2">
 				<p:outputLabel value="Nome:" />
 				<p:inputText maxlength="50" size="30"
-					value="#{cidadeBean.cidade.nome}" />
+					value="#{cidadeBean.cidade.nome}" required="true" requiredMessage="O campo Nome é obrigatório"/>
 
 				<p:outputLabel value="Estado:" />
 				<p:selectOneMenu filter="true" value="#{cidadeBean.cidade.estado}"
-					converter="omnifaces.SelectItemsConverter">
+					converter="omnifaces.SelectItemsConverter"
+					required="true" requiredMessage="O campo Estado é obrigatório">
 					<f:selectItem noSelectionOption="true"
 						itemLabel="Selecione um estado" />
 					<f:selectItems value="#{cidadeBean.estados}" var="estado"
