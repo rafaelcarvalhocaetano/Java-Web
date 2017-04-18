@@ -106,9 +106,18 @@ public class CidadeBean implements Serializable {
 			Messages.addGlobalError("Erro ao excluir a cidade");
 		}
 	}
-	
-	public void editar(ActionEvent event){
-		
+
+	public void editar(ActionEvent event) {
+		try {
+			cidade = (Cidade) event.getComponent().getAttributes().get("cidadeSelecionada");
+
+			EstadoDAO dao = new EstadoDAO();
+			estados = dao.listar();
+
+			Messages.addGlobalInfo("Cidade editada com sucesso");
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao tentar editar a cidade");
+		}
 	}
-	
+
 }
