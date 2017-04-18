@@ -74,6 +74,11 @@ Criar um pasta `WEB-INF` para conter `web.xml`
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
 
+    <!-- Carregamento do Hibernate -->
+    <listener>
+	<listener-class>br.com.drogaria.util.HibernateContexto</listener-class>
+    </listener>
+
 </web-app>
 
 ``` 
@@ -161,8 +166,12 @@ Configurando o pom.xml
 			<version>1.11</version>
 		</dependency>
 
-
-
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
 
 	</dependencies>
 </project>
