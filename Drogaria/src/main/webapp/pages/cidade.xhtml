@@ -62,12 +62,12 @@
 		draggable="false" resizable="false" modal="true" closable="false">
 		<h:form id="formCadastro">
 			<h:panelGrid id="painel" columns="2">
-				<p:outputLabel value="Nome:" />
-				<p:inputText maxlength="50" size="30"
+				<p:outputLabel for="nome" value="Nome:" />
+				<p:inputText id="nome" maxlength="50" size="30"
 					value="#{cidadeBean.cidade.nome}" required="true" requiredMessage="O campo Nome é obrigatório"/>
 
-				<p:outputLabel value="Estado:" />
-				<p:selectOneMenu filter="true" value="#{cidadeBean.cidade.estado}"
+				<p:outputLabel for="estado" value="Estado:" />
+				<p:selectOneMenu id="estado" filter="true" value="#{cidadeBean.cidade.estado}"
 					converter="omnifaces.SelectItemsConverter"
 					required="true" requiredMessage="O campo Estado é obrigatório">
 					<f:selectItem noSelectionOption="true"
