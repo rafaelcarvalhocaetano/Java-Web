@@ -2,19 +2,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
-<head>
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Pessoas</title>
-</head>
+</h:head>
 <h:body>
 	<p:growl id="mensagem" />
+
 	<h:form id="formListagem">
 		<p:panel header="Pessoas - Listagem">
-			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado"
-				paginator="true" rows="3" value="#{}" var="pessoa">
-				<f:facet name="footer">
+			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
+				paginator="true" value="#{pessoaBean.pessoas}" var="pessoa"
+				rows="5">
+				<f:facet name="header">
 					<p:commandButton value="Novo" actionListener="#{pessoaBean.novo}"
 						oncomplete="PF('dialogo').show();"
 						update=":mensagem :formCadastro:painel">
@@ -22,30 +24,26 @@
 							type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
 					</p:commandButton>
 				</f:facet>
-				<p:column headerText="Nome">
-					<h:outputText value="pessoa.nome" />
-				</p:column>
 
 				<p:column headerText="Nome">
-					<h:outputText value="pessoa.nome" />
+					<h:outputText value="#{pessoa.nome}" />
 				</p:column>
 
 				<p:column headerText="RG">
-					<h:outputText value="pessoa.rg" />
+					<h:outputText value="#{pessoa.rg}" />
 				</p:column>
-
+				
 				<p:column headerText="CPF">
-					<h:outputText value="pessoa.cpf" />
+					<h:outputText value="#{pessoa.cpf}" />
 				</p:column>
 
 				<p:column headerText="Opções">
 					<p:commandButton icon="ui-icon-trash"
 						actionListener="#{pessoaBean.excluir}"
 						update=":mensagem :formListagem:tabela">
-						<p:confirm header="Confirmação" message="Deseja excluir a pessoa"
-							icon="ui-icon-alert" />
+						<p:confirm header="Confirmação"
+							message="Deseja excluir a pessoa?" icon="ui-icon-alert" />
 						<f:attribute name="pessoaSelecionada" value="#{pessoa}" />
-
 					</p:commandButton>
 
 					<p:commandButton icon="ui-icon-pencil"
@@ -58,14 +56,16 @@
 					</p:commandButton>
 				</p:column>
 			</p:dataTable>
-			
+
 			<p:confirmDialog global="true">
-				<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
-				<p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+				<p:commandButton value="Sim" type="button"
+					styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+				<p:commandButton value="Não" type="button"
+					styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
 			</p:confirmDialog>
 		</p:panel>
 	</h:form>
-	
+
 	<p:dialog header="Pessoas - Cadastro" widgetVar="dialogo"
 		draggable="false" resizable="false" modal="true" closable="false">
 		<h:form id="formCadastro">
