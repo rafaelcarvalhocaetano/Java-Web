@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.ActionEvent;
 
 import org.omnifaces.util.Messages;
 
@@ -44,6 +45,22 @@ public class PessoaBean implements Serializable{
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Erro ao listar uma pessoa");
 		}
+	}
+	public void novo() {
+
+	}
+
+	public void editar(ActionEvent evento) {
+		
+
+	}
+
+	public void salvar() {
+
+	}
+
+	public void excluir(ActionEvent evento) {
+
 	}
 	
 	
