@@ -10,7 +10,9 @@ import javax.faces.bean.ViewScoped;
 import org.omnifaces.util.Messages;
 
 import br.com.drogaria.dao.ClienteDAO;
+import br.com.drogaria.dao.PessoaDAO;
 import br.com.drogaria.domain.Cliente;
+import br.com.drogaria.domain.Pessoa;
 
 @SuppressWarnings("serial")
 @ManagedBean
@@ -18,6 +20,8 @@ import br.com.drogaria.domain.Cliente;
 public class ClienteBean implements Serializable{
 	
 	private List<Cliente> clientes;
+	private Cliente cliente;
+	private List<Pessoa> pessoas;
 
 	public List<Cliente> getClientes() {
 		return clientes;
@@ -25,6 +29,18 @@ public class ClienteBean implements Serializable{
 
 	public void setClientes(List<Cliente> clientes) {
 		this.clientes = clientes;
+	}
+	public List<Pessoa> getPessoas() {
+		return pessoas;
+	}
+	public void setPessoas(List<Pessoa> pessoas) {
+		this.pessoas = pessoas;
+	}
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 	
 	@PostConstruct
@@ -38,7 +54,17 @@ public class ClienteBean implements Serializable{
 			e.printStackTrace();
 		}
 	}
-	
+	public void novo(){
+		try {
+			cliente = new Cliente();
+			
+			PessoaDAO pdao = new PessoaDAO();
+			pessoas = pdao.listar("nome");
+			
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao adicionar um novo cliente");
+		}
+	}
 	
 
 }
