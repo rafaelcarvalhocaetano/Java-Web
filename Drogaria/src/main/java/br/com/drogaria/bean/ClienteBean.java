@@ -65,6 +65,22 @@ public class ClienteBean implements Serializable{
 			Messages.addGlobalError("Erro ao adicionar um novo cliente");
 		}
 	}
+	public void salvar(){
+		
+		try {
+			ClienteDAO dao = new ClienteDAO();
+			dao.merge(cliente);
+			
+			cliente = new Cliente();
+			
+			PessoaDAO pdao = new PessoaDAO();
+			pessoas = pdao.listar("nome");
+			
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao tentar salvar");
+			e.printStackTrace();
+		}
+	}
 	
 
 }
