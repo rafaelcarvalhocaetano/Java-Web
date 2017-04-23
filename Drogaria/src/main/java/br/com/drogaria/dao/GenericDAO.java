@@ -62,6 +62,7 @@ public class GenericDAO<Entidade> {
 			sessao.close();
 		}
 	}
+	//listar ordenado
 	@SuppressWarnings("unchecked")
 	public List<Entidade> listar(String campoOrdenacao){
 		
