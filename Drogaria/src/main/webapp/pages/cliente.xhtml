@@ -9,11 +9,12 @@
 	<title>cliente</title>
 </h:head>
 <h:body>
+	<p:growl id="mensagem"/>
 	<h:form>
 		<p:panel header="Cliente - Listagem">
 			<p:dataTable emptyMessage="Nenhum cliente encontrado" paginator="true" value="#{clienteBean.clientes}" var="cliente" rows="3">
 			<f:facet name="footer">
-				<p:commandButton value="Novo" oncomplete="PF('dialogo').show();"/>
+				<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" actionListener="#{clienteBean.novo}" update=":mensagem :formCadastro:painel"/>
 			</f:facet>
 			
 			<p:column headerText="Nome">
@@ -41,8 +42,8 @@
 		</p:panel>
 	</h:form>
 	<p:dialog header="Cliente - Cadastro" widgetVar="dialogo" draggable="false" closable="false" resizable="false" modal="false">
-		<h:form>
-			<h:panelGrid columns="2">
+		<h:form id="formCadastro">
+			<h:panelGrid id="painel" columns="2">
 				<p:outputLabel value="Pessoa: "/>
 				<p:selectOneMenu filter="true">
 					<f:selectItem itemValue="" itemLabel="Selecione uma Pessoa"/>
