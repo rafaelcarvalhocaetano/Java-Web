@@ -61,6 +61,21 @@ public class GenericDAO<Entidade> {
 			sessao.close();
 		}
 	}
+	@SuppressWarnings("unchecked")
+	public List<Entidade> listar(String campoOrdenacao){
+		
+		Session sessao = HibernateUtil.getFabricaDeSessao().openSession();
+		
+		try {
+			Criteria consulta = sessao.createCriteria(classe);
+			List<Entidade> resultado = consulta.list();
+			return resultado;
+		} catch (RuntimeException e) {
+			throw e;
+		}finally {
+			sessao.close();
+		}
+	}
 	
 	@SuppressWarnings("unchecked")
 	public Entidade buscar(Long codigo){
