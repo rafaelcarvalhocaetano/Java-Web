@@ -26,7 +26,7 @@
 			</p:column>
 			
 			<p:column headerText="Data de Cadastro">
-				<h:outputText value="#{cliente.dataCadastro}">
+				<h:outputText value="#{cliente.dataCadastro}" rendered="true" >
 					<f:convertDateTime locale="pt_BR"/>
 				</h:outputText>
 			</p:column>
@@ -44,19 +44,20 @@
 	<p:dialog header="Cliente - Cadastro" widgetVar="dialogo" draggable="false" closable="false" resizable="false" modal="false">
 		<h:form id="formCadastro">
 			<h:panelGrid id="painel" columns="2">
-				<p:outputLabel value="Pessoa: "/>
-				<p:selectOneMenu filter="true">
-					<f:selectItem itemValue="" itemLabel="Selecione uma Pessoa"/>
+				<p:outputLabel value="Pessoa: " for="pessoa"/>
+				<p:selectOneMenu filter="true" id="pessoa" value="#{clienteBean.cliente.pessoa}" required="true" requiredMessage="O campo Pessoa é obrigatório">
+					<f:selectItem noSelectionOption="true" itemLabel="Selecione uma Pessoa"/>
+					<f:selectItems value="#{clienteBean.pessoas}" var="pessoa" itemValue="#{pessoa}" itemLabel="#{pessoa.nome} - #{pessoa.cpf}"/>
 				</p:selectOneMenu>
 			
 				<p:outputLabel value="Data de Cadastro: "/>
-				<p:calendar />
+				<p:calendar value="#{clienteBean.cliente.dataCadastro}" required="true" requiredMessage="O campo de data de cadastro é obrigatório" size="5"/>
 				
 				<p:outputLabel value="Ativo: "/>
 				<p:selectBooleanCheckbox />
 			</h:panelGrid>
 			<h:panelGrid columns="2">
-				<p:commandButton value="Salvar"/>
+				<p:commandButton value="Salvar" update=":mensagem"/>
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();"/>
 			</h:panelGrid>
 		</h:form>
