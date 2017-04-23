@@ -11,15 +11,17 @@
 <h:body>
 	<h:form>
 		<p:panel header="Cliente - Listagem">
-			<p:dataTable emptyMessage="Nenhum cliente encontrado" paginator="true">
+			<p:dataTable emptyMessage="Nenhum cliente encontrado" paginator="true" value="#{clienteBean.clientes}" var="cliente" rows="3">
 			<f:facet name="footer">
 				<p:commandButton value="Novo" oncomplete="PF('dialogo').show();"/>
 			</f:facet>
 			
 			<p:column headerText="Nome">
+				<h:outputText value="#{cliente.pessoa.nome}" />
 			</p:column>
 			
 			<p:column headerText="CPF">
+				<h:outputText value="#{cliente.pessoa.cpf}" />
 			</p:column>
 			
 			<p:column headerText="Data de Cadastro">
