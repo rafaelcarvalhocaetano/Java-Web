@@ -24,7 +24,7 @@ public class PessoaBean implements Serializable {
 
 	private Pessoa pessoa;
 	private List<Pessoa> pessoas;
-
+	private Estado estado;
 	private List<Estado> estados;
 	private List<Cidade> cidades;
 
@@ -58,6 +58,12 @@ public class PessoaBean implements Serializable {
 
 	public void setCidades(List<Cidade> cidades) {
 		this.cidades = cidades;
+	}
+	public Estado getEstado() {
+		return estado;
+	}
+	public void setEstado(Estado estado) {
+		this.estado = estado;
 	}
 
 	@PostConstruct

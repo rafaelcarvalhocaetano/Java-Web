@@ -86,8 +86,8 @@
 
 				<p:outputLabel for="estado" value="Estado:" />
 				<p:selectOneMenu id="estado" filter="true"
-					converter="omnifaces.SelectItemsConverter" required="true"
-					requiredMessage="O campo 'Estado' é obrigatório">
+					converter="omnifaces.SelectItemsConverter"
+					value="#{pessoaBean.estado}">
 					<f:selectItem noSelectionOption="true"
 						itemLabel="Selecione um estado" />
 					<f:selectItems value="#{pessoaBean.estados}" var="estado"
@@ -97,7 +97,8 @@
 				<p:outputLabel for="cidade" value="Cidade:" />
 				<p:selectOneMenu id="cidade" filter="true" required="true"
 					requiredMessage="O campo 'Cidade' é obrigatório"
-					converter="omnifaces.SelectItemsConverter">
+					converter="omnifaces.SelectItemsConverter"
+					value="#{pessoaBean.pessoa.cidade}">
 					<f:selectItem noSelectionOption="true"
 						itemLabel="Selecione uma cidade" />
 					<f:selectItems value="#{pessoaBean.cidades}" var="cidade"
