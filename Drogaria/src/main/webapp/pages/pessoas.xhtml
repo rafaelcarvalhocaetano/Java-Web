@@ -15,7 +15,7 @@
 		<p:panel header="Pessoas - Listagem">
 			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
 				paginator="true" value="#{pessoaBean.pessoas}" var="pessoa" rows="5">
-				<f:facet name="header">
+				<f:facet name="footer">
 					<p:commandButton value="Novo" actionListener="#{pessoaBean.novo}"
 						oncomplete="PF('dialogo').show();"
 						update=":mensagem :formCadastro:painel">
@@ -78,7 +78,7 @@
 				<p:inputText id="rg" />
 
 				<p:outputLabel for="cpf" value="CPF:" />
-				<p:inputText id="cpf" />
+				<p:inputMask id="cpf" mask="999.999.999-99"/>
 
 				<p:outputLabel for="estado" value="Estado:" />
 				<p:selectOneMenu id="estado" filter="true"
