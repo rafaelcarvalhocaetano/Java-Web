@@ -76,6 +76,10 @@ public class ClienteBean implements Serializable{
 			PessoaDAO pdao = new PessoaDAO();
 			pessoas = pdao.listar("nome");
 			
+			clientes = dao.listar("dataCadastro");
+			
+			Messages.addGlobalInfo("Cliente Salvo com sucesso");
+			
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Erro ao tentar salvar");
 			e.printStackTrace();

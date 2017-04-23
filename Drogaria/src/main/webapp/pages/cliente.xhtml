@@ -67,7 +67,7 @@
 				<p:calendar id="dataCadastro"
 					value="#{clienteBean.cliente.dataCadastro}" required="true"
 					requiredMessage="O campo de data de cadastro é obrigatório"
-					size="5" />
+					size="5" locale="pt_BR"/>
 
 				<p:outputLabel for="liberado" value="Ativo: " />
 				<p:selectBooleanCheckbox id="liberado"
@@ -76,7 +76,7 @@
 			</h:panelGrid>
 			<h:panelGrid columns="2">
 				<p:commandButton value="Salvar"
-					update=":mensagem :formListagem:tabela :formCadastro:painel" />
+					update=":mensagem :formCadastro:painel :formListagem:tabela" actionListener="#{clienteBean.salvar}"/>
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 		</h:form>
