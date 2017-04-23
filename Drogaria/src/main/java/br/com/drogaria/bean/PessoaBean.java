@@ -13,6 +13,7 @@ import org.omnifaces.util.Messages;
 import br.com.drogaria.dao.CidadeDAO;
 import br.com.drogaria.dao.PessoaDAO;
 import br.com.drogaria.domain.Cidade;
+import br.com.drogaria.domain.Estado;
 import br.com.drogaria.domain.Pessoa;
 
 @SuppressWarnings("serial")
@@ -23,6 +24,7 @@ public class PessoaBean implements Serializable {
 	private Pessoa pessoa;
 	private List<Pessoa> pessoas;
 	private List<Cidade> cidades;
+	private List<Estado> estados;
 
 	public Pessoa getPessoa() {
 		return pessoa;
@@ -46,6 +48,13 @@ public class PessoaBean implements Serializable {
 
 	public void setCidades(List<Cidade> cidades) {
 		this.cidades = cidades;
+	}
+	
+	public void setEstados(List<Estado> estados) {
+		this.estados = estados;
+	}
+	public List<Estado> getEstados() {
+		return estados;
 	}
 
 	@PostConstruct
