@@ -92,6 +92,7 @@
 						itemLabel="Selecione um estado" />
 					<f:selectItems value="#{pessoaBean.estados}" var="estado"
 						itemValue="#{estado}" itemLabel="#{estado.nome}" />
+					<p:ajax listener="#{pessoaBean.popular}" update=":formCadastro:cidade"/>
 				</p:selectOneMenu>
 
 				<p:outputLabel for="cidade" value="Cidade:" />

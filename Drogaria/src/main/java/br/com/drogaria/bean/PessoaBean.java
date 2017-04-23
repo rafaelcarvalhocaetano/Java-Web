@@ -11,6 +11,7 @@ import javax.faces.event.ActionEvent;
 
 import org.omnifaces.util.Messages;
 
+import br.com.drogaria.dao.CidadeDAO;
 import br.com.drogaria.dao.EstadoDAO;
 import br.com.drogaria.dao.PessoaDAO;
 import br.com.drogaria.domain.Cidade;
@@ -101,5 +102,19 @@ public class PessoaBean implements Serializable {
 
 	public void excluir(ActionEvent evento) {
 
+	}
+	public void popular(){
+		
+		try {
+			if(estado != null){
+				CidadeDAO dao = new CidadeDAO();
+				cidades = dao.buscarPorEstado(estado.getCodigo());
+			}else{
+				cidades = new ArrayList<Cidade>();
+			}
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao tentar buscar o Estado");
+			e.printStackTrace();
+		}
 	}
 }
