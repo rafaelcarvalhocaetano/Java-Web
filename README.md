@@ -197,6 +197,22 @@ Configurando o pom.xml
 			<version>3.1.0</version>
 		</dependency>
 
+		<!-- JERSEY -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>2.22.1</version>
+		</dependency>
+
+		<!-- GSON -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+
+
 	</dependencies>
 </project>
 
