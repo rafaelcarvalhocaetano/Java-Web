@@ -12,15 +12,18 @@
 	<h:form>
 		<p:panel header="Usuários - Listagem">
 			<p:dataTable id="tabela" emptyMessage="Nenhum usuário encontrado"
-				paginator="true" >
+				paginator="true" value="#{usuarioBean.usuarios}" var="usuario">
+				
 				<f:facet name="footer">
 					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" />
 				</f:facet>
 
-				<p:column headerText="Nome">
+				<p:column headerText="Nome" sortBy="#{usuario.pessoa.nome}" filterBy="#{usuario.pessoa.nome}">
+					<h:outputLabel value="#{usuario.pessoa.nome}" />
 				</p:column>
 
-				<p:column headerText="CPF">
+				<p:column headerText="CPF" sortBy="#{usuario.pessoa.cpf}" filterBy="#{usuario.pessoa.cpf}">
+					<h:outputLabel value="#{usuario.pessoa.cpf}" />
 				</p:column>
 
 				<p:column headerText="Tipo">

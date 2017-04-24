@@ -3,9 +3,13 @@ package br.com.drogaria.bean;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
+import org.omnifaces.util.Messages;
+
+import br.com.drogaria.dao.UsuarioDAO;
 import br.com.drogaria.domain.Pessoa;
 import br.com.drogaria.domain.Usuario;
 
@@ -37,6 +41,16 @@ public class UsuarioBean implements Serializable{
 		this.pessoas = pessoas;
 	}
 	
-	
+	@PostConstruct
+	public void listar(){
+		try {
+			UsuarioDAO dao = new UsuarioDAO();
+			usuarios = dao.listar();
+			
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao tentar listar usuários");
+			e.printStackTrace();
+		}
+	}
 
 }
