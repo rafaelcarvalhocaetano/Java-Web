@@ -71,19 +71,19 @@
 					<f:validateLength minimum="6" maximum="8"/>	
 				</p:password>
 
-				<p:outputLabel value="Tipo: " />
-				<p:selectOneRadio>
+				<p:outputLabel id="tipo" value="Tipo: " />
+				<p:selectOneRadio id="tipo" value="#{usuarioBean.usuario.tipo}" required="true" requiredMessage="O campo Tipo é obrigatório">
 					<f:selectItem itemValue="A" itemLabel="Administrador" />
 					<f:selectItem itemValue="G" itemLabel="Gerente" />
 					<f:selectItem itemValue="B" itemLabel="Balconista" />
 				</p:selectOneRadio>
 
-				<p:outputLabel value="Ativo: " />
-				<p:selectBooleanCheckbox />
+				<p:outputLabel for="ativo" value="Ativo: " />
+				<p:selectBooleanCheckbox id="ativo"  value="#{usuarioBean.usuario.ativo}" required="true" requiredMessage="O campo Ativo é obrigatório"/>
 
 			</h:panelGrid>
 			<h:panelGrid columns="2">
-				<p:commandButton value="Novo" />
+				<p:commandButton value="Salvar" update=":mensagem :formCadastro:painel :formListagem:tabela"  actionListener="#{usuarioBean.salvar()}"/>
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 		</h:form>

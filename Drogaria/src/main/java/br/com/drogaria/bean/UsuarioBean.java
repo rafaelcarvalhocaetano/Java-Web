@@ -56,5 +56,8 @@ public class UsuarioBean implements Serializable{
 	public void novo(){
 		
 	}
+	public void salvar(){
+		
+	}
 
 }
