@@ -57,27 +57,33 @@ Criar um pasta `WEB-INF` para conter `web.xml`
 
 	<!-- Nome da Aplicação -->
 	<display-name>Drogaria</display-name>
-	
+
 	<!-- Estágio do Projeto -->
 	<context-param>
-        <param-name>javax.faces.PROJECT_STAGE</param-name>
-        <param-value>Development</param-value>
-    </context-param>
-    
-    <servlet>
-        <servlet-name>Faces Servlet</servlet-name>
-        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>*.xhtml</url-pattern>
-    </servlet-mapping>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
 
-    <!-- Carregamento do Hibernate -->
-    <listener>
-	<listener-class>br.com.drogaria.util.HibernateContexto</listener-class>
-    </listener>
+	<!-- PrimeFaces Temas all -->
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>delta</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+
+	<!-- Carregamento do Hibernate -->
+	<listener>
+		<listener-class>br.com.drogaria.util.HibernateContexto</listener-class>
+	</listener>
 
 </web-app>
 
