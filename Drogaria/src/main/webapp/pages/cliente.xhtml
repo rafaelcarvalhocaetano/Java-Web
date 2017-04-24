@@ -24,21 +24,21 @@
 					</p:commandButton>
 				</f:facet>
 
-				<p:column headerText="Nome">
+				<p:column headerText="Nome" sortBy="#{cliente.pessoa.nome}" filterBy="#{cliente.pessoa.nome}">
 					<h:outputText value="#{cliente.pessoa.nome}" />
 				</p:column>
 
-				<p:column headerText="CPF">
+				<p:column headerText="CPF" sortBy="#{cliente.pessoa.cpf}" filterBy="#{cliente.pessoa.cpf}">
 					<h:outputText value="#{cliente.pessoa.cpf}" />
 				</p:column>
 
-				<p:column headerText="Data de Cadastro">
+				<p:column headerText="Data de Cadastro" sortBy="#{cliente.dataCadastro}" filterBy="#{cliente.dataCadastro}">
 					<h:outputText value="#{cliente.dataCadastro}" rendered="true">
 						<f:convertDateTime locale="pt_BR" />
 					</h:outputText>
 				</p:column>
 
-				<p:column headerText="Liberado">
+				<p:column headerText="Liberado" sortBy="#{cliente.liberado}">
 					<p:selectBooleanCheckbox value="#{cliente.liberado}"
 						disabled="true" />
 				</p:column>

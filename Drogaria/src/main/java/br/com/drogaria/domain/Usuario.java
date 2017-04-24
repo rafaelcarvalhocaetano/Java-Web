@@ -71,9 +71,16 @@ public class Usuario extends GenericDomain{
 	}
 	
 	@Transient
-	public String getAtivo(){
+	public String getAtivoFormatado(){
 		
 		String ativoFormatado = null;
+		
+		if(ativo){
+			ativoFormatado = "SIM";
+		}else{
+			ativoFormatado = "NÃO";
+		}
+		return ativoFormatado;
 	}
 	
 	
