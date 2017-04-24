@@ -11,8 +11,8 @@
 <h:body>
 	<h:form>
 		<p:panel header="Usuários - Listagem">
-			<p:dataTable emptyMessage="Nenhum usuário encontrado"
-				paginator="true">
+			<p:dataTable id="tabela" emptyMessage="Nenhum usuário encontrado"
+				paginator="true" >
 				<f:facet name="footer">
 					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" />
 				</f:facet>
