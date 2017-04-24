@@ -128,13 +128,24 @@ Configurando o pom.xml
 		</plugins>
 	</build>
 
+	<!-- Repositórios -->
+	<repositories>
+		<!-- PrimeFaces Themas ALL -->
+		<repository>
+			<id>prime-repo</id>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+
 	<!-- Dependências necessárias -->
 	<dependencies>
 		<!-- Hibernate Core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>5.2.9.Final</version>
+			<version>4.3.3.Final</version>
 		</dependency>
 
 		<!-- Conector MySql -->
@@ -144,25 +155,32 @@ Configurando o pom.xml
 			<version>6.0.6</version>
 		</dependency>
 
-		<!-- Junit na Versão 4.12 e 11 aparecem erros-->
+		<!-- Junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.10</version>  
+			<version>4.10</version>
 		</dependency>
-		
+
 		<!-- JSF -->
 		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.faces</artifactId>
 			<version>2.2.12</version>
 		</dependency>
-		
+
 		<!--PrimeFaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>5.2</version>
+		</dependency>
+
+		<!--PrimeFaces Themas -->
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>1.0.10</version>
 		</dependency>
 
 		<!-- OMNIFACES -->
