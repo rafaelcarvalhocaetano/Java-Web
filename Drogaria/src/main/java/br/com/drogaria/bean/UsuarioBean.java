@@ -52,5 +52,9 @@ public class UsuarioBean implements Serializable{
 			e.printStackTrace();
 		}
 	}
+	
+	public void novo(){
+		
+	}
 
 }

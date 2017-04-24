@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://xmlns.jcp.org/jsf/html"
-	  xmlns:p="http://primefaces.org/ui"
-	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Usuário</title>
 </h:head>
 <h:body>
-	<h:form>
+	<p:growl id="mensagem" />
+	<h:form id="formListagem">
 		<p:panel header="Usuários - Listagem">
 			<p:dataTable id="tabela" emptyMessage="Nenhum usuário encontrado"
 				paginator="true" value="#{usuarioBean.usuarios}" var="usuario">
-				
+
 				<f:facet name="footer">
-					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();" />
+					<p:commandButton value="Novo" oncomplete="PF('dialogo').show();"
+						actionListener="#{usuarioBean.novo()}"
+						update=":mensagem :formCadastro:painel">
+						<f:actionListener
+							type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
+					</p:commandButton>
 				</f:facet>
 
-				<p:column headerText="Nome" sortBy="#{usuario.pessoa.nome}" filterBy="#{usuario.pessoa.nome}">
+				<p:column headerText="Nome" sortBy="#{usuario.pessoa.nome}"
+					filterBy="#{usuario.pessoa.nome}">
 					<h:outputText value="#{usuario.pessoa.nome}" />
 				</p:column>
 
-				<p:column headerText="CPF" sortBy="#{usuario.pessoa.cpf}" filterBy="#{usuario.pessoa.cpf}">
+				<p:column headerText="CPF" sortBy="#{usuario.pessoa.cpf}"
+					filterBy="#{usuario.pessoa.cpf}">
 					<h:outputText value="#{usuario.pessoa.cpf}" />
 				</p:column>
 
@@ -30,7 +38,8 @@
 					<h:outputText value="#{usuario.tipoFormatado}" />
 				</p:column>
 
-				<p:column headerText="Ativo" sortBy="#{usuario.ativoFormatado}" filterBy="#{usuario.ativoFormatado}">
+				<p:column headerText="Ativo" sortBy="#{usuario.ativoFormatado}"
+					filterBy="#{usuario.ativoFormatado}">
 					<h:outputText value="#{usuario.ativoFormatado}" />
 				</p:column>
 
@@ -41,11 +50,15 @@
 	</h:form>
 	<p:dialog header="Usuário - cadastro" widgetVar="dialogo"
 		draggable="false" closable="false" resizable="false" modal="true">
-		<h:form>
-			<h:panelGrid columns="2">
-				<p:outputLabel value="Pessoa: " />
-				<p:selectOneMenu filter="true">
-					<f:selectItem itemLabel="Selecione uma pessoa" itemValue="" />
+		<h:form id="formCadastro">
+			<h:panelGrid id="painel" columns="2">
+
+				<p:outputLabel for="pessoa" value="Pessoa: " />
+				<p:selectOneMenu id="pessoa" filter="true"
+					value="#{usuarioBean.usuario.pessoa}" required="true"
+					requiredMessage="O campo Pessoa é obrigatório" converter="omnifaces.SelectItemsConverter">
+					<f:selectItem itemLabel="Selecione uma pessoa" noSelectionOption="true"/>
+					<f:selectItems value="#{usuarioBean.pessoas}" var="pessoa" itemValue="#{pessoa}" itemLabel="#{pessoa.nome} - #{pessoa.cpf}" />
 				</p:selectOneMenu>
 
 				<p:outputLabel value="Senha: " />
@@ -53,9 +66,9 @@
 
 				<p:outputLabel value="Tipo: " />
 				<p:selectOneRadio>
-					<f:selectItem itemValue="A"  itemLabel="Administrador" />
-					<f:selectItem  itemValue="G" itemLabel="Gerente"/>
-					<f:selectItem itemValue="B"  itemLabel="Balconista" />
+					<f:selectItem itemValue="A" itemLabel="Administrador" />
+					<f:selectItem itemValue="G" itemLabel="Gerente" />
+					<f:selectItem itemValue="B" itemLabel="Balconista" />
 				</p:selectOneRadio>
 
 				<p:outputLabel value="Ativo: " />
