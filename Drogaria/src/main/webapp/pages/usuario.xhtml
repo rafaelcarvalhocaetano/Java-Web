@@ -56,13 +56,20 @@
 				<p:outputLabel for="pessoa" value="Pessoa: " />
 				<p:selectOneMenu id="pessoa" filter="true"
 					value="#{usuarioBean.usuario.pessoa}" required="true"
-					requiredMessage="O campo Pessoa é obrigatório" converter="omnifaces.SelectItemsConverter">
-					<f:selectItem itemLabel="Selecione uma pessoa" noSelectionOption="true"/>
-					<f:selectItems value="#{usuarioBean.pessoas}" var="pessoa" itemValue="#{pessoa}" itemLabel="#{pessoa.nome} - #{pessoa.cpf}" />
+					requiredMessage="O campo Pessoa é obrigatório"
+					converter="omnifaces.SelectItemsConverter">
+					<f:selectItem itemLabel="Selecione uma pessoa"
+						noSelectionOption="true" />
+					<f:selectItems value="#{usuarioBean.pessoas}" var="pessoa"
+						itemValue="#{pessoa}" itemLabel="#{pessoa.nome} - #{pessoa.cpf}" />
 				</p:selectOneMenu>
 
-				<p:outputLabel value="Senha: " />
-				<p:password maxlength="10" size="10" />
+				<p:outputLabel for="senha" value="Senha: " />
+				<p:password id="senha" maxlength="10" size="10"
+					value="#{usuarioBean.usuario.senha}" required="true"
+					requiredMessage="O campo Senha é obrigatório" validatorMessage="Informe uma senha entre 6 e 8 caracteres">
+					<f:validateLength minimum="6" maximum="8"/>	
+				</p:password>
 
 				<p:outputLabel value="Tipo: " />
 				<p:selectOneRadio>
