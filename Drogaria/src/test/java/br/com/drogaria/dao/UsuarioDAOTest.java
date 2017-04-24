@@ -93,7 +93,7 @@ public class UsuarioDAOTest {
 	@Ignore
 	public void editar(){
 
-		Long codigo = 2L;
+		Long codigo = 1L;
 		
 		UsuarioDAO dao = new UsuarioDAO();
 		Usuario us = dao.buscar(codigo);
@@ -101,7 +101,7 @@ public class UsuarioDAOTest {
 		if(us == null){
 			System.out.println("Nenhum resultado encontrado...");
 		}else{
-						
+			us.setTipo('A');
 			us.setSenha("788888888");
 			dao.editar(us);
 			

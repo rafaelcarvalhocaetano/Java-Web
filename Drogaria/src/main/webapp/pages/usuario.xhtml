@@ -19,17 +19,19 @@
 				</f:facet>
 
 				<p:column headerText="Nome" sortBy="#{usuario.pessoa.nome}" filterBy="#{usuario.pessoa.nome}">
-					<h:outputLabel value="#{usuario.pessoa.nome}" />
+					<h:outputText value="#{usuario.pessoa.nome}" />
 				</p:column>
 
 				<p:column headerText="CPF" sortBy="#{usuario.pessoa.cpf}" filterBy="#{usuario.pessoa.cpf}">
-					<h:outputLabel value="#{usuario.pessoa.cpf}" />
+					<h:outputText value="#{usuario.pessoa.cpf}" />
 				</p:column>
 
-				<p:column headerText="Tipo">
+				<p:column headerText="Tipo" sortBy="#{usuario.tipoFormatado}">
+					<h:outputText value="#{usuario.tipoFormatado}" />
 				</p:column>
 
-				<p:column headerText="Ativo">
+				<p:column headerText="Ativo" sortBy="#{usuario.ativo}" filterBy="#{usuario.ativo}">
+					<h:outputText value="#{usuario.ativo}" />
 				</p:column>
 
 				<p:column headerText="Opções">
@@ -51,9 +53,9 @@
 
 				<p:outputLabel value="Tipo: " />
 				<p:selectOneRadio>
-					<f:selectItem itemLabel="Administrador" itemValue="A" />
-					<f:selectItem itemLabel="Gerente" itemValue="G" />
-					<f:selectItem itemLabel="Balconista" itemValue="B" />
+					<f:selectItem itemValue="A"  itemLabel="Administrador" />
+					<f:selectItem  itemValue="G" itemLabel="Gerente"/>
+					<f:selectItem itemValue="B"  itemLabel="Balconista" />
 				</p:selectOneRadio>
 
 				<p:outputLabel value="Ativo: " />
