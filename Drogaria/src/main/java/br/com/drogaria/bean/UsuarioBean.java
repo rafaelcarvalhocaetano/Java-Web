@@ -19,7 +19,7 @@ import br.com.drogaria.domain.Usuario;
 @ViewScoped
 public class UsuarioBean implements Serializable{
 	
-private Usuario usuario;
+	private Usuario usuario;
 	
 	private List<Pessoa> pessoas;
 	private List<Usuario> usuarios;
@@ -52,7 +52,7 @@ private Usuario usuario;
 	public void listar(){
 		try {
 			UsuarioDAO dao = new UsuarioDAO();
-			usuarios = dao.listar();
+			usuarios = dao.listar("tipo");
 			
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Erro ao tentar listar usuários");
@@ -61,6 +61,17 @@ private Usuario usuario;
 	}
 	
 	public void novo(){
+		
+		try {
+			usuario = new Usuario();
+			
+			PessoaDAO dao = new PessoaDAO();
+			pessoas = dao.listar("nome");
+			
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Ocorreu um erro ao tentar criar um novo usuário");
+			e.printStackTrace();
+		}
 		
 	}
 	public void salvar(){
