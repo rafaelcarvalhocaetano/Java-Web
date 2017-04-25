@@ -24,4 +24,12 @@ public class FabricanteService {
 		
 		return json;
 	}
+	
+	@GET
+	@Path("{codigo}")
+	public String buscar(){
+		FabricanteDAO dao = new FabricanteDAO();
+		
+		Fabricante fabricante = dao.buscar(codigo);
+	}
 }
