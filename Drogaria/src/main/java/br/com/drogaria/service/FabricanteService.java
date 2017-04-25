@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 
 import com.google.gson.Gson;
 
@@ -27,9 +28,15 @@ public class FabricanteService {
 	
 	@GET
 	@Path("{codigo}")
-	public String buscar(){
+	public String buscar(@PathParam("codigo")Long codigo){
 		FabricanteDAO dao = new FabricanteDAO();
 		
 		Fabricante fabricante = dao.buscar(codigo);
+		
+		Gson gson = new Gson();
+		
+		String json = gson.toJson(fabricante);
+		
+		return json;
 	}
 }
