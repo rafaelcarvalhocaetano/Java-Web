@@ -70,4 +70,16 @@ public class FabricanteService {
 			String jsonSaida = gson.toJson(fab);
 			return jsonSaida;
 		}
+		
+		
+		//http://localhost:8080/Drogaria/rest/fabricante
+		public String excluir(String json){
+			Gson gson = new Gson();
+			Fabricante fabricante = gson.fromJson(json, Fabricante.class);
+			
+			FabricanteDAO dao = new FabricanteDAO();
+			dao.excluir(fabricante);
+			
+			return null;
+		}
 }
