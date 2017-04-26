@@ -2,6 +2,7 @@ package br.com.drogaria.service;
 
 import java.util.List;
 
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -73,13 +74,18 @@ public class FabricanteService {
 		
 		
 		//http://localhost:8080/Drogaria/rest/fabricante
+		@DELETE
 		public String excluir(String json){
 			Gson gson = new Gson();
 			Fabricante fabricante = gson.fromJson(json, Fabricante.class);
 			
 			FabricanteDAO dao = new FabricanteDAO();
+			
+			fabricante = dao.buscar(fabricante.getCodigo());
+			
 			dao.excluir(fabricante);
 			
-			return null;
+			String saida = gson.toJson(fabricante);
+			return saida;
 		}
 }
