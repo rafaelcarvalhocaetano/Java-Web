@@ -44,12 +44,15 @@ public class FabricanteService {
 	
 	//http://localhost:8080/Drogaria/rest/fabricante
 	@POST
-	public void salvar(String json){
+	public String salvar(String json){
 		
 		Gson gson = new Gson();
 		Fabricante fab = gson.fromJson(json, Fabricante.class);
 		
 		FabricanteDAO dao = new FabricanteDAO();
 		dao.merge(fab);
+		
+		String jsonSaida = gson.toJson(fab);
+		return jsonSaida;
 	}
 }
