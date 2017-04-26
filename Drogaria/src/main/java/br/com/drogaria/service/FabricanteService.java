@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
@@ -50,9 +51,23 @@ public class FabricanteService {
 		Fabricante fab = gson.fromJson(json, Fabricante.class);
 		
 		FabricanteDAO dao = new FabricanteDAO();
-		dao.merge(fab);
+		dao.salvar(fab);
 		
 		String jsonSaida = gson.toJson(fab);
 		return jsonSaida;
 	}
+	
+	//http://localhost:8080/Drogaria/rest/fabricante
+		@PUT
+		public String editar(String json){
+			
+			Gson gson = new Gson();
+			Fabricante fab = gson.fromJson(json, Fabricante.class);
+			
+			FabricanteDAO dao = new FabricanteDAO();
+			dao.editar(fab);
+			
+			String jsonSaida = gson.toJson(fab);
+			return jsonSaida;
+		}
 }
