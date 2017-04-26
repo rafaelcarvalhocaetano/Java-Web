@@ -34,7 +34,6 @@ public class FabricanteService {
 		Fabricante fabricante = dao.buscar(codigo);
 		
 		Gson gson = new Gson();
-		
 		String json = gson.toJson(fabricante);
 		
 		return json;
