@@ -1,13 +1,20 @@
 package br.com.drogaria.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
 
 import org.omnifaces.util.Messages;
+
+import com.google.gson.Gson;
 
 import br.com.drogaria.dao.FabricanteDAO;
 import br.com.drogaria.domain.Fabricante;
@@ -43,8 +50,17 @@ public class FabricanteBean implements Serializable {
 	@PostConstruct
 	public void listar(){
 		try {
-			FabricanteDAO dao = new FabricanteDAO();
-			fabricantes = dao.listar();
+			//FabricanteDAO dao = new FabricanteDAO();
+			//fabricantes = dao.listar();
+			
+			Client cliente = ClientBuilder.newClient();
+			WebTarget caminho = cliente.target("http://localhost:8080/Drogaria/rest/fabricante");
+			String json = caminho.request().get(String.class);
+			
+			Gson gson = new Gson();
+			Fabricante[] vetor = gson.fromJson(json, Fabricante[].class);
+			
+			fabricantes = Arrays.asList(vetor);
 			
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Fabricante não encontrado");
