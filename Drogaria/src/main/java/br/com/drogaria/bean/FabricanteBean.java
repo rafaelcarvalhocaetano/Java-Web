@@ -10,6 +10,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 
 import org.omnifaces.util.Messages;
@@ -72,10 +73,24 @@ public class FabricanteBean implements Serializable {
 		
 		try {
 			
-			FabricanteDAO dao = new FabricanteDAO();
-			dao.salvar(fabricante);
+			//FabricanteDAO dao = new FabricanteDAO();
+			//dao.salvar(fabricante);
 			
-			novo();
+			//fabricante = new Fabricante();
+			//fabricantes = dao.listar();
+			
+			Client cliente = ClientBuilder.newClient();
+			WebTarget caminho = cliente.target("http://localhost:8080/Drogaria/rest/fabricante");
+			
+			Gson gson = new Gson();
+			String jsonFalso = gson.toJson(fabricante);
+			caminho.request().post(Entity.json(jsonFalso));
+			
+			fabricante = new Fabricante();
+			
+			String json = caminho.request().get(String.class);
+			Fabricante[] vetor = gson.fromJson(json, Fabricante[].class);
+			fabricantes = Arrays.asList(vetor);
 			
 			Messages.addGlobalInfo("Fabricante salvo com sucesso");
 			
