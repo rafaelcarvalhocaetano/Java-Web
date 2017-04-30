@@ -118,5 +118,14 @@ public class FabricanteBean implements Serializable {
 		}
 		
 	}
+	public void editar(ActionEvent event){
+		try {
+			fabricante = (Fabricante) event.getComponent().getAttributes().get("fabricanteSelecionado");
+			
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao editar");
+			e.printStackTrace();
+		}
+	}
 
 }
