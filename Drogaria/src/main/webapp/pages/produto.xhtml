@@ -17,7 +17,7 @@
 			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
 				paginator="true" value="#{produtoBean.produtos}" var="produto"
 				rows="5">
-				<f:facet name="footer">
+				<f:facet name="header">
 					<p:commandButton value="Novo" actionListener="#{produtoBean.novo}"
 						oncomplete="PF('dialogo').show();"
 						update=":mensagem :formCadastro:painel">
@@ -35,9 +35,9 @@
 				</p:column>
 
 				<p:column headerText="Preço">
-					<h:outputText value="#{produto.preco}" >
-						<f:convertNumber locale="pr_BR" minFractionDigits="2"/>
-					</h:outputText>
+					<h:outputText value="#{produto.preco}">
+						<f:convertNumber locale="pt_BR" minFractionDigits="2" />
+					</h:outputText>	
 				</p:column>
 
 				<p:column headerText="Fabricante">
@@ -75,34 +75,34 @@
 
 	<p:dialog header="Produtos - Cadastro" widgetVar="dialogo"
 		draggable="false" resizable="false" modal="true" closable="false">
-		<h:form id="formCadastro">
+		<h:form id="formCadastro" enctype="multipart/form-data">
 			<h:panelGrid id="painel" columns="2">
-				<p:outputLabel value="Descrição:" />
-				<p:inputText maxlength="50" size="30"
+				<p:outputLabel for="descricao" value="Descrição:" />
+				<p:inputText id="descricao" maxlength="50" size="30"
 					value="#{produtoBean.produto.descricao}" required="true"
 					requiredMessage="O campo 'Descrição' é obrigatório" />
 
-				<p:outputLabel value="Quantidade:" />
-				<p:inputText maxlength="5" size="10"
+				<p:outputLabel for="quantidade" value="Quantidade:" />
+				<p:inputText id="quantidade" maxlength="5" size="10"
 					value="#{produtoBean.produto.quantidade}" required="true"
 					requiredMessage="O campo 'Quantidade' é obrigatório"
-					converterMessage="Informe um valor válido para o campo 'Quantidade'" 
-					validatorMessage="Informe um valor entre 0 e 100 para o campo quantidade">
-						<f:validateLongRange minimum="0" maximum="100"/>
-					</p:inputText>
+					converterMessage="Informe um valor válido para o campo 'Quantidade'"
+					validatorMessage="Informe um valor entre 0 e 1000 para o campo 'Quantidade'">
+					<f:validateLongRange minimum="0" maximum="1000" />
+				</p:inputText>	
 
-				<p:outputLabel value="Preço:" />
-				<p:inputText maxlength="7" size="10"
+				<p:outputLabel for="preco" value="Preço:" />
+				<p:inputText id="preco" maxlength="7" size="10"
 					value="#{produtoBean.produto.preco}" required="true"
 					requiredMessage="O campo 'Preço' é obrigatório"
-					converterMessage="Informe um valor válido para o campo 'Preço''" 
-					validatorMessage="Informe um valor entre 0.01 e 9999.99 para o campo 'Preço' ">
-						<f:validateDoubleRange minimum="0.01" maximum="9999.99" />
-						<f:convertNumber locale="pt_BR" minFractionDigits="2"/>
-					</p:inputText>
+					converterMessage="Informe um valor válido para o campo 'Preço''"
+					validatorMessage="Informe um valor entre 0,01 e 9999,99 para o campo 'Preço'">
+					<f:validateDoubleRange minimum="0.01" maximum="9999.99" />
+					<f:convertNumber locale="pt_BR" minFractionDigits="2" />
+				</p:inputText>
 
-				<p:outputLabel value="Fabricante:" />
-				<p:selectOneMenu filter="true"
+				<p:outputLabel for="fabricante" value="Fabricante:" />
+				<p:selectOneMenu id="fabricante" filter="true"
 					value="#{produtoBean.produto.fabricante}"
 					converter="omnifaces.SelectItemsConverter" required="true"
 					requiredMessage="O campo 'Fabricante' é obrigatório">
@@ -111,6 +111,10 @@
 					<f:selectItems value="#{produtoBean.fabricantes}" var="fabricante"
 						itemValue="#{fabricante}" itemLabel="#{fabricante.descricao}" />
 				</p:selectOneMenu>
+				
+				<p:outputLabel for="foto" value="Foto:" />
+				<p:fileUpload id="foto" mode="advanced" fileUploadListener="#{produtoBean.upload}"
+					update=":mensagem" auto="true" />
 
 			</h:panelGrid>
 

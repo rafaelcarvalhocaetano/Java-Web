@@ -9,6 +9,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.event.ActionEvent;
 
 import org.omnifaces.util.Messages;
+import org.primefaces.event.FileUploadEvent;
 
 import br.com.drogaria.dao.FabricanteDAO;
 import br.com.drogaria.dao.ProdutoDAO;
@@ -127,6 +128,9 @@ public class ProdutoBean implements Serializable {
 			e2.printStackTrace();
 		}
 
+	}
+	public void upload(FileUploadEvent event){
+		
 	}
 
 }
