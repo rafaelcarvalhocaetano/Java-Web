@@ -1,6 +1,10 @@
 package br.com.drogaria.bean;
 
+import java.io.IOException;
 import java.io.Serializable;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -10,6 +14,7 @@ import javax.faces.event.ActionEvent;
 
 import org.omnifaces.util.Messages;
 import org.primefaces.event.FileUploadEvent;
+import org.primefaces.model.UploadedFile;
 
 import br.com.drogaria.dao.FabricanteDAO;
 import br.com.drogaria.dao.ProdutoDAO;
@@ -129,12 +134,26 @@ public class ProdutoBean implements Serializable {
 		}
 
 	}
-	public void upload(FileUploadEvent event){
-		String nome = event.getFile().getFileName();
-		String tipo = event.getFile().getContentType();
-		long tamanho = event.getFile().getSize();
-		
-		Messages.addGlobalInfo("Nome: "+nome+" Tipo: "+tipo+" Tamanho: "+tamanho);
+
+	public void upload(FileUploadEvent event) {
+		/*
+		 * String nome = event.getFile().getFileName(); String tipo =
+		 * event.getFile().getContentType(); long tamanho =
+		 * event.getFile().getSize();
+		 * 
+		 * Messages.addGlobalInfo("Nome: "+nome+" Tipo: "+tipo+" Tamanho: "
+		 * +tamanho);
+		 */
+		// Usando o local do OS para salvar as fotos...
+		try {
+			UploadedFile arquivoUpload = event.getFile();
+			Path arquivoTemp = Files.createTempFile(null, null);
+			Files.copy(arquivoUpload.getInputstream(), arquivoTemp, StandardCopyOption.REPLACE_EXISTING);
+			
+		} catch (IOException e) {
+			Messages.addGlobalError("Ocorreu um erro ao tentar salvar o arquivo");
+			e.printStackTrace();
+		}
 	}
 
 }
