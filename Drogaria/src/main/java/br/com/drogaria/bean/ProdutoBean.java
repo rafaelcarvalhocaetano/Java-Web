@@ -150,6 +150,9 @@ public class ProdutoBean implements Serializable {
 			Path arquivoTemp = Files.createTempFile(null, null);
 			Files.copy(arquivoUpload.getInputstream(), arquivoTemp, StandardCopyOption.REPLACE_EXISTING);
 			
+			produto.setCaminho(arquivoTemp.toString());
+			
+			Messages.addGlobalInfo(produto.getCaminho());
 		} catch (IOException e) {
 			Messages.addGlobalError("Ocorreu um erro ao tentar salvar o arquivo");
 			e.printStackTrace();
