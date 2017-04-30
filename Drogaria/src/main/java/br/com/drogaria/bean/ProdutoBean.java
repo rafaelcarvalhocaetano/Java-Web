@@ -130,7 +130,11 @@ public class ProdutoBean implements Serializable {
 
 	}
 	public void upload(FileUploadEvent event){
+		String nome = event.getFile().getFileName();
+		String tipo = event.getFile().getContentType();
+		long tamanho = event.getFile().getSize();
 		
+		Messages.addGlobalInfo("Nome: "+nome+" Tipo: "+tipo+" Tamanho: "+tamanho);
 	}
 
 }
