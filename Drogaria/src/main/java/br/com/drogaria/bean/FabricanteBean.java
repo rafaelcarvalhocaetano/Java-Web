@@ -8,6 +8,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.ActionEvent;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -98,6 +99,24 @@ public class FabricanteBean implements Serializable {
 			Messages.addGlobalError("Erro ao salvar o fabricante");
 			e.printStackTrace();
 		}
+	}
+	
+	//passar para restfull
+	public void excluir(ActionEvent event){
+		try {
+			fabricante =(Fabricante) event.getComponent().getAttributes().get("fabricanteSelecionado");
+			
+			FabricanteDAO dao = new FabricanteDAO();
+			dao.excluir(fabricante);
+			
+			fabricantes = dao.listar();
+			
+			Messages.addGlobalInfo("Fabricante Excluído com sucesso");
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao excluir o fabricante");
+			e.printStackTrace();
+		}
+		
 	}
 
 }
