@@ -95,6 +95,19 @@ public class PessoaBean implements Serializable {
 	}
 
 	public void editar(ActionEvent evento) {
+		try {
+			pessoa = (Pessoa) evento.getComponent().getAttributes().get("pessoaSelecionada");
+			
+			PessoaDAO dao = new PessoaDAO();
+			dao.merge(pessoa);
+			
+			pessoas = dao.listar();
+			
+			Messages.addGlobalInfo(" 'Pessoa ' Editada com sucesso ");
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao editar a 'Pessoa' ");
+			e.printStackTrace();
+		}
 
 	}
 
