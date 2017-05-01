@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
 
@@ -87,18 +88,21 @@ public class ProdutoBean implements Serializable {
 	public void salvar() {
 		try {
 			ProdutoDAO dao = new ProdutoDAO();
-			dao.merge(produto);
+			Produto produtoRetorno = dao.merge(produto);
+
+			Path origem = Paths.get(produto.getCaminho());
+			Path destino = Paths.get("C:/" + produtoRetorno.getCodigo() + ".png");
+			Files.copy(origem, destino, StandardCopyOption.REPLACE_EXISTING);
 
 			produto = new Produto();
 
-			FabricanteDAO fdao = new FabricanteDAO();
-			fabricantes = fdao.listar();
+			FabricanteDAO fabricanteDAO = new FabricanteDAO();
+			fabricantes = fabricanteDAO.listar();
 
 			produtos = dao.listar();
 
-			Messages.addGlobalInfo("Produto Salvo com sucesso");
-
-		} catch (RuntimeException e) {
+			Messages.addGlobalInfo("Produto salvo com sucesso");
+		} catch (RuntimeException | IOException e) {
 			Messages.addGlobalError("Erro ao tentar salvar o produto");
 			e.printStackTrace();
 		}
@@ -152,7 +156,7 @@ public class ProdutoBean implements Serializable {
 			
 			produto.setCaminho(arquivoTemp.toString());
 			
-			Messages.addGlobalInfo(produto.getCaminho());
+			Messages.addGlobalInfo("Foto Salva com sucesso");
 		} catch (IOException e) {
 			Messages.addGlobalError("Ocorreu um erro ao tentar salvar o arquivo");
 			e.printStackTrace();
