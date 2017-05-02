@@ -125,7 +125,9 @@
 					update=":mensagem :formCadastro:foto" auto="true" />
 				
 				<p:outputLabel for="foto" value="Foto:"/>
-				<p:graphicImage />
+				<p:graphicImage value="#{imagemBean.foto}">
+					<f:param name="caminho" value="#{produtoBean.produto.caminho}"/>
+				</p:graphicImage>
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
