@@ -1,5 +1,6 @@
 package br.com.drogaria.bean;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,6 +10,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
+import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 
 @ManagedBean
@@ -25,11 +27,16 @@ public class ImagemBean {
 	public void setCaminho(String caminho) {
 		this.caminho = caminho;
 	}
-	public StreamedContent getFoto() {
+	public StreamedContent getFoto() throws IOException {
 		
 		if(caminho == null || caminho.isEmpty()){
-			Path foto = Paths.get("C:/javaFotos/code.png");
-			InputStream fluxo = Files.newInputStream(foto);
+			Path path = Paths.get("C:/javaFotos/code.png");
+			InputStream stream = Files.newInputStream(path);
+			foto = new DefaultStreamedContent(stream);
+		}else{
+			Path path = Paths.get(caminho);
+			InputStream stream = Files.newInputStream(path);
+			foto = new DefaultStreamedContent(stream);
 		}
 		
 		return foto;

@@ -26,8 +26,7 @@
 							type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
 					</p:commandButton>
 
-					<p:commandButton icon="ui-icon-print"
-						/>
+					<p:commandButton icon="ui-icon-print"/>
 				</f:facet>
 
 				<p:column headerText="Descrição" filterBy="#{produto.descricao}"
@@ -124,9 +123,9 @@
 					fileUploadListener="#{produtoBean.upload}"
 					update=":mensagem :formCadastro:foto" auto="true" />
 				
-				<p:outputLabel for="foto" value="Foto:"/>
-				<p:graphicImage value="#{imagemBean.foto}">
-					<f:param name="caminho" value="#{produtoBean.produto.caminho}"/>
+				<p:outputLabel for="foto" value="Foto:" />
+				<p:graphicImage id="foto" value="#{imagemBean.foto}">
+					<f:param name="caminho" value="#{produtoBean.produto.caminho}" />
 				</p:graphicImage>
 			</h:panelGrid>
 
