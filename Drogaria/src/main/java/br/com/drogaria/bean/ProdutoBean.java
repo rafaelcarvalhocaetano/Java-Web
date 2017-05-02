@@ -91,7 +91,7 @@ public class ProdutoBean implements Serializable {
 			Produto produtoRetorno = dao.merge(produto);
 
 			Path origem = Paths.get(produto.getCaminho());
-			Path destino = Paths.get("C:/" + produtoRetorno.getCodigo() + ".png");
+			Path destino = Paths.get("C:/javaFotos/" + produtoRetorno.getCodigo() + ".png");
 			Files.copy(origem, destino, StandardCopyOption.REPLACE_EXISTING);
 
 			produto = new Produto();
@@ -129,10 +129,14 @@ public class ProdutoBean implements Serializable {
 
 			ProdutoDAO dao = new ProdutoDAO();
 			dao.excluir(produto);
+			
+			Path caminhoArquivo = Paths.get("C:/javaFotos/" + produto.getCodigo()+" .png ");
+			
+			Files.deleteIfExists(caminhoArquivo); //precisa do IOException
 
 			produtos = dao.listar();
 
-		} catch (RuntimeException e2) {
+		} catch (RuntimeException | IOException e2) {
 			Messages.addGlobalError("Erro ao tentar excluir o produto");
 			e2.printStackTrace();
 		}
