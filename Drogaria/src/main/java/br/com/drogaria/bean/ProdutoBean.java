@@ -87,6 +87,12 @@ public class ProdutoBean implements Serializable {
 
 	public void salvar() {
 		try {
+			
+			if(produto.getCaminho() == null){
+				Messages.addGlobalError("O campo foto é obrigatório");
+				return;
+			}
+			
 			ProdutoDAO dao = new ProdutoDAO();
 			Produto produtoRetorno = dao.merge(produto);
 
@@ -112,6 +118,7 @@ public class ProdutoBean implements Serializable {
 	public void editar(ActionEvent event) {
 		try {
 			produto = (Produto) event.getComponent().getAttributes().get("produtoSelecionado");
+			produto.setCaminho("C:/javaFotos/" + produto.getCodigo() + ".png");
 
 			FabricanteDAO dao = new FabricanteDAO();
 			fabricantes = dao.listar();
