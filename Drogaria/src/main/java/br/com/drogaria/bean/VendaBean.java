@@ -33,9 +33,9 @@ public class VendaBean implements Serializable{
 		try {
 
 			ProdutoDAO dao = new ProdutoDAO();
-			produtos = dao.listar("descricao ");
+			produtos = dao.listar("descricao");
 
-			Messages.addGlobalInfo("Produto Salvo com sucesso");
+			Messages.addGlobalInfo("Sucesso");
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Erro");
 			e.printStackTrace();
