@@ -15,12 +15,15 @@ import org.omnifaces.util.Messages;
 import br.com.drogaria.dao.ProdutoDAO;
 import br.com.drogaria.domain.ItemVenda;
 import br.com.drogaria.domain.Produto;
+import br.com.drogaria.domain.Venda;
 
 @SuppressWarnings("serial")
 @ManagedBean
 @ViewScoped
 public class VendaBean implements Serializable{
 	
+	
+	private Venda venda;
 	private List<Produto> produtos;
 	private List<ItemVenda> itensVendas;
 	
@@ -37,11 +40,19 @@ public class VendaBean implements Serializable{
 	public void setItensVendas(List<ItemVenda> itensVendas) {
 		this.itensVendas = itensVendas;
 	}
+	public Venda getVenda() {
+		return venda;
+	}
+	public void setVenda(Venda venda) {
+		this.venda = venda;
+	}
 	
 	@PostConstruct
-	public void listar() {
+	public void novo() {
 
 		try {
+			venda = new Venda();
+			venda.setPrecoTotal(new BigDecimal("0.00"));
 
 			ProdutoDAO dao = new ProdutoDAO();
 			produtos = dao.listar("descricao");
@@ -91,6 +102,9 @@ public class VendaBean implements Serializable{
 		if(achou > -1){
 			itensVendas.remove(achou);
 		}
+	}
+	public void calcular(){
+		
 	}
 
 }
