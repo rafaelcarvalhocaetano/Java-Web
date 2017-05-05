@@ -1,6 +1,7 @@
 package br.com.drogaria.bean;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,6 +78,7 @@ public class VendaBean implements Serializable{
 		}else{
 			ItemVenda itemVenda = itensVendas.get(achou);
 			itemVenda.setQuantidade(new Short(itemVenda.getQuantidade() + 1 + ""));
+			itemVenda.setValorParcial(produto.getPreco().multiply(new BigDecimal(itemVenda.getQuantidade())));
 		}
 		
 		
