@@ -41,7 +41,7 @@
 
 				<p:column headerText="Opções">
 					<p:commandButton icon="ui-icon-plus" actionListener="#{vendaBean.adicionar}"
-						update=":formulario:tabelaCesta">
+						update=":formulario:tabelaCesta :formulario:painelFinalizacao">
 						<f:attribute name="produtoSelecionado" value="#{produto}" />
 					</p:commandButton>
 				</p:column>
@@ -76,7 +76,7 @@
 				<p:column headerText="Opções">
 					<p:commandButton icon="ui-icon-minus"
 						actionListener="#{vendaBean.remover}"
-						update=":formulario:tabelaCesta">
+						update=":formulario:tabelaCesta :formulario:painelFinalizacao">
 						<f:attribute name="itemSelecionado" value="#{itemVenda}" />
 					</p:commandButton>
 				</p:column>
@@ -84,14 +84,33 @@
 		</p:panel>
 
 		<p:panel header="Finalizar">
-		<p:panelGrid columns="3">
+		<p:panelGrid id="painelFinalizacao" columns="3">
 			<p:outputLabel value="Total: R$ "/>
 			<h:outputText value="#{vendaBean.venda.precoTotal}" >
 				<f:convertNumber locale="pt_BR" minFractionDigits="2"/>
 			</h:outputText>
-			<p:commandButton value="Finalizar"/>
+			<p:commandButton value="Finalizar" oncomplete="PF('dialogo').show();"/>
 		</p:panelGrid>
 		</p:panel>
 	</h:form>
+	<p:dialog header="Finalizar Venda" widgetVar="dialogo" draggable="false" resizable="false" modal="true" closable="false">
+		<h:form>
+			<h:panelGrid columns="2">
+				<p:outputLabel value="Funcionário: "/>
+				<p:selectOneMenu value="#{vendaBean.venda.funcionario}" converter="ominifaces.SelectItemsConverter">
+					<f:selectItem noSelectionOption="true" itemLabel="Selecione um funcionário"/>
+					<f:selectItems value="#{vendaBean.funcionarios}" var="funcionario" itemValue="#{funcionario}" itemLabel="#{funcionario.pessoa.nome}"/>
+				</p:selectOneMenu>
+			
+			
+			</h:panelGrid>
+			<h:panelGrid columns="2">
+				<p:commandButton value="Salvar"/>
+				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();"/>
+			</h:panelGrid>
+		</h:form>
+	</p:dialog>
+	
+	
 </h:body>
 </html>
