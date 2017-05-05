@@ -58,12 +58,27 @@ public class VendaBean implements Serializable{
 		
 		Produto produto = (Produto) event.getComponent().getAttributes().get("produtoSelecionado");
 		
-		ItemVenda itemVenda = new ItemVenda();
-		itemVenda.setValorParcial(produto.getPreco());
-		itemVenda.setProduto(produto);
-		itemVenda.setQuantidade(new Short("1"));
+		int achou = -1;
+		for (int posicao = 0; posicao < itensVendas.size(); posicao++) {
+			
+			if(itensVendas.get(posicao).getProduto().equals(produto)){
+				achou = posicao;
+			}
+		}
 		
-		itensVendas.add(itemVenda);
+		if(achou == 0){
+			ItemVenda itemVenda = new ItemVenda();
+			itemVenda.setValorParcial(produto.getPreco());
+			itemVenda.setProduto(produto);
+			itemVenda.setQuantidade(new Short("1"));
+			
+			itensVendas.add(itemVenda);
+			
+		}else{
+			ItemVenda itemVenda = itensVendas.get(achou);
+			itemVenda.setQuantidade(new Short(itemVenda.getQuantidade() + 1 + ""));
+		}
+		
 		
 	}
 
