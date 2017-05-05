@@ -137,4 +137,13 @@ public class VendaBean implements Serializable {
 		}
 
 	}
+	public void finalizar(){
+		try {
+			
+			
+			Messages.addGlobalInfo("Salvo com sucesso");
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao tentar finalizar a venda");
+		}
+	}
 }

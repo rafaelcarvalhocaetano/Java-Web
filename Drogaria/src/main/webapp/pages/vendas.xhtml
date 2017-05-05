@@ -97,7 +97,7 @@
 		<h:form>
 			<h:panelGrid columns="2">
 				<p:outputLabel value="Funcionário: "/>
-				<p:selectOneMenu value="#{vendaBean.venda.funcionario}" converter="ominifaces.SelectItemsConverter">
+				<p:selectOneMenu value="#{vendaBean.venda.funcionario}" converter="omnifaces.SelectItemsConverter" filter="true">
 					<f:selectItem noSelectionOption="true" itemLabel="Selecione um funcionário"/>
 					<f:selectItems value="#{vendaBean.funcionarios}" var="funcionario" itemValue="#{funcionario}" itemLabel="#{funcionario.pessoa.nome}"/>
 				</p:selectOneMenu>
