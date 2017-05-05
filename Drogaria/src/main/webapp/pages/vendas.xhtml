@@ -16,7 +16,7 @@
 		<p:panel header="Produtos">
 			<p:dataTable id="tabelaProduto" emptyMessage="Nenhum registro encontrado."
 				paginator="true" value="#{vendaBean.produtos}" var="produto"
-				rows="3">
+				rows="5">
 
 				<p:column headerText="Descrição" filterBy="#{produto.descricao}"
 					sortBy="#{produto.descricao}">
@@ -51,7 +51,7 @@
 		<p:panel header="Cesta de Compras">
 			<p:dataTable id="tabelaCesta" emptyMessage="Nenhum registro encontrado."
 				paginator="true" value="#{vendaBean.itensVendas}" var="itemVenda"
-				rows="3">
+				rows="5">
 
 				<p:column headerText="Descrição">
 					<h:outputText value="#{itemVenda.produto.descricao}" />
@@ -74,7 +74,8 @@
 				</p:column>
 
 				<p:column headerText="Opções">
-					<p:commandButton icon="ui-icon-minus" />
+					<p:commandButton icon="ui-icon-minus" actionListener="#{vendaBean.remover}" update=":formulario:tabelaCesta"/>
+					<f:attribute name="itemSelecionado" value="#{itemVenda}"/>
 				</p:column>
 			</p:dataTable>
 		</p:panel>

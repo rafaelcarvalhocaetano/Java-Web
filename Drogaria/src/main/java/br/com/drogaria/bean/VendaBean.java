@@ -55,31 +55,30 @@ public class VendaBean implements Serializable{
 		}
 
 	}
-	public void adicionar(ActionEvent event){
-		
-		Produto produto = (Produto) event.getComponent().getAttributes().get("produtoSelecionado");
-		
+	public void adicionar(ActionEvent evento) {
+		Produto produto = (Produto) evento.getComponent().getAttributes().get("produtoSelecionado");
+
 		int achou = -1;
 		for (int posicao = 0; posicao < itensVendas.size(); posicao++) {
-			
-			if(itensVendas.get(posicao).getProduto().equals(produto)){
+			if (itensVendas.get(posicao).getProduto().equals(produto)) {
 				achou = posicao;
 			}
 		}
-		
-		if(achou == 0){
+
+		if (achou < 0) {
 			ItemVenda itemVenda = new ItemVenda();
 			itemVenda.setValorParcial(produto.getPreco());
 			itemVenda.setProduto(produto);
 			itemVenda.setQuantidade(new Short("1"));
 			
 			itensVendas.add(itemVenda);
-			
 		}else{
 			ItemVenda itemVenda = itensVendas.get(achou);
 			itemVenda.setQuantidade(new Short(itemVenda.getQuantidade() + 1 + ""));
 			itemVenda.setValorParcial(produto.getPreco().multiply(new BigDecimal(itemVenda.getQuantidade())));
-		}
+		}	
+	}
+	public void remover(ActionEvent event){
 		
 		
 	}
