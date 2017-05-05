@@ -11,18 +11,15 @@
 </h:head>
 <h:body>
 	<p:growl id="mensagem" />
-	<h:form>
 
-
+	<h:form id="formulario">
 		<p:panel header="Produtos">
-
-			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
+			<p:dataTable id="tabelaProduto" emptyMessage="Nenhum registro encontrado."
 				paginator="true" value="#{vendaBean.produtos}" var="produto"
-				rows="5">
-
+				rows="3">
 
 				<p:column headerText="Descrição" filterBy="#{produto.descricao}"
-					filterMatchMode="contains" sortBy="#{produto.descricao}">
+					sortBy="#{produto.descricao}">
 					<h:outputText value="#{produto.descricao}" />
 				</p:column>
 
@@ -38,57 +35,51 @@
 
 				<p:column headerText="Fabricante"
 					filterBy="#{produto.fabricante.descricao}"
-					filterMatchMode="contains" sortBy="#{produto.fabricante.descricao}">
+					sortBy="#{produto.fabricante.descricao}">
 					<h:outputText value="#{produto.fabricante.descricao}" />
 				</p:column>
 
 				<p:column headerText="Opções">
-					<p:commandButton icon="ui-icon-plus" />
+					<p:commandButton icon="ui-icon-plus" actionListener="#{vendaBean.adicionar}"
+						update=":formulario:tabelaCesta">
+						<f:attribute name="produtoSelecionado" value="#{produto}" />
+					</p:commandButton>
 				</p:column>
 			</p:dataTable>
+		</p:panel>
 
+		<p:panel header="Cesta de Compras">
+			<p:dataTable id="tabelaCesta" emptyMessage="Nenhum registro encontrado."
+				paginator="true" value="#{vendaBean.itensVendas}" var="itemVenda"
+				rows="3">
 
-			<p:panel header="Cesta de compras">
-				<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
-					paginator="true" value="#{vendaBean.produtos}" var="produto"
-					rows="5">
+				<p:column headerText="Descrição">
+					<h:outputText value="#{itemVenda.produto.descricao}" />
+				</p:column>
 
+				<p:column headerText="Preço Un.">
+					<h:outputText value="#{itemVenda.produto.preco}">
+						<f:convertNumber locale="pt_BR" minFractionDigits="2" />
+					</h:outputText>
+				</p:column>
 
-					<p:column headerText="Descrição" filterBy="#{produto.descricao}"
-						filterMatchMode="contains" sortBy="#{produto.descricao}">
-						<h:outputText value="#{produto.descricao}" />
-					</p:column>
+				<p:column headerText="Qtde.">
+					<h:outputText value="#{itemVenda.quantidade}" />
+				</p:column>
+				
+				<p:column headerText="Preço Parcial">
+					<h:outputText value="#{itemVenda.precoParcial}">
+						<f:convertNumber locale="pt_BR" minFractionDigits="2" />
+					</h:outputText>
+				</p:column>
 
-					<p:column headerText="Quantidade" sortBy="#{produto.quantidade}">
-						<h:outputText value="#{produto.quantidade}" />
-					</p:column>
+				<p:column headerText="Opções">
+					<p:commandButton icon="ui-icon-minus" />
+				</p:column>
+			</p:dataTable>
+		</p:panel>
 
-					<p:column headerText="Preço" sortBy="#{produto.preco}">
-						<h:outputText value="#{produto.preco}">
-							<f:convertNumber locale="pt_BR" minFractionDigits="2" />
-						</h:outputText>
-					</p:column>
-
-					<p:column headerText="Fabricante"
-						filterBy="#{produto.fabricante.descricao}"
-						filterMatchMode="contains"
-						sortBy="#{produto.fabricante.descricao}">
-						<h:outputText value="#{produto.fabricante.descricao}" />
-					</p:column>
-
-					<p:column headerText="Opções">
-						<p:commandButton icon="ui-icon-plus" />
-					</p:column>
-				</p:dataTable>
-
-			</p:panel>
-
-
-			<p:panel header="Vendas">
-
-
-			</p:panel>
-
+		<p:panel header="Total">
 		</p:panel>
 	</h:form>
 </h:body>

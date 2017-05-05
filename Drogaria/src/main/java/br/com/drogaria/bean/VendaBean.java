@@ -1,11 +1,13 @@
 package br.com.drogaria.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.event.ActionEvent;
 
 import org.omnifaces.util.Messages;
 
@@ -42,6 +44,8 @@ public class VendaBean implements Serializable{
 
 			ProdutoDAO dao = new ProdutoDAO();
 			produtos = dao.listar("descricao");
+			
+			itensVendas = new ArrayList<>();
 
 			Messages.addGlobalInfo("Sucesso");
 		} catch (RuntimeException e) {
@@ -49,6 +53,18 @@ public class VendaBean implements Serializable{
 			e.printStackTrace();
 		}
 
+	}
+	public void adicionar(ActionEvent event){
+		
+		Produto produto = (Produto) event.getComponent().getAttributes().get("produtoSelecionado");
+		
+		ItemVenda itemVenda = new ItemVenda();
+		itemVenda.setValorParcial(produto.getPreco());
+		itemVenda.setProduto(produto);
+		itemVenda.setQuantidade(new Short("1"));
+		
+		itensVendas.add(itemVenda);
+		
 	}
 
 }
