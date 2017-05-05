@@ -14,9 +14,9 @@
 
 	<h:form id="formulario">
 		<p:panel header="Produtos">
-			<p:dataTable id="tabelaProduto" emptyMessage="Nenhum registro encontrado."
-				paginator="true" value="#{vendaBean.produtos}" var="produto"
-				rows="5">
+			<p:dataTable id="tabelaProduto"
+				emptyMessage="Nenhum registro encontrado." paginator="true"
+				value="#{vendaBean.produtos}" var="produto" rows="5">
 
 				<p:column headerText="Descrição" filterBy="#{produto.descricao}"
 					sortBy="#{produto.descricao}">
@@ -40,7 +40,8 @@
 				</p:column>
 
 				<p:column headerText="Opções">
-					<p:commandButton icon="ui-icon-plus" actionListener="#{vendaBean.adicionar}"
+					<p:commandButton icon="ui-icon-plus"
+						actionListener="#{vendaBean.adicionar}"
 						update=":formulario:tabelaCesta :formulario:painelFinalizacao">
 						<f:attribute name="produtoSelecionado" value="#{produto}" />
 					</p:commandButton>
@@ -49,9 +50,9 @@
 		</p:panel>
 
 		<p:panel header="Cesta de Compras">
-			<p:dataTable id="tabelaCesta" emptyMessage="Nenhum registro encontrado."
-				paginator="true" value="#{vendaBean.itensVendas}" var="itemVenda"
-				rows="5">
+			<p:dataTable id="tabelaCesta"
+				emptyMessage="Nenhum registro encontrado." paginator="true"
+				value="#{vendaBean.itensVendas}" var="itemVenda" rows="5">
 
 				<p:column headerText="Descrição">
 					<h:outputText value="#{itemVenda.produto.descricao}" />
@@ -66,7 +67,7 @@
 				<p:column headerText="Qtde.">
 					<h:outputText value="#{itemVenda.quantidade}" />
 				</p:column>
-				
+
 				<p:column headerText="Preço Parcial">
 					<h:outputText value="#{itemVenda.valorParcial}">
 						<f:convertNumber locale="pt_BR" minFractionDigits="2" />
@@ -84,33 +85,52 @@
 		</p:panel>
 
 		<p:panel header="Finalizar">
-		<p:panelGrid id="painelFinalizacao" columns="3">
-			<p:outputLabel value="Total: R$ "/>
-			<h:outputText value="#{vendaBean.venda.precoTotal}" >
-				<f:convertNumber locale="pt_BR" minFractionDigits="2"/>
-			</h:outputText>
-			<p:commandButton value="Finalizar" oncomplete="PF('dialogo').show();"/>
-		</p:panelGrid>
+			<p:panelGrid id="painelFinalizacao" columns="3">
+				<p:outputLabel value="Total: R$ " />
+				<h:outputText value="#{vendaBean.venda.precoTotal}">
+					<f:convertNumber locale="pt_BR" minFractionDigits="2" />
+				</h:outputText>
+				<p:commandButton value="Finalizar"
+					oncomplete="PF('dialogo').show();"
+					actionListener="#{vendaBean.finalizar}" update=":mensagem :formularioFinalizar:painelFinalizar" />
+			</p:panelGrid>
 		</p:panel>
 	</h:form>
-	<p:dialog header="Finalizar Venda" widgetVar="dialogo" draggable="false" resizable="false" modal="true" closable="false">
-		<h:form>
-			<h:panelGrid columns="2">
-				<p:outputLabel value="Funcionário: "/>
-				<p:selectOneMenu value="#{vendaBean.venda.funcionario}" converter="omnifaces.SelectItemsConverter" filter="true">
-					<f:selectItem noSelectionOption="true" itemLabel="Selecione um funcionário"/>
-					<f:selectItems value="#{vendaBean.funcionarios}" var="funcionario" itemValue="#{funcionario}" itemLabel="#{funcionario.pessoa.nome}"/>
+	
+	<p:dialog header="Finalizar Venda" widgetVar="dialogo"
+		draggable="false" resizable="false" modal="true" closable="false">
+		<h:form id="formularioFinalizar">
+			
+			<h:panelGrid id="painelFinalizar" columns="2">
+				
+				<p:outputLabel value="Funcionário:" />
+				<p:selectOneMenu value="#{vendaBean.venda.funcionario}"
+					converter="omnifaces.SelectItemsConverter" filter="true"
+					filterMatchMode="contains">
+					<f:selectItem noSelectionOption="true"
+						itemLabel="Selecione um funcionário" />
+					<f:selectItems value="#{vendaBean.funcionarios}" var="funcionario"
+						itemValue="#{funcionario}"
+						itemLabel="#{funcionario.pessoa.nome} - #{funcionario.pessoa.cpf}" />
 				</p:selectOneMenu>
-			
-			
+
+				<p:outputLabel value="Cliente:" />
+				<p:selectOneMenu value="#{vendaBean.venda.cliente}"
+					converter="omnifaces.SelectItemsConverter" filter="true"
+					filterMatchMode="contains">
+					<f:selectItem noSelectionOption="true"
+						itemLabel="Selecione um cliente" />
+					<f:selectItems value="#{vendaBean.clientes}" var="cliente"
+						itemValue="#{cliente}"
+						itemLabel="#{cliente.pessoa.nome} - #{cliente.pessoa.cpf}" />
+				</p:selectOneMenu>
 			</h:panelGrid>
+
 			<h:panelGrid columns="2">
-				<p:commandButton value="Salvar"/>
-				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();"/>
+				<p:commandButton value="Salvar" />
+				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 		</h:form>
 	</p:dialog>
-	
-	
 </h:body>
 </html>

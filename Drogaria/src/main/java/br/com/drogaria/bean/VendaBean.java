@@ -12,6 +12,8 @@ import javax.faces.event.ActionEvent;
 
 import org.omnifaces.util.Messages;
 
+import br.com.drogaria.dao.ClienteDAO;
+import br.com.drogaria.dao.FuncionarioDAO;
 import br.com.drogaria.dao.ProdutoDAO;
 import br.com.drogaria.domain.Cliente;
 import br.com.drogaria.domain.Funcionario;
@@ -139,7 +141,11 @@ public class VendaBean implements Serializable {
 	}
 	public void finalizar(){
 		try {
+			FuncionarioDAO dao = new FuncionarioDAO();
+			funcionarios = dao.listarOrdenado();
 			
+			ClienteDAO cdao = new ClienteDAO();
+			clientes = cdao.listarOrdenado();
 			
 			Messages.addGlobalInfo("Salvo com sucesso");
 		} catch (RuntimeException e) {
