@@ -163,6 +163,10 @@ public class VendaBean implements Serializable {
 
 	public void salvar() {
 		try {
+			if(venda.getPrecoTotal().signum() == 0){
+				Messages.addGlobalInfo("Informe um item para a venda");
+				return;
+			}
 
 			Messages.addGlobalInfo("Salvo com sucesso");
 		} catch (RuntimeException e) {
