@@ -170,6 +170,8 @@ public class VendaBean implements Serializable {
 			}
 			VendaDAO vdao = new VendaDAO();
 			vdao.salvar(venda, itensVendas);
+			
+			novo();
 
 			Messages.addGlobalInfo("Venda realizada com sucesso");
 		} catch (RuntimeException e) {
