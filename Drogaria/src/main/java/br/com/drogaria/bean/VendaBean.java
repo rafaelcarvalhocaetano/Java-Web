@@ -56,15 +56,19 @@ public class VendaBean implements Serializable {
 	public void setVenda(Venda venda) {
 		this.venda = venda;
 	}
+
 	public List<Cliente> getClientes() {
 		return clientes;
 	}
+
 	public void setClientes(List<Cliente> clientes) {
 		this.clientes = clientes;
 	}
+
 	public List<Funcionario> getFuncionarios() {
 		return funcionarios;
 	}
+
 	public void setFuncionarios(List<Funcionario> funcionarios) {
 		this.funcionarios = funcionarios;
 	}
@@ -111,7 +115,7 @@ public class VendaBean implements Serializable {
 			itemVenda.setQuantidade(new Short(itemVenda.getQuantidade() + 1 + ""));
 			itemVenda.setValorParcial(produto.getPreco().multiply(new BigDecimal(itemVenda.getQuantidade())));
 		}
-		
+
 		calcular();
 	}
 
@@ -140,26 +144,26 @@ public class VendaBean implements Serializable {
 		}
 
 	}
-	public void finalizar(){
+
+	public void finalizar() {
 		try {
 			venda.setHorario(new Date());
-			
-			
+
 			FuncionarioDAO dao = new FuncionarioDAO();
 			funcionarios = dao.listarOrdenado();
-			
+
 			ClienteDAO cdao = new ClienteDAO();
 			clientes = cdao.listarOrdenado();
-			
+
 			Messages.addGlobalInfo("Salvo com sucesso");
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Erro ao tentar finalizar a venda");
 		}
 	}
-	public void salvar(){
+
+	public void salvar() {
 		try {
-			
-			
+
 			Messages.addGlobalInfo("Salvo com sucesso");
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Erro ao tentar salvar");

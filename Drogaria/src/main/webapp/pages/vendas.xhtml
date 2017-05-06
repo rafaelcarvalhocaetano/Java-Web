@@ -52,7 +52,8 @@
 		<p:panel header="Cesta de Compras">
 			<p:dataTable id="tabelaCesta"
 				emptyMessage="Nenhum registro encontrado." paginator="true"
-				value="#{vendaBean.itensVendas}" var="itemVenda" rows="5" paginatorPosition="bottom">
+				value="#{vendaBean.itensVendas}" var="itemVenda" rows="5"
+				paginatorPosition="bottom">
 
 				<p:column headerText="Descrição">
 					<h:outputText value="#{itemVenda.produto.descricao}" />
@@ -94,8 +95,9 @@
 					oncomplete="PF('dialogo').show();"
 					actionListener="#{vendaBean.finalizar}"
 					update=":mensagem :formularioFinalizar:painelFinalizar">
-				
-				<f:actionListener type="org.omnifaces.eventlistener.ResetInputAjaxActionListener"/>	
+
+					<f:actionListener
+						type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
 				</p:commandButton>
 			</p:panelGrid>
 		</p:panel>
@@ -106,14 +108,15 @@
 		<h:form id="formularioFinalizar">
 
 			<h:panelGrid id="painelFinalizar" columns="2">
-				
-				<p:outputLabel value="Horário: "/>
-				<h:outputText value="#{vendaBean.venda.horario}" >
-					<f:convertDateTime pattern="dd/MM/yyyy HH:mm" locale="pt_BR" timeZone="America/Sao_Paulo"/>
+
+				<p:outputLabel value="Horário: " />
+				<h:outputText value="#{vendaBean.venda.horario}">
+					<f:convertDateTime pattern="dd/MM/yyyy HH:mm" locale="pt_BR"
+						timeZone="America/Sao_Paulo" />
 				</h:outputText>
-				
-				
-				
+
+
+
 				<p:outputLabel value="Total: R$ " />
 				<h:outputText value="#{vendaBean.venda.precoTotal}">
 					<f:convertNumber locale="pt_BR" minFractionDigits="2" />
@@ -145,7 +148,8 @@
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
-				<p:commandButton value="Salvar" actionListener="#{vendaBean.salvar}" update=":mensagem" oncomplete="PF('dialogo').show();"/>
+				<p:commandButton value="Salvar" actionListener="#{vendaBean.salvar}"
+					update=":mensagem" oncomplete="PF('dialogo').show();" />
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 		</h:form>
