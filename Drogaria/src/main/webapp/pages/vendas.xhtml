@@ -52,7 +52,7 @@
 		<p:panel header="Cesta de Compras">
 			<p:dataTable id="tabelaCesta"
 				emptyMessage="Nenhum registro encontrado." paginator="true"
-				value="#{vendaBean.itensVendas}" var="itemVenda" rows="5">
+				value="#{vendaBean.itensVendas}" var="itemVenda" rows="5" paginatorPosition="bottom">
 
 				<p:column headerText="Descrição">
 					<h:outputText value="#{itemVenda.produto.descricao}" />
@@ -92,26 +92,44 @@
 				</h:outputText>
 				<p:commandButton value="Finalizar"
 					oncomplete="PF('dialogo').show();"
-					actionListener="#{vendaBean.finalizar}" update=":mensagem :formularioFinalizar:painelFinalizar" />
+					actionListener="#{vendaBean.finalizar}"
+					update=":mensagem :formularioFinalizar:painelFinalizar">
+				
+				<f:actionListener type="org.omnifaces.eventlistener.ResetInputAjaxActionListener"/>	
+				</p:commandButton>
 			</p:panelGrid>
 		</p:panel>
 	</h:form>
-	
+
 	<p:dialog header="Finalizar Venda" widgetVar="dialogo"
 		draggable="false" resizable="false" modal="true" closable="false">
 		<h:form id="formularioFinalizar">
-			
+
 			<h:panelGrid id="painelFinalizar" columns="2">
 				
-				<p:outputLabel value="Funcionário:" />
-				<p:selectOneMenu value="#{vendaBean.venda.funcionario}"
+				<p:outputLabel value="Horário: "/>
+				<h:outputText value="#{vendaBean.venda.horario}" >
+					<f:convertDateTime pattern="dd/MM/yyyy HH:mm" locale="pt_BR" timeZone="America/Sao_Paulo"/>
+				</h:outputText>
+				
+				
+				
+				<p:outputLabel value="Total: R$ " />
+				<h:outputText value="#{vendaBean.venda.precoTotal}">
+					<f:convertNumber locale="pt_BR" minFractionDigits="2" />
+				</h:outputText>
+
+				<p:outputLabel for="funcionario" value="Funcionário:" />
+				<p:selectOneMenu id="funcionario"
+					value="#{vendaBean.venda.funcionario}"
 					converter="omnifaces.SelectItemsConverter" filter="true"
-					filterMatchMode="contains">
+					filterMatchMode="contains" required="true"
+					requiredMessage="O campo Funcionário é obrigatório">
 					<f:selectItem noSelectionOption="true"
 						itemLabel="Selecione um funcionário" />
 					<f:selectItems value="#{vendaBean.funcionarios}" var="funcionario"
 						itemValue="#{funcionario}"
-						itemLabel="#{funcionario.pessoa.nome} - #{funcionario.pessoa.cpf}" />
+						itemLabel="#{funcionario.pessoa.cpf} - #{funcionario.pessoa.nome}" />
 				</p:selectOneMenu>
 
 				<p:outputLabel value="Cliente:" />
@@ -127,7 +145,7 @@
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
-				<p:commandButton value="Salvar" />
+				<p:commandButton value="Salvar" actionListener="#{vendaBean.salvar}" update=":mensagem" oncomplete="PF('dialogo').show();"/>
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 		</h:form>
