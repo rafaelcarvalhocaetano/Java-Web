@@ -16,6 +16,7 @@ import org.omnifaces.util.Messages;
 import br.com.drogaria.dao.ClienteDAO;
 import br.com.drogaria.dao.FuncionarioDAO;
 import br.com.drogaria.dao.ProdutoDAO;
+import br.com.drogaria.dao.VendaDAO;
 import br.com.drogaria.domain.Cliente;
 import br.com.drogaria.domain.Funcionario;
 import br.com.drogaria.domain.ItemVenda;
@@ -165,10 +166,12 @@ public class VendaBean implements Serializable {
 		try {
 			if(venda.getPrecoTotal().signum() == 0){
 				Messages.addGlobalInfo("Informe um item para a venda");
-				return;
+				return;	
 			}
+			VendaDAO vdao = new VendaDAO();
+			vdao.salvar(venda, itensVendas);
 
-			Messages.addGlobalInfo("Salvo com sucesso");
+			Messages.addGlobalInfo("Venda realizada com sucesso");
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Erro ao tentar salvar");
 		}
