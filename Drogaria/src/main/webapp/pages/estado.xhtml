@@ -8,6 +8,8 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	template="/templates/modelo.xhtml">
 
+	<ui:define name="conteudo">
+	
 	<h:form id="formListagem">
 		<p:panel header="Estado - Listagem">
 			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado"
@@ -58,4 +60,5 @@
 			</h:panelGrid>
 		</h:form>
 	</p:dialog>
+	</ui:define>
 </ui:composition>

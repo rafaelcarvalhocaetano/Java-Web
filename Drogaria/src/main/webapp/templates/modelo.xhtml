@@ -12,12 +12,13 @@
 </h:head>
 <h:body>
 	<p:growl id="mensagem" />
-	<h:form>
+	
 	<div id="geral">
 		<div id="topo" class="divTopo">
 			<p:graphicImage library="imagem" name="banner.jpg" styleClass="imagemCentralizada"/>
 		</div>
 		<div id="header" >
+			<h:form id="formMenu">
 			<p:menubar>
 				<p:submenu label="Arquivos">
 					<p:menuitem value="Sair"/>
@@ -38,11 +39,12 @@
 					<p:menuitem value="Sobre"/>
 				</p:submenu>
 			</p:menubar>
+			</h:form>
 		</div>
 		<div id="conteudo" >
 			<ui:insert name="conteudo"/>
 		</div>
 	</div>
-	</h:form>
+	
 </h:body>
 </html>
