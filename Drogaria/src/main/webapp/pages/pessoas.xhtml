@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Pessoas</title>
-</h:head>
-<h:body>
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/templates/modelo.xhtml">
+
+	<ui:define name="conteudo">
 	<p:growl id="mensagem" />
 
 	<h:form id="formListagem">
@@ -36,11 +36,11 @@
 					<h:outputText value="#{pessoa.cpf}" />
 				</p:column>
 
-				<p:column headerText="OpÃ§Ãµes">
+				<p:column headerText="Opções">
 					<p:commandButton icon="ui-icon-trash"
 						actionListener="#{pessoaBean.excluir}"
 						update=":mensagem :formListagem:tabela">
-						<p:confirm header="ConfirmaÃ§Ã£o" message="Deseja excluir a pessoa?"
+						<p:confirm header="Confirmação" message="Deseja excluir a pessoa?"
 							icon="ui-icon-alert" />
 						<f:attribute name="pessoaSelecionada" value="#{pessoa}" />
 					</p:commandButton>
@@ -59,7 +59,7 @@
 			<p:confirmDialog global="true">
 				<p:commandButton value="Sim" type="button"
 					styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
-				<p:commandButton value="NÃ£o" type="button"
+				<p:commandButton value="Não" type="button"
 					styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
 			</p:confirmDialog>
 		</p:panel>
@@ -72,17 +72,17 @@
 				<p:outputLabel for="nome" value="Nome:" />
 				<p:inputText id="nome" maxlength="50" size="30"
 					value="#{pessoaBean.pessoa.nome}" required="true"
-					requiredMessage="O campo 'Nome' Ã© obrigatÃ³rio" />
+					requiredMessage="O campo 'Nome' é obrigatório" />
 
 				<p:outputLabel for="rg" value="RG:" />
 				<p:inputMask id="rg" mask="99.999.999-9" size="10"
 					value="#{pessoaBean.pessoa.rg}" required="true"
-					requiredMessage="O campo RG Ã© obrigatÃ³rio" />
+					requiredMessage="O campo RG é obrigatório" />
 
 				<p:outputLabel for="cpf" value="CPF:" />
 				<p:inputMask id="cpf" mask="999.999.999-99" size="10"
 					value="#{pessoaBean.pessoa.cpf}" required="true"
-					requiredMessage="O campo CPF Ã© obrigatÃ³rio" />
+					requiredMessage="O campo CPF é obrigatório" />
 
 				<p:outputLabel for="estado" value="Estado:" />
 				<p:selectOneMenu id="estado" filter="true"
@@ -97,7 +97,7 @@
 
 				<p:outputLabel for="cidade" value="Cidade:" />
 				<p:selectOneMenu id="cidade" filter="true" required="true"
-					requiredMessage="O campo 'Cidade' Ã© obrigatÃ³rio"
+					requiredMessage="O campo 'Cidade' é obrigatório"
 					converter="omnifaces.SelectItemsConverter"
 					value="#{pessoaBean.pessoa.cidade}">
 					<f:selectItem noSelectionOption="true"
@@ -109,26 +109,26 @@
 				<p:outputLabel for="rua" value="Rua:" />
 				<p:inputText id="rua" maxlength="100" size="50"
 					value="#{pessoaBean.pessoa.rua}" required="true"
-					requiredMessage="O campo 'Rua' Ã© obrigatÃ³rio" />
+					requiredMessage="O campo 'Rua' é obrigatório" />
 
-				<p:outputLabel value="NÃºmero" />
+				<p:outputLabel value="Número" />
 				<p:inputText maxlength="5" size="10"
 					value="#{pessoaBean.pessoa.numero}" required="true"
-					requiredMessage="O campo 'NÃºmero' Ã© obrigatÃ³rio"
-					converterMessage="Informe um valor vÃ¡lido para o campo 'NÃºmero'"
-					validatorMessage="Informe um valor entre 1 e 32767 para o campo 'NÃºmero'">
+					requiredMessage="O campo 'Número' é obrigatório"
+					converterMessage="Informe um valor válido para o campo 'Número'"
+					validatorMessage="Informe um valor entre 1 e 32767 para o campo 'Número'">
 					<f:validateLongRange minimum="1" maximum="32767" />
 				</p:inputText>
 
 				<p:outputLabel for="bairro" value="Bairro:" />
 				<p:inputText id="bairro" maxlength="30" size="20"
 					value="#{pessoaBean.pessoa.bairro}" required="true"
-					requiredMessage="O campo 'Bairro' Ã© obrigatÃ³rio" />
+					requiredMessage="O campo 'Bairro' é obrigatório" />
 
 				<p:outputLabel for="cep" value="CEP:" />
 				<p:inputMask id="cep" mask="99999-999" size="10"
 					value="#{pessoaBean.pessoa.cep}" required="true"
-					requiredMessage="O campo CEP Ã© obrigatÃ³rio" />
+					requiredMessage="O campo CEP é obrigatório" />
 
 				<p:outputLabel for="complemento" value="Complemento:" />
 				<p:inputText id="complemento" maxlength="10" size="10"
@@ -137,17 +137,17 @@
 				<p:outputLabel for="telefone" value="Telefone:" />
 				<p:inputMask mask="(99) 9999-9999" id="telefone" size="12"
 					value="#{pessoaBean.pessoa.telefone}" required="true"
-					requiredMessage="O campo Telefone Ã© obrigatÃ³rio" />
+					requiredMessage="O campo Telefone é obrigatório" />
 
 				<p:outputLabel for="celular" value="Celular:" />
 				<p:inputMask id="celular" mask="(99) 99999-9999" size="12"
 					value="#{pessoaBean.pessoa.celular}" required="true"
-					requiredMessage="O campo Celular Ã© obrigatÃ³rio" />
+					requiredMessage="O campo Celular é obrigatório" />
 
 				<p:outputLabel for="email" value="Email:" />
 				<p:inputText id="email" maxlength="100" size="50"
 					value="#{pessoaBean.pessoa.email}" required="true"
-					requiredMessage="O campo 'Email' Ã© obrigatÃ³rio" />
+					requiredMessage="O campo 'Email' é obrigatório" />
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
@@ -158,5 +158,5 @@
 			</h:panelGrid>
 		</h:form>
 	</p:dialog>
-</h:body>
-</html>
+</ui:define>
+</ui:composition>

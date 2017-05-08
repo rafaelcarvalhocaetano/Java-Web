@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Usu√°rios</title>
-</h:head>
-<h:body>
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/templates/modelo.xhtml">
+
+	<ui:define name="usuario">
+	
 	<p:growl id="mensagem" />
 	<h:form id="formListagem">
-		<p:panel header="Usu√°rios - Listagem">
+		<p:panel header="Usu·rios - Listagem">
 			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
 				paginator="true" value="#{usuarioBean.usuarios}" var="usuario"
 				rows="5">
@@ -42,20 +43,20 @@
 					<h:outputText value="#{usuario.ativoFormatado}" />
 				</p:column>
 
-				<p:column headerText="Op√ß√µes">
+				<p:column headerText="OpÁıes">
 				</p:column>
 			</p:dataTable>
 		</p:panel>
 	</h:form>
 
-	<p:dialog header="Usu√°rios - Cadastro" widgetVar="dialogo"
+	<p:dialog header="Usu·rios - Cadastro" widgetVar="dialogo"
 		draggable="false" resizable="false" modal="true" closable="false">
 		<h:form id="formCadastro">
 			<h:panelGrid id="painel" columns="2">
 				<p:outputLabel for="pessoa" value="Pessoa:" />
 				<p:selectOneMenu id="pessoa" filter="true"
 					value="#{usuarioBean.usuario.pessoa}" required="true"
-					requiredMessage="O campo 'Pessoa' √© obrigat√≥rio"
+					requiredMessage="O campo 'Pessoa' È obrigatÛrio"
 					converter="omnifaces.SelectItemsConverter">
 					<f:selectItem noSelectionOption="true"
 						itemLabel="Selecione uma pessoa" />
@@ -66,14 +67,14 @@
 				<p:outputLabel for="senha" value="Senha:" />
 				<p:password id="senha" maxlength="8" size="10"
 					value="#{usuarioBean.usuario.senha}" required="true"
-					requiredMessage="O campo 'Senha' √© obrigat√≥rio"
+					requiredMessage="O campo 'Senha' È obrigatÛrio"
 					validatorMessage="Informe uma senha de 6 a 8 caracteres">
 					<f:validateLength minimum="6" maximum="8" />
 				</p:password>
 
 				<p:outputLabel for="tipo" value="Tipo:" />
 				<p:selectOneRadio id="tipo" value="#{usuarioBean.usuario.tipo}"
-					required="true" requiredMessage="O campo 'Tipo' ¬¥obrigat√≥rio">
+					required="true" requiredMessage="O campo 'Tipo' ¥obrigatÛrio">
 					<f:selectItem itemValue="A" itemLabel="Administrador" />
 					<f:selectItem itemValue="G" itemLabel="Gerente" />
 					<f:selectItem itemValue="B" itemLabel="Balconista" />
@@ -82,7 +83,7 @@
 				<p:outputLabel for="ativo" value="Ativo:" />
 				<p:selectBooleanCheckbox id="ativo"
 					value="#{usuarioBean.usuario.ativo}" required="true"
-					requiredMessage="O campo 'Ativo' √© obrigat√≥rio" />
+					requiredMessage="O campo 'Ativo' È obrigatÛrio" />
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
@@ -93,5 +94,5 @@
 			</h:panelGrid>
 		</h:form>
 	</p:dialog>
-</h:body>
-</html>
+</ui:define>
+</ui:composition>
