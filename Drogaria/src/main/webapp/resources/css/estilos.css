@@ -12,3 +12,6 @@
 .divCabecalho{
 	margin-bottom: 0.5%;
 }
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 90% !important;
+}
