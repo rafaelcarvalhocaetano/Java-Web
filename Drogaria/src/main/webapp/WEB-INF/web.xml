@@ -6,6 +6,11 @@
 
 	<!-- Nome da Aplicação -->
 	<display-name>Drogaria</display-name>
+	
+	<!-- Página principal -->
+	<welcome-file-list>
+		<welcome-file>pages/principal.xhtml</welcome-file>
+	</welcome-file-list>
 
 	<!-- Estágio do Projeto -->
 	<context-param>
@@ -18,12 +23,6 @@
 		<param-name>primefaces.THEME</param-name>
 		<param-value>delta</param-value>
 	</context-param>
-	
-	<!-- Definição do Mecanismo de Upload -->
-	<context-param>
-		<param-name>primefaces.UPLOADER</param-name>
-		<param-value>native</param-value>
- 	</context-param>
 
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
