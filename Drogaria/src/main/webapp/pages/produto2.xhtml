@@ -14,10 +14,22 @@
 		<p:panel header="Produtos">
 		<h:panelGrid columns="3">
 			<p:outputLabel for="codigo" value="Código:"/>
-			<p:inputText id="codigo" size="20" maxlength="10" required="true" requiredMessage="O campo código é obrigatório"/>
+			<p:inputText id="codigo" size="20" maxlength="10" required="true" requiredMessage="O campo código é obrigatório" value="#{produtoBean2.produto.codigo}"/>
 			<p:commandButton icon="ui-icon-search" update=":mensagem"/>
 		</h:panelGrid>
 		</p:panel>
+		
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Descrição do produto: " />
+			<h:outputText value="#{produtoBean2.produto.descricao}" />
+			
+			<h:outputLabel value="Preço: " />
+			<h:outputText value="#{produtoBean2.produto.preco}" />
+			
+			<h:outputLabel value="Quantidade: " />
+			<h:outputText value="#{produtoBean2.produto.quantidade}" />
+			
+		</h:panelGrid>
 	</h:form>
 </h:body>
 </html>
