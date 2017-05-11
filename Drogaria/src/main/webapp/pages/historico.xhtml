@@ -42,6 +42,9 @@
 
 				<h:outputLabel value="Fabricante: " />
 				<h:outputText value="#{historicoBean.produto.fabricante.descricao}" />
+				
+				<h:outputLabel for="observacoes" value="Observações:" />
+				<h:inputTextarea value="" id="observacoes" required="true" requiredMessage="O campo observações é obrigatório"/>
 
 			</h:panelGrid>
 		</h:panelGroup>
