@@ -5,13 +5,13 @@
 <html>
 <head>
 	<!-- Estilo do bootstrap -->
-	<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap-theme.min.css" />
 
 	<!-- Meu estilo -->
-	<link rel="stylesheet" type="text/css" href="../resources/css/myStyle.css" />
+	<link rel="stylesheet" type="text/css" href="resources/css/myStyle.css" />
 	<!-- JavaScript do Bootstrap -->
-	<script src="../resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
 
 	<!-- Mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +27,7 @@
     
        
        <div class="jumbotron">
-  		<h3>Resposta da calculadora de Bhaskara <span class="label label-default"><%=request.getParameter("a")%>x + <%=request.getParameter("b")%>x + <%=request.getParameter("c")%></span></h3>
+  		<h3>Resposta da calculadora de Bhaskara <span class="label label-default"><%=request.getParameter("a")%>x² + <%=request.getParameter("b")%>x + <%=request.getParameter("c")%></span></h3>
 		
   		<ul class="list-group">
 		  <li class="list-group-item">Delta<span class="badge">  Delta: <% out.print(bhaskara.getDelta()); %> <br/></span></li>
