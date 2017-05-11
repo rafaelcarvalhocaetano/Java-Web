@@ -6,7 +6,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Produtos II</title>
+	<title>Histórico</title>
 </h:head>
 <h:body>
 	<p:growl id="mensagem" />
@@ -16,32 +16,32 @@
 				<p:outputLabel for="codigo" value="Código:" />
 				<p:inputText id="codigo" size="20" maxlength="10" required="true"
 					requiredMessage="O campo código é obrigatório"
-					value="#{produtoBean2.produto.codigo}"
+					value="#{historicoBean.produto.codigo}"
 					converterMessage="O valor Informado é invalido"
 					validatorMessage="Informe um valor entre 1 a 999999999999 ">
 						<f:validateLongRange minimum="1" maximum="9999999999999"/>
 					</p:inputText>
 				<p:commandButton icon="ui-icon-search"
 					update=":mensagem :formulario:painel"
-					actionListener="#{produtoBean2.buscar}" />
+					actionListener="#{historicoBean.buscar}" />
 			</h:panelGrid>
 		</p:panel>
 
 		<h:panelGroup id="painel" layout="block">
-			<h:panelGrid columns="2" rendered="#{produtoBean2.exibir}">
+			<h:panelGrid columns="2" rendered="#{historicoBean.exibir}">
 				<h:outputLabel value="Descrição do produto: " />
-				<h:outputText value="#{produtoBean2.produto.descricao}" />
+				<h:outputText value="#{historicoBean.produto.descricao}" />
 
 				<h:outputLabel value="Preço: " />
-				<h:outputText value="#{produtoBean2.produto.preco}">
+				<h:outputText value="#{historicoBean.produto.preco}">
 					<f:convertNumber locale="pt_BR" minFractionDigits="2" />
 				</h:outputText>
 
 				<h:outputLabel value="Quantidade: " />
-				<h:outputText value="#{produtoBean2.produto.quantidade}" />
+				<h:outputText value="#{historicoBean.produto.quantidade}" />
 
 				<h:outputLabel value="Fabricante: " />
-				<h:outputText value="#{produtoBean2.produto.fabricante.descricao}" />
+				<h:outputText value="#{historicoBean.produto.fabricante.descricao}" />
 
 			</h:panelGrid>
 		</h:panelGroup>
