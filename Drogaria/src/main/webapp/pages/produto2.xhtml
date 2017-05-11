@@ -5,34 +5,46 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>Produtos II</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Produtos II</title>
 </h:head>
 <h:body>
-	<p:growl id="mensagem"/>
+	<p:growl id="mensagem" />
 	<h:form id="formulario">
 		<p:panel header="Produtos">
-		<h:panelGrid columns="3">
-			<p:outputLabel for="codigo" value="Código:"/>
-			<p:inputText id="codigo" size="20" maxlength="10" required="true" requiredMessage="O campo código é obrigatório" value="#{produtoBean2.produto.codigo}"/>
-			<p:commandButton icon="ui-icon-search" update=":mensagem :formulario:painel" actionListener="#{produtoBean2.buscar}"/>
-		</h:panelGrid>
+			<h:panelGrid columns="3">
+				<p:outputLabel for="codigo" value="Código:" />
+				<p:inputText id="codigo" size="20" maxlength="10" required="true"
+					requiredMessage="O campo código é obrigatório"
+					value="#{produtoBean2.produto.codigo}"
+					converterMessage="O valor Informado é invalido"
+					validatorMessage="Informe um valor entre 1 a 999999999999 ">
+						<f:validateLongRange minimum="1" maximum="9999999999999"/>
+					</p:inputText>
+				<p:commandButton icon="ui-icon-search"
+					update=":mensagem :formulario:painel"
+					actionListener="#{produtoBean2.buscar}" />
+			</h:panelGrid>
 		</p:panel>
-		
-		<h:panelGrid columns="2" id="painel">
-			<h:outputLabel value="Descrição do produto: " />
-			<h:outputText value="#{produtoBean2.produto.descricao}" />
-			
-			<h:outputLabel value="Preço: " />
-			<h:outputText value="#{produtoBean2.produto.preco}" />
-			
-			<h:outputLabel value="Quantidade: " />
-			<h:outputText value="#{produtoBean2.produto.quantidade}" />
-			
-			<h:outputLabel value="Fabricante: " />
-			<h:outputText value="#{produtoBean2.produto.fabricante.descricao}" />
-			
-		</h:panelGrid>
+
+		<h:panelGroup id="painel" layout="block">
+			<h:panelGrid columns="2" rendered="#{produtoBean2.exibir}">
+				<h:outputLabel value="Descrição do produto: " />
+				<h:outputText value="#{produtoBean2.produto.descricao}" />
+
+				<h:outputLabel value="Preço: " />
+				<h:outputText value="#{produtoBean2.produto.preco}">
+					<f:convertNumber locale="pt_BR" minFractionDigits="2" />
+				</h:outputText>
+
+				<h:outputLabel value="Quantidade: " />
+				<h:outputText value="#{produtoBean2.produto.quantidade}" />
+
+				<h:outputLabel value="Fabricante: " />
+				<h:outputText value="#{produtoBean2.produto.fabricante.descricao}" />
+
+			</h:panelGrid>
+		</h:panelGroup>
 	</h:form>
 </h:body>
 </html>

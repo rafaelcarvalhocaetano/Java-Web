@@ -15,7 +15,9 @@ import br.com.drogaria.domain.Produto;
 @ManagedBean
 @ViewScoped
 public class ProdutoBean2 implements Serializable{
+	
 	private Produto produto;
+	private Boolean exibir;
 	
 	public Produto getProduto() {
 		return produto;
@@ -23,10 +25,17 @@ public class ProdutoBean2 implements Serializable{
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
+	public Boolean getExibir() {
+		return exibir;
+	}
+	public void setExibir(Boolean exibir) {
+		this.exibir = exibir;
+	}
 	
 	@PostConstruct
 	public void novo(){
 		produto = new Produto();
+		exibir = false;
 	}
 	
 	public void buscar(){
@@ -36,8 +45,10 @@ public class ProdutoBean2 implements Serializable{
 			Produto resultado = dao.buscar(produto.getCodigo());
 			
 			if(resultado == null){
+				exibir = false;
 				Messages.addGlobalWarn("Item não existe");
 			}else{
+				exibir = true;
 				produto = resultado;
 			}
 			
