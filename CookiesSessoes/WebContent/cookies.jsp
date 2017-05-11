@@ -4,13 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Coockies e Sessões</title>
+<title>Cookies</title>
 </head>
 <body>
-	
-	<center>
-		<a href="cookies.jsp">trabalhar com cookies</a>	
-	</center>
+
+<form action="GerarCookies.jsp" method="POST">
+
+	Informe um texto:<input type="text" name="nome">
+	<input type="submit" value="Gerar Cookies"/>
+
+</form>
 
 </body>
 </html>
