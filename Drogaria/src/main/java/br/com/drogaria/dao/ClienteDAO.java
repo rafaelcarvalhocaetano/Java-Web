@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Order;
 
 import br.com.drogaria.domain.Cliente;
-import br.com.drogaria.domain.Funcionario;
 import br.com.drogaria.util.HibernateUtil;
 
 public class ClienteDAO extends GenericDAO<Cliente>{

@@ -1,14 +1,18 @@
 package br.com.drogaria.bean;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.print.attribute.standard.MediaSize.JIS;
 
 import org.omnifaces.util.Messages;
 
+import br.com.drogaria.dao.HistoricoDAO;
 import br.com.drogaria.dao.ProdutoDAO;
+import br.com.drogaria.domain.Historico;
 import br.com.drogaria.domain.Produto;
 
 @SuppressWarnings("serial")
@@ -18,6 +22,7 @@ public class HistoricoBean implements Serializable{
 	
 	private Produto produto;
 	private Boolean exibir;
+	private Historico historico;
 	
 	public Produto getProduto() {
 		return produto;
@@ -32,8 +37,16 @@ public class HistoricoBean implements Serializable{
 		this.exibir = exibir;
 	}
 	
+	public Historico getHistorico() {
+		return historico;
+	}
+	public void setHistorico(Historico historico) {
+		this.historico = historico;
+	}
+	
 	@PostConstruct
 	public void novo(){
+		historico = new Historico();
 		produto = new Produto();
 		exibir = false;
 	}
@@ -55,6 +68,20 @@ public class HistoricoBean implements Serializable{
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Erro ao buscar");
 			e.printStackTrace();
+		}
+	}
+	
+	public void salvar(){
+		try {
+			historico.setHorario(new Date());
+			
+			historico.setProduto(produto);
+			HistoricoDAO dao = new HistoricoDAO();
+			dao.salvar(historico);
+			
+			Messages.addGlobalInfo("Salvo com sucesso");
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao salvar o histórioco");
 		}
 	}
 
