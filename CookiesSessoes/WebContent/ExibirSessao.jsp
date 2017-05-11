@@ -4,14 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Coockies e Sessões</title>
+<title>Exibição</title>
 </head>
 <body>
-	
-	<center>
-		<a href="cookies.jsp">Trabalhando com cookies</a>	
-		<a href="sessao.jsp">Trabalhando com sessoes</a>	
-	</center>
-
+	<%
+		String valor =String.valueOf(session.getAttribute("nomeDoUsuario"));
+		
+		out.println(valor);
+	%>
 </body>
 </html>

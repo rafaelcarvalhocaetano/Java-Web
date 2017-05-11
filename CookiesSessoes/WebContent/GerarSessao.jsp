@@ -4,14 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Coockies e Sessões</title>
+<title>Gerar Sessões</title>
 </head>
 <body>
-	
-	<center>
-		<a href="cookies.jsp">Trabalhando com cookies</a>	
-		<a href="sessao.jsp">Trabalhando com sessoes</a>	
-	</center>
-
+	<%
+		session.setAttribute("nomeDoUsuario", request.getParameter("nome"));
+	%>
+	<a href="ExibirSessao.jsp">Exibindo Valor da Sessão</a>
 </body>
 </html>
