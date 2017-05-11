@@ -6,6 +6,9 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
+import org.omnifaces.util.Messages;
+
+import br.com.drogaria.dao.ProdutoDAO;
 import br.com.drogaria.domain.Produto;
 
 @SuppressWarnings("serial")
@@ -24,6 +27,24 @@ public class ProdutoBean2 implements Serializable{
 	@PostConstruct
 	public void novo(){
 		produto = new Produto();
+	}
+	
+	public void buscar(){
+		try {
+			
+			ProdutoDAO dao = new ProdutoDAO();
+			Produto resultado = dao.buscar(produto.getCodigo());
+			
+			if(resultado == null){
+				Messages.addGlobalWarn("Item não existe");
+			}else{
+				produto = resultado;
+			}
+			
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao buscar");
+			e.printStackTrace();
+		}
 	}
 
 }

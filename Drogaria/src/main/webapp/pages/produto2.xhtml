@@ -10,16 +10,16 @@
 </h:head>
 <h:body>
 	<p:growl id="mensagem"/>
-	<h:form>
+	<h:form id="formulario">
 		<p:panel header="Produtos">
 		<h:panelGrid columns="3">
 			<p:outputLabel for="codigo" value="Código:"/>
 			<p:inputText id="codigo" size="20" maxlength="10" required="true" requiredMessage="O campo código é obrigatório" value="#{produtoBean2.produto.codigo}"/>
-			<p:commandButton icon="ui-icon-search" update=":mensagem"/>
+			<p:commandButton icon="ui-icon-search" update=":mensagem :formulario:painel" actionListener="#{produtoBean2.buscar}"/>
 		</h:panelGrid>
 		</p:panel>
 		
-		<h:panelGrid columns="2">
+		<h:panelGrid columns="2" id="painel">
 			<h:outputLabel value="Descrição do produto: " />
 			<h:outputText value="#{produtoBean2.produto.descricao}" />
 			
@@ -28,6 +28,9 @@
 			
 			<h:outputLabel value="Quantidade: " />
 			<h:outputText value="#{produtoBean2.produto.quantidade}" />
+			
+			<h:outputLabel value="Fabricante: " />
+			<h:outputText value="#{produtoBean2.produto.fabricante.descricao}" />
 			
 		</h:panelGrid>
 	</h:form>
