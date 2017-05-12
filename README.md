@@ -1,11 +1,11 @@
 # Projetos JAVA-WEB
 
-## Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql.
-## Projetos Front-End usando java com JSP - Bootstrap - JQuery.
+### Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql.
+### Projetos Front-End usando java com JSP - Bootstrap - JQuery.
 
 - [Requisito para o Desafio B2W](#requisito-para-o-desafio-b2w)
-- [Instalações Necessárias](#instalações-necessárias)
-  - [java](#java)
+- [Projetos Front-End usando java com JSP Bootstrap e JQuery](#Projetos-Front-End-usando-java-com-JSP-Bootstrap-e-JQuery)
+  - [JSP Bhaskara](#JSP-Bhaskara)
   - [Sass](#sass)
 - [Servidor](#servidor)
   - [Clonando o Desafio B2W](#clonando-o-desafio-b2w)
@@ -285,6 +285,6 @@ Configurando o arquivo hibernate.cfg.xml que fica dentro de src/main/resources
 </hibernate-configuration>
 
 ```
-### Projetos JSP 1
-### java
+### Projetos Front-End usando java com JSP Bootstrap e JQuery
+### JSP Bhaskara
 
