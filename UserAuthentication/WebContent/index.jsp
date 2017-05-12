@@ -7,6 +7,14 @@
 <title>User Authentication</title>
 </head>
 <body>
+	<center>
+		<h1>Autenticação de usuário</h1>
+		<h4>Usuário: </h4>
+		<input type="text" name="usuario"/>
+		<h4>Senha: </h4>
+		<input type="password" name="senha"/>
+		<input type="submit" value="login"/>
+	</center>
 
 </body>
 </html>
