@@ -2,10 +2,8 @@
 
 ### Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql.
 ### Projetos Front-End usando java com JSP - Bootstrap - JQuery.
-
-- [Requisito para o Desafio B2W](#requisito-para-o-desafio-b2w)
-- [Projetos Front-End usando java com JSP Bootstrap e JQuery](#Projetos-Front-End-usando-java-com-JSP-Bootstrap-e-JQuery)
-  - [JSP Bhaskara](#JSP-Bhaskara)
+- [Projetos Front-End usando java com JSP Bootstrap e JQuery](#projetos-front-end-usando-java-com-jsp-bootstrap-e-jquery)
+  - [JSP Bhaskara](#jsp-bhaskara)
   - [Sass](#sass)
 - [Servidor](#servidor)
   - [Clonando o Desafio B2W](#clonando-o-desafio-b2w)
