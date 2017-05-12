@@ -281,6 +281,7 @@ Configurando o arquivo hibernate.cfg.xml que fica dentro de src/main/resources
 ```
 ### Projetos Front-End usando java com JSP Bootstrap e JQuery
 ### JSP Bhaskara
-<img  width="300" heigth="300" src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/Bhaskara/WebContent/resources/img/bhaskara%201.png"/>
+<img  src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/Bhaskara/WebContent/resources/img/bhaskara%201.png"/>
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/Bhaskara/WebContent/resources/img/bhaskara%202.png"/>
 ### JSP Cookies e Sessões
 
