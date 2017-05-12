@@ -2,7 +2,7 @@
 
 ## Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql.
 ## Projetos Front-End usando java com JSP - Bootstrap - JQuery.
-  - [Projetos JSP (Bootstrap) - BHASKARA.](#Projetos-JSP-(Bootstrap)-BHASKARA.)
+  - [Projetos JSP 1](#Projetos-JSP-1)
 
 
 Acesse o link http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html
@@ -277,5 +277,5 @@ Configurando o arquivo hibernate.cfg.xml que fica dentro de src/main/resources
 </hibernate-configuration>
 
 ```
-### Projetos JSP (Bootstrap) - BHASKARA.
+### Projetos JSP 1
 
