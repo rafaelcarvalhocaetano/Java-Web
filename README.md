@@ -1,14 +1,9 @@
 # Projetos JAVA-WEB
 
-### Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql.
-### Projetos Front-End usando java com JSP - Bootstrap - JQuery.
+- [Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql](#projeto-front-end-com-java-usando-jsf---primefaces---ajax---hibernate---jarsperreporter---mysql)
 - [Projetos Front-End usando java com JSP Bootstrap e JQuery](#projetos-front-end-usando-java-com-jsp-bootstrap-e-jquery)
   - [JSP Bhaskara](#jsp-bhaskara)
-  - [Sass](#sass)
-- [Servidor](#servidor)
-  - [Clonando o Desafio B2W](#clonando-o-desafio-b2w)
-  - [Rodando o Desafio B2W](#rodando-o-desafio-b2w)
-- [Estrutura do Desafio B2W](#estrutura-do-desafio-b2w)
+  - [JSP Cookies e Sessões](#jsp-cookies-e-sessões)
 
 
 Acesse o link http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html
@@ -48,8 +43,9 @@ Clique em "Novo"
  
  Após ter baixado, siga clicando em next
  
+### Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql
  
-## Baixando os jar necessários através do Maven
+### Baixando os jar necessários através do Maven
 
 Criar um pasta `WEB-INF` para conter `web.xml`
 
