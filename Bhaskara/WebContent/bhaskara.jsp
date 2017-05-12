@@ -34,11 +34,11 @@
 		</ul>
 		
 		<ul class="list-group">
-		  <li class="list-group-item">Raiz Positiva<span class="badge"><% out.print(bhaskara.getRaizPositiva()); %></span></li>
+		  <li class="list-group-item">Raiz Positiva<span class="badge"><%= bhaskara.getRaizPositiva() %></span></li>
 		</ul>
 		
 		<ul class="list-group">
-		  <li class="list-group-item">Raiz Negativa<span class="badge"><% out.print(bhaskara.getRaizNegativa()); %></span></li>
+		  <li class="list-group-item">Raiz Negativa<span class="badge"><%= bhaskara.getRaizNegativa() %></span></li>
 		</ul>
 		
 	</div>
