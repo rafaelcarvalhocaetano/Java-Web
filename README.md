@@ -279,7 +279,7 @@ Configurando o arquivo hibernate.cfg.xml que fica dentro de src/main/resources
 </hibernate-configuration>
 
 ```
-### PProjetos Java Web com JSP Bootstrap e JQuery
+### Projetos Java Web com JSP Bootstrap e JQuery
 ### JSP Bhaskara
 Imagem do index
 
