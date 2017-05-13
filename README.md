@@ -1,7 +1,7 @@
 # Projetos JAVA-WEB
 
 - [Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql](#projeto-front-end-com-java-usando-jsf---primefaces---ajax---hibernate---jarsperreporter---mysql)
-- [Projetos Java Web com JSP Bootstrap e JQuery](#projetos-front-end-usando-java-com-jsp-bootstrap-e-jquery)
+- [Projetos Java Web com JSP Bootstrap e JQuery](#projetos-java-web-com-jsp-bootstrap-e-jquery)
   - [JSP Bhaskara](#jsp-bhaskara)
   - [JSP Cookies e Sessões](#jsp-cookies-e-sessões)
 
