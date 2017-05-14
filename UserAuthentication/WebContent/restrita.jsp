@@ -12,9 +12,9 @@
 		aut = Boolean.parseBoolean(session.getAttribute("autenticacao").toString());
 		
 		if(aut){
-			out.print("Você pode estar aqui");
+			out.print("Você Não pode estar aqui");
 		}else{
-			out.print("Você não pode estar aqui");
+			out.print("Você pode estar aqui");
 		}
 	%>
 </body>

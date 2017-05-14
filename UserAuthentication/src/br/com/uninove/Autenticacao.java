@@ -20,9 +20,9 @@ public class Autenticacao {
 		this.senha = senha;
 	}
 	
-	public boolean autentica(){
+	public boolean autenticar(){
 		
-		//criar um método de consulta de banco de dados login - usuário e senha.
+		//criar um método de consulta com banco de dados login - usuário e senha.
 		
 		if(usuario.equalsIgnoreCase("rafael") && senha.equals("123")){
 			return true;

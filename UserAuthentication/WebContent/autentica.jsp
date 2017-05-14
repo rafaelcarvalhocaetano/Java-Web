@@ -10,16 +10,17 @@
 <center>
 	<jsp:useBean scope="page" id="autenticacao" class="br.com.uninove.Autenticacao"/>
 	<jsp:setProperty value='<%= request.getParameter("usuario") %>' name="autenticacao" property="usuario"/>
-	<jsp:setProperty value='<%= request.getParameter("senha") %>' name="autenticacao" property="usuario"/>
+	<jsp:setProperty value='<%= request.getParameter("senha") %>' name="autenticacao" property="senha"/>
 
 </center>
 <%
-	if(autenticacao.autentica()){
+	if(autenticacao.autenticar()){
 		session.setAttribute("usuario ", request.getParameter("usuario"));
 		session.setAttribute("autenticado", true);
 		out.print("<h3> Usuário autenticado </h3>");
 	}else{
 		session.setAttribute("autenticacao", false);
+		out.print("<h3> Usuário Não autenticado </h3>");
 	}
 %>
 <a href="restrita.jsp">Area restrita</a>
