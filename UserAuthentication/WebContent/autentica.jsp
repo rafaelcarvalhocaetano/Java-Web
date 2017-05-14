@@ -13,6 +13,14 @@
 	<jsp:setProperty value="<%= request.getParameter("senha") %>" name="autenticacao" property="usuario"/>
 
 </center>
+<%
+	if(autenticacao.autentica()){
+		session.setAttribute("usuario ", request.getParameter("usuario"));
+		session.setAttribute("autenticado", true);
+	}else{
+		session.setAttribute("autenticacao", false);
+	}
+%>
 
 </body>
 </html>
