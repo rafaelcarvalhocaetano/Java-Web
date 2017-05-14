@@ -7,6 +7,15 @@
 <title>Restrita</title>
 </head>
 <body>
-
+	<%
+		boolean aut = false;
+		aut = Boolean.parseBoolean(session.getAttribute("autenticacao").toString());
+		
+		if(aut){
+			out.print("Você pode estar aqui");
+		}else{
+			out.print("Você não pode estar aqui");
+		}
+	%>
 </body>
 </html>

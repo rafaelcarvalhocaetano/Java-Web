@@ -9,14 +9,15 @@
 <body>
 <center>
 	<jsp:useBean scope="page" id="autenticacao" class="br.com.uninove.Autenticacao"/>
-	<jsp:setProperty value="<%= request.getParameter("usuario") %>" name="autenticacao" property="usuario"/>
-	<jsp:setProperty value="<%= request.getParameter("senha") %>" name="autenticacao" property="usuario"/>
+	<jsp:setProperty value='<%= request.getParameter("usuario") %>' name="autenticacao" property="usuario"/>
+	<jsp:setProperty value='<%= request.getParameter("senha") %>' name="autenticacao" property="usuario"/>
 
 </center>
 <%
 	if(autenticacao.autentica()){
 		session.setAttribute("usuario ", request.getParameter("usuario"));
 		session.setAttribute("autenticado", true);
+		out.print("<h3> Usuário autenticado </h3>");
 	}else{
 		session.setAttribute("autenticacao", false);
 	}
