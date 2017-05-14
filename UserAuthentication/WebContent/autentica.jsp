@@ -21,6 +21,8 @@
 		session.setAttribute("autenticacao", false);
 	}
 %>
+<a href="restrita.jsp">Area restrita</a>
+
 
 </body>
 </html>
