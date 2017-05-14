@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Autenticação</title>
 </head>
 <body>
+<center>
+<jsp:useBean scope="page" id="autenticacao" class="br.com.uninove.Autenticacao"/>
+
+
+</center>
 
 </body>
 </html>
