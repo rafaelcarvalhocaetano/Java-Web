@@ -1,6 +1,9 @@
-﻿# Projeto Front-End com java.
+# Projetos JAVA-WEB
 
-## Instalando o java 8
+- [Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql](#projeto-front-end-com-java-usando-jsf---primefaces---ajax---hibernate---jarsperreporter---mysql)
+- [Projetos Java Web com JSP Bootstrap e JQuery](#projetos-java-web-com-jsp-bootstrap-e-jquery)
+  - [JSP Bhaskara](#jsp-bhaskara)
+  - [JSP Cookies e Sessões](#jsp-cookies-e-sessões)
 
 
 Acesse o link http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html
@@ -28,9 +31,6 @@ Clique em "Novo"
 
 ```
 
-
-
-
 ## Instalando o eclipse
  
  Acesse o link https://www.eclipse.org/downloads/
@@ -43,8 +43,9 @@ Clique em "Novo"
  
  Após ter baixado, siga clicando em next
  
+### Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql
  
-## Baixando os jar necessários através do Maven
+### Baixando os jar necessários através do Maven
 
 Criar um pasta `WEB-INF` para conter `web.xml`
 
@@ -278,3 +279,15 @@ Configurando o arquivo hibernate.cfg.xml que fica dentro de src/main/resources
 </hibernate-configuration>
 
 ```
+### Projetos Java Web com JSP Bootstrap e JQuery
+### JSP Bhaskara
+Imagem do index
+
+<img  src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/Bhaskara/WebContent/resources/img/bhaskara%201.png"/>
+
+Imagem do calculo final.
+
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/Bhaskara/WebContent/resources/img/bhaskara%202.png"/>
+
+### JSP Cookies e Sessões
+
