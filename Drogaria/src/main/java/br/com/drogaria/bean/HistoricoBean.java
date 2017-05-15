@@ -6,7 +6,6 @@ import java.util.Date;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.print.attribute.standard.MediaSize.JIS;
 
 import org.omnifaces.util.Messages;
 
@@ -18,11 +17,12 @@ import br.com.drogaria.domain.Produto;
 @SuppressWarnings("serial")
 @ManagedBean
 @ViewScoped
-public class HistoricoBean implements Serializable{
+public class HistoricoBean implements Serializable {
 	
 	private Produto produto;
 	private Boolean exibir;
 	private Historico historico;
+	
 	
 	public Produto getProduto() {
 		return produto;

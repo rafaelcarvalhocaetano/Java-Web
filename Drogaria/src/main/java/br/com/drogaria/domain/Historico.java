@@ -41,8 +41,5 @@ public class Historico extends GenericDomain{
 	}
 	public void setProduto(Produto produto) {
 		this.produto = produto;
-	}
-	
-	
-	
+	}	
 }

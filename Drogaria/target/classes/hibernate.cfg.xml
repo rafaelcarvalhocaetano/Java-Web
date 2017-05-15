@@ -31,23 +31,23 @@
 
 		<!-- Cria as tabelas do banco de dados -->
 		<property name="hbm2ddl.auto">update</property>
-
+		
 		<!-- Mapeamento das entidades -->
-
-		<mapping class="br.com.drogaria.domain.Estado" />
+		
+		<mapping class="br.com.drogaria.domain.Estado"/>
 		<mapping class="br.com.drogaria.domain.Cidade" />
-		<mapping class="br.com.drogaria.domain.Pessoa" />
+		<mapping class="br.com.drogaria.domain.Pessoa"/>
 		<mapping class="br.com.drogaria.domain.Cliente" />
 		<mapping class="br.com.drogaria.domain.Funcionario" />
-		<mapping class="br.com.drogaria.domain.Usuario" />
-
-		<mapping class="br.com.drogaria.domain.Fabricante" />
-		<mapping class="br.com.drogaria.domain.Produto" />
-
-		<mapping class="br.com.drogaria.domain.Venda" />
-		<mapping class="br.com.drogaria.domain.ItemVenda" />
+		<mapping class="br.com.drogaria.domain.Usuario"/>
+		
+		<mapping class="br.com.drogaria.domain.Fabricante"/>
+		<mapping class="br.com.drogaria.domain.Produto"/>
+				
+		<mapping class="br.com.drogaria.domain.Venda"/>
+		<mapping class="br.com.drogaria.domain.ItemVenda"/>
 		<mapping class="br.com.drogaria.domain.Historico"/>
-
+		
 	</session-factory>
 
 </hibernate-configuration>

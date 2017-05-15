@@ -46,10 +46,10 @@
 					<h:outputText value="#{historicoBean.produto.fabricante.descricao}" />
 
 					<p:outputLabel for="observacoes" value="Observações:" />
-					<p:inputTextarea id="observacoes" required="true"
+					<p:inputTextarea id="observacoes" required="true" value="#{historicoBean.historico.observacoes}" 
 						requiredMessage="O campo Observações é obrigatório" rows="5"
 						cols="50" autoResize="false"
-						value="#{historicoBean.historico.observacoes}" />
+						/>
 				</h:panelGrid>
 
 				<h:panelGrid columns="1"
