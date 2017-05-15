@@ -4,22 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Home</title>
+<title>Resultado</title>
 </head>
 <body>
-<form action="calculando.jsp" method="post">
-<center>
-<h3>Calculo de Bhaskara</h3>
-A: <input type="text" name="a" id="valorA">
-B: <input type="text" name="b" id="valorB">
-C: <input type="text" name="c" id="valorC">
-<div>
-<input type="submit" value="Verificar Resultado">
-</div>
 
-</center>
 
-</form>
 
 </body>
 </html>
