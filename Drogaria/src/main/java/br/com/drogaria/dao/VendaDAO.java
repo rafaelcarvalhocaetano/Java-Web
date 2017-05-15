@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.omnifaces.util.Messages;
 
 import br.com.drogaria.domain.ItemVenda;
 import br.com.drogaria.domain.Produto;

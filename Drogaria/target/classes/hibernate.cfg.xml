@@ -47,6 +47,7 @@
 		<mapping class="br.com.drogaria.domain.Venda"/>
 		<mapping class="br.com.drogaria.domain.ItemVenda"/>
 		<mapping class="br.com.drogaria.domain.Historico"/>
+		<mapping class="br.com.drogaria.domain.Caixa"/>
 		
 	</session-factory>
 
