@@ -4,8 +4,9 @@
 	padding: 0;
 }
 #form h3{
+	color: #000;
 	font-family: sans-serif;
-	margin-left: 35%;
+	margin-left: 33%;
 	margin-top: 5%;
 	margin-bottom: 5%;
 }
@@ -15,11 +16,11 @@
 button{
 	width: 20%;
 	height: 4em;
-	background-color: #ef5350;
+	background-color: #f44336;
 }
 #form{
 	width: 45%;
 	height: 10em;
 	margin-left: 25%;
-	background-color: #ba68c8;
+	background-color: #757575;
 }
