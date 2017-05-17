@@ -21,16 +21,49 @@
 <title>Cadastro</title>
 </head>
 <body>
-	
-	<form action="pages/dados.jsp" method="post">
-	
-    
-    <div id="cor" class="col s12 m2">
-      <p class="z-depth-3">z-depth-3</p>
-    </div>
-    
-  
-	
-	</form>
+
+	<div class="row">
+		<div class="col s12 m6">
+			<div class="card blue-grey darken-1">
+
+				<div class="card-content white-text">
+					<div class="row">
+						<form class="col s12">
+							<div class="row">
+								<div class="input-field col s6">
+									<input id="first_name" type="text"
+										class="validate"> <label for="first_name">First
+										Name</label>
+								</div>
+								<div class="input-field col s6">
+									<input id="last_name" type="text" class="validate"> <label
+										for="last_name">Last Name</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="password" type="password" class="validate">
+									<label for="password">Password</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="email" type="text" class="validate"> <label
+										for="email">Email</label>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+				<center>
+				<div class="card-action">
+					<a href="#">Sair</a> <a href="#">Cadastrar</a>
+				</div>
+				</center>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
