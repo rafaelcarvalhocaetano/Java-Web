@@ -1,5 +1,15 @@
 @CHARSET "ISO-8859-1";
 
 #card{
-	margin-left: 20%;
+	margin-left: 30%;
+	margin-top: 4%;
+}
+body{
+	background-color: #041A27;
+}
+#figura1{
+	margin-top: -10%;
+	margin-right: 20%;
+	margin-left: 10%;
+	
 }

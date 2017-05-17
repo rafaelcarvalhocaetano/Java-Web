@@ -8,7 +8,8 @@
 <script type="text/javascript" src="resources/javascript/efeitor.js"></script>
 <!-- Meu css -->
 <link rel="stylesheet" href="resources/css/estilo.css">
-<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous"></script>
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet"
@@ -22,43 +23,43 @@
 <title>Cadastro</title>
 </head>
 <body>
-	<div class="row">
+	<div class="row" id="card">
 		<div class="col m6">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
 					<div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
-      </div>
+						<form class="col s12">
+							<div class="row">
+								<div class="input-field col s6">
+									<input id="first_name" type="text" class="validate"> <label
+										for="first_name">First Name</label>
+								</div>
+								<div class="input-field col s6">
+									<input id="last_name" type="text" class="validate"> <label
+										for="last_name">Last Name</label>
+								</div>
+							</div>
 
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Confirmação de Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="text" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-    </form>
-  </div>
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="password" type="password" class="validate">
+									<label for="password">Password</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="password" type="password" class="validate">
+									<label for="password">Confirmação de Password</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="email" type="text" class="validate"> <label
+										for="email">Email</label>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
 				<center>
 					<div class="card-action">
@@ -67,6 +68,12 @@
 				</center>
 			</div>
 		</div>
-	</div>  
+	</div>
+	<div id="figura1">
+		<img alt="imagem" src="uni.png">
+	</div>
+	<div id="figura2">
+		<img alt="imagem" src="uni.png">
+	</div>
 </body>
 </html>
