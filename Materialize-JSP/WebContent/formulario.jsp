@@ -58,7 +58,7 @@
 								com imagem</p>
 						</div>
 						<div class="card-action">
-							<a href="index.jsp">Anterior</a> <a href="form.jsp">Próxima</a>
+							<a href="index.jsp">Anterior</a> <a href="formularioComp.jsp">Próxima</a>
 						</div>
 					</div>
 				</div>
