@@ -13,15 +13,16 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <title>Formulário</title>
 </head>
 <body>
-	<div id="center" class="row">
+	<div id="form" class="row">
 		<form class="col s10">
 			<div class="row">
 				<div class="input-field col s6">
-					<input placeholder="Placeholder" id="first_name" type="text"
-						class="validate"> <label for="first_name">Nome</label>
+					<input id="first_name" type="text" class="validate"> <label
+						for="first_name">Nome</label>
 				</div>
 				<div class="input-field col s6">
 					<input id="last_name" type="text" class="validate"> <label
@@ -40,17 +41,14 @@
 						for="email">Email</label>
 				</div>
 			</div>
+
+			<h5>Estatus de Cadastro</h5>
+			<div class="progress">
+				<div class="determinate" style="width: 50%"></div>
+			</div>
+
 		</form>
 	</div>
-
-
-
-
-	<div id="center" class="progress">
-		<div class="determinate" style="width: 50%"></div>
-	</div>
-
-
 
 </body>
 </html>
