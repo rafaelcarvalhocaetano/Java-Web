@@ -4,6 +4,9 @@
 <html>
 <head>
 
+<link rel="stylesheet" type="text/css" href="resources/css/estilo.css" />
+
+
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
@@ -17,20 +20,49 @@
 </head>
 <body>
 	<form action="">
-		<div class="row">
-			<div class="col s12 m6">
-				<div class="card blue-grey darken-1">
-					<div class="card-content white-text">
-						<span class="card-title">Testando Cards</span>
-						<p>Componentes de Cards servem para comport uma informação com imagem</p>
-					</div>
-					<div class="card-action">
-						<a href="index.jsp">Anterior</a> <a href="form.jsp">Próxima</a>
+
+		<ul class="collection">
+			<li class="collection-item avatar"><img src="images/yuna.jpg"
+				alt="" class="circle"> <span class="title">Title</span>
+				<p>
+					First Line <br> Second Line
+				</p> <a href="#!" class="secondary-content"><i
+					class="material-icons">grade</i></a></li>
+			<li class="collection-item avatar"><i
+				class="material-icons circle">folder</i> <span class="title">Title</span>
+				<p>
+					First Line <br> Second Line
+				</p> <a href="#!" class="secondary-content"><i
+					class="material-icons">grade</i></a></li>
+			<li class="collection-item avatar"><i
+				class="material-icons circle green">insert_chart</i> <span
+				class="title">Title</span>
+				<p>
+					First Line <br> Second Line
+				</p> <a href="#!" class="secondary-content"><i
+					class="material-icons">grade</i></a></li>
+			<li class="collection-item avatar"><i
+				class="material-icons circle red">play_arrow</i> <span class="title">Title</span>
+				<p>
+					First Line <br> Second Line
+				</p> <a href="#!" class="secondary-content"><i
+					class="material-icons">grade</i></a></li>
+		</ul>
+
+			<div id="center" class="row">
+				<div class="col s12 m6">
+					<div class="card blue-grey darken-1">
+						<div class="card-content white-text">
+							<span class="card-title">Testando Cards</span>
+							<p>Componentes de Cards servem para comport uma informação
+								com imagem</p>
+						</div>
+						<div class="card-action">
+							<a href="index.jsp">Anterior</a> <a href="form.jsp">Próxima</a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-
 	</form>
 
 </body>
