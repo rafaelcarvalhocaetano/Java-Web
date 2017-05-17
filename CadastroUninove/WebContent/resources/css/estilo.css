@@ -8,8 +8,8 @@ body{
 	background-color: #041A27;
 }
 #figura1{
-	margin-top: -10%;
-	margin-right: 20%;
-	margin-left: 10%;
-	
+	margin: -50% 0 10% 10%;
+}
+#figura2{
+	margin: -50% 0 10% 40%;
 }

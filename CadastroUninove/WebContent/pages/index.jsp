@@ -8,18 +8,26 @@
 <script type="text/javascript" src="resources/javascript/efeitor.js"></script>
 <!-- Meu css -->
 <link rel="stylesheet" href="resources/css/estilo.css">
+<!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous"></script>
+
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
 <!-- Compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 
 <!-- Compiled and minified JavaScript -->
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>Cadastro</title>
 </head>
 <body>
@@ -62,18 +70,19 @@
 					</div>
 				</div>
 				<center>
-					<div class="card-action">
-						<a href="#">Sair</a> <a href="#">Cadastrar</a>
+					<div class="card-action">					
+					<a class="waves-effect waves-light btn-large"><i class="material-icons left">perm_identity</i>Cadastrar</a>
+
+					<a class="waves-effect waves-light btn-large"><i class="material-icons left"></i>Entrar</a>
 					</div>
 				</center>
 			</div>
 		</div>
 	</div>
-	<div id="figura1">
-		<img alt="imagem" src="uni.png">
+	<div>
+		<img id="figura1" alt="imagem" src="uni.png"> <img id="figura2"
+			alt="imagem" src="uni.png">
 	</div>
-	<div id="figura2">
-		<img alt="imagem" src="uni.png">
-	</div>
+	
 </body>
 </html>
