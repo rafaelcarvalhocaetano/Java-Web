@@ -25,7 +25,7 @@
 	<form action="pages/dados.jsp" method="post">
 	
     
-    <div class="col s12 m2">
+    <div id="cor" class="col s12 m2">
       <p class="z-depth-3">z-depth-3</p>
     </div>
     
