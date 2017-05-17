@@ -9,13 +9,13 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 
 <!-- Compiled and minified JavaScript -->
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Componentes Materialize</title>
 </head>
 <body>
+<form action="formulario.jsp" method="post">
 	<center>
 		<h4>MENU</h4>
 	</center>
@@ -30,12 +30,12 @@
 		</ul>
 	</div>
 	</nav>
-
+	<br>
 
 	<center>
-		<a class="waves-effect waves-light btn-large">PRÓXIMO</a>
+		<button class="btn waves-effect waves-light" type="submit" name="action">PRÓXIMO</button>
 	</center>
 
-
+</form>
 </body>
 </html>
