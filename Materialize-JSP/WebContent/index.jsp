@@ -4,6 +4,7 @@
 <html>
 <head>
 
+<script type="text/javascript" src="resources/js/efeito.js"></script>
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
@@ -30,33 +31,12 @@
 				<li><a href="#">Projects</a></li>
 			</ul>
 		</div>
+
 		</nav>
 		<br>
-
-		<div class="carousel">
-			<a class="carousel-item" href="#one!"><img
-				src="http://lorempixel.com/250/250/nature/1"></a> <a
-				class="carousel-item" href="#two!"><img
-				src="http://lorempixel.com/250/250/nature/2"></a> <a
-				class="carousel-item" href="#three!"><img
-				src="http://lorempixel.com/250/250/nature/3"></a> <a
-				class="carousel-item" href="#four!"><img
-				src="http://lorempixel.com/250/250/nature/4"></a> <a
-				class="carousel-item" href="#five!"><img
-				src="http://lorempixel.com/250/250/nature/5"></a>
-		</div>
-
-
-
-
-
-
-
-		<center>
-			<button class="btn waves-effect waves-light" type="submit"
-				name="action">PRÓXIMO</button>
-		</center>
-
 	</form>
+
+	
+
 </body>
 </html>
