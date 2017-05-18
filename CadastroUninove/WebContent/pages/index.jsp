@@ -36,11 +36,11 @@
 </head>
 <body>
 	<div class="row" id="card">
-		<div class="col m6">
+		<div class="col m5.5">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
 					<div class="row">
-						<form class="col s12" method="post" action="pages/view.jsp">
+						<form class="col s12" method="post" action="pages/dadosConfirmar.jsp">
 							<div class="row">
 								<div class="input-field col s6">
 									<input id="first_name" type="text" class="validate"> <label
@@ -64,6 +64,7 @@
 									<label for="password">Confirmação de Password</label>
 								</div>
 							</div>
+							
 							<div class="row">
 								<div class="input-field col s12">
 									<input id="email" type="text" class="validate"> <label
@@ -71,17 +72,15 @@
 								</div>
 							</div>
 							
-							<div class="card-action col m20 s12">
+							<div class="card-action">				
+								<a class="waves-effect waves-light btn" href="#">Entrar</a>
 								
-							<button id="btn" class="btn waves-effect waves-light" type="submit">
-								<i class="material-icons left">input</i>Cadastrar
-							</button>
-							<button id="btn2" class="btn waves-effect waves-light" type="submit">
-										<i class="material-icons left">input</i>Entrar
-							</button>
+								<button id="botao" class="btn waves-effect waves-light" type="submit">
+									<i class="material-icons left">input</i>Cadastro
+								</button>
 							</div>
-							
 						</form>
+						
 					</div>
 				</div>
 			</div>
@@ -92,6 +91,5 @@
 			alt="imagem" src="uni.png">
 	</div>
 	
-
 </body>
 </html>

@@ -1,22 +1,20 @@
 @CHARSET "ISO-8859-1";
 
 #card{
-	margin-left: 28%;
+	margin-left: 35%;
 	margin-top: 1%;
 }
 body{
 	background-color: #041A27;
 }
+
 #figura1{
 	margin: -50% 0 10% 10%;
 }
 #figura2{
 	margin: -50% 0 10% 40%;
 }
-#btn{
-	float:left;
-}
-#btn2{
-	float: right;
-	
+#en{
+	color: #FFF;
+	font-style: italic;
 }
