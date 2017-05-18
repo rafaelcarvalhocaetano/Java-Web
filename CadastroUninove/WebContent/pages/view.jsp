@@ -86,10 +86,5 @@
 			</div>
 		</div>
 	</div>
-	<div>
-		<img id="figura1" alt="imagem" src="uni.png"> <img id="figura2"
-			alt="imagem" src="uni.png">
-	</div>
-	
 </body>
 </html>
