@@ -44,24 +44,24 @@
 							<div class="row">
 								<div class="input-field col s6">
 									<input id="first_name" type="text" class="validate"> <label
-										for="first_name">First Name</label>
+										for="first_name">Primeiro Nome</label>
 								</div>
 								<div class="input-field col s6">
 									<input id="last_name" type="text" class="validate"> <label
-										for="last_name">Last Name</label>
+										for="last_name">Segundo Nome</label>
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="input-field col s12">
 									<input id="password" type="password" class="validate">
-									<label for="password">Password</label>
+									<label for="password">Senha</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
 									<input id="password" type="password" class="validate">
-									<label for="password">Confirmação de Password</label>
+									<label for="password">Confirmação de Senha</label>
 								</div>
 							</div>
 							
@@ -72,12 +72,11 @@
 								</div>
 							</div>
 							
-							<div class="card-action">				
+							<div class="card-action">	
+							<center>			
 								<a class="waves-effect waves-light btn" href="pages/ambiente">Entrar</a>
-								
-								<button id="botao" class="btn waves-effect waves-light" type="submit">
-									<i class="material-icons left">input</i>Cadastro
-								</button>
+								<a class="waves-effect waves-light btn" href="pages/ambiente">Entrar</a>
+							</center>
 							</div>
 						</form>
 						
@@ -88,9 +87,7 @@
 	</div>
 	<div>
 		<img id="figura1" alt="imagem" src="img/uni.png">
-		<img id="figura2" alt="imagem" src="img/uni.png">
-			
+		<img id="figura2" alt="imagem" src="img/uni.png">	
 	</div>
-	
 </body>
 </html>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,61 +35,23 @@
 <title>Cadastro</title>
 </head>
 <body>
-	<div class="row" id="painel">
-		<div class="col m5.5">
+	<div class="row" id="init">
+		<div class="col s6 m6">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
-					<div class="row">
-						<form class="col s12" method="post" action="pages/dadosConfirmar.jsp">
-							<div class="row">
-								<div class="input-field col s6">
-									<input id="first_name" type="text" class="validate"> <label
-										for="first_name">First Name</label>
-								</div>
-								<div class="input-field col s6">
-									<input id="last_name" type="text" class="validate"> <label
-										for="last_name">Last Name</label>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="input-field col s12">
-									<input id="password" type="password" class="validate">
-									<label for="password">Password</label>
-								</div>
-							</div>
-							<div class="row">
-								<div class="input-field col s12">
-									<input id="password" type="password" class="validate">
-									<label for="password">Confirmação de Password</label>
-								</div>
-							</div>
-							
-							<div class="row">
-								<div class="input-field col s12">
-									<input id="email" type="text" class="validate"> <label
-										for="email">Email</label>
-								</div>
-							</div>
-							
-							<div class="card-action">				
-								<a class="waves-effect waves-light btn" type="submit">Entrar</a>
-								<a class="waves-effect waves-light btn" href="cadastro.jsp">Cadastrar</a>
-								
-								
-							</div>
-						</form>
-						
-					</div>
+					<span class="card-title">Ambiente de Acesso e Cadastros</span>
+					<p>Bem vindo ao Ambiente de Acesso a Cadastro</p>
+					<p>Ambiente onde o usuário testa nosso sistema através de cadastro que são armazenados no banco de dados MySql</p>
+				</div>
+				
+				<div class="card-action">
+				<center>
+					<a class="waves-effect waves-light btn" href="cadastro.jsp">Cadastrar</a>
+					<a class="waves-effect waves-light btn" href="ambiente.jsp">Entrar</a>
+				</center>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div>
-		<img id="figura1" alt="imagem" src="img/uni.png">
-		<img id="figura2" alt="imagem" src="img/uni.png">
-			
-	</div>
-	
 </body>
 </html>

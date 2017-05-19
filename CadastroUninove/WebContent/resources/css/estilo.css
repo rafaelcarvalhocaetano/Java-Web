@@ -3,6 +3,15 @@
 	margin: 0;
 	padding: 0;
 }
-#painel{
-	margin-left: 35%;
+body{
+	background-color: #041A27;
 }
+#painel{
+	margin-top: 3%;
+	margin-left: 33%;
+}
+#init{
+	margin-top: 10%;
+	margin-left: 33%;
+}
+
