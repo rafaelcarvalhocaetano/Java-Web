@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,7 +35,7 @@
 <title>Cadastro</title>
 </head>
 <body>
-	<div class="row" id="card">
+	<div class="row" id="painel">
 		<div class="col m5.5">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
@@ -73,11 +73,10 @@
 							</div>
 							
 							<div class="card-action">				
-								<a class="waves-effect waves-light btn" href="pages/ambiente">Entrar</a>
+								<a class="waves-effect waves-light btn" type="submit">Entrar</a>
+								<a class="waves-effect waves-light btn" href="cadastro.jsp">Cadastrar</a>
 								
-								<button id="botao" class="btn waves-effect waves-light" type="submit">
-									<i class="material-icons left">input</i>Cadastro
-								</button>
+								
 							</div>
 						</form>
 						
@@ -87,8 +86,9 @@
 		</div>
 	</div>
 	<div>
-		<img id="figura1" alt="imagem" src="uni.png"> <img id="figura2"
-			alt="imagem" src="uni.png">
+		<img id="figura1" alt="imagem" src="img/uni.png">
+		<img id="figura2" alt="imagem" src="img/uni.png">
+			
 	</div>
 	
 </body>

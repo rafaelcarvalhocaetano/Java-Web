@@ -30,6 +30,11 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.babel.editor.rbeBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
@@ -39,5 +44,6 @@
 		<nature>org.jboss.tools.jst.web.kb.kbnature</nature>
 		<nature>org.jboss.tools.cdi.core.cdinature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+		<nature>com.jaspersoft.studio.babel.editor.rbeNature</nature>
 	</natures>
 </projectDescription>
