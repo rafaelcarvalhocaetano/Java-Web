@@ -37,23 +37,20 @@
 <title>Cadastro</title>
 </head>
 <body>
-	<div class="row" id="painel">
+			
+	
+   <div class="row" id="painel">
 		<div class="col m5.5">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
 					<div class="row">
 						<form class="col s12" method="post" action="pages/dadosConfirmar.jsp">
-							<div class="row">
+							
+							
 								<div class="input-field col s6">
-									<input id="first_name" type="text" class="validate"> <label
-										for="first_name">Primeiro Nome</label>
+									<label><p>tes</p></label>
 								</div>
-								<div class="input-field col s6">
-									<input id="last_name" type="text" class="validate"> <label
-										for="last_name">Segundo Nome</label>
-								</div>
-							</div>
-
+							
 							<div class="row">
 								<div class="input-field col s12">
 									<input id="password" type="password" class="validate">
@@ -91,5 +88,8 @@
 		<img id="figura1" alt="imagem" src="img/uni.png">
 		<img id="figura2" alt="imagem" src="img/uni.png">	
 	</div>
+     
+    
+	
 </body>
 </html>
