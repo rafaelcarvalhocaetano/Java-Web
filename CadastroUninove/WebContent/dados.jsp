@@ -4,8 +4,10 @@
 <html>
 <head>
 
-<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah"
-	rel="stylesheet">
+<!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
 <!-- Meu JS -->
 <script type="text/javascript" src="resources/javascript/efeitor.js"></script>
@@ -15,16 +17,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous"></script>
-
-<!--Import Google Icon Font-->
-<link
-	href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do"
-	rel="stylesheet">
-
-<!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
-	media="screen,projection" />
-
+	
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
@@ -40,26 +33,34 @@
 <title>Cadastro</title>
 </head>
 <body>
- <ul class="collection">
-    
-    <li class="collection-item avatar">
-      <i class="material-icons circle">folder</i>
-      <span class="title">Nome</span>
-      <p>First Line</p>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle green">insert_chart</i>
-      <span class="title">Title</span>
-      <p>First Line     </p>
-     
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle red">play_arrow</i>
-      <span class="title">Title</span>
-      <p>First Line</p>
-    </li>
-  </ul>
-	
 
+<div class="row" id="in">
+		<div class="col m9">
+			<div class="card blue-grey darken-1">
+				<div class="card-content white-text">
+					
+						<form method="post" action="pages/dadosConfirmar.jsp">
+							
+							<div class="row">
+								<p>NOME: </p>
+							</div>
+							<div class="row">
+								<p>SOBRE NOME: </p>
+							</div>
+							<div class="row">
+								<p>EMAIL: </p>
+							</div>
+													
+							<div class="card-action">	
+							<center>			
+								<a class="waves-effect waves-light btn" href="dados.jsp">Confirmar</a>
+							</center>
+							</div>
+						</form>
+					</div>
+				
+			</div>
+		</div>
+	</div>
 </body>
 </html>
