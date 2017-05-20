@@ -5,14 +5,14 @@
 <head>
 
 <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
 <!-- Meu JS -->
 <script type="text/javascript" src="resources/javascript/efeitor.js"></script>
 <!-- Meu css -->
-<link rel="stylesheet" href="resources/css/estilo.css">
+<link rel="stylesheet" href="resources/css/dados.css">
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
@@ -34,31 +34,31 @@
 </head>
 <body>
 
-<div class="row" id="in">
-		<div class="col m9">
+<div id="dados" class="row offset-s9">
+		<div class="col m6">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
 					
 						<form method="post" action="pages/dadosConfirmar.jsp">
 							
 							<div class="row">
-								<p>NOME: </p>
+								<p>NOME: <% %></p>
+							</div>
+							
+							<div class="row">
+								<p>SOBRE NOME: <% %></p>
 							</div>
 							<div class="row">
-								<p>SOBRE NOME: </p>
-							</div>
-							<div class="row">
-								<p>EMAIL: </p>
+								<p>EMAIL: <% %></p>
 							</div>
 													
 							<div class="card-action">	
 							<center>			
-								<a class="waves-effect waves-light btn" href="dados.jsp">Confirmar</a>
+								<a class="waves-effect waves-light btn" href="ambiente.jsp">Confirmar</a>
 							</center>
 							</div>
 						</form>
 					</div>
-				
 			</div>
 		</div>
 	</div>
