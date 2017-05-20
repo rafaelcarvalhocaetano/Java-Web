@@ -30,7 +30,7 @@
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>AMBIENTE</title>
+<title>LOGIN</title>
 </head>
 <body>
 
@@ -41,7 +41,8 @@
 					
 						<form method="post" action="pages/dadosConfirmar.jsp">
 							
-							WELCOME TO AMBIENTE
+							
+							LOGIN
 													
 							<div class="card-action">	
 							<center>			

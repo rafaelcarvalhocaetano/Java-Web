@@ -30,7 +30,7 @@
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Cadastro</title>
+<title>DADOS</title>
 </head>
 <body>
 
@@ -54,7 +54,7 @@
 													
 							<div class="card-action">	
 							<center>			
-								<a class="waves-effect waves-light btn" href="ambiente.jsp">Confirmar</a>
+								<a class="waves-effect waves-light btn" href="login.jsp">Confirmar</a>
 							</center>
 							</div>
 						</form>
