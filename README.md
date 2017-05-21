@@ -4,6 +4,9 @@
 - [Projetos Java Web com JSP Bootstrap e JQuery](#projetos-java-web-com-jsp-bootstrap-e-jquery)
   - [JSP Bhaskara](#jsp-bhaskara)
   - [JSP Cookies e Sessões](#jsp-cookies-e-sessões)
+  - [Materialize - JSP](#materialize---jsp)
+  - [User Authentication](#user-authentication)
+  - [Cadastro Uninove](#cadastro-uninove)
 
 
 Acesse o link http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html
@@ -290,4 +293,6 @@ Imagem do calculo final.
 <img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/Bhaskara/WebContent/resources/img/bhaskara%202.png"/>
 
 ### JSP Cookies e Sessões
-
+### Materialize - JSP
+### User Authentication
+### Cadastro Uninove
