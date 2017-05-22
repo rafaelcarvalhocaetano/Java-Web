@@ -60,7 +60,36 @@ public class CadastroDAO {
 		
 		ps.executeUpdate();
 	}
-	/*
+	
+	public void excluir(Cadastro c) throws SQLException{
+		
+		StringBuilder sql = new StringBuilder();
+		
+		sql.append("DELETE FROM cadastro ");
+		sql.append("WHERE id = ? ");
+		
+		Connection conexao = ConexaoFactory.conectar();
+		PreparedStatement ps = conexao.prepareStatement(sql.toString());
+		
+		ps.setLong(1, c.getId());
+		
+		ps.executeUpdate();
+	}
+	
+	/*salvar
+	public static void main(String[] args) throws SQLException {
+		
+		Cadastro cad = new Cadastro();
+		
+		cad.setNome("Heitor Ribeiro Braz");
+		cad.setRa("33333333");
+		cad.setSenha("heitor");
+		
+		CadastroDAO dao = new CadastroDAO();
+		dao.salvar(cad);
+	}
+	*/	
+	/* update
 	public static void main(String[] args) throws SQLException {
 		
 		Cadastro cad = new Cadastro();
@@ -74,5 +103,18 @@ public class CadastroDAO {
 		dao.editar(cad);
 	}
 	*/
+	
+	/*excluir
+	public static void main(String[] args) throws SQLException {
+		
+		Cadastro c = new Cadastro();
+		c.setId(2L);
+		
+		CadastroDAO dao = new CadastroDAO();
+		dao.excluir(c);
+	}
+	*/
+	
+	
 	
 }
