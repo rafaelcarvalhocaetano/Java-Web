@@ -2,7 +2,9 @@ package br.com.uninove.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import br.com.uninove.domain.Cadastro;
 import br.com.uninove.factory.ConexaoFactory;
@@ -75,6 +77,41 @@ public class CadastroDAO {
 		
 		ps.executeUpdate();
 	}
+	public ArrayList<Cadastro> listar() throws SQLException{
+		
+		StringBuilder sql = new StringBuilder();
+		
+		sql.append("SELECT c.id, c.nome, c.ra, c.senha ");
+		sql.append("FROM cadastro c");
+		
+		Connection conexao = ConexaoFactory.conectar();
+		PreparedStatement ps = conexao.prepareStatement(sql.toString());
+		
+		ResultSet resultado = ps.executeQuery();
+		
+		ArrayList<Cadastro> itens = new ArrayList<Cadastro>();
+		
+		while(resultado.next()){
+			
+			Cadastro ca = new Cadastro();
+			
+			ca.setId(resultado.getLong("c.id"));
+			ca.setNome(resultado.getString("c.nome"));
+			ca.setRa(resultado.getString("c.ra"));
+			ca.setSenha(resultado.getString("c.senha"));
+			
+			itens.add(ca);
+		}
+		
+		return itens;
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 	/*salvar
 	public static void main(String[] args) throws SQLException {
