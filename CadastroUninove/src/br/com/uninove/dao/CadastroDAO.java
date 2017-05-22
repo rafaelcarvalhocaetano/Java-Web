@@ -13,6 +13,12 @@ public class CadastroDAO {
 	
 	public void buscar(){
 		
+		try {
+			
+			
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		}
 		
 		
 	}
@@ -35,5 +41,38 @@ public class CadastroDAO {
 		ps.executeUpdate();
 		
 	}
+	public void editar(Cadastro c) throws SQLException{
+		
+		StringBuilder sql = new StringBuilder();
+		
+		sql.append("UPDATE cadastro ");
+		sql.append("SET nome = ?, ra = ?, senha = ? ");
+		sql.append("WHERE id = ? ");
+		
+		Connection conexao = ConexaoFactory.conectar();
+		
+		PreparedStatement ps = conexao.prepareStatement(sql.toString());
+		
+		ps.setString(1, c.getNome());
+		ps.setString(2, c.getRa());
+		ps.setString(3, c.getSenha());
+		ps.setLong(4, c.getId());
+		
+		ps.executeUpdate();
+	}
+	/*
+	public static void main(String[] args) throws SQLException {
+		
+		Cadastro cad = new Cadastro();
+		
+		cad.setId(2L);
+		cad.setNome("Rosemeire Ribeiro Braz");
+		cad.setRa("111222333");
+		cad.setSenha("rose");
+		
+		CadastroDAO dao = new CadastroDAO();
+		dao.editar(cad);
+	}
+	*/
 	
 }
