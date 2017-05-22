@@ -11,19 +11,8 @@ import br.com.uninove.factory.ConexaoFactory;
 
 public class CadastroDAO {
 	
-	//salvar, editar, excluir, buscar,
+	//salvar, editar, excluir, listar, CRUD....
 	
-	public void buscar(){
-		
-		try {
-			
-			
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-		}
-		
-		
-	}
 	public void salvar(Cadastro cad) throws SQLException{
 		
 		StringBuilder sql = new StringBuilder();
@@ -151,6 +140,25 @@ public class CadastroDAO {
 		dao.excluir(c);
 	}
 	*/
+	/*Listar
+	public static void main(String[] args) throws SQLException {
+		
+		CadastroDAO dao = new CadastroDAO();
+		
+		ArrayList<Cadastro> lista = dao.listar();
+		
+		for (Cadastro cadastro : lista) {
+			
+			System.out.println("Código do cadastro: " + cadastro.getId());
+			System.out.println("Nome do Aluno: " + cadastro.getNome());
+			System.out.println("RA do Aluno: " + cadastro.getRa());
+			System.out.println("Senha: " + cadastro.getSenha());
+			System.out.println();
+		}
+		
+	}
+	*/
+
 	
 	
 	
