@@ -23,6 +23,17 @@ public class ConexaoFactory {
 		
 		return connection;
 	}
+	/*
+	public static void main(String [] args){
+		try {
+			Connection con = ConexaoFactory.conectar();
+			System.out.println("Conectado");
+		} catch (Exception e) {
+			System.out.println("Não Conectado");
+			e.printStackTrace();
+		}
+	}
+	*/
 	
 	
 }

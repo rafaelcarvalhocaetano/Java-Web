@@ -32,7 +32,8 @@ public class CadastroDAO {
 		ps.setString(2, cad.getRa());
 		ps.setString(3, cad.getSenha());
 		
-		ps.executeQuery();
+		ps.executeUpdate();
+		
 	}
-
+	
 }
