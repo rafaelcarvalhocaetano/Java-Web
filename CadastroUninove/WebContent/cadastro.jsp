@@ -32,7 +32,7 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html charset=utf-8">
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -50,7 +50,6 @@
 									<input id="first_name" type="text" class="validate"> <label id="nome">Nome</label>
 								</div>
 							</div>
-
 							<div class="row">
 								<div class="input-field col s12">
 									<input id="password" type="password" class="validate">
@@ -63,14 +62,12 @@
 									<label id="cSenha">Confirmação de Senha</label>
 								</div>
 							</div>
-							
 							<div class="row">
 								<div class="input-field col s12">
 									<input id="email" type="text" class="validate"> <label
 										id="email">Email</label>
 								</div>
 							</div>
-							
 							<div class="card-action">	
 							<center>			
 								<a class="waves-effect waves-light btn" href="index.jsp">Voltar</a>
@@ -78,7 +75,6 @@
 							</center>
 							</div>
 						</form>
-						
 					</div>
 				</div>
 			</div>
