@@ -28,16 +28,16 @@ public class CalculandoBhaskara {
 		this.c = c;
 	}
 	
-	public double delta() {
+	public double getDelta() {
 
 		try {
-			double valorA, valorB, valorC;
+			double da, db, dc;
 
-			valorA = Double.parseDouble(a);
-			valorB = Double.parseDouble(b);
-			valorC = Double.parseDouble(c);
+			da = Double.parseDouble(a);
+			db = Double.parseDouble(b);
+			dc = Double.parseDouble(c);
 
-			double delta = (valorB * valorB) - 4 * valorA * valorC;
+			double delta = (db * db) - 4 * da * dc;
 			return delta;
 
 		} catch (Exception e) {
@@ -47,18 +47,19 @@ public class CalculandoBhaskara {
 
 	}
 	
-	public String raizPositiva(){
+	public String getRaizPositiva(){
 		try {
-			double valorA, valorB;
+			double da, db, dc;
 
-			valorA = Double.parseDouble(a);
-			valorB = Double.parseDouble(b);
-			
-			if(delta() < 0 ){
+			da = Double.parseDouble(a);
+			db = Double.parseDouble(b);
+			dc = Double.parseDouble(c);
+
+			if(getDelta() < 0 ){
 				return "Delta é negativo";
 			}else{
 				double raizPositiva;
-				raizPositiva = ((-valorB + Math.sqrt(delta())) / (2 * valorA));
+				raizPositiva = ((-db + Math.sqrt(getDelta())) / (2 * da));
 				return String.valueOf(raizPositiva);
 			}
 
@@ -67,18 +68,19 @@ public class CalculandoBhaskara {
 		}
 
 	}
-	public String raizNegativa(){
+	public String getRaizNegativa(){
 		try {
-			double valorA, valorB;
+			double da, db, dc;
 
-			valorA = Double.parseDouble(a);
-			valorB = Double.parseDouble(b);
+			da = Double.parseDouble(a);
+			db = Double.parseDouble(b);
+			dc = Double.parseDouble(c);
 			
-			if(delta() < 0 ){
+			if(getDelta() < 0 ){
 				return "Delta é negativo";
 			}else{
 				double raizPositiva;
-				raizPositiva = (( -valorB - Math.sqrt(delta()) ) / (2 * valorA));
+				raizPositiva = (( -db - Math.sqrt(getDelta()) ) / (2 * da));
 				return String.valueOf(raizPositiva);
 			}
 		} catch (Exception e) {

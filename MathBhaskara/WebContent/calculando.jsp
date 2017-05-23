@@ -13,21 +13,21 @@
 
 <jsp:setProperty property="a" name="cal" value='<%= request.getParameter("a") %>'/>
 <jsp:setProperty property="b" name="cal" value='<%= request.getParameter("b") %>'/>
-<jsp:setProperty property="c" name="cal" value='<%= request.getParameter("b") %>'/>
+<jsp:setProperty property="c" name="cal" value='<%= request.getParameter("c") %>'/>
 
 <div id="pos">
 <div>
 	<h1>Resposta da calculadora de Bhaskara</h1>
 </div>
-	<h4>Resposta de : <%=request.getParameter("a")%>x² +<%=request.getParameter("b")%>x +<%=request.getParameter("c")%></h4>
+	<h4>Resposta de : <%=request.getParameter("a")%>x² <%=request.getParameter("b")%>x <%=request.getParameter("c")%></h4>
 <div>
-	<p>Delta: <%= cal.delta() %></p>
+	<p>Delta: <% out.print(cal.getDelta()); %></p>
 </div>
 <div>
-	<p>Raiz Positiva: <%= cal.raizPositiva() %></p>
+	<p>Raiz Positiva: <% out.print(cal.getRaizPositiva()); %></p>
 </div>
 <div>
-	<p>Raiz Negativa: <%= cal.raizNegativa()%></p>
+	<p>Raiz Positiva: <% out.print(cal.getRaizNegativa()); %></p>
 </div>
 </div>
 </body>

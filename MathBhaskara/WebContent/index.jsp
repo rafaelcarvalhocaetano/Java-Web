@@ -12,9 +12,9 @@
 
 <h3>Calculo de Bhaskara</h3>
 <div id="info">
-A: <input type="text" name="a" id="valorA">
-B: <input type="text" name="b" id="valorB">
-C: <input type="text" name="c" id="valorC">
+A: <input type="text" name="a">
+B: <input type="text" name="b">
+C: <input type="text" name="c">
 </div>
 <div>
 <button id="btn" type="submit">Verificar</button>
