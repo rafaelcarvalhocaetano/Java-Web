@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<form action="">
+<form action="InserirContato" method="post">
 
 Nome: <input type="text" name="nome">
 <br>

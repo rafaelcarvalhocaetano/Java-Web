@@ -1,4 +1,4 @@
-package br.com.agenda.action;
+package action;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class InserirContato
+ * Servlet implementation class Dados
  */
-@WebServlet("/InserirContato")
-public class InserirContato extends HttpServlet {
+@WebServlet("/Dados")
+public class Dados extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InserirContato() {
+    public Dados() {
         super();
         // TODO Auto-generated constructor stub
     }
