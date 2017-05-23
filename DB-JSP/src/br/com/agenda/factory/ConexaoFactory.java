@@ -25,6 +25,7 @@ public class ConexaoFactory {
 		return connection;
 	}
 	
+	@SuppressWarnings("null")
 	public void xConexao(){
 		try {
 			

@@ -64,7 +64,7 @@ public class InserirContato extends HttpServlet {
 			
 			AgendaDAO dao = new AgendaDAO();
 			dao.inserir(contato);
-			System.out.println("Salvo com sucesso");
+			System.out.println("Salvo com sucesso, conexão sendo fechada ....");
 		} catch (SQLException e) {
 			System.out.println("Erro com a conexao no servlets");
 			e.printStackTrace();
