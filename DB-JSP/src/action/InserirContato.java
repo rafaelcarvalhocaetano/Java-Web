@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -69,6 +70,9 @@ public class InserirContato extends HttpServlet {
 			System.out.println("Erro com a conexao no servlets");
 			e.printStackTrace();
 		}
+		
+		RequestDispatcher rd = request.getRequestDispatcher("listarContatos.jsp");
+		rd.forward(request, response);
 
 	}
 

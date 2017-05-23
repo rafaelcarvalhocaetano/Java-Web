@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="br.com.agenda.model.Contato"%>
 <%@page import="java.util.List"%>
 <%@page import="br.com.agenda.dao.AgendaDAO"%>
@@ -27,18 +29,24 @@
 			<th>Estado</th>
 		</tr>
 		<%
-			
+			for(Contato c: contatos){
+				
+				String fdata = new SimpleDateFormat("dd/MM/yyyy").format(c.getDataNascimento());
 		%>
 		<tr>
-			<td>Codigo</td>
-			<td>Nome</td>
-			<td>Telefone</td>
-			<td>Celular</td>
-			<td>Data de Nascimento</td>
-			<td>Endereço</td>
-			<td>Cidade</td>
-			<td>Estado</td>
+			<td><%= c.getCodigo() %></td>
+			<td><%= c.getNome() %></td>
+			<td><%= c.getTelefone() %></td>
+			<td><%= c.getCelular() %></td>
+			<td><%= fdata %></td>
+			<td><%= c.getEndereco() %></td>
+			<td><%= c.getCidade() %></td>
+			<td><%= c.getEstado() %></td>
 		</tr>
+		
+		<%  
+			}
+		%>
 
 	</table>
 
