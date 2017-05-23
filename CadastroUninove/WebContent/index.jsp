@@ -48,8 +48,8 @@
 				</div>
 				<div class="card-action">
 				<center>
-					<a class="waves-effect waves-light btn" href="cadastro.jsp">Cadastrar</a>
-					<a class="waves-effect waves-light btn" href="login.jsp">Entrar</a>
+					<a class="waves-effect waves-light btn" href="cadastro.jsp" name="cadastrar">Cadastrar</a>
+					<a class="waves-effect waves-light btn" href="login.jsp" name="entrar">Entrar</a>
 				</center>
 				</div>
 			</div>

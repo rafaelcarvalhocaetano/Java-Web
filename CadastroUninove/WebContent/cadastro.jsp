@@ -1,5 +1,7 @@
+<%@page import="br.com.uninove.bean.CadastroBean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -34,6 +36,7 @@
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<jsp:useBean id="db" scope="page" class="br.com.uninove.bean.CadastroBean"></jsp:useBean>
 <title>Cadastro</title>
 </head>
 <body>
@@ -44,33 +47,28 @@
 					<div class="row">
 						<form class="col s12" method="post" action="pages/dadosConfirmar.jsp">
 							<div class="row">
-								<div class="input-field col s6">
-									<input id="first_name" type="text" class="validate"> <label
-										for="first_name">Primeiro Nome</label>
-								</div>
-								<div class="input-field col s6">
-									<input id="last_name" type="text" class="validate"> <label
-										for="last_name">Segundo Nome</label>
+								<div class="input-field col s12">
+									<input id="first_name" type="text" class="validate"> <label id="nome">Nome</label>
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="input-field col s12">
 									<input id="password" type="password" class="validate">
-									<label for="password">Senha</label>
+									<label id="senha">Senha</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
 									<input id="password" type="password" class="validate">
-									<label for="password">Confirmação de Senha</label>
+									<label id="cSenha" <% %>>Confirmação de Senha</label>
 								</div>
 							</div>
 							
 							<div class="row">
 								<div class="input-field col s12">
 									<input id="email" type="text" class="validate"> <label
-										for="email">Email</label>
+										id="email">Email</label>
 								</div>
 							</div>
 							
