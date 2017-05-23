@@ -36,14 +36,6 @@
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<jsp:useBean id="db" scope="page" class="br.com.uninove.bean.CadastroBean"></jsp:useBean>
-
-<jsp:setProperty property="first_name" name="db"/>
-<jsp:setProperty property="password" name="db"/>
-<jsp:setProperty property="cpassword" name="db"/>
-<jsp:setProperty property="email" name="db"/>
-
-
 <title>Cadastro</title>
 </head>
 <body>

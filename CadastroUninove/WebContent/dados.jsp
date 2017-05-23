@@ -39,7 +39,7 @@
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
 					
-						<form method="post" action="pages/dadosConfirmar.jsp">
+						<form method="post" action="ambiente.jsp">
 							
 							<div class="row">
 								<p>NOME: <% %></p>
