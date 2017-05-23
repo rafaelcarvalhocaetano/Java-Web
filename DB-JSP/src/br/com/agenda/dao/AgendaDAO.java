@@ -2,6 +2,7 @@ package br.com.agenda.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,9 +39,41 @@ public class AgendaDAO {
 	
 	public List<Contato> listarDados(){
 		
-		List contatos = new ArrayList<Contato>();
+		List<Contato> contatos = new ArrayList<>();
 		
-		
+		StringBuilder sql = new StringBuilder();
+		try {
+			
+			sql.append("SELECT c.codigo, c.nome, c.telefone, c.celular, c.dataNascimento, c.endereco, c.cidade, c.estado ");
+			sql.append("FROM Contato c ");
+			
+			Connection conexao = ConexaoFactory.conectar();
+			
+			PreparedStatement ps = conexao.prepareStatement(sql.toString());
+			
+			ResultSet resultado = ps.executeQuery();
+			
+			while(resultado.next()){
+				
+				Contato c = new Contato();
+				
+				c.setCodigo(resultado.getInt("c.codigo"));
+				c.setNome(resultado.getString("c.nome"));
+				c.setTelefone(resultado.getString("c.telefone"));
+				c.setCelular(resultado.getString("c.celular"));
+				c.setDataNascimento(resultado.getDate("c.dataNascimento"));
+				c.setEndereco(resultado.getString("c.endereco"));
+				c.setCidade(resultado.getString("c.cidade"));
+				c.setEstado(resultado.getString("c.estado"));
+				
+				contatos.add(c);
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Erro ao listar ....");
+		}
 		
 		
 		return contatos;
