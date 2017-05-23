@@ -37,6 +37,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <jsp:useBean id="db" scope="page" class="br.com.uninove.bean.CadastroBean"></jsp:useBean>
+
+<jsp:setProperty property="first_name" name="db"/>
+<jsp:setProperty property="password" name="db"/>
+<jsp:setProperty property="cpassword" name="db"/>
+<jsp:setProperty property="email" name="db"/>
+
+
 <title>Cadastro</title>
 </head>
 <body>
@@ -45,7 +52,7 @@
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
 					<div class="row">
-						<form class="col s12" method="post" action="pages/dadosConfirmar.jsp">
+						<form class="col s12" method="post" action="dados.jsp">
 							<div class="row">
 								<div class="input-field col s12">
 									<input id="first_name" type="text" class="validate"> <label id="nome">Nome</label>
@@ -60,8 +67,8 @@
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
-									<input id="password" type="password" class="validate">
-									<label id="cSenha" <% %>>Confirmação de Senha</label>
+									<input id="cpassword" type="password" class="validate">
+									<label id="cSenha">Confirmação de Senha</label>
 								</div>
 							</div>
 							
@@ -75,7 +82,7 @@
 							<div class="card-action">	
 							<center>			
 								<a class="waves-effect waves-light btn" href="index.jsp">Voltar</a>
-								<a class="waves-effect waves-light btn" href="dados.jsp">Confirmar</a>
+								<input type="submit" class="waves-effect waves-light btn" value="Confirmar"/>
 							</center>
 							</div>
 						</form>
