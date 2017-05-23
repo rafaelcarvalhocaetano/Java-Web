@@ -1,10 +1,10 @@
 package br.com.agenda.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
+import java.sql.Date;
 
 import br.com.agenda.factory.ConexaoFactory;
 import br.com.agenda.model.Contato;
@@ -25,8 +25,8 @@ public class AgendaDAO {
 		
 		ps.setString(1, contato.getNome());
 		ps.setString(2, contato.getTelefone());
-		ps.setString(3, contato.getCelular());
-		ps.setDate(4, (Date) contato.getDataNascimento());
+		ps.setString(3, contato.getCelular());		
+		ps.setDate(4, new Date(contato.getDataNascimento().getTime()) );
 		ps.setString(5, contato.getEndereco());
 		ps.setString(6, contato.getCidade());
 		ps.setString(7, contato.getEstado());
