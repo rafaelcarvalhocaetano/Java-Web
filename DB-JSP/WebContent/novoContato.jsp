@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>INFORMAÇÕES</title>
+<title>Agenda de Contatos</title>
 </head>
 <body>
 
