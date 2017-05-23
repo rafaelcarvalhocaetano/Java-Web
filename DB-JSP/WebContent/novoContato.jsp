@@ -10,16 +10,25 @@
 <title>Agenda de Contatos</title>
 </head>
 <body>
-<%
 
-Contato contato = new Contato();
-contato.setNome("Rafael");
+<form action="">
 
-
-
-
-
-%>
+Nome: <input type="text" name="nome">
+<br>
+Telefone: <input type="text" name="telefone">
+<br>
+Celular: <input type="text" name="celular">
+<br>
+Data de Nascimento: <input type="text" name="data">
+<br>
+Endereço: <input type="text" name="endereco">
+<br>
+Cidade: <input type="text" name="cidade">
+<br>
+Estado: <input type="text" name="estado">
+<br>
+<input type="submit" value="Salvar">
+</form>
 
 </body>
 </html>
