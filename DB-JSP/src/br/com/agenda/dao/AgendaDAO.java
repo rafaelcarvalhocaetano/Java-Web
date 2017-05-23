@@ -1,5 +1,6 @@
 package br.com.agenda.dao;
 
+import java.sql.PreparedStatement;
 import java.util.List;
 
 import br.com.agenda.model.Contato;
@@ -13,6 +14,7 @@ public class AgendaDAO {
 		sql.append("INSERT INTO contato ");
 		sql.append("(nome, telefone, celular, dataNascimento, endereco, cidade, estado) ");
 		sql.append("VALUES (?, ?, ?, ?, ?, ?, ?) ");
+		
 		
 	}
 	
