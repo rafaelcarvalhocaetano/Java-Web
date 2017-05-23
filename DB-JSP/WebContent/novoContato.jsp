@@ -19,7 +19,7 @@ Telefone: <input type="text" name="telefone">
 <br>
 Celular: <input type="text" name="celular">
 <br>
-Data de Nascimento: <input type="text" name="data">
+Data de Nascimento: <input type="text" name="dataNascimento">
 <br>
 Endereço: <input type="text" name="endereco">
 <br>
