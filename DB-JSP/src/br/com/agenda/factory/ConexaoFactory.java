@@ -24,5 +24,16 @@ public class ConexaoFactory {
 		
 		return connection;
 	}
+	
+	public void xConexao(){
+		try {
+			
+			Connection conexao = null;
+			conexao.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }

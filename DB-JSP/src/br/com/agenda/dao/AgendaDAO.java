@@ -1,13 +1,17 @@
 package br.com.agenda.dao;
 
+import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
+import br.com.agenda.factory.ConexaoFactory;
 import br.com.agenda.model.Contato;
 
 public class AgendaDAO {
 	
-	public void inserir(Contato contato){
+	public void inserir(Contato contato) throws SQLException{
 		
 		StringBuilder sql = new StringBuilder();
 		
@@ -15,7 +19,20 @@ public class AgendaDAO {
 		sql.append("(nome, telefone, celular, dataNascimento, endereco, cidade, estado) ");
 		sql.append("VALUES (?, ?, ?, ?, ?, ?, ?) ");
 		
+		Connection conexao = ConexaoFactory.conectar();
 		
+		PreparedStatement ps = conexao.prepareStatement(sql.toString());
+		
+		ps.setString(1, contato.getNome());
+		ps.setString(2, contato.getTelefone());
+		ps.setString(3, contato.getCelular());
+		ps.setDate(4, (Date) contato.getDataNascimento());
+		ps.setString(5, contato.getEndereco());
+		ps.setString(6, contato.getCidade());
+		ps.setString(7, contato.getEstado());
+			
+		ps.executeUpdate();
+				
 	}
 	
 	public List<Contato> listarDados(){
