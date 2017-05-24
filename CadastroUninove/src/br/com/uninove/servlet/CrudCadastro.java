@@ -25,6 +25,7 @@ public class CrudCadastro extends HttpServlet {
 
 	}
 
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -54,40 +55,15 @@ public class CrudCadastro extends HttpServlet {
 				dao.salvar(cadastro);
 				System.out.println("Cadastro realizado com sucesso ...");
 			}
+			RequestDispatcher rd = request.getRequestDispatcher("dados.jsp");
+			rd.forward(request, response);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Erro ao cadastrar ...");
 		}
 
-		RequestDispatcher rd = request.getRequestDispatcher("dados.jsp");
-		rd.forward(request, response);
 		
-		//Verificando usuário
-		
-		try {
-			
-			if(ra == "" && senha == ""){
-				System.out.println("Erro ....");
-				RequestDispatcher red = request.getRequestDispatcher("erro.jsp");
-				red.forward(request, response);
-			}else{
-				
-				CadastroDAO dao = new CadastroDAO();
-				
-				dao.verificandoUsuario();
-				
-				System.out.println("Cadastro realizado com sucesso ...");
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("Erro ao cadastrar ...");
-		}
-
-		RequestDispatcher redirect = request.getRequestDispatcher("ambiente.jsp");
-		redirect.forward(request, response);
-
 	}
 
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response)

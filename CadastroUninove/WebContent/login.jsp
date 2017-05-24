@@ -39,14 +39,14 @@
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
 					
-						<form method="post" action="dados.jsp">
+						<form method="post" action="VerificandoCad">
 							<center>
 								<p>LOGIN</p>
 							</center>
 							
 							<div class="row">
 								<div class="input-field col s12">
-									<input id="senha" type="password" class="validate" name="ra">
+									<input id="senha" type="text" class="validate" name="ra">
 									<label id="senha">RA</label>
 								</div>
 							</div>
@@ -59,7 +59,7 @@
 													
 							<div class="card-action">	
 							<center>			
-								<a class="waves-effect waves-light btn" href="ambiente.jsp">Confirmar</a>
+								<input type="submit" class="waves-effect waves-light btn" value="Entrar"/>
 							</center>
 							</div>
 						</form>
