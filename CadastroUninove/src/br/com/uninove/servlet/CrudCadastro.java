@@ -57,7 +57,7 @@ public class CrudCadastro extends HttpServlet {
 				dao.salvar(cadastro);
 				System.out.println("Cadastro realizado com sucesso ...");
 			}
-			RequestDispatcher rd = request.getRequestDispatcher("dados.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			rd.forward(request, response);
 			
 		} catch (Exception e) {

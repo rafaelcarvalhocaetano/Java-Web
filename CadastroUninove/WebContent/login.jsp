@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="br.com.uninove.domain.Cadastro"%>
 <%@page import="br.com.uninove.dao.CadastroDAO"%>
 <%@page import="java.sql.ResultSet"%>
@@ -11,9 +12,11 @@
 <head>
 
 <!--Import Google Icon Font-->
-<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 <!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
+	media="screen,projection" />
 
 <!-- Meu JS -->
 <script type="text/javascript" src="resources/javascript/efeitor.js"></script>
@@ -23,7 +26,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous"></script>
-	
+
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
@@ -40,41 +43,43 @@
 </head>
 <body>
 
+	
 
 
-<div id="dados" class="row offset-s9">
+	<div id="dados" class="row offset-s9">
 		<div class="col m6">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
-					
-						<form method="post" action="Verificando">
+
+					<form method="post" action="Verificando">
+						<center>
+							<p>LOGIN</p>
+						</center>
+
+						<div class="row">
+							<div class="input-field col s12">
+
+								<input type="text" class="validate" name="ra"> <label
+									id="senha">RA</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<input type="password" class="validate" name="senha"> <label>Senha</label>
+							</div>
+						</div>
+
+						<div class="card-action">
 							<center>
-								<p>LOGIN</p>
+								<input type="submit" class="waves-effect waves-light btn"
+									value="Entrar" />
 							</center>
-							
-							<div class="row">
-								<div class="input-field col s12">
-									<input type="text" class="validate" name="ra">
-									<label id="senha">RA</label>
-								</div>
-							</div>
-							<div class="row">
-								<div class="input-field col s12">
-									<input type="password" class="validate" name="senha">
-									<label>Senha</label>
-								</div>
-							</div>
-													
-							<div class="card-action">	
-							<center>			
-								<input type="submit" class="waves-effect waves-light btn" value="Entrar"/>
-							</center>
-							</div>
-						</form>
-					</div>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
-	
+
 </body>
 </html>

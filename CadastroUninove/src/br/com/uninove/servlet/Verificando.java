@@ -1,10 +1,8 @@
 package br.com.uninove.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.uninove.factory.ConexaoFactory;
+import br.com.uninove.dao.CadastroDAO;
+import br.com.uninove.domain.Cadastro;
 
 @WebServlet("/Verificando")
 public class Verificando extends HttpServlet {
@@ -27,41 +26,28 @@ public class Verificando extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		PrintWriter out = response.getWriter();
+		String ra = request.getParameter("ra");
+		String senha = request.getParameter("senha");
 
-		String ra = new String("");
-		String senha = new String("");
-		response.setContentType("text/html");
 		try {
-			Connection conexao = ConexaoFactory.conectar();
-
-			String sql = "select ra,senha from cadastro";
-
-			PreparedStatement ps = conexao.prepareStatement(sql);
-
-			ResultSet resultSet = ps.executeQuery();
-
-			while (resultSet.next()) {
-
-				ra = resultSet.getString("ra");
-				senha = resultSet.getString("senha");
-			}
-			resultSet.close();
-			resultSet.close();
-		} catch (Exception e) {
-			System.out.println("Exception is ;" + e);
-		}
-		if (ra.equals(request.getParameter("ra")) && senha.equals(request.getParameter("senha"))) {
-
-			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-			rd.forward(request, response);
-
-		} else {
+			CadastroDAO dao = new CadastroDAO();
+			List<Cadastro> cadastros = dao.listar();
 			
+			Cadastro c = new Cadastro();
+				
+				if (ra == c.getRa() && senha == c.getSenha()) {
+
+					RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+					rd.forward(request, response);
+				}
+						
+			
+
+		} catch (SQLException e) {
+			e.printStackTrace();
 			RequestDispatcher rd = request.getRequestDispatcher("erro.jsp");
 			rd.forward(request, response);
-
 		}
-	}
 
+	}
 }
