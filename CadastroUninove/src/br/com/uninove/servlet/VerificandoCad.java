@@ -25,6 +25,7 @@ public class VerificandoCad extends HttpServlet {
 			throws ServletException, IOException {
 		
 	
+		
 		String senha = request.getParameter("cSenha");
 		String ra = request.getParameter("registro");
 
@@ -44,11 +45,12 @@ public class VerificandoCad extends HttpServlet {
 			RequestDispatcher redirect = request.getRequestDispatcher("erro.jsp");
 			redirect.forward(request, response);
 		}
+
 		
 		
 		
 		
-		
+	}
 		
 		
 		/*
@@ -81,6 +83,5 @@ public class VerificandoCad extends HttpServlet {
 
 	}
 	*/
-	}
 
 }

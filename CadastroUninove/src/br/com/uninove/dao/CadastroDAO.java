@@ -106,8 +106,8 @@ public class CadastroDAO {
 
 		StringBuilder sql = new StringBuilder();
 
-		sql.append("SELECT c.ra, c.senha ");
-		sql.append("FROM cadastro c WHERE c.ra=?, c.senha=? ");
+		sql.append("SELECT ra, senha ");
+		sql.append("FROM cadastro WHERE ra=?, senha=? ");
 
 		Connection conexao = ConexaoFactory.conectar();
 		PreparedStatement ps = conexao.prepareStatement(sql.toString());
@@ -120,7 +120,6 @@ public class CadastroDAO {
 
 			Cadastro ca = new Cadastro();
 
-			
 			ca.setRa(resultado.getString("c.ra"));
 			ca.setSenha(resultado.getString("c.senha"));
 			
