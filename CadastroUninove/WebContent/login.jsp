@@ -1,3 +1,9 @@
+<%@page import="br.com.uninove.domain.Cadastro"%>
+<%@page import="br.com.uninove.dao.CadastroDAO"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="br.com.uninove.factory.ConexaoFactory"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -33,18 +39,15 @@
 <title>LOGIN</title>
 </head>
 <body>
-<%
-	
 
 
-%>
 
 <div id="dados" class="row offset-s9">
 		<div class="col m6">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
 					
-						<form method="post" action="VerificandoCad">
+						<form method="post" action="Verificando">
 							<center>
 								<p>LOGIN</p>
 							</center>
@@ -72,5 +75,6 @@
 			</div>
 		</div>
 	</div>
+	
 </body>
 </html>
