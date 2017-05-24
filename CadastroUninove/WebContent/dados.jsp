@@ -39,9 +39,14 @@
 </head>
 <body>
 	<%
-		CadastroDAO dao = new CadastroDAO();
+		session.setAttribute("info1", request.getParameter("nome"));
+		session.setAttribute("info2", request.getParameter("ra"));
+		session.setAttribute("info3", request.getParameter("email"));
+			
+		String i1 = String.valueOf(session.getAttribute("info1"));
+		String i2 = String.valueOf(session.getAttribute("info2"));
+		String i3 = String.valueOf(session.getAttribute("info3"));
 		
-		List<Cadastro> cadastros =	dao.listar();
 	%>
 	<div id="dados" class="row offset-s9">
 		<div class="col m6">
@@ -51,25 +56,14 @@
 					<form method="post" action="ambiente.jsp">
 
 						<div class="row">
-							<p>
-								NOME:<%= %></p>
+							<p>NOME: <%= i1%></p>
 						</div>
 
 						<div class="row">
-							<p>
-								SOBRE NOME:
-								<%
-								
-							%>
-							</p>
+							<p>RA: <%= i2%></p>
 						</div>
 						<div class="row">
-							<p>
-								EMAIL:
-								<%
-								
-							%>
-							</p>
+							<p>EMAIL: <%= i3%></p>
 						</div>
 
 						<div class="card-action">
