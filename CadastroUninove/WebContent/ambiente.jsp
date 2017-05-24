@@ -43,44 +43,31 @@
 		String i3 = String.valueOf(session.getAttribute("info3"));
 		
 	%>
-<div id="dados" class="row offset-s9">
-		<div class="col m6">
-			<div class="card blue-grey darken-1">
-				<div class="card-content white-text">
-					
-						
-							
-							
-								<div class="row">
-								<div class="input-field col s12">
-									
-									<label id="ra">NOME: <%= i1 %></label>
-								</div>
-								</div>
-								<div class="row">
-								<div class="input-field col s12">
-									
-									<label id="ra">RA: <%= i2 %></label>
-								</div>
-								</div>
-								<div class="row">
-								<div class="input-field col s12">
-									
-									<label id="ra">NOME: <%= i3 %></label>
-									<br>
-								</div>
-								</div>
-							
+<nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
 													
-							<div class="card-action">	
-							<center>			
-								<a class="waves-effect waves-light btn" href="ambiente.jsp">Sair</a>
+								
+							<center id="dados1">			
+								<a href="index.jsp">Sair</a>
 							</center>
-							</div>
+							
 						
-					</div>
-			</div>
-		</div>
-	</div>
+					
 </body>
 </html>
