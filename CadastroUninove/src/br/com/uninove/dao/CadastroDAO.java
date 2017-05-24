@@ -101,11 +101,30 @@ public class CadastroDAO {
 
 	}
 
-	public void verificandoUsuario() {
+	public void verificandoUsuario() throws SQLException {
+		
 		StringBuilder sql = new StringBuilder();
 
-		sql.append("SELECT c.id, c.nome, c.ra, c.senha, c.email ");
+		sql.append("SELECT c.ra, c.senha ");
 		sql.append("FROM cadastro c");
+		
+		Connection conexao = ConexaoFactory.conectar();
+		PreparedStatement ps = conexao.prepareStatement(sql.toString());
+		
+		ResultSet resultado = ps.executeQuery();
+		
+		ArrayList<Cadastro> itens = new ArrayList<Cadastro>();
+		
+		while(resultado.next()){
+			
+			Cadastro c = new Cadastro();
+			
+			c.setRa(resultado.getString("c.ra"));
+			c.setSenha(resultado.getString("c.senha"));
+			
+			itens.add(c);
+		}
+
 
 	}
 

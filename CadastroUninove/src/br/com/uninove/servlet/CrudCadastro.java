@@ -67,14 +67,15 @@ public class CrudCadastro extends HttpServlet {
 		
 		try {
 			
-			if(true){
+			if(ra == "" && senha == ""){
 				System.out.println("Erro ....");
 				RequestDispatcher red = request.getRequestDispatcher("erro.jsp");
 				red.forward(request, response);
-			
 			}else{
 				
 				CadastroDAO dao = new CadastroDAO();
+				
+				dao.verificandoUsuario();
 				
 				System.out.println("Cadastro realizado com sucesso ...");
 			}
