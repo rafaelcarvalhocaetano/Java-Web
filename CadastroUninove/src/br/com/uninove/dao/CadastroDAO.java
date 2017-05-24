@@ -18,8 +18,8 @@ public class CadastroDAO {
 		StringBuilder sql = new StringBuilder();
 		
 		sql.append("INSERT INTO cadastro ");
-		sql.append("(nome, ra, senha) ");
-		sql.append("VALUES (?, ?, ?) ");
+		sql.append("(nome, ra, senha, email) ");
+		sql.append("VALUES (?, ?, ?, ?) ");
 			
 		Connection conexao = ConexaoFactory.conectar();
 		
@@ -37,7 +37,7 @@ public class CadastroDAO {
 		StringBuilder sql = new StringBuilder();
 		
 		sql.append("UPDATE cadastro ");
-		sql.append("SET nome = ?, ra = ?, senha = ? ");
+		sql.append("SET nome = ?, ra = ?, senha = ?, email = ? ");
 		sql.append("WHERE id = ? ");
 		
 		Connection conexao = ConexaoFactory.conectar();
@@ -70,7 +70,7 @@ public class CadastroDAO {
 		
 		StringBuilder sql = new StringBuilder();
 		
-		sql.append("SELECT c.id, c.nome, c.ra, c.senha ");
+		sql.append("SELECT c.id, c.nome, c.ra, c.senha, c.email ");
 		sql.append("FROM cadastro c");
 		
 		Connection conexao = ConexaoFactory.conectar();
@@ -88,6 +88,7 @@ public class CadastroDAO {
 			ca.setNome(resultado.getString("c.nome"));
 			ca.setRa(resultado.getString("c.ra"));
 			ca.setSenha(resultado.getString("c.senha"));
+			ca.setEmail(resultado.getString("c.email"));
 			
 			itens.add(ca);
 		}

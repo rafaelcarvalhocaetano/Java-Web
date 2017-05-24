@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="br.com.uninove.dao.CadastroDAO"%>
 <%@page import="br.com.uninove.domain.Cadastro"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -39,7 +40,8 @@
 <body>
 	<%
 		CadastroDAO dao = new CadastroDAO();
-		dao.listar();
+		
+		List<Cadastro> cadastros =	dao.listar();
 	%>
 	<div id="dados" class="row offset-s9">
 		<div class="col m6">
@@ -50,8 +52,7 @@
 
 						<div class="row">
 							<p>
-								NOME:
-								<%=%></p>
+								NOME:<%= %></p>
 						</div>
 
 						<div class="row">
