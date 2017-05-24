@@ -26,16 +26,12 @@ public class VerificandoCad extends HttpServlet {
 		
 		String ra = request.getParameter("cSenha");
 		String senha = request.getParameter("registro");
-		
-		Cadastro cadastro = new Cadastro();
-
-		cadastro.setSenha(senha);
-		cadastro.setRa(ra);
-		
+				
 		try {
-
+			
 			CadastroDAO dao = new CadastroDAO();
-			dao.logar();
+			dao.logar(ra, senha);
+			
 			System.out.println("login realizado com sucesso ...");
 			
 			RequestDispatcher redirect = request.getRequestDispatcher("ambiente.jsp");
@@ -44,6 +40,7 @@ public class VerificandoCad extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("erro de verificação ...");
+			
 			RequestDispatcher redirect = request.getRequestDispatcher("erro.jsp");
 			redirect.forward(request, response);
 		}

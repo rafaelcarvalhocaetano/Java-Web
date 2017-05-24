@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import br.com.uninove.domain.Cadastro;
 import br.com.uninove.factory.ConexaoFactory;
@@ -100,14 +101,12 @@ public class CadastroDAO {
 		return itens;
 
 	}
-	
-	
-	public void logar() throws SQLException {
+	public ArrayList<Cadastro> logar(String ra, String senha) throws SQLException {
 
 		StringBuilder sql = new StringBuilder();
 
-		sql.append("SELECT ra, senha FROM cadastro");
-		
+		sql.append("SELECT * FROM cadastro WHERE ra = "+ ra +" and senha = "+ senha +" ");
+
 		Connection conexao = ConexaoFactory.conectar();
 		PreparedStatement ps = conexao.prepareStatement(sql.toString());
 
@@ -125,9 +124,37 @@ public class CadastroDAO {
 			itens.add(ca);
 		}
 
+		return itens;
+
 	}
+	
 
 	
+
+	/* public void logar() throws SQLException {
+	 * 
+	 * StringBuilder sql = new StringBuilder();
+	 * 
+	 * sql.append("SELECT ra, senha FROM cadastro WHERE id= ");
+	 * 
+	 * Connection conexao = ConexaoFactory.conectar(); PreparedStatement ps =
+	 * conexao.prepareStatement(sql.toString());
+	 * 
+	 * ResultSet resultado = ps.executeQuery();
+	 * 
+	 * ArrayList<Cadastro> itens = new ArrayList<Cadastro>();
+	 * 
+	 * while (resultado.next()) {
+	 * 
+	 * Cadastro ca = new Cadastro();
+	 * 
+	 * ca.setRa(resultado.getString("ra"));
+	 * ca.setSenha(resultado.getString("senha"));
+	 * 
+	 * itens.add(ca); }
+	 * 
+	 * }
+	 */
 
 	/*
 	 * salvar public static void main(String[] args) throws SQLException {
