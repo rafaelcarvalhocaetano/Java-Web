@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class ConexaoFactory {
 		
 	private static final String USUARIO = "root";
-	private static final String URL = "jdbc:mysql://localhost:3306/cadastrouninove";
+	private static final String URL = "jdbc:mysql://localhost:3306/cadastrouninove?useSSL=true";
 	private static final String SENHA = "q1w2e3r4";
 	
 	public static Connection conectar() throws SQLException{

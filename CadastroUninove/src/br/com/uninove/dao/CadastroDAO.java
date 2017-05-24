@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import br.com.uninove.domain.Cadastro;
 import br.com.uninove.factory.ConexaoFactory;
@@ -100,9 +101,7 @@ public class CadastroDAO {
 		return itens;
 
 	}
-
 	
-
 	/*
 	 * public void logar() throws SQLException {
 	 * 

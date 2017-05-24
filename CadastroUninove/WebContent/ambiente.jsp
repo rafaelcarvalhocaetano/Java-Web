@@ -33,22 +33,51 @@
 <title>AMBIENTE</title>
 </head>
 <body>
-
+<%
+		session.setAttribute("info1", request.getParameter("nome"));
+		session.setAttribute("info2", request.getParameter("ra"));
+		session.setAttribute("info3", request.getParameter("email"));
+			
+		String i1 = String.valueOf(session.getAttribute("info1"));
+		String i2 = String.valueOf(session.getAttribute("info2"));
+		String i3 = String.valueOf(session.getAttribute("info3"));
+		
+	%>
 <div id="dados" class="row offset-s9">
 		<div class="col m6">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
 					
-						<form method="post" action="pages/dadosConfirmar.jsp">
+						
 							
-							WELCOME TO AMBIENTE
+							
+								<div class="row">
+								<div class="input-field col s12">
+									
+									<label id="ra">NOME: <%= i1 %></label>
+								</div>
+								</div>
+								<div class="row">
+								<div class="input-field col s12">
+									
+									<label id="ra">RA: <%= i2 %></label>
+								</div>
+								</div>
+								<div class="row">
+								<div class="input-field col s12">
+									
+									<label id="ra">NOME: <%= i3 %></label>
+									<br>
+								</div>
+								</div>
+							
 													
 							<div class="card-action">	
 							<center>			
-								<a class="waves-effect waves-light btn" href="ambiente.jsp">Confirmar</a>
+								<a class="waves-effect waves-light btn" href="ambiente.jsp">Sair</a>
 							</center>
 							</div>
-						</form>
+						
 					</div>
 			</div>
 		</div>

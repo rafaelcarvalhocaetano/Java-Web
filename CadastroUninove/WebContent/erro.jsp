@@ -7,6 +7,11 @@
 <title>erro</title>
 </head>
 <body>
+<div>
+<center>
 <h1>Erro de Preenchimento dos campos</h1>
+<button><a href="login.jsp">VOLTAR</a></button>
+</center>
+</div>
 </body>
 </html>

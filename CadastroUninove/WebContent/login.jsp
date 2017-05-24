@@ -1,3 +1,4 @@
+<%@page import="java.net.URLDecoder"%>
 <%@page import="java.util.List"%>
 <%@page import="br.com.uninove.domain.Cadastro"%>
 <%@page import="br.com.uninove.dao.CadastroDAO"%>
@@ -42,11 +43,7 @@
 <title>LOGIN</title>
 </head>
 <body>
-
-	
-
-
-	<div id="dados" class="row offset-s9">
+<div id="dados" class="row offset-s9">
 		<div class="col m6">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
@@ -58,7 +55,6 @@
 
 						<div class="row">
 							<div class="input-field col s12">
-
 								<input type="text" class="validate" name="ra"> <label
 									id="senha">RA</label>
 							</div>
