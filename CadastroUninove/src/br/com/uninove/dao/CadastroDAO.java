@@ -100,36 +100,34 @@ public class CadastroDAO {
 		return itens;
 
 	}
+	
+	
+	public void logar() throws SQLException {
 
-	public void verificandoUsuario(Cadastro c) throws SQLException {
-		
 		StringBuilder sql = new StringBuilder();
 
-		sql.append("SELECT c.ra, c.senha ");
-		sql.append("FROM cadastro c ");
-		sql.append("WHERE ra = ?, senha = ? ");
-		
+		sql.append("SELECT ra, senha FROM cadastro");
 		
 		Connection conexao = ConexaoFactory.conectar();
 		PreparedStatement ps = conexao.prepareStatement(sql.toString());
-		
-		ResultSet resultado = ps.executeQuery();
-		
-		ArrayList<Cadastro> itens = new ArrayList<Cadastro>();
-		
-		while(resultado.next()){
-			
-			Cadastro cad = new Cadastro();
-			
-			cad.setRa(resultado.getString("c.ra"));
-			cad.setSenha(resultado.getString("c.senha"));
-			
-			itens.add(c);
-		}
-		
 
+		ResultSet resultado = ps.executeQuery();
+
+		ArrayList<Cadastro> itens = new ArrayList<Cadastro>();
+
+		while (resultado.next()) {
+
+			Cadastro ca = new Cadastro();
+
+			ca.setRa(resultado.getString("ra"));
+			ca.setSenha(resultado.getString("senha"));
+			
+			itens.add(ca);
+		}
 
 	}
+
+	
 
 	/*
 	 * salvar public static void main(String[] args) throws SQLException {

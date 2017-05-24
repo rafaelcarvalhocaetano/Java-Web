@@ -23,30 +23,30 @@ public class VerificandoCad extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		String senha = request.getParameter("registro");
+		
 		String ra = request.getParameter("cSenha");
-
+		String senha = request.getParameter("registro");
+		
 		Cadastro cadastro = new Cadastro();
 
 		cadastro.setSenha(senha);
 		cadastro.setRa(ra);
-
+		
 		try {
 
 			CadastroDAO dao = new CadastroDAO();
-			dao.listar();
+			dao.logar();
 			System.out.println("login realizado com sucesso ...");
+			
+			RequestDispatcher redirect = request.getRequestDispatcher("ambiente.jsp");
+			redirect.forward(request, response);
 
 		} catch (Exception e) {
 			e.printStackTrace();
-
-			RequestDispatcher red = request.getRequestDispatcher("erro.jsp");
-			red.forward(request, response);
-
+			System.out.println("erro de verificação ...");
+			RequestDispatcher redirect = request.getRequestDispatcher("erro.jsp");
+			redirect.forward(request, response);
 		}
-		RequestDispatcher redirect = request.getRequestDispatcher("ambiente.jsp");
-		redirect.forward(request, response);
 
 	}
 
