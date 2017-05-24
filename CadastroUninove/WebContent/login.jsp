@@ -46,14 +46,14 @@
 							
 							<div class="row">
 								<div class="input-field col s12">
-									<input id="senha" type="text" class="validate" name="ra">
+									<input type="text" class="validate" name="registro">
 									<label id="senha">RA</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
-									<input id="senha" type="password" class="validate" name="senha">
-									<label id="senha">Senha</label>
+									<input type="password" class="validate" name="cSenha">
+									<label>Senha</label>
 								</div>
 							</div>
 													
