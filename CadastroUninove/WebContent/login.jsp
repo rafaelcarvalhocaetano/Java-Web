@@ -40,9 +40,22 @@
 				<div class="card-content white-text">
 					
 						<form method="post" action="dados.jsp">
+							<center>
+								<p>LOGIN</p>
+							</center>
 							
-							
-							LOGIN
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="senha" type="password" class="validate" name="ra">
+									<label id="senha">RA</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="senha" type="password" class="validate" name="senha">
+									<label id="senha">Senha</label>
+								</div>
+							</div>
 													
 							<div class="card-action">	
 							<center>			

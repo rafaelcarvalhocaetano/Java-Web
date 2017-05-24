@@ -62,6 +62,30 @@ public class CrudCadastro extends HttpServlet {
 
 		RequestDispatcher rd = request.getRequestDispatcher("dados.jsp");
 		rd.forward(request, response);
+		
+		//Verificando usuário
+		
+		try {
+			
+			if(true){
+				System.out.println("Erro ....");
+				RequestDispatcher red = request.getRequestDispatcher("erro.jsp");
+				red.forward(request, response);
+			
+			}else{
+				
+				CadastroDAO dao = new CadastroDAO();
+				
+				System.out.println("Cadastro realizado com sucesso ...");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Erro ao cadastrar ...");
+		}
+
+		RequestDispatcher redirect = request.getRequestDispatcher("ambiente.jsp");
+		redirect.forward(request, response);
 
 	}
 
