@@ -24,13 +24,47 @@ public class VerificandoCad extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+	
+		String senha = request.getParameter("cSenha");
+		String ra = request.getParameter("registro");
+
+		Cadastro cadastro = new Cadastro();
+
+		cadastro.setSenha(senha);
+		cadastro.setRa(ra);
+		
+		try {
+			
+			CadastroDAO dao = new CadastroDAO();
+			dao.login();					
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			RequestDispatcher redirect = request.getRequestDispatcher("erro.jsp");
+			redirect.forward(request, response);
+		}
+		
+		
+		
+		
+		
+		
+		
+		/*
 		String ra = request.getParameter("cSenha");
 		String senha = request.getParameter("registro");
+		
+		Cadastro cadastro = new Cadastro();
+
+		cadastro.setSenha(senha);
+		cadastro.setRa(ra);
+		
 				
 		try {
 			
 			CadastroDAO dao = new CadastroDAO();
-			dao.logar(ra, senha);
+			dao.aut(ra, senha);
 			
 			System.out.println("login realizado com sucesso ...");
 			
@@ -45,6 +79,8 @@ public class VerificandoCad extends HttpServlet {
 			redirect.forward(request, response);
 		}
 
+	}
+	*/
 	}
 
 }

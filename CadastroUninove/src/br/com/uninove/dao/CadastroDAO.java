@@ -101,11 +101,13 @@ public class CadastroDAO {
 		return itens;
 
 	}
-	public ArrayList<Cadastro> logar(String ra, String senha) throws SQLException {
+
+	public ArrayList<Cadastro> login() throws SQLException {
 
 		StringBuilder sql = new StringBuilder();
 
-		sql.append("SELECT * FROM cadastro WHERE ra = "+ ra +" and senha = "+ senha +" ");
+		sql.append("SELECT c.ra, c.senha ");
+		sql.append("FROM cadastro c WHERE c.ra=?, c.senha=? ");
 
 		Connection conexao = ConexaoFactory.conectar();
 		PreparedStatement ps = conexao.prepareStatement(sql.toString());
@@ -118,8 +120,9 @@ public class CadastroDAO {
 
 			Cadastro ca = new Cadastro();
 
-			ca.setRa(resultado.getString("ra"));
-			ca.setSenha(resultado.getString("senha"));
+			
+			ca.setRa(resultado.getString("c.ra"));
+			ca.setSenha(resultado.getString("c.senha"));
 			
 			itens.add(ca);
 		}
@@ -127,11 +130,9 @@ public class CadastroDAO {
 		return itens;
 
 	}
-	
 
-	
-
-	/* public void logar() throws SQLException {
+	/*
+	 * public void logar() throws SQLException {
 	 * 
 	 * StringBuilder sql = new StringBuilder();
 	 * 
