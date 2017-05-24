@@ -1,3 +1,5 @@
+<%@page import="br.com.uninove.dao.CadastroDAO"%>
+<%@page import="br.com.uninove.domain.Cadastro"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -5,9 +7,11 @@
 <head>
 
 <!--Import Google Icon Font-->
-<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 <!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
+	media="screen,projection" />
 
 <!-- Meu JS -->
 <script type="text/javascript" src="resources/javascript/efeitor.js"></script>
@@ -17,7 +21,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous"></script>
-	
+
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
@@ -33,32 +37,47 @@
 <title>DADOS</title>
 </head>
 <body>
-
-<div id="dados" class="row offset-s9">
+	<%
+		CadastroDAO dao = new CadastroDAO();
+		dao.listar();
+	%>
+	<div id="dados" class="row offset-s9">
 		<div class="col m6">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
-					
-						<form method="post" action="ambiente.jsp">
-							
-							<div class="row">
-								<p>NOME: <% %></p>
-							</div>
-							
-							<div class="row">
-								<p>SOBRE NOME: <% %></p>
-							</div>
-							<div class="row">
-								<p>EMAIL: <% %></p>
-							</div>
-													
-							<div class="card-action">	
-							<center>			
+
+					<form method="post" action="ambiente.jsp">
+
+						<div class="row">
+							<p>
+								NOME:
+								<%=%></p>
+						</div>
+
+						<div class="row">
+							<p>
+								SOBRE NOME:
+								<%
+								
+							%>
+							</p>
+						</div>
+						<div class="row">
+							<p>
+								EMAIL:
+								<%
+								
+							%>
+							</p>
+						</div>
+
+						<div class="card-action">
+							<center>
 								<a class="waves-effect waves-light btn" href="login.jsp">Confirmar</a>
 							</center>
-							</div>
-						</form>
-					</div>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

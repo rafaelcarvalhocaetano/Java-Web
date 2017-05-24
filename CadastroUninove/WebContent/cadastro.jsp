@@ -44,27 +44,28 @@
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
 					<div class="row">
-						<form class="col s12" method="post" action="dados.jsp">
+						<form class="col s12" method="post" action="CrudCadastro">
 							<div class="row">
 								<div class="input-field col s12">
-									<input id="first_name" type="text" class="validate"> <label id="nome">Nome</label>
+									<input id="nome" type="text" class="validate" name="nome"> <label id="nome">Nome</label>
 								</div>
 							</div>
+						
 							<div class="row">
 								<div class="input-field col s12">
-									<input id="password" type="password" class="validate">
+									<input id="senha" type="password" class="validate" name="senha">
 									<label id="senha">Senha</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
-									<input id="cpassword" type="password" class="validate">
-									<label id="cSenha">Confirmação de Senha</label>
+									<input  id="csenha" type="password" class="validate" name="ra">
+									<label id="ra">RA</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
-									<input id="email" type="text" class="validate"> <label
+									<input id="email" type="text" class="validate" name="email"> <label
 										id="email">Email</label>
 								</div>
 							</div>
