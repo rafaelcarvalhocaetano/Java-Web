@@ -1,7 +1,6 @@
 package br.com.uninove.servlet;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,19 +41,21 @@ public class CrudCadastro extends HttpServlet {
 		cadastro.setEmail(email);
 
 		try {
-			
-			CadastroDAO dao = new CadastroDAO();
-			
+						
 			if(nome == "" || senha == "" || ra == "" || email == ""){
 				System.out.println("Erro ....");
+				
 				RequestDispatcher rd = request.getRequestDispatcher("erro.jsp");
 				rd.forward(request, response);
+			
 			}else{
+				
+				CadastroDAO dao = new CadastroDAO();
 				dao.salvar(cadastro);
 				System.out.println("Cadastro realizado com sucesso ...");
 			}
 			
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Erro ao cadastrar ...");
 		}

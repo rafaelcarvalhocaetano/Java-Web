@@ -53,7 +53,7 @@
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
 
-					<form method="post" action="ambiente.jsp">
+					<form method="post">
 
 						<div class="row">
 							<p>NOME: <%= i1%></p>

@@ -28,6 +28,7 @@ public class CadastroDAO {
 		ps.setString(1, cad.getNome());
 		ps.setString(2, cad.getRa());
 		ps.setString(3, cad.getSenha());
+		ps.setString(4, cad.getEmail());
 		
 		ps.executeUpdate();
 		
@@ -48,6 +49,7 @@ public class CadastroDAO {
 		ps.setString(2, c.getRa());
 		ps.setString(3, c.getSenha());
 		ps.setLong(4, c.getId());
+		ps.setString(5, c.getEmail());
 		
 		ps.executeUpdate();
 	}
@@ -96,12 +98,6 @@ public class CadastroDAO {
 		return itens;
 		
 	}
-	
-	
-	
-	
-	
-	
 	
 	/*salvar
 	public static void main(String[] args) throws SQLException {
