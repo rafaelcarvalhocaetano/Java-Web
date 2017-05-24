@@ -1,4 +1,4 @@
-package br.com.uninove.bean;
+package br.com.uninove.servlet;
 
 import java.io.IOException;
 
