@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import br.com.uninove.domain.Cadastro;
 import br.com.uninove.factory.ConexaoFactory;
@@ -102,33 +101,7 @@ public class CadastroDAO {
 
 	}
 
-	public ArrayList<Cadastro> login() throws SQLException {
-
-		StringBuilder sql = new StringBuilder();
-
-		sql.append("SELECT ra, senha ");
-		sql.append("FROM cadastro WHERE ra=?, senha=? ");
-
-		Connection conexao = ConexaoFactory.conectar();
-		PreparedStatement ps = conexao.prepareStatement(sql.toString());
-
-		ResultSet resultado = ps.executeQuery();
-
-		ArrayList<Cadastro> itens = new ArrayList<Cadastro>();
-
-		while (resultado.next()) {
-
-			Cadastro ca = new Cadastro();
-
-			ca.setRa(resultado.getString("c.ra"));
-			ca.setSenha(resultado.getString("c.senha"));
-			
-			itens.add(ca);
-		}
-
-		return itens;
-
-	}
+	
 
 	/*
 	 * public void logar() throws SQLException {

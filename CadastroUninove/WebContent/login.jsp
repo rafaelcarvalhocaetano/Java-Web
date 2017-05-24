@@ -33,26 +33,31 @@
 <title>LOGIN</title>
 </head>
 <body>
+<%
+	
+
+
+%>
 
 <div id="dados" class="row offset-s9">
 		<div class="col m6">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
 					
-						<form method="post" action="CrudCadastro">
+						<form method="post" action="VerificandoCad">
 							<center>
 								<p>LOGIN</p>
 							</center>
 							
 							<div class="row">
 								<div class="input-field col s12">
-									<input type="text" class="validate" name="registro">
+									<input type="text" class="validate" name="ra">
 									<label id="senha">RA</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
-									<input type="password" class="validate" name="cSenha">
+									<input type="password" class="validate" name="senha">
 									<label>Senha</label>
 								</div>
 							</div>
