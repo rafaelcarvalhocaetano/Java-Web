@@ -49,21 +49,21 @@ public class Verificando extends HttpServlet {
 					
 					ResultSet rs = ps.executeQuery();
 					
-					
-					
-					
+					if(rs.next()){
+						
+						response.sendRedirect("ambiente.jsp");
+					}else{
+						response.sendRedirect("erro.jsp");
+					}
 				}
-				
-				
-				
 			} catch (Exception e) {
-				
+				e.printStackTrace();
+				System.out.println("erro de DB");
 			}
 			
-			
-			
 		} catch (Exception e) {
-			
+			System.out.println("Erro de chamada .....");
+			e.printStackTrace();
 		}
 		
 
