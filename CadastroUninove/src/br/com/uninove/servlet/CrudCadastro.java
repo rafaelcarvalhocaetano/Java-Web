@@ -1,6 +1,7 @@
 package br.com.uninove.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,14 +21,7 @@ public class CrudCadastro extends HttpServlet {
 		super();
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		
-				
-
-	}
-
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -48,8 +42,9 @@ public class CrudCadastro extends HttpServlet {
 			if(nome == "" || senha == "" || ra == "" || email == ""){
 				System.out.println("Erro ....");
 				
-				RequestDispatcher rd = request.getRequestDispatcher("erro.jsp");
-				rd.forward(request, response);
+				PrintWriter out = response.getWriter();
+				
+				out.println("Erro ao preencher os campos .... ");
 			
 			}else{
 				
@@ -57,7 +52,7 @@ public class CrudCadastro extends HttpServlet {
 				dao.salvar(cadastro);
 				System.out.println("Cadastro realizado com sucesso ...");
 			}
-			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("dados.jsp");
 			rd.forward(request, response);
 			
 		} catch (Exception e) {

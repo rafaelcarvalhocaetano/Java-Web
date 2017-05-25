@@ -1,7 +1,6 @@
 package br.com.uninove.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -28,11 +27,7 @@ public class Verificando extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		response.setContentType("text/html;charset=UTF-8");
-		
-		try (PrintWriter out = response.getWriter()){
-			
-			
+					
 			String rah = request.getParameter("ra");
 			String senhah = request.getParameter("senha");
 			
@@ -61,11 +56,5 @@ public class Verificando extends HttpServlet {
 				System.out.println("erro de DB");
 			}
 			
-		} catch (Exception e) {
-			System.out.println("Erro de chamada .....");
-			e.printStackTrace();
-		}
-		
-
 	}
 }
