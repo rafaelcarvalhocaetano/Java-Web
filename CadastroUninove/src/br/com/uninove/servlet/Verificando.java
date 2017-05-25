@@ -1,9 +1,11 @@
 package br.com.uninove.servlet;
 
 import java.io.IOException;
-import java.util.List;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 
@@ -11,8 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.uninove.dao.CadastroDAO;
-import br.com.uninove.domain.Cadastro;
+import br.com.uninove.factory.ConexaoFactory;
+
 
 @WebServlet("/Verificando")
 public class Verificando extends HttpServlet {
@@ -20,36 +22,50 @@ public class Verificando extends HttpServlet {
 
 	public Verificando() {
 		super();
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		String senha = request.getParameter("senha");
-		String ra = request.getParameter("ra");
-
-		if(senha == "" || ra == ""){
-			RequestDispatcher rd = request.getRequestDispatcher("erro.jsp");
-			rd.forward(request, response);
-		}else{
-			try{
-				CadastroDAO dao = new CadastroDAO();
-				List<Cadastro> cads = dao.listar();
+		
+		response.setContentType("text/html;charset=UTF-8");
+		
+		try (PrintWriter out = response.getWriter()){
+			
+			
+			String rah = request.getParameter("ra");
+			String senhah = request.getParameter("senha");
+			
+			try {
 				
-				if(cads == null){
-					System.out.println("Erro no retorno ....");
-				}else{
-					RequestDispatcher rd = request.getRequestDispatcher("ambiente.jsp");
-					rd.forward(request, response);
+				if(rah != null && senhah != null){
+					
+					Connection conexao = ConexaoFactory.conectar();
+					String sql = "SELECT * FROM cadastro WHERE ra=? AND senha=?";
+					PreparedStatement ps = conexao.prepareStatement(sql);
+					
+					ps.setString(1, rah);
+					ps.setString(2, senhah);
+					
+					ResultSet rs = ps.executeQuery();
+					
+					
+					
+					
 				}
-			}catch (Exception e) {
-				RequestDispatcher rd = request.getRequestDispatcher("erro.jsp");
-				rd.forward(request, response);
+				
+				
+				
+			} catch (Exception e) {
+				
 			}
 			
+			
+			
+		} catch (Exception e) {
+			
 		}
-
 		
+
 	}
 }
