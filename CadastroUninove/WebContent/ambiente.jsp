@@ -46,18 +46,19 @@
 <body>
 
 <%
+String ra = (String) request.getSession().getAttribute("rah");
+		
+CadastroDAO dao = new CadastroDAO();
+List<Cadastro>cadastros = dao.listar();
 
-
-session.setAttribute("id", request.getParameter("ra"));
-
-
-String valor = String.valueOf(session.getAttribute("id"));
+		
 %>
-<h2><%= valor %></h2>
+<h2><%= ra %></h2>
 
 	<div>
 		<ul class="collapsible" data-collapsible="accordion">
 			<li>
+	
 				<div class="collapsible-header">
 					<i class="material-icons">filter_drama</i>FRONT-END
 				</div>

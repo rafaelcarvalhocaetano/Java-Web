@@ -112,7 +112,7 @@ public class CadastroDAO {
 		Connection conexao = ConexaoFactory.conectar();
 		PreparedStatement comando = conexao.prepareStatement(sql.toString());
 
-		comando.setString(1, "a");
+		comando.setString(1, c);
 
 		ResultSet resultado = comando.executeQuery();
 

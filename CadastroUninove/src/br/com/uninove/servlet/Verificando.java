@@ -1,7 +1,7 @@
 package br.com.uninove.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.jasper.tagplugins.jstl.core.Out;
 
 import br.com.uninove.factory.ConexaoFactory;
 
@@ -34,6 +33,9 @@ public class Verificando extends HttpServlet {
 					
 			String rah = request.getParameter("ra");
 			String senhah = request.getParameter("senha");
+			
+			request.getSession().setAttribute("rah", rah );
+			
 			
 			try {
 				
