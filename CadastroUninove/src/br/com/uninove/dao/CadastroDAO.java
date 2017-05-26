@@ -101,6 +101,7 @@ public class CadastroDAO {
 		return itens;
 
 	}
+	
 	public Cadastro buscarCodigo(String c) throws SQLException {
 
 		StringBuilder sql = new StringBuilder();

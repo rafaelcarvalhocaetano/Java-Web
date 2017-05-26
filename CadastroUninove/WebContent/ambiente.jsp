@@ -49,11 +49,17 @@
 String ra = (String) request.getSession().getAttribute("rah");
 		
 CadastroDAO dao = new CadastroDAO();
-List<Cadastro>cadastros = dao.listar();
-
+Cadastro c = new Cadastro();
+c=dao.buscarCodigo(ra);
 		
 %>
-<h2><%= ra %></h2>
+<nav>
+<ul>
+<li>Bem Vindo  <%= c.getNome() %></li>
+<li> - </li>
+<li>RA: <%= c.getRa() %></li>
+</ul>
+</nav>
 
 	<div>
 		<ul class="collapsible" data-collapsible="accordion">
