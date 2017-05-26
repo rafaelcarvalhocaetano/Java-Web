@@ -1,7 +1,7 @@
 # Projetos JAVA-WEB
 
 - [Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql](#projeto-front-end-com-java-usando-jsf---primefaces---ajax---hibernate---jarsperreporter---mysql)
-- [Projetos Java Web com JSP Bootstrap e JQuery](#projetos-java-web-com-jsp-bootstrap-e-jquery)
+- [Projetos Java Web com JSP Bootstrap/JQuery e Materialize](#projetos-java-web-com-jsp-bootstrap-/-jquery-e-materialize)
   - [JSP Bhaskara](#jsp-bhaskara)
   - [JSP Cookies e Sessões](#jsp-cookies-e-sessões)
   - [Materialize - JSP](#materialize---jsp)
@@ -282,7 +282,7 @@ Configurando o arquivo hibernate.cfg.xml que fica dentro de src/main/resources
 </hibernate-configuration>
 
 ```
-### Projetos Java Web com JSP Bootstrap e JQuery
+### Projetos Java Web com JSP Bootstrap/JQuery e Materialize
 ### JSP Bhaskara
 Imagem do index
 
