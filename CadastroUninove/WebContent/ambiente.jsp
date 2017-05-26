@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="br.com.uninove.servlet.CrudCadastro"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="br.com.uninove.factory.ConexaoFactory"%>
@@ -42,14 +44,40 @@
 <title>AMBIENTE</title>
 </head>
 <body>
-	<nav></nav>
-	
-	
 
-	<center id="dados1">
-		<a href="index.jsp">Sair</a>
-	</center>
+<%
 
+
+session.setAttribute("id", request.getParameter("ra"));
+
+
+String valor = String.valueOf(session.getAttribute("id"));
+%>
+<h2><%= valor %></h2>
+
+	<div>
+		<ul class="collapsible" data-collapsible="accordion">
+			<li>
+				<div class="collapsible-header">
+					<i class="material-icons">filter_drama</i>FRONT-END
+				</div>
+				<div class="collapsible-body">
+					<label>Curso de Java</label>
+				</div>
+			</li>
+			<li>
+				<div class="collapsible-header">
+					<i class="material-icons">place</i>BANCO DE DADOS
+				</div>
+				<div class="collapsible-body">
+					<label>Curso de MONGO DB - MYSQL</label>
+				</div>
+			</li>
+		</ul>
+		<center>
+			<a class="waves-effect waves-light btn" href="index.jsp"><i class="material-icons left" >not_interested</i>sair</a>
+		</center>
+	</div>
 
 
 </body>

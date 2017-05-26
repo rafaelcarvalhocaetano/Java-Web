@@ -101,6 +101,31 @@ public class CadastroDAO {
 		return itens;
 
 	}
+	public Cadastro buscarCodigo(String c) throws SQLException {
+
+		StringBuilder sql = new StringBuilder();
+
+		sql.append("SELECT nome, ra ");
+		sql.append("FROM cadastro ");
+		sql.append("WHERE ra = ? ");
+
+		Connection conexao = ConexaoFactory.conectar();
+		PreparedStatement comando = conexao.prepareStatement(sql.toString());
+
+		comando.setString(1, "a");
+
+		ResultSet resultado = comando.executeQuery();
+
+		Cadastro retorno = null;
+
+		if (resultado.next()) {
+			retorno = new Cadastro();
+			retorno.setNome(resultado.getString("nome"));
+			retorno.setRa(resultado.getString("ra"));
+		}
+		return retorno;
+	}
+
 	
 
 	

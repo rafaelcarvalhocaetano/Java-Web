@@ -38,7 +38,7 @@
 <title>DADOS</title>
 </head>
 <body>
-	<%
+<%
 		session.setAttribute("info1", request.getParameter("nome"));
 		session.setAttribute("info2", request.getParameter("ra"));
 		session.setAttribute("info3", request.getParameter("email"));
@@ -46,7 +46,8 @@
 		String i1 = String.valueOf(session.getAttribute("info1"));
 		String i2 = String.valueOf(session.getAttribute("info2"));
 		String i3 = String.valueOf(session.getAttribute("info3"));
-	%>
+		
+%>
 	<div id="dados" class="row offset-s9">
 		<div class="col m6">
 			<div class="card blue-grey darken-1">

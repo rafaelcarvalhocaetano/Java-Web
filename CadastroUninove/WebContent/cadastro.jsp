@@ -47,26 +47,25 @@
 						<form class="col s12" method="post" action="CrudCadastro">
 							<div class="row">
 								<div class="input-field col s12">
-									<input id="nome" type="text" class="validate" name="nome"> <label id="nome">Nome</label>
+									<input id="nome" type="text" class="validate" name="nome"> <label>Nome</label>
 								</div>
 							</div>
 						
 							<div class="row">
 								<div class="input-field col s12">
 									<input id="senha" type="password" class="validate" name="senha">
-									<label id="senha">Senha</label>
+									<label >Senha</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
 									<input  id="csenha" type="password" class="validate" name="ra">
-									<label id="ra">RA</label>
+									<label>RA</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
-									<input id="email" type="text" class="validate" name="email"> <label
-										id="email">Email</label>
+									<input id="email" type="text" class="validate" name="email"> <label>Email</label>
 								</div>
 							</div>
 							<div class="card-action">	

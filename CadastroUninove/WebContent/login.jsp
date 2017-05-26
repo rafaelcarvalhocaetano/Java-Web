@@ -1,3 +1,4 @@
+<%@page import="javax.websocket.Session"%>
 <%@page import="java.net.URLDecoder"%>
 <%@page import="java.util.List"%>
 <%@page import="br.com.uninove.domain.Cadastro"%>
@@ -43,12 +44,7 @@
 <title>LOGIN</title>
 </head>
 <body>
-	<%
-		session.setAttribute("a", request.getParameter("ra"));
-		
-		
-		
-	%>
+	
 	<div id="dados" class="row offset-s9">
 		<div class="col m6">
 			<div class="card blue-grey darken-1">
@@ -58,16 +54,16 @@
 						<center>
 							<p>LOGIN</p>
 						</center>
-
+						
 						<div class="row">
 							<div class="input-field col s12">
-								<input type="text" class="validate" name="raa"> <label
-									id="senha">RA</label>
+								<input type="text" class="validate" name="ra">
+								 <label	id="senha">RA</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="input-field col s12">
-								<input type="password" class="validate" name="senhaa"> <label>Senha</label>
+								<input type="password" class="validate" name="senha"> <label>Senha</label>
 							</div>
 						</div>
 
