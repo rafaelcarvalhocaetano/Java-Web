@@ -42,46 +42,8 @@
 <title>AMBIENTE</title>
 </head>
 <body>
-	<%
-		Cadastro c = new Cadastro();
-		String valor = String.valueOf(session.getAttribute("info2"));
-		c.setRa(valor);
-		
-		try {
-			
-			if(valor != null ){
-				
-				Connection conexao = ConexaoFactory.conectar();
-				String sql = "SELECT nome, ra FROM cadastro WHERE ra='"+c.getRa()+"' ";
-				PreparedStatement ps = conexao.prepareStatement(sql);
-				
-				ps.setString(1, c.getNome());
-				ps.setString(2, c.getRa());
-				
-				ResultSet rs = ps.executeQuery();
-				
-				if(rs.next()){
-					
-					out.println(valor);
-					
-				}else{
-					out.println("erro");
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("erro de DB");
-		}
-		
-			
-	%>
-	<nav>
-	<ul>
-		<li><h5>NOME: </h5></li>
-		<li>RA:</li>
-	</ul>
-	<h1>Out</h1>
-	</nav>
+	<nav></nav>
+	
 	
 
 	<center id="dados1">

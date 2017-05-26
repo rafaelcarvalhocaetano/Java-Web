@@ -44,7 +44,10 @@
 </head>
 <body>
 	<%
-		session.setAttribute("info2", request.getParameter("ra"));
+		session.setAttribute("a", request.getParameter("ra"));
+		
+		
+		
 	%>
 	<div id="dados" class="row offset-s9">
 		<div class="col m6">
@@ -58,13 +61,13 @@
 
 						<div class="row">
 							<div class="input-field col s12">
-								<input type="text" class="validate" name="ra"> <label
+								<input type="text" class="validate" name="raa"> <label
 									id="senha">RA</label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="input-field col s12">
-								<input type="password" class="validate" name="senha"> <label>Senha</label>
+								<input type="password" class="validate" name="senhaa"> <label>Senha</label>
 							</div>
 						</div>
 

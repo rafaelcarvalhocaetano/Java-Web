@@ -28,8 +28,8 @@ public class Verificando extends HttpServlet {
 			throws ServletException, IOException {
 		
 					
-			String rah = request.getParameter("ra");
-			String senhah = request.getParameter("senha");
+			String rah = request.getParameter("raa");
+			String senhah = request.getParameter("senhaa");
 			
 			try {
 				
