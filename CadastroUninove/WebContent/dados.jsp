@@ -42,11 +42,10 @@
 		session.setAttribute("info1", request.getParameter("nome"));
 		session.setAttribute("info2", request.getParameter("ra"));
 		session.setAttribute("info3", request.getParameter("email"));
-			
+
 		String i1 = String.valueOf(session.getAttribute("info1"));
 		String i2 = String.valueOf(session.getAttribute("info2"));
 		String i3 = String.valueOf(session.getAttribute("info3"));
-		
 	%>
 	<div id="dados" class="row offset-s9">
 		<div class="col m6">
@@ -56,14 +55,20 @@
 					<form method="post">
 
 						<div class="row">
-							<p>NOME: <%= i1%></p>
+							<p>
+								NOME:
+								<%=i1%></p>
 						</div>
 
 						<div class="row">
-							<p>RA: <%= i2%></p>
+							<p>
+								RA:
+								<%=i2%></p>
 						</div>
 						<div class="row">
-							<p>EMAIL: <%= i3%></p>
+							<p>
+								EMAIL:
+								<%=i3%></p>
 						</div>
 
 						<div class="card-action">

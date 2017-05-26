@@ -43,7 +43,10 @@
 <title>LOGIN</title>
 </head>
 <body>
-<div id="dados" class="row offset-s9">
+	<%
+		session.setAttribute("info2", request.getParameter("ra"));
+	%>
+	<div id="dados" class="row offset-s9">
 		<div class="col m6">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">

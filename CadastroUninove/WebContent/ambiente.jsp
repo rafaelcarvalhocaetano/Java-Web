@@ -1,3 +1,10 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="br.com.uninove.factory.ConexaoFactory"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="br.com.uninove.domain.Cadastro"%>
+<%@page import="java.util.List"%>
+<%@page import="br.com.uninove.dao.CadastroDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -5,9 +12,11 @@
 <head>
 
 <!--Import Google Icon Font-->
-<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 <!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
+	media="screen,projection" />
 
 <!-- Meu JS -->
 <script type="text/javascript" src="resources/javascript/efeitor.js"></script>
@@ -17,7 +26,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous"></script>
-	
+
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
@@ -33,41 +42,53 @@
 <title>AMBIENTE</title>
 </head>
 <body>
-<%
-		session.setAttribute("info1", request.getParameter("nome"));
-		session.setAttribute("info2", request.getParameter("ra"));
-		session.setAttribute("info3", request.getParameter("email"));
-			
-		String i1 = String.valueOf(session.getAttribute("info1"));
-		String i2 = String.valueOf(session.getAttribute("info2"));
-		String i3 = String.valueOf(session.getAttribute("info3"));
+	<%
+		Cadastro c = new Cadastro();
+		String valor = String.valueOf(session.getAttribute("info2"));
+		c.setRa(valor);
 		
-	%>
-<nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav>
-													
-								
-							<center id="dados1">			
-								<a href="index.jsp">Sair</a>
-							</center>
-							
-						
+		try {
+			
+			if(valor != null ){
+				
+				Connection conexao = ConexaoFactory.conectar();
+				String sql = "SELECT nome, ra FROM cadastro WHERE ra='"+c.getRa()+"' ";
+				PreparedStatement ps = conexao.prepareStatement(sql);
+				
+				ps.setString(1, c.getNome());
+				ps.setString(2, c.getRa());
+				
+				ResultSet rs = ps.executeQuery();
+				
+				if(rs.next()){
 					
+					out.println(valor);
+					
+				}else{
+					out.println("erro");
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("erro de DB");
+		}
+		
+			
+	%>
+	<nav>
+	<ul>
+		<li><h5>NOME: </h5></li>
+		<li>RA:</li>
+	</ul>
+	<h1>Out</h1>
+	</nav>
+	
+
+	<center id="dados1">
+		<a href="index.jsp">Sair</a>
+	</center>
+
+
+
 </body>
 </html>
