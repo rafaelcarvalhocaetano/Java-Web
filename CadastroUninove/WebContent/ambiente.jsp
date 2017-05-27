@@ -23,11 +23,8 @@
 <!-- Meu JS -->
 <script type="text/javascript" src="resources/javascript/efeitor.js"></script>
 <!-- Meu css -->
-<link rel="stylesheet" href="resources/css/dados.css">
+<link rel="stylesheet" href="resources/css/ambiente.css">
 <!-- JQuery -->
-<script src="https://code.jquery.com/jquery-3.2.1.js"
-	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-	crossorigin="anonymous"></script>
 
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet"
@@ -43,8 +40,6 @@
 
 <title>AMBIENTE</title>
 </head>
-<body>
-
 <%
 String ra = (String) request.getSession().getAttribute("rah");
 		
@@ -53,39 +48,22 @@ Cadastro c = new Cadastro();
 c=dao.buscarCodigo(ra);
 		
 %>
-<nav>
+
+<body>
+<div id="nava">
 <ul>
-<li>Bem Vindo  <%= c.getNome() %></li>
-<li> - </li>
-<li>RA: <%= c.getRa() %></li>
+<li><i class="material-icons md-light">face</i><%= c.getNome() %></li>
+<li><i class="md-36 material-icons">person_pin</i>Nome: <%= c.getNome() %> </li>
+<li><i class="material-icons">info_outline</i> <%= c.getRa() %> </li>
 </ul>
-</nav>
 
-	<div>
-		<ul class="collapsible" data-collapsible="accordion">
-			<li>
-	
-				<div class="collapsible-header">
-					<i class="material-icons">filter_drama</i>FRONT-END
-				</div>
-				<div class="collapsible-body">
-					<label>Curso de Java</label>
-				</div>
-			</li>
-			<li>
-				<div class="collapsible-header">
-					<i class="material-icons">place</i>BANCO DE DADOS
-				</div>
-				<div class="collapsible-body">
-					<label>Curso de MONGO DB - MYSQL</label>
-				</div>
-			</li>
-		</ul>
-		<center>
-			<a class="waves-effect waves-light btn" href="index.jsp"><i class="material-icons left" >not_interested</i>sair</a>
-		</center>
-	</div>
-
+</div>
+<div id="botao">
+<center>
+	<a class="waves-effect waves-light btn" href="index.jsp">
+	<i class="material-icons left">not_interested</i>sair</a>
+</center>
+</div>
 
 </body>
 </html>
