@@ -59,8 +59,9 @@ c=dao.buscarCodigo(ra);
 
 
 <div id="botao">
+
 <center>
-	<a class="waves-effect waves-light btn" href="Verificando">
+	<a class="waves-effect waves-light btn" href="login.jsp">
 	<i class="material-icons left">not_interested</i>sair</a>
 </center>
 </div>

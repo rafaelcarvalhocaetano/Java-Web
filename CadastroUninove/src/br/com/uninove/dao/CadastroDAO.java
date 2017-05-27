@@ -126,6 +126,19 @@ public class CadastroDAO {
 		}
 		return retorno;
 	}
+	
+	@SuppressWarnings("null")
+	public static void close(){
+		
+		Connection conexao = null;
+		
+		try {
+			conexao.close();
+			System.out.println("Conexão finalizada ... ");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 	
 

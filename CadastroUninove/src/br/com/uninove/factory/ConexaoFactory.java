@@ -20,9 +20,10 @@ public class ConexaoFactory {
 			System.out.println("Erro de conexão");
 		}
 		Connection connection = DriverManager.getConnection(URL, USUARIO, SENHA);
-		
 		return connection;
 	}
+
+
 	/*
 	public static void main(String [] args){
 		try {
