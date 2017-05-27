@@ -297,8 +297,7 @@ Imagem do calculo final.
 ### User Authentication
 ### Cadastro Uninove - Concluído.
 
-<ul>
-<li><a href="#"><img src="#"></a></li>
-<li>b</li>
-<li>c</li>
-</ul>
+<p>
+<a href="#"><img src="#">teste 1</a>
+<a href="#"><img src="#">teste 2</a>
+</p>
