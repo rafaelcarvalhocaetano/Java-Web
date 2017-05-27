@@ -18,10 +18,15 @@ body{
 	margin-top: 5%;
 }
 
-li{
+i, span{
 	float: left;
-	margin: 1%;
 }
-li i{
-	
+i{
+	margin-left: 4%;
+	margin-top: 1.4%;
+}
+span{
+	margin-left: 0.5%;
+	margin-top: 1%;
+	font-size: 20px;
 }

@@ -51,16 +51,16 @@ c=dao.buscarCodigo(ra);
 
 <body>
 <div id="nava">
-<ul>
-<li><i class="material-icons md-light">face</i><%= c.getNome() %></li>
-<li><i class="md-36 material-icons">person_pin</i>Nome: <%= c.getNome() %> </li>
-<li><i class="material-icons">info_outline</i> <%= c.getRa() %> </li>
-</ul>
-
+	<i class="md-36 material-icons">person_pin</i>
+	<span> <%= c.getNome() %> </span>
+	<i class="material-icons">info_outline</i>
+	<span> <%= c.getRa() %> </span>
 </div>
+
+
 <div id="botao">
 <center>
-	<a class="waves-effect waves-light btn" href="index.jsp">
+	<a class="waves-effect waves-light btn" href="Verificando">
 	<i class="material-icons left">not_interested</i>sair</a>
 </center>
 </div>
