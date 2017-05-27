@@ -296,6 +296,11 @@ Imagem do calculo final.
 ### Materialize - JSP
 ### User Authentication
 ### Cadastro Uninove - Concluído.
+<style>
+ul{
+float: left;
+}
+</style>
 <ul>
 <li>a</li>
 <li>b</li>
