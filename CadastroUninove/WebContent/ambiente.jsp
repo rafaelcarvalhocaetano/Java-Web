@@ -13,6 +13,12 @@
 <html>
 <head>
 
+
+<!-- Meu JS -->
+<script type="text/javascript" src="resources/javascript/efeitor.js"></script>
+<!-- Meu css -->
+<link rel="stylesheet" href="resources/css/ambiente.css">
+
 <!--Import Google Icon Font-->
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
@@ -20,11 +26,10 @@
 <link type="text/css" rel="stylesheet" href="css/materialize.min.css"
 	media="screen,projection" />
 
-<!-- Meu JS -->
-<script type="text/javascript" src="resources/javascript/efeitor.js"></script>
-<!-- Meu css -->
-<link rel="stylesheet" href="resources/css/ambiente.css">
 <!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous"></script>
 
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet"
@@ -58,13 +63,20 @@ c=dao.buscarCodigo(ra);
 </div>
 
 
-<div id="botao">
 
+
+
+
+
+
+
+
+
+
+<div id="botao">
 <center>
-	<a class="waves-effect waves-light btn" href="login.jsp">
-	<i class="material-icons left">not_interested</i>sair</a>
+	<a class="waves-effect waves-light btn" href="login.jsp"><p>SAIR</p></a>
 </center>
 </div>
-
 </body>
 </html>
