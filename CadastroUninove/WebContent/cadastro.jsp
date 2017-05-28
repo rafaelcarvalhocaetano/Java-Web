@@ -13,28 +13,22 @@
 <!-- Meu css -->
 <link rel="stylesheet" href="resources/css/estilo.css">
 
-
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous"></script>
 
-
-
 <!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
 
 <!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="css/materialize.min.css"
-	media="screen,projection" />
+<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 
 <!-- Compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 
 <!-- Compiled and minified JavaScript -->
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
 
 <!--Let browser know website is optimized for mobile-->
@@ -54,8 +48,7 @@
 								<div class="input-field col s12">
 									<input id="nome" type="text" class="validate" name="nome"> <label>Nome</label>
 								</div>
-							</div>
-						
+							</div>	
 							<div class="row">
 								<div class="input-field col s12">
 									<input id="senha" type="password" class="validate" name="senha">
