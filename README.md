@@ -1,7 +1,7 @@
 # Projetos JAVA-WEB
 
 - [Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql](#projeto-front-end-com-java-usando-jsf---primefaces---ajax---hibernate---jarsperreporter---mysql)
-- [Projetos Java Web com JSP Bootstrap/JQuery e Materialize](#projetos-java-web-com-jsp-bootstrap-/-jquery-e-materialize)
+- [Projetos Java Web com JSP Bootstrap JQuery e Materialize](#projetos-java-web-com-jsp-bootstrap-jquery-e-materialize)
   - [JSP Bhaskara](#jsp-bhaskara)
   - [JSP Cookies e Sessões](#jsp-cookies-e-sessões)
   - [Materialize - JSP](#materialize---jsp)
@@ -282,7 +282,7 @@ Configurando o arquivo hibernate.cfg.xml que fica dentro de src/main/resources
 </hibernate-configuration>
 
 ```
-### Projetos Java Web com JSP Bootstrap/JQuery e Materialize
+### Projetos Java Web com JSP Bootstrap JQuery e Materialize
 ### JSP Bhaskara
 Imagem do index
 
@@ -295,4 +295,9 @@ Imagem do calculo final.
 ### JSP Cookies e Sessões
 ### Materialize - JSP
 ### User Authentication
-### Cadastro Uninove
+### Cadastro Uninove - Concluído.
+
+<p>
+<a href="#"><img src="#">teste 1</a>
+<a href="#"><img src="#">teste 2</a>
+</p>
