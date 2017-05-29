@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -23,8 +24,12 @@ public class CaixaDAOTest {
 	}
 	
 	@Test
-	public void buscar(){
+	public void buscar() throws ParseException{
 		
+		CaixaDAO dao = new CaixaDAO();
+		Caixa caixa = dao.buscar(new SimpleDateFormat("dd/MM/yyyy").parse("29/05/2015"));
+		System.out.println(caixa);
+		Assert.assertNull(caixa);
 		
 	}
 
