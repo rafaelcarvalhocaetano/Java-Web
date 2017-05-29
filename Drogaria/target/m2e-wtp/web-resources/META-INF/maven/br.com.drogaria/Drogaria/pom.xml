@@ -5,7 +5,7 @@
 	<artifactId>Drogaria</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
-	
+
 
 	<!-- Codificação dos caracteres -->
 	<properties>
@@ -114,6 +114,16 @@
 			<artifactId>gson</artifactId>
 			<version>2.4</version>
 		</dependency>
+
+		<!-- shiro-core -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+
+
+
 
 
 
