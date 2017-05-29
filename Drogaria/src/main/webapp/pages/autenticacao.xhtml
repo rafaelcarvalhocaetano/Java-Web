@@ -9,19 +9,27 @@
 	<title>Autenticação</title>
 </h:head>
 <h:body>
-	<p:growl id="mensagem"/>
-	<p:dialog header="Autenticação" closable="false" draggable="false" resizable="false" modal="true" visible="true">
-	<h:form>
-		<h:panelGrid columns="2">
-			<p:outputLabel for="cpf" value="CPF: "/>
-			<p:inputMask mask="999.999.99-99" id="cpf" required="true" requiredMessage="Campo Obrigatório"/>
-			
-			<p:outputLabel for="senha" value="SENHA: "/>
-			<p:password id="senha" required="true" requiredMessage="O campo é obrigatório"/>
-		</h:panelGrid>
-		<h:panelGrid>
-			<p:commandButton value="Entrar" update=":mensagem"/>		
-		</h:panelGrid>
+	<p:growl id="mensagem" />
+
+	<p:dialog header="Autenticação" closable="false" draggable="false"
+		resizable="false" modal="true" visible="true">
+		<h:form>
+			<h:panelGrid columns="2">
+				<p:outputLabel for="cpf" value="CPF:" />
+				<p:inputMask id="cpf" mask="999.999.999-99" size="20"
+					required="true" requiredMessage="O campo CPF é obrigatório"
+					value="#{autenticacaoBean.usuario.pessoa.cpf}" />
+
+				<p:outputLabel for="senha" value="Senha:" />
+				<p:password id="senha" maxlength="8" size="20" required="true"
+					requiredMessage="O campo Senha é obrigatório"
+					value="#{autenticacaoBean.usuario.senha}" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="1">
+				<p:commandButton value="Entrar" update=":mensagem"
+					actionListener="#{autenticacaoBean.autenticar()}"/>
+			</h:panelGrid>
 		</h:form>
 	</p:dialog>
 </h:body>
