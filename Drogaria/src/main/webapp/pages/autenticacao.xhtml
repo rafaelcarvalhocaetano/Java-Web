@@ -6,10 +6,17 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Histórico</title>
+	<title>Autenticação</title>
 </h:head>
 <h:body>
-
-
+	<p:dialog header="Autenticação" closable="false" draggable="false" resizable="false" modal="true" visible="true">
+		<h:panelGrid columns="2">
+			<p:outputLabel for="cpf" value="CPF: "/>
+			<p:inputMask mask="999.999.99-99" id="cpf"/>
+			
+			<p:outputLabel for="senha" value="SENHA: "/>
+			<p:password id="senha"/>
+		</h:panelGrid>
+	</p:dialog>
 </h:body>
 </html>
