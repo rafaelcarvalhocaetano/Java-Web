@@ -1,7 +1,6 @@
 package br.com.drogaria.bean;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,7 +17,6 @@ import org.omnifaces.util.Messages;
 
 import com.google.gson.Gson;
 
-import br.com.drogaria.dao.FabricanteDAO;
 import br.com.drogaria.domain.Fabricante;
 
 @SuppressWarnings("serial")
@@ -104,11 +102,11 @@ public class FabricanteBean implements Serializable {
 	//passar para restfull
 	public void excluir(ActionEvent event){
 		try {
-			fabricante =(Fabricante) event.getComponent().getAttributes().get("fabricanteSelecionado");
-			
+			fabricante = (Fabricante) event.getComponent().getAttributes().get("fabricanteSelecionado");
+
 			Client cliente = ClientBuilder.newClient();
 			
-			WebTarget caminho = cliente.target("htpp:127.0.0.1:8080/Drogaria/rest/fabricnate");
+			WebTarget caminho = cliente.target("http://127.0.0.1:8080/Drogaria/rest/fabricante");
 			WebTarget caminhoExcluir = caminho.path("{codigo}").resolveTemplate("codigo", fabricante.getCodigo());
 			
 			caminhoExcluir.request().delete();
@@ -118,8 +116,8 @@ public class FabricanteBean implements Serializable {
 			Fabricante[] vetor = gson.fromJson(json, Fabricante[].class);
 			
 			fabricantes = Arrays.asList(vetor);
-			
-			Messages.addGlobalInfo("Fabricante Excluído com sucesso");
+
+			Messages.addGlobalInfo("Fabricante removido com sucesso");
 		} catch (RuntimeException e) {
 			Messages.addGlobalError("Erro ao excluir o fabricante");
 			e.printStackTrace();
