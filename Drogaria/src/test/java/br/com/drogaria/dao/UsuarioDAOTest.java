@@ -12,6 +12,7 @@ import br.com.drogaria.domain.Usuario;
 public class UsuarioDAOTest {
 
 	@Test
+	@Ignore
 	public void salvar() {
 
 		Long codigo = 3L;
@@ -113,6 +114,15 @@ public class UsuarioDAOTest {
 			
 			System.out.println("Alterações feitas com sucesso ...");
 		}
+	}
+	public void autenticar(){
+		String cpf = "999.999.999-99";
+		String senha = "q1w2e3r4";
+		
+		UsuarioDAO dao = new UsuarioDAO();
+		Usuario usuario = dao.autenticar(cpf, senha);
+		
+		System.out.println(usuario);
 	}
 
 }

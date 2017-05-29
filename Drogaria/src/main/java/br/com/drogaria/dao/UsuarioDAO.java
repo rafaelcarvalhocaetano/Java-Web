@@ -3,7 +3,6 @@ package br.com.drogaria.dao;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 
 import br.com.drogaria.domain.Usuario;
