@@ -1,4 +1,4 @@
-# Projetos JAVA-WEB
+﻿# Projetos JAVA-WEB
 
 - [Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql](#projeto-front-end-com-java-usando-jsf---primefaces---ajax---hibernate---jarsperreporter---mysql)
 - [Projetos Java Web com JSP Bootstrap JQuery e Materialize](#projetos-java-web-com-jsp-bootstrap-jquery-e-materialize)
@@ -213,6 +213,13 @@ Configurando o pom.xml
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>2.4</version>
+		</dependency>
+		
+		<!-- shiro-core -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>1.2.4</version>
 		</dependency>
 
 
