@@ -1,6 +1,7 @@
 package br.com.drogaria.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -105,10 +106,18 @@ public class FabricanteBean implements Serializable {
 		try {
 			fabricante =(Fabricante) event.getComponent().getAttributes().get("fabricanteSelecionado");
 			
-			FabricanteDAO dao = new FabricanteDAO();
-			dao.excluir(fabricante);
+			Client cliente = ClientBuilder.newClient();
 			
-			fabricantes = dao.listar();
+			WebTarget caminho = cliente.target("htpp:127.0.0.1:8080/Drogaria/rest/fabricnate");
+			WebTarget caminhoExcluir = caminho.path("{codigo}").resolveTemplate("codigo", fabricante.getCodigo());
+			
+			caminhoExcluir.request().delete();
+			String json = caminho.request().get(String.class);
+			
+			Gson gson = new Gson();
+			Fabricante[] vetor = gson.fromJson(json, Fabricante[].class);
+			
+			fabricantes = Arrays.asList(vetor);
 			
 			Messages.addGlobalInfo("Fabricante Excluído com sucesso");
 		} catch (RuntimeException e) {
