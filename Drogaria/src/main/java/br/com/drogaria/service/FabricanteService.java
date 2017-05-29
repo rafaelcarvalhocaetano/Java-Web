@@ -90,16 +90,14 @@ public class FabricanteService {
 		}
 		@DELETE
 		@Path("{codigo}")
-		public String excluir(@PathParam("codigo")Long codigo){
+		public String excluir(@PathParam("codigo") Long codigo){
+			FabricanteDAO fabricanteDAO = new FabricanteDAO();
 			
-			FabricanteDAO dao = new FabricanteDAO();
-			
-			Fabricante fabricante = dao.buscar(codigo);
-			dao.excluir(fabricante);
+			Fabricante fabricante = fabricanteDAO.buscar(codigo);
+			fabricanteDAO.excluir(fabricante);
 			
 			Gson gson = new Gson();
-			String json = gson.toJson(fabricante);
-			
-			return json;
+			String saida = gson.toJson(fabricante);
+			return saida;
 		}
 }
