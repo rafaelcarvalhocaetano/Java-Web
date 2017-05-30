@@ -14,90 +14,72 @@ import com.google.gson.Gson;
 import br.com.drogaria.dao.FabricanteDAO;
 import br.com.drogaria.domain.Fabricante;
 
-//http://localhost:8080/Drogaria/rest/fabricante
 @Path("fabricante")
 public class FabricanteService {
-
-	//http://localhost:8080/Drogaria/rest/fabricante
+	// http://127.0.0.1:8080/Drogaria/rest/fabricante
 	@GET
-	public String listar(){
-		FabricanteDAO dao = new FabricanteDAO();
-		List<Fabricante> fabricantes = dao.listar("descricao");
-		
+	public String listar() {
+		FabricanteDAO fabricanteDAO = new FabricanteDAO();
+		List<Fabricante> fabricantes = fabricanteDAO.listar("descricao");
+
 		Gson gson = new Gson();
 		String json = gson.toJson(fabricantes);
-		
+
 		return json;
 	}
-	
-	//http://localhost:8080/Drogaria/rest/fabricante/3 ou 4 ...
+
+	// http://127.0.0.1:8080/Drogaria/rest/fabricante/{codigo}
+	// http://127.0.0.1:8080/Drogaria/rest/fabricante/10
 	@GET
 	@Path("{codigo}")
-	public String buscar(@PathParam("codigo")Long codigo){
-		FabricanteDAO dao = new FabricanteDAO();
-		
-		Fabricante fabricante = dao.buscar(codigo);
-		
+	public String buscar(@PathParam("codigo") Long codigo) {
+		FabricanteDAO fabricanteDAO = new FabricanteDAO();
+		Fabricante fabricante = fabricanteDAO.buscar(codigo);
+
 		Gson gson = new Gson();
 		String json = gson.toJson(fabricante);
-		
+
 		return json;
 	}
-	
-	//http://localhost:8080/Drogaria/rest/fabricante
+
+	// http://127.0.0.1:8080/Drogaria/rest/fabricante
 	@POST
-	public String salvar(String json){
-		
+	public String salvar(String json) {
 		Gson gson = new Gson();
-		Fabricante fab = gson.fromJson(json, Fabricante.class);
-		
-		FabricanteDAO dao = new FabricanteDAO();
-		dao.salvar(fab);
-		
-		String jsonSaida = gson.toJson(fab);
+		Fabricante fabricante = gson.fromJson(json, Fabricante.class);
+
+		FabricanteDAO fabricanteDAO = new FabricanteDAO();
+		fabricanteDAO.merge(fabricante);
+
+		String jsonSaida = gson.toJson(fabricante);
+		return jsonSaida;
+	}
+
+	// http://127.0.0.1:8080/Drogaria/rest/fabricante
+	@PUT
+	public String editar(String json) {
+		Gson gson = new Gson();
+		Fabricante fabricante = gson.fromJson(json, Fabricante.class);
+
+		FabricanteDAO fabricanteDAO = new FabricanteDAO();
+		fabricanteDAO.editar(fabricante);
+
+		String jsonSaida = gson.toJson(fabricante);
 		return jsonSaida;
 	}
 	
-	//http://localhost:8080/Drogaria/rest/fabricante
-		@PUT
-		public String editar(String json){
-			
-			Gson gson = new Gson();
-			Fabricante fab = gson.fromJson(json, Fabricante.class);
-			
-			FabricanteDAO dao = new FabricanteDAO();
-			dao.editar(fab);
-			
-			String jsonSaida = gson.toJson(fab);
-			return jsonSaida;
-		}
+	// http://127.0.0.1:8080/Drogaria/rest/fabricante/{codigo}
+	// http://127.0.0.1:8080/Drogaria/rest/fabricante/10
+	@DELETE
+	@Path("{codigo}")
+	public String excluir(@PathParam("codigo") Long codigo){
+		FabricanteDAO fabricanteDAO = new FabricanteDAO();
 		
+		Fabricante fabricante = fabricanteDAO.buscar(codigo);
+		fabricanteDAO.excluir(fabricante);
 		
-		//http://localhost:8080/Drogaria/rest/fabricante
-		@DELETE
-		public String excluir(String json){
-			Gson gson = new Gson();
-			Fabricante fabricante = gson.fromJson(json, Fabricante.class);
-			
-			FabricanteDAO dao = new FabricanteDAO();
-			
-			fabricante = dao.buscar(fabricante.getCodigo());
-			
-			dao.excluir(fabricante);
-			
-			String saida = gson.toJson(fabricante);
-			return saida;
-		}
-		@DELETE
-		@Path("{codigo}")
-		public String excluir(@PathParam("codigo") Long codigo){
-			FabricanteDAO fabricanteDAO = new FabricanteDAO();
-			
-			Fabricante fabricante = fabricanteDAO.buscar(codigo);
-			fabricanteDAO.excluir(fabricante);
-			
-			Gson gson = new Gson();
-			String saida = gson.toJson(fabricante);
-			return saida;
-		}
+		Gson gson = new Gson();
+		String saida = gson.toJson(fabricante);
+		return saida;
+	}
 }

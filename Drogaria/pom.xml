@@ -121,11 +121,5 @@
 			<artifactId>shiro-core</artifactId>
 			<version>1.2.4</version>
 		</dependency>
-
-
-
-
-
-
 	</dependencies>
 </project>

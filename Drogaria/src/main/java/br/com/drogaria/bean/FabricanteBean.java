@@ -23,86 +23,72 @@ import br.com.drogaria.domain.Fabricante;
 @ManagedBean
 @ViewScoped
 public class FabricanteBean implements Serializable {
-	
-	private List<Fabricante> fabricantes;
-	
 	private Fabricante fabricante;
-	
-	
-	public List<Fabricante> getFabricantes() {
-		return fabricantes;
-	}
-	public void setFabricantes(List<Fabricante> fabricantes) {
-		this.fabricantes = fabricantes;
-	}
-	
+	private List<Fabricante> fabricantes;
+
 	public Fabricante getFabricante() {
 		return fabricante;
 	}
+
 	public void setFabricante(Fabricante fabricante) {
 		this.fabricante = fabricante;
 	}
-	
-	public void novo(){
-		fabricante = new Fabricante();
+
+	public List<Fabricante> getFabricantes() {
+		return fabricantes;
 	}
-	
+
+	public void setFabricantes(List<Fabricante> fabricantes) {
+		this.fabricantes = fabricantes;
+	}
+
 	@PostConstruct
-	public void listar(){
+	public void listar() {
 		try {
-			//FabricanteDAO dao = new FabricanteDAO();
-			//fabricantes = dao.listar();
-			
 			Client cliente = ClientBuilder.newClient();
-			WebTarget caminho = cliente.target("http://localhost:8080/Drogaria/rest/fabricante");
+			WebTarget caminho = cliente.target("http://127.0.0.1:8080/Drogaria/rest/fabricante");
 			String json = caminho.request().get(String.class);
 			
 			Gson gson = new Gson();
 			Fabricante[] vetor = gson.fromJson(json, Fabricante[].class);
 			
 			fabricantes = Arrays.asList(vetor);
-			
-		} catch (RuntimeException e) {
-			Messages.addGlobalError("Fabricante não encontrado");
-			e.printStackTrace();
+ 		} catch (RuntimeException erro) {
+			Messages.addGlobalError("Ocorreu um erro ao tentar listar os fabricantes");
+			erro.printStackTrace();
 		}
 	}
-	
-	public void salvar(){
-		
+
+	public void novo() {
+		fabricante = new Fabricante();
+	}
+
+	public void salvar() {
 		try {
-			
-			//FabricanteDAO dao = new FabricanteDAO();
-			//dao.salvar(fabricante);
-			
-			//fabricante = new Fabricante();
-			//fabricantes = dao.listar();
-			
 			Client cliente = ClientBuilder.newClient();
-			WebTarget caminho = cliente.target("http://localhost:8080/Drogaria/rest/fabricante");
-			
+			WebTarget caminho = cliente.target("http://127.0.0.1:8080/Drogaria/rest/fabricante");
+		
 			Gson gson = new Gson();
-			String jsonFalso = gson.toJson(fabricante);
-			caminho.request().post(Entity.json(jsonFalso));
+			
+			String json = gson.toJson(fabricante);
+			caminho.request().post(Entity.json(json));	
 			
 			fabricante = new Fabricante();
 			
-			String json = caminho.request().get(String.class);
+			json = caminho.request().get(String.class);
 			Fabricante[] vetor = gson.fromJson(json, Fabricante[].class);
 			fabricantes = Arrays.asList(vetor);
-			
+
 			Messages.addGlobalInfo("Fabricante salvo com sucesso");
-			
-		} catch (RuntimeException e) {
-			Messages.addGlobalError("Erro ao salvar o fabricante");
-			e.printStackTrace();
+		} catch (RuntimeException erro) {
+			Messages.addGlobalError("Ocorreu um erro ao tentar salvar o fabricante");
+			erro.printStackTrace();
 		}
 	}
-	
-	//passar para restfull
-	public void excluir(ActionEvent event){
+
+	public void excluir(ActionEvent evento) {
 		try {
-			fabricante = (Fabricante) event.getComponent().getAttributes().get("fabricanteSelecionado");
+			fabricante = (Fabricante) evento.getComponent().getAttributes().get("fabricanteSelecionado");
 
 			Client cliente = ClientBuilder.newClient();
 			
@@ -118,20 +104,13 @@ public class FabricanteBean implements Serializable {
 			fabricantes = Arrays.asList(vetor);
 
 			Messages.addGlobalInfo("Fabricante removido com sucesso");
-		} catch (RuntimeException e) {
-			Messages.addGlobalError("Erro ao excluir o fabricante");
-			e.printStackTrace();
-		}
-		
-	}
-	public void editar(ActionEvent event){
-		try {
-			fabricante = (Fabricante) event.getComponent().getAttributes().get("fabricanteSelecionado");
-			
-		} catch (RuntimeException e) {
-			Messages.addGlobalError("Erro ao editar");
-			e.printStackTrace();
+		} catch (RuntimeException erro) {
+			Messages.addFlashGlobalError("Ocorreu um erro ao tentar remover o fabricante");
+			erro.printStackTrace();
 		}
 	}
 
+	public void editar(ActionEvent evento) {
+		fabricante = (Fabricante) evento.getComponent().getAttributes().get("fabricanteSelecionado");
+	}
 }
