@@ -4,9 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>HOME</title>
 </head>
 <body>
+<div style="margmargin-left: 35%">
+<h2>Bem Vindo - Aluno</h2>
 
+<div>
+<a href="#"><button type="submit" >ENTRAR</button></a>
+<a href="#"><button type="submit" >CADASTRAR</button></a>
+</div>
+</div>
 </body>
 </html>
