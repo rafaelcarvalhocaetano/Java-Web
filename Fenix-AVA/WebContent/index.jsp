@@ -7,11 +7,11 @@
 <title>HOME</title>
 </head>
 <body>
-<div style="margmargin-left: 35%">
+<div style="margin:20% 0 0 40%">
 <h2>Bem Vindo - Aluno</h2>
 
 <div>
-<a href="#"><button type="submit" >ENTRAR</button></a>
+<a href="#"><button type="submit"  style="margin: 0.5%">ENTRAR</button></a>
 <a href="#"><button type="submit" >CADASTRAR</button></a>
 </div>
 </div>
