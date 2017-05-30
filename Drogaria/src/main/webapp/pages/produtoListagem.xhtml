@@ -12,5 +12,44 @@
 </h:head>
 <h:body>
 
+	<h:form id="formListagem">
+		<p:panel header="Produtos - Listagem">
+			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
+				paginator="true" value="#{produtoBean.produtos}" var="produto"
+				rows="5">
+				<f:facet name="footer">
+					<p:commandButton icon="ui-icon-plus" />
+					<p:commandButton icon="ui-icon-print"/>
+				</f:facet>
+
+				<p:column headerText="Descrição" filterBy="#{produto.descricao}"
+					filterMatchMode="contains" sortBy="#{produto.descricao}">
+					<h:outputText value="#{produto.descricao}" />
+				</p:column>
+
+				<p:column headerText="Quantidade" sortBy="#{produto.quantidade}">
+					<h:outputText value="#{produto.quantidade}" />
+				</p:column>
+
+				<p:column headerText="Preço" sortBy="#{produto.preco}">
+					<h:outputText value="#{produto.preco}">
+						<f:convertNumber locale="pt_BR" minFractionDigits="2" />
+					</h:outputText>
+				</p:column>
+
+				<p:column headerText="Fabricante"
+					filterBy="#{produto.fabricante.descricao}"
+					filterMatchMode="contains" sortBy="#{produto.fabricante.descricao}">
+					<h:outputText value="#{produto.fabricante.descricao}" />
+				</p:column>
+
+				<p:column headerText="Opções">
+					<p:commandButton icon="ui-icon-trash"/>
+					<p:commandButton icon="ui-icon-pencil"/>
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+	</h:form>
+
 </h:body>
 </html>
