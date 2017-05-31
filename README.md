@@ -302,7 +302,7 @@ Imagem do calculo final.
 ### JSP Cookies e Sessões
 ### Materialize - JSP
 ### User Authentication
-### Cadastro Uninove - Concluído.
+### Cadastro Uninove
 
 <p>
 <a href="#"><img src="#">teste 1</a>
