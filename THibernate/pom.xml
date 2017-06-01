@@ -6,7 +6,7 @@
 	<version>1.0</version>
 	<packaging>war</packaging>
 
-	<!-- Codificação dos Caracteres -->
+	<!-- Codificação dos caracteres -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -14,7 +14,7 @@
 	<!-- Parâmetros de execução -->
 	<build>
 		<!-- Nome do projeto empacotado -->
-		<finalName>THibernate</finalName>
+		<finalName>Drogaria</finalName>
 
 		<!-- Plugins -->
 		<plugins>
@@ -22,7 +22,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5</version>
+				<version>3.3</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
@@ -30,10 +30,21 @@
 			</plugin>
 		</plugins>
 	</build>
-	<!-- Dependências -->
-	<dependency>
-		<groupId>org.hibernate</groupId>
-		<artifactId>hibernate-core</artifactId>
-		<version>5.2.10.Final</version>
-	</dependency>
+
+	<!-- Dependências necessárias -->
+	<dependencies>
+		<!-- Hibernate Core -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.3.Final</version>
+		</dependency>
+
+		<!-- Conector MySql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.6</version>
+		</dependency>
+	</dependencies>
 </project>

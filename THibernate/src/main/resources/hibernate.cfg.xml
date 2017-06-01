@@ -9,7 +9,7 @@
 
 		<!-- Configurações de Conexão com o Banco de Dados -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/thibernatecadastro</property>
+		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">q1w2e3r4</property>
 
