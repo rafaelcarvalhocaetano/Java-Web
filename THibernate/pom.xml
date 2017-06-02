@@ -14,7 +14,7 @@
 	<!-- Parâmetros de execução -->
 	<build>
 		<!-- Nome do projeto empacotado -->
-		<finalName>Drogaria</finalName>
+		<finalName>THibernate</finalName>
 
 		<!-- Plugins -->
 		<plugins>
@@ -34,11 +34,13 @@
 	<!-- Dependências necessárias -->
 	<dependencies>
 		<!-- Hibernate Core -->
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>4.3.3.Final</version>
+			<version>5.2.10.Final</version>
 		</dependency>
+
 
 		<!-- Conector MySql -->
 		<dependency>
