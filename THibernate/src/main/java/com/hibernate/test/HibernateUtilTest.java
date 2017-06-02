@@ -8,9 +8,9 @@ public class HibernateUtilTest {
 	
 	public static void main(String[] args) {
 		
-		Session sessao = HibernateUtil.getFabricaDeSessao().openSession(); //acabou de ligar e a pessoa atendeu
+		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession(); //acabou de ligar e a pessoa atendeu
 		
-		sessao.close(); //encerra a ligação
+		//sessao.close(); //encerra a ligação
 	}
 
 }

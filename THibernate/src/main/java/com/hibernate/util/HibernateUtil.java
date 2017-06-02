@@ -7,29 +7,24 @@ import org.hibernate.service.ServiceRegistry;
 
 public class HibernateUtil {
 	
-	private static SessionFactory fabricaDeSessao = createFS();
-	
-	public static SessionFactory getFabricaDeSessao() {
-		return fabricaDeSessao;
+	private static SessionFactory fabricaDeSessoes = criarFabricaDeSessoes();
+
+	public static SessionFactory getFabricaDeSessoes() {
+		return fabricaDeSessoes;
 	}
-	
-	private static SessionFactory createFS(){
-		
+
+	private static SessionFactory criarFabricaDeSessoes() {
 		try {
-			Configuration configuracao = new Configuration().configure(); //captura no hibernateu cfg as configurações.
+			Configuration configuracao = new Configuration().configure();
 			
 			ServiceRegistry registro = new StandardServiceRegistryBuilder().applySettings(configuracao.getProperties()).build();
 			
 			SessionFactory fabrica = configuracao.buildSessionFactory(registro);
 			
 			return fabrica;
-			
-		} catch (Throwable e) {
-			System.out.println("Falha na criação da sessão do hibernate util"+e);
-			throw new ExceptionInInitializerError(e);
+		} catch (Throwable ex) {
+			System.err.println("A fábrica de sessões não pode ser criada." + ex);
+			throw new ExceptionInInitializerError(ex);
 		}
 	}
-	
-
-
 }

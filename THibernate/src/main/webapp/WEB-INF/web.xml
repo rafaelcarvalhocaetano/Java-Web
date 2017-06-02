@@ -7,6 +7,14 @@
 	
 	<!-- Nome do Aplicação -->
 	<display-name>THibernate</display-name>
+	
+	<!-- Estágio do Projeto -->
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+
+	
 
 </web-app>
 	
