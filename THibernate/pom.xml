@@ -34,7 +34,6 @@
 	<!-- Dependências -->
 	<dependencies>
 		<!-- Hibernate Core -->
-
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -42,7 +41,7 @@
 		</dependency>
 
 
-		<!-- MySQL Connector -->
+		<!-- MySQL Connector penultima versão do mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>

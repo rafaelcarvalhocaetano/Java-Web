@@ -6,11 +6,12 @@ import com.hibernate.util.HibernateUtil;
 
 public class HibernateUtilTest {
 	
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession(); //acabou de ligar e a pessoa atendeu
 		
-		//sessao.close(); //encerra a ligação
+		HibernateUtil.getFabricaDeSessoes().close(); //encerra a ligação
 	}
 
 }
