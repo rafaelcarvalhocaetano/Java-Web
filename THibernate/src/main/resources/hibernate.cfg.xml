@@ -32,5 +32,4 @@
 		<property name="hbm2ddl.auto">create</property>
 		
 	</session-factory>
-
 </hibernate-configuration>
