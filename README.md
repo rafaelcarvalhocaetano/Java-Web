@@ -1,6 +1,13 @@
 ﻿# Projetos JAVA-WEB
+ Projetos java web com integração de framawork.
+ 
 
 - [Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql](#projeto-front-end-com-java-usando-jsf---primefaces---ajax---hibernate---jarsperreporter---mysql)
+	- [THibernate ](#thibernate)
+	- [Cadastro com Hibernate](#cadastro-com-hibernate)
+	- [Controle de Acesso com Hibernate](#controle-de-acesso-com-hibernate)
+
+
 - [Projetos Java Web com JSP Bootstrap JQuery e Materialize](#projetos-java-web-com-jsp-bootstrap-jquery-e-materialize)
   - [JSP Bhaskara](#jsp-bhaskara)
   - [JSP Cookies e Sessões](#jsp-cookies-e-sessões)
@@ -289,7 +296,22 @@ Configurando o arquivo hibernate.cfg.xml que fica dentro de src/main/resources
 </hibernate-configuration>
 
 ```
-### Projetos Java Web com JSP Bootstrap JQuery e Materialize
+Projetos JSF - Hibernate - MySQl - PrimeFaces - JReport - JUnit.
+### THibernate
+Projeto THibernate é um projeto teste de integração com banco de dados. Sua função é simplesmente um cadastro e autenticação do usuário via DB.
+
+### Cadastro com Hibernate
+
+Projeto de Cadastro de usuário e controle de acesso simples.
+
+### Controle de Acesso com Hibernate
+
+Projeto de controle de acesso de uma portaria, onde ficam armazenados nome, rg, cpf, empresa, horário e nome da pessoa a ser visitada por ele.
+
+### Projeto JSP - Servlet - Bootstrap - Materialize - JQuery.
+
+Projetos Java Web com JSP Bootstrap JQuery e Materialize
+
 ### JSP Bhaskara
 Imagem do index
 
