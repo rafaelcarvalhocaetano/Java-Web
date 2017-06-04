@@ -57,5 +57,6 @@
 		<nature>org.jboss.tools.cdi.core.cdinature</nature>
 		<nature>com.jaspersoft.studio.babel.editor.rbeNature</nature>
 		<nature>org.hibernate.eclipse.console.hibernateNature</nature>
+		<nature>org.jboss.tools.jsf.jsfnature</nature>
 	</natures>
 </projectDescription>
