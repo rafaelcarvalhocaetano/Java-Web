@@ -40,7 +40,6 @@
 			<version>4.3.11.Final</version>
 		</dependency>
 
-
 		<!-- MySQL Connector penultima versão do mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -54,7 +53,5 @@
 			<artifactId>junit</artifactId>
 			<version>4.10</version>
 		</dependency>
-
-
 	</dependencies>
 </project>
