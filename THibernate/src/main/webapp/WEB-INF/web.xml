@@ -22,7 +22,7 @@
 	<!-- PrimeFaces Temas all -->
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
-		<param-value>delta</param-value>
+		<param-value>aristo</param-value>
 	</context-param>
 
 	<servlet>
