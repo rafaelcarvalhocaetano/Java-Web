@@ -7,6 +7,7 @@ import com.hibernate.util.HibernateUtil;
 
 public class HibernateUtilTest {
 	
+	@SuppressWarnings("unused")
 	@Test
 	public void conectar() {
 		
