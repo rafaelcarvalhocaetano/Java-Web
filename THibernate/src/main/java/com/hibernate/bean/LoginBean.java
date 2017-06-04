@@ -1,9 +1,12 @@
 package com.hibernate.bean;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+import javax.faces.view.facelets.FaceletContext;
 
 import com.hibernate.domain.Login;
 
@@ -27,6 +30,15 @@ public class LoginBean implements Serializable{
 		this.logins = logins;
 	}
 	
+	public void navegar(){
+		
+		try {
+			FacesContext.getCurrentInstance().getExternalContext().redirect("logar.xhtml");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 	
 	

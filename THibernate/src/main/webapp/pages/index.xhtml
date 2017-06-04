@@ -16,10 +16,9 @@
 
 		<p:panel id="painel" header="AMBIENTE VIRTUAL DE APRENDIZAGEM">
 			<div align="center">
-			<h:panelGrid columns="2" cellpadding="5">
+			<h:panelGrid columns="2" cellpadding="10">
 				<p:commandButton value="Cadastrar" type="button" onclick="PF('dlg1').show();" />
-				<p:commandButton value="ENTRAR" type="button" onclick="PF('dlg2').show();" />
-				
+				<p:commandButton value="Entrar" type="button" onclick="PF('dlg2').show();" />
 			</h:panelGrid>
 			</div>
 
@@ -39,12 +38,15 @@
 				<h:outputText value="Teste de acesso" />
 				
 				<h:panelGrid columns="2">
-					<p:commandButton value="Salvar"/>
+					
+				
+					<p:commandLink value="Entrar" action="#{loginBean.navegar()}"/>
 					<p:commandButton value="Fechar" oncomplete="PF('dlg2').hide();" />
 				</h:panelGrid>
 			
 			</p:dialog>
 		</p:panel>
 	</p:outputPanel>
+
 </h:body>
 </html>
