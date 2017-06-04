@@ -15,10 +15,22 @@
 	<p:outputPanel id="pnl" layout="block">
 	
     <p:panel id="painel" header="AMBIENTE VIRTUAL DE APRENDIZAGEM">
-     <p:commandButton value="ENTRAR"/>
-    <p:commandButton value="CADASTRAR"/>
+     	<p:commandButton value="ENTRAR">
+			<f:actionListener type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
+		</p:commandButton>
+	
+	<p:commandButton id="cad" value="Cadastrar" type="button" oncomplete="PF('dlg').show">
+		<f:actionListener type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
+	</p:commandButton>
+	
+    
     </p:panel>
+    
+   
 </p:outputPanel>
+ 
+
+
 	
 	
 </h:body>
