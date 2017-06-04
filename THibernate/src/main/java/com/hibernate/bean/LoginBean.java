@@ -3,12 +3,12 @@ package com.hibernate.bean;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
 
 import com.hibernate.domain.Login;
 
-
 @SuppressWarnings("serial")
-
+@ManagedBean
 public class LoginBean implements Serializable{
 	
 	private Login login;
