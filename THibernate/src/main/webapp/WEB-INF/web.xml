@@ -35,5 +35,10 @@
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
 
+	<!-- Carregamento do Hibernate -->
+	<listener>
+		<listener-class>com.hibernate.util.HibernateContext</listener-class>
+	</listener>
+
 </web-app>
 	
