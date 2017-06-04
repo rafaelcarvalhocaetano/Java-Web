@@ -10,28 +10,32 @@
 	<title>HOME</title>
 </h:head>
 <h:body>
-<h:outputStylesheet library="css" name="estilo.css"/>
-	
+	<h:outputStylesheet library="css" name="estilo.css" />
+
 	<p:outputPanel id="pnl" layout="block">
-	
-    <p:panel id="painel" header="AMBIENTE VIRTUAL DE APRENDIZAGEM">
-     	<p:commandButton value="ENTRAR">
-			<f:actionListener type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
-		</p:commandButton>
-	
-	<p:commandButton id="cad" value="Cadastrar" type="button" oncomplete="PF('dlg').show">
-		<f:actionListener type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
-	</p:commandButton>
-	
-    
-    </p:panel>
-    
-   
-</p:outputPanel>
- 
 
+		<p:panel id="painel" header="AMBIENTE VIRTUAL DE APRENDIZAGEM">
+			<div align="center">
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:commandButton value="Cadastrar" type="button" onclick="PF('dlg').show();" />
+				<p:commandButton value="Entrar" type="button">
+					
+				</p:commandButton>
+			</h:panelGrid>
+			</div>
 
-	
-	
+			<p:dialog header="Cadastro" widgetVar="dlg" showEffect="explode"
+				draggable="false" resizable="false" modal="true" closable="false">
+				
+				<h:outputText value="This dialog has nice effects." />
+				
+				<h:panelGrid columns="2">
+					<p:commandButton value="Salvar"/>
+					<p:commandButton value="Fechar" oncomplete="PF('dlg').hide();" />
+				</h:panelGrid>
+			
+			</p:dialog>
+		</p:panel>
+	</p:outputPanel>
 </h:body>
 </html>
