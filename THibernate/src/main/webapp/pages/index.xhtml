@@ -17,24 +17,30 @@
 		<p:panel id="painel" header="AMBIENTE VIRTUAL DE APRENDIZAGEM">
 			<div align="center">
 			<h:panelGrid columns="2" cellpadding="5">
-				<p:commandButton value="Cadastrar" type="button" onclick="PF('dlg').show();" />
-				
-				
-				<p:commandButton value="tt" type="button" action="/pages/acesso.xhtml" ajax="false" />
-				
-				
+				<p:commandButton value="Cadastrar" type="button" onclick="PF('dlg1').show();" />
+				<p:commandButton value="ENTRAR" type="button" onclick="PF('dlg2').show();" />
 				
 			</h:panelGrid>
 			</div>
 
-			<p:dialog header="Cadastro" widgetVar="dlg" showEffect="explode"
+			<p:dialog header="Cadastro" widgetVar="dlg1" showEffect="explode"
 				draggable="false" resizable="false" modal="true" closable="false">
 				
-				<h:outputText value="This dialog has nice effects." />
+				<h:outputText value="Teste de acesso" />
 				
 				<h:panelGrid columns="2">
 					<p:commandButton value="Salvar"/>
-					<p:commandButton value="Fechar" oncomplete="PF('dlg').hide();" />
+					<p:commandButton value="Fechar" oncomplete="PF('dlg1').hide();" />
+				</h:panelGrid>
+			</p:dialog>
+			<p:dialog header="Cadastro" widgetVar="dlg2" showEffect="explode"
+				draggable="false" resizable="false" modal="true" closable="false">
+				
+				<h:outputText value="Teste de acesso" />
+				
+				<h:panelGrid columns="2">
+					<p:commandButton value="Salvar"/>
+					<p:commandButton value="Fechar" oncomplete="PF('dlg2').hide();" />
 				</h:panelGrid>
 			
 			</p:dialog>
