@@ -7,6 +7,10 @@
 	
 	<!-- Nome do Aplicação -->
 	<display-name>THibernate</display-name>
+	<!-- Mapeamento -->
+	<welcome-file-list>
+		<welcome-file>pages/index.xhtml</welcome-file>
+	</welcome-file-list>
 	
 	<!-- Estágio do Projeto -->
 	<context-param>
