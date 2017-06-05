@@ -1,5 +1,9 @@
 @CHARSET "ISO-8859-1";
 
+body{
+	background-color: #20272A;
+}
+
 #pnl {
 	margin-left: 30%;
 	margin-top: 15%;

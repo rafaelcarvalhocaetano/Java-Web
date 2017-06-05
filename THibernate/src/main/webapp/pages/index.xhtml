@@ -21,28 +21,51 @@
 				<p:commandButton value="Entrar" type="button" onclick="PF('dlg2').show();" />
 			</h:panelGrid>
 			</div>
-
+			
+			<!-- Cadastrar -->
 			<p:dialog header="Cadastro" widgetVar="dlg1" showEffect="explode"
 				draggable="false" resizable="false" modal="true" closable="false">
 				
-				<h:outputText value="Teste de acesso" />
+				<h:form>
+				<h:panelGrid columns="2" cellpadding="2">
+			        <p:outputLabel value="Nome: " />
+			        <p:inputText />
+			        
+			        <p:outputLabel value="RA: " />
+			        <p:inputText />
+			        
+			         <p:outputLabel value="Senha: " />
+			        <p:inputText />
+				</h:panelGrid>
 				
-				<h:panelGrid columns="2">
-					<p:commandButton value="Salvar"/>
+				
+				<h:panelGrid columns="2" cellpadding="10" style="margin-left:15%">
+					<p:commandButton value="Salvar" actionListener="#{loginBean.salvarDirecionar()}"/>
 					<p:commandButton value="Fechar" oncomplete="PF('dlg1').hide();" />
 				</h:panelGrid>
+				
+				</h:form>
 			</p:dialog>
+			
+			<!-- Entrar no ambiente -->
 			<p:dialog header="Cadastro" widgetVar="dlg2" showEffect="explode"
 				draggable="false" resizable="false" modal="true" closable="false">
 				
-				<h:outputText value="Teste de acesso" />
+				<p:panelGrid columns="2">
+					<p:outputLabel value="Nome: " />
+					<p:inputText id="rua" required="true"
+						requiredMessage="O campo é obrigatório"/>
+						
+					<p:outputLabel value="Senha: " />
+					<p:password id="senha" />
+				</p:panelGrid>
 				
-				<h:panelGrid columns="2">
-					
-				
-					<p:commandLink value="Entrar" action="#{loginBean.navegar()}"/>
+				<div align="center" style="margin-top: 1%;">
+				<h:panelGrid columns="2">				
+					<p:commandButton value="Entrar" action="#{loginBean.navegar()}"/>
 					<p:commandButton value="Fechar" oncomplete="PF('dlg2').hide();" />
 				</h:panelGrid>
+				</div>
 			
 			</p:dialog>
 		</p:panel>

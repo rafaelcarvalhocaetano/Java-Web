@@ -8,6 +8,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.view.facelets.FaceletContext;
 
+import org.omnifaces.util.Messages;
+
+import com.hibernate.dao.LoginDAO;
 import com.hibernate.domain.Login;
 
 @SuppressWarnings("serial")
@@ -38,6 +41,20 @@ public class LoginBean implements Serializable{
 			e.printStackTrace();
 		}
 		
+	}
+	public void salvarDirecionar(){
+		
+		try {
+			LoginDAO dao = new LoginDAO();
+			dao.merge(login);			
+			
+			login = new Login();
+			
+			Messages.addGlobalInfo("Mensagem Salva com sucesso");
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao tentar salvar");
+			e.printStackTrace();
+		}
 	}
 	
 	
