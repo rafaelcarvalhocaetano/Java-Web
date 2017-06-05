@@ -56,15 +56,27 @@ public class LoginBean implements Serializable{
 		}
 	}
 	
-	public void navegar(){
+	public void verificar() throws IOException{
 		
 		try {
-			FacesContext.getCurrentInstance().getExternalContext().redirect("logar.xhtml");
-		} catch (IOException e) {
+			
+			if(login.getNome().equals(null) && login.getSobreNome().equals(null)){
+				System.out.println("Erro .. Campo Vazio");
+				
+				LoginDAO dao = new LoginDAO();
+				logins = dao.listar();
+				
+				FacesContext.getCurrentInstance().getExternalContext().redirect("ambiente.xhtml");
+				
+			}
+			
+			
+		} catch (RuntimeException e) {
 			e.printStackTrace();
 		}
 		
 	}
+	
 	
 	
 	

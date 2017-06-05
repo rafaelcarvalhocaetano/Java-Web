@@ -33,10 +33,8 @@
 			        <p:inputText value="#{loginBean.login.nome}"/>
 			        
 			        <p:outputLabel value="Sobre Nome: "/>
-			        <p:inputText maxlength="10" value="#{loginBean.login.sobreNome}"/>
-			       
+			        <p:inputText maxlength="10" value="#{loginBean.login.sobreNome}"/>   
 				</h:panelGrid>
-				
 				
 				<h:panelGrid columns="2" cellpadding="10" style="margin-left:15%">
 					<p:commandButton value="Salvar" actionListener="#{loginBean.salvar()}" update=":formCadastro:painel"/>
@@ -49,23 +47,23 @@
 			<!-- Entrar no ambiente -->
 			<p:dialog header="Cadastro" widgetVar="dlg2" showEffect="explode"
 				draggable="false" resizable="false" modal="true" closable="false">
-				
-				<p:panelGrid columns="2">
+				<form id="formEntrar">
+				<p:panelGrid id="painelEntrar" columns="2">
+					
 					<p:outputLabel value="Nome: " />
-					<p:inputText id="rua" required="true"
-						requiredMessage="O campo é obrigatório"/>
+					<p:inputText value="#{loginBean.login.nome}"/>
 						
-					<p:outputLabel value="Senha: " />
-					<p:password id="senha" />
+					<p:outputLabel value="Sobre Nome: " />
+					<p:password id="senha" value="#{loginBean.login.sobreNome}"/>
 				</p:panelGrid>
 				
 				<div align="center" style="margin-top: 1%;">
 				<h:panelGrid columns="2">				
-					<p:commandButton value="Entrar" action="#{loginBean.navegar()}"/>
+					<p:commandButton value="Entrar" action="#{loginBean.verificar}"/>
 					<p:commandButton value="Fechar" oncomplete="PF('dlg2').hide();" />
 				</h:panelGrid>
 				</div>
-			
+				</form>
 			</p:dialog>
 		</p:panel>
 	</p:outputPanel>
