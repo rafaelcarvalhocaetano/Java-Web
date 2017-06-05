@@ -10,62 +10,51 @@
 	<title>HOME</title>
 </h:head>
 <h:body>
+	<p:growl id="msg" />
 
 	<h:outputStylesheet library="css" name="estilo.css" />
-
-	<p:outputPanel id="pnl" layout="block">
-
-		<p:panel id="painel" header="AMBIENTE VIRTUAL DE APRENDIZAGEM">
-			<div align="center">
-			<h:panelGrid columns="2" cellpadding="10">
-				<p:commandButton value="Cadastrar" type="button" onclick="PF('dlg1').show();" />
-				<p:commandButton value="Entrar" type="button" onclick="PF('dlg2').show();" />
-			</h:panelGrid>
-			</div>
-			
-			<!-- Cadastrar -->
-			<p:dialog header="Cadastro" widgetVar="dlg1" showEffect="explode"
-				draggable="false" resizable="false" modal="true" closable="false">
+	<p:panel header="TABELA DE CADASTROS">
+	<h:form id="formListagem">
+		<h:panelGrid>
+			<p:dataTable emptyMessage="Nenhum Registro Encontrado" id="tblView"
+				paginator="true" rows="5" value="#{loginBean.logins}" var="login">
+				<f:facet name="footer">
+					<p:commandButton value="VIEW"/>
+					<p:commandButton value="CADASTRAR"/>
+				</f:facet>
 				
-				<h:form id="formCadastro">
-				<h:panelGrid id="painel" columns="2" cellpadding="2">
-			        <p:outputLabel value="Nome: "/>
-			        <p:inputText value="#{loginBean.login.nome}"/>
-			        
-			        <p:outputLabel value="Sobre Nome: "/>
-			        <p:inputText maxlength="10" value="#{loginBean.login.sobreNome}"/>   
-				</h:panelGrid>
+				<p:column headerText="ID">
+					<h:outputText value="#{login.codigo}"/>
+				</p:column>
 				
-				<h:panelGrid columns="2" cellpadding="10" style="margin-left:15%">
-					<p:commandButton value="Salvar" actionListener="#{loginBean.salvar()}" update=":formCadastro:painel"/>
-					<p:commandButton value="Fechar" oncomplete="PF('dlg1').hide();" />
-				</h:panelGrid>
+				<p:column headerText="NOME">
+					<h:outputText value="#{login.nome}"/>
+				</p:column>
 				
-				</h:form>
-			</p:dialog>
-			
-			<!-- Entrar no ambiente -->
-			<p:dialog header="Cadastro" widgetVar="dlg2" showEffect="explode"
-				draggable="false" resizable="false" modal="true" closable="false">
-				<form id="formEntrar">
-				<p:panelGrid id="painelEntrar" columns="2">
-					
-					<p:outputLabel value="Nome: " />
-					<p:inputText value="#{loginBean.login.nome}"/>
+				<p:column headerText="ÚLTIMO NOME">
+					<h:outputText value="#{login.sobreNome}"/>
+				</p:column>
+				
+				<p:column headerText="Opções">
+					<p:commandButton icon="ui-icon-trash"
+						>
+						<p:confirm header="Confirmação" message="Deseja excluir a pessoa?"
+							icon="ui-icon-alert" />
 						
-					<p:outputLabel value="Sobre Nome: " />
-					<p:inputText id="senha" value="#{loginBean.login.sobreNome}"/>
-				</p:panelGrid>
-				
-				<div align="center" style="margin-top: 1%;">
-				<h:panelGrid columns="2">				
-					<p:commandButton value="Entrar" action="#{}"/>
-					<p:commandButton value="Fechar" oncomplete="PF('dlg2').hide();" />
-				</h:panelGrid>
-				</div>
-				</form>
-			</p:dialog>
-		</p:panel>
-	</p:outputPanel>
+					</p:commandButton>
+
+					<p:commandButton icon="ui-icon-pencil"
+						
+						
+						oncomplete="PF('dialogo').show();">
+						<f:attribute name="pessoaSelecionada" value="#{pessoa}" />
+						<f:actionListener
+							type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
+					</p:commandButton>
+				</p:column>		
+			</p:dataTable>
+		</h:panelGrid>
+	</h:form>
+	</p:panel>
 </h:body>
 </html>

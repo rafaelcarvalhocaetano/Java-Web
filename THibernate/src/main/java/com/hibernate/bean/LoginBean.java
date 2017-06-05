@@ -6,8 +6,9 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-
 import javax.faces.view.ViewScoped;
+
+import org.omnifaces.util.Messages;
 
 import com.hibernate.dao.LoginDAO;
 import com.hibernate.domain.Login;
@@ -35,8 +36,18 @@ public class LoginBean implements Serializable {
 	public void setLogins(List<Login> logins) {
 		this.logins = logins;
 	}
-
 	@PostConstruct
+	public void listar(){
+		try {
+			LoginDAO dao = new LoginDAO();
+			logins = dao.listar();
+			
+		} catch (RuntimeException e) {
+			Messages.addGlobalError("Erro ao listar clientes");
+			e.printStackTrace();
+		}
+	}
+	
 	public void novo() {
 		login = new Login();
 
@@ -57,5 +68,6 @@ public class LoginBean implements Serializable {
 			e.printStackTrace();
 		}
 	}
+	
 
 }
