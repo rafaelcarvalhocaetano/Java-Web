@@ -1,18 +1,14 @@
 package com.hibernate.bean;
 
-import java.io.IOException;
+
 import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.context.FacesContext;
+
 import javax.faces.view.ViewScoped;
 
-import org.omnifaces.util.Faces;
-import org.omnifaces.util.Messages;
-
-import com.hibernate.dao.AutenticacaoDAO;
 import com.hibernate.dao.LoginDAO;
 import com.hibernate.domain.Login;
 
@@ -61,28 +57,5 @@ public class LoginBean implements Serializable {
 			e.printStackTrace();
 		}
 	}
-
-	public void autentic(){
-		try {
-			AutenticacaoDAO dao = new AutenticacaoDAO();
-			login = dao.autenticar(login.getNome(), login.getSobreNome());
-			
-			if(login == null){
-				System.out.println("Erro na autenticação ... ");
-				return;
-			}
-			Faces.redirect("/pages/ambiente.xhtml");
-		}catch (IOException e) {
-			System.out.println("Busca não realizada ... ");
-			e.printStackTrace();
-		}
-	
-	}
-
-	
-	
-	
-	
-	
 
 }
