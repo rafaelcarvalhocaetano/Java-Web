@@ -9,73 +9,76 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 
+import org.omnifaces.util.Faces;
+import org.omnifaces.util.Messages;
+
+import com.hibernate.dao.AutenticacaoDAO;
 import com.hibernate.dao.LoginDAO;
 import com.hibernate.domain.Login;
-
 
 @SuppressWarnings("serial")
 @ManagedBean
 @ViewScoped
-public class LoginBean implements Serializable{
-	
+public class LoginBean implements Serializable {
+
 	private Login login;
 	private List<Login> logins;
-	
+
 	public Login getLogin() {
 		return login;
 	}
+
 	public void setLogin(Login login) {
 		this.login = login;
 	}
+
 	public List<Login> getLogins() {
 		return logins;
 	}
+
 	public void setLogins(List<Login> logins) {
 		this.logins = logins;
 	}
-	
+
 	@PostConstruct
-	public void novo(){
+	public void novo() {
 		login = new Login();
-		
+
 	}
-	
-	public void salvar(){
-		
+
+	public void salvar() {
+
 		try {
 			LoginDAO dao = new LoginDAO();
 			dao.salvar(login);
-			
+
 			novo();
 			logins = dao.listar();
-			
+
 			System.out.println("Salvo com sucesso");
 		} catch (RuntimeException e) {
 			System.out.println("Erro ... ");
 			e.printStackTrace();
 		}
 	}
-	
-	public void verificar() throws IOException{
-		
+
+	public void autentic(){
 		try {
+			AutenticacaoDAO dao = new AutenticacaoDAO();
+			login = dao.autenticar(login.getNome(), login.getSobreNome());
 			
-			if(login.getNome().equals(null) && login.getSobreNome().equals(null)){
-				System.out.println("Erro .. Campo Vazio");
-				
-				LoginDAO dao = new LoginDAO();
-				logins = dao.listar();
-				
-				FacesContext.getCurrentInstance().getExternalContext().redirect("ambiente.xhtml");
-				
+			if(login == null){
+				System.out.println("Erro na autenticação ... ");
+				return;
 			}
-			
-			
-		} catch (RuntimeException e) {
+			Faces.redirect("/pages/ambiente.xhtml");
+		}catch (IOException e) {
+			System.out.println("Busca não realizada ... ");
 			e.printStackTrace();
 		}
-		
+	
 	}
+
 	
 	
 	

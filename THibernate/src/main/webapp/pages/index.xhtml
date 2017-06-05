@@ -54,12 +54,12 @@
 					<p:inputText value="#{loginBean.login.nome}"/>
 						
 					<p:outputLabel value="Sobre Nome: " />
-					<p:password id="senha" value="#{loginBean.login.sobreNome}"/>
+					<p:inputText id="senha" value="#{loginBean.login.sobreNome}"/>
 				</p:panelGrid>
 				
 				<div align="center" style="margin-top: 1%;">
 				<h:panelGrid columns="2">				
-					<p:commandButton value="Entrar" action="#{loginBean.verificar}"/>
+					<p:commandButton value="Entrar" action="#{loginBean.autentic()}"/>
 					<p:commandButton value="Fechar" oncomplete="PF('dlg2').hide();" />
 				</h:panelGrid>
 				</div>
