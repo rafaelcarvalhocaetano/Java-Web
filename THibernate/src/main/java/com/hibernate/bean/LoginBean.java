@@ -4,17 +4,18 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-import javax.faces.view.facelets.FaceletContext;
-
-import org.omnifaces.util.Messages;
+import javax.faces.view.ViewScoped;
 
 import com.hibernate.dao.LoginDAO;
 import com.hibernate.domain.Login;
 
+
 @SuppressWarnings("serial")
 @ManagedBean
+@ViewScoped
 public class LoginBean implements Serializable{
 	
 	private Login login;
@@ -33,6 +34,28 @@ public class LoginBean implements Serializable{
 		this.logins = logins;
 	}
 	
+	@PostConstruct
+	public void novo(){
+		login = new Login();
+		
+	}
+	
+	public void salvar(){
+		
+		try {
+			LoginDAO dao = new LoginDAO();
+			dao.salvar(login);
+			
+			novo();
+			logins = dao.listar();
+			
+			System.out.println("Salvo com sucesso");
+		} catch (RuntimeException e) {
+			System.out.println("Erro ... ");
+			e.printStackTrace();
+		}
+	}
+	
 	public void navegar(){
 		
 		try {
@@ -42,21 +65,6 @@ public class LoginBean implements Serializable{
 		}
 		
 	}
-	public void salvarDirecionar(){
-		
-		try {
-			LoginDAO dao = new LoginDAO();
-			dao.merge(login);			
-			
-			login = new Login();
-			
-			Messages.addGlobalInfo("Mensagem Salva com sucesso");
-		} catch (RuntimeException e) {
-			Messages.addGlobalError("Erro ao tentar salvar");
-			e.printStackTrace();
-		}
-	}
-	
 	
 	
 	

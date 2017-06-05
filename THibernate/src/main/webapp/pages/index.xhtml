@@ -10,6 +10,7 @@
 	<title>HOME</title>
 </h:head>
 <h:body>
+
 	<h:outputStylesheet library="css" name="estilo.css" />
 
 	<p:outputPanel id="pnl" layout="block">
@@ -26,21 +27,19 @@
 			<p:dialog header="Cadastro" widgetVar="dlg1" showEffect="explode"
 				draggable="false" resizable="false" modal="true" closable="false">
 				
-				<h:form>
-				<h:panelGrid columns="2" cellpadding="2">
-			        <p:outputLabel value="Nome: " />
-			        <p:inputText />
+				<h:form id="formCadastro">
+				<h:panelGrid id="painel" columns="2" cellpadding="2">
+			        <p:outputLabel value="Nome: "/>
+			        <p:inputText value="#{loginBean.login.nome}"/>
 			        
-			        <p:outputLabel value="RA: " />
-			        <p:inputText />
-			        
-			         <p:outputLabel value="Senha: " />
-			        <p:inputText />
+			        <p:outputLabel value="Sobre Nome: "/>
+			        <p:inputText maxlength="10" value="#{loginBean.login.sobreNome}"/>
+			       
 				</h:panelGrid>
 				
 				
 				<h:panelGrid columns="2" cellpadding="10" style="margin-left:15%">
-					<p:commandButton value="Salvar" actionListener="#{loginBean.salvarDirecionar()}"/>
+					<p:commandButton value="Salvar" actionListener="#{loginBean.salvar()}" update=":formCadastro:painel"/>
 					<p:commandButton value="Fechar" oncomplete="PF('dlg1').hide();" />
 				</h:panelGrid>
 				
