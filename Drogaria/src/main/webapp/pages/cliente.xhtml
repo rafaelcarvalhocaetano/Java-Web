@@ -14,6 +14,7 @@
 				<p:dataTable id="tabela" emptyMessage="Nenhum cliente encontrado"
 					paginator="true" value="#{clienteBean.clientes}" var="cliente"
 					rows="3">
+					
 					<f:facet name="footer">
 						<p:commandButton value="Novo" oncomplete="PF('dialogo').show();"
 							actionListener="#{clienteBean.novo}"
@@ -78,6 +79,7 @@
 						value="#{clienteBean.cliente.liberado}" required="true"
 						requiredMessage="O campo Liberado é obrigatório" />
 				</h:panelGrid>
+				
 				<h:panelGrid columns="2">
 					<p:commandButton value="Salvar"
 						update=":mensagem :formCadastro:painel :formListagem:tabela"

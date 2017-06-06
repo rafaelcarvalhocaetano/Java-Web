@@ -7,7 +7,7 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 	
 <f:metadata>
-	<f:viewAction action="#{ProdutoListagemBean.listar}" />
+	<f:viewAction action="#{produtoListagemBean.listar}" />
 </f:metadata>
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
@@ -20,7 +20,7 @@
 	<h:form id="formListagem">
 		<p:panel header="Produtos - Listagem">
 			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
-				paginator="true" value="#{ProdutoListagemBean.produtos}" var="produto"
+				paginator="true" value="#{produtoListagemBean.produtos}" var="produto"
 				rows="5">
 				<f:facet name="footer">
 					<p:commandButton icon="ui-icon-plus" />
