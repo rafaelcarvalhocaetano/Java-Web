@@ -19,8 +19,8 @@
 			<p:dataTable emptyMessage="Nenhum Registro Encontrado" id="tblView"
 				paginator="true" rows="5" value="#{loginBean.logins}" var="login">
 				<f:facet name="footer">
-					<p:commandButton value="VIEW"/>
-					<p:commandButton value="CADASTRAR"/>
+					<p:commandButton value="View" />
+					<p:commandButton value="Cadastrar" oncomplete="PF('dialogo').show();"/>
 				</f:facet>
 				
 				<p:column headerText="ID">
@@ -36,25 +36,35 @@
 				</p:column>
 				
 				<p:column headerText="Opções">
-					<p:commandButton icon="ui-icon-trash"
-						>
-						<p:confirm header="Confirmação" message="Deseja excluir a pessoa?"
-							icon="ui-icon-alert" />
-						
+					<p:commandButton icon="ui-icon-trash">
+						<p:confirm header="Confirmação" message="Deseja excluir a pessoa?" icon="ui-icon-alert" />
 					</p:commandButton>
 
 					<p:commandButton icon="ui-icon-pencil"
-						
-						
 						oncomplete="PF('dialogo').show();">
 						<f:attribute name="pessoaSelecionada" value="#{pessoa}" />
-						<f:actionListener
-							type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
+						<f:actionListener type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" />
 					</p:commandButton>
 				</p:column>		
 			</p:dataTable>
 		</h:panelGrid>
 	</h:form>
 	</p:panel>
+	<p:dialog widgetVar="dialogo">
+	<h:form id="formDialogo">
+		<p:panelGrid columns="2">
+			<p:outputLabel value="Nome: "/>
+			<p:inputText  />
+			
+			<p:outputLabel value="Ultimo Nome: "/>
+			<p:inputText />
+		</p:panelGrid>
+		
+		<div align="center">
+			<p:commandButton value="Salvar"/>
+			<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();"/>
+		</div>
+	</h:form>
+	</p:dialog>
 </h:body>
 </html>
