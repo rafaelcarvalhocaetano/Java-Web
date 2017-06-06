@@ -10,8 +10,8 @@
 	}
 	String codifica = URLEncoder.encode(nome, "UTF-8");
 	Cookie cookie= new Cookie("nomeDoUsuario", codifica);
-	cookie.setVersion(0);
-	cookie.setMaxAge(6);
+	cookie.setVersion(0); //referente a versão do navegador
+	cookie.setMaxAge(6); // tempo referente a duração do cookies
 	response.addCookie(cookie);
 	
 
