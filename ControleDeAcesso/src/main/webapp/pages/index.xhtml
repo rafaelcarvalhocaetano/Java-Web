@@ -16,11 +16,10 @@
 				<h:panelGrid columns="2" cellpadding="3">
 
 					<h:outputLabel for="text" value="RA: " />
-					<p:inputText id="text" value="#{validationView.text}"
-						required="true" />
+					<p:inputText id="text" required="true" />
 
 					<h:outputLabel for="integer" value="Senha: " />
-					<p:password id="integer" value="#{validationView.integer}" />
+					<p:password id="integer" />
 
 				</h:panelGrid>
 			</div>
@@ -38,14 +37,14 @@
 		<h:form>
 			<h:panelGrid columns="2">
 				<p:outputLabel value="Nome: " />
-				<p:inputText maxlength="20" size="20"/>
+				<p:inputText maxlength="20" size="20" value="#{cadastroBean.cadastro.nome}"/>
 				
 				<p:outputLabel value="RA: " />
-				<p:inputText maxlength="10" size="10"/>
+				<p:inputText maxlength="10" size="10" value="#{cadastroBean.cadastro.ra}"/>
 				
 				
 				<p:outputLabel value="Senha: " />
-				<p:inputText maxlength="8" size="10" />
+				<p:inputText maxlength="8" size="10" value="#{cadastroBean.cadastro.senha}"/>
 			</h:panelGrid>
 			<div align="center">
 			<h:panelGrid columns="2">
