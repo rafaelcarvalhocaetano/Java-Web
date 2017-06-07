@@ -1,1 +1,13 @@
 @CHARSET "ISO-8859-1";
+*{
+	margin: 0;
+	padding: 0;
+}
+#pnl{
+	width: 40%;
+	margin: 5% 0 0 30%;
+	
+}
+.ui-widget-header{
+	text-align: center;
+}

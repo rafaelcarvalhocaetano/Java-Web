@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://xmlns.jcp.org/jsf/html"
-	  xmlns:p="http://primefaces.org/ui"
-	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>HOME</title>
-<h:outputStylesheet library="css" name="estilo.css"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>HOME</title>
+	<h:outputStylesheet library="css" name="estilo.css" />
 </h:head>
 <h:body>
+	<h:form id="pnl">
+		<p:panel header="Ambiente Virtual">
+			<div align="center">
+				<h:panelGrid columns="2" cellpadding="3">
 
+					<h:outputLabel for="text" value="RA: " />
+					<p:inputText id="text" value="#{validationView.text}"
+						required="true" />
 
+					<h:outputLabel for="integer" value="Senha: " />
+					<p:password id="integer" value="#{validationView.integer}" />
 
+				</h:panelGrid>
+			</div>
+			<br />
+			<div align="center">
+				<p:commandButton value="Entrar" icon="ui-icon-check"
+					validateClient="true" />
+				<p:commandButton value="Cadastrar" icon="ui-icon-check"
+					validateClient="true" />
+			</div>
+		</p:panel>
+	</h:form>
 </h:body>
 </html>
