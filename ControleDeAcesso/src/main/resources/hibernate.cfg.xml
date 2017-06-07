@@ -32,7 +32,7 @@
 		<property name="hbm2ddl.auto">create</property>
 		
 		<!-- Mapeando banco de dados -->
-		<mapping class="com.hibernate.domain.Login"/>
+		<mapping class="br.com.hibernate.domain.Cadastro"/>
 		
 	</session-factory>
 </hibernate-configuration>

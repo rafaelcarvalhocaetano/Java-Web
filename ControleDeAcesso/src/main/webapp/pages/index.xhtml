@@ -34,8 +34,8 @@
 	</h:form>
 	<p:dialog widgetVar="dialogo" header="Funcionário - Cadastro"
 		closable="false" resizable="false" draggable="false" modal="true">
-		<h:form>
-			<h:panelGrid columns="2">
+		<h:form id="formCadastro">
+			<h:panelGrid id="painel" columns="2">
 				<p:outputLabel value="Nome: " />
 				<p:inputText maxlength="20" size="20" value="#{cadastroBean.cadastro.nome}"/>
 				
@@ -48,7 +48,7 @@
 			</h:panelGrid>
 			<div align="center">
 			<h:panelGrid columns="2">
-				<p:commandButton value="Salvar" />
+				<p:commandButton value="Salvar" actionListener="#{cadastroBean.salvar()}" update=":formCadastro:painel"/>
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 			</div>
