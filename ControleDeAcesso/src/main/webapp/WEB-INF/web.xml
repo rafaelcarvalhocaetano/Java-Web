@@ -42,7 +42,7 @@
 
 	<!-- Carregamento do Hibernate -->
 	<listener>
-		<listener-class>com.hibernate.util.HibernateContext</listener-class>
+		<listener-class>br.com.cadastro.util.HibernateContext</listener-class>
 	</listener>
 
 </web-app>
