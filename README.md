@@ -298,7 +298,8 @@ Configurando o arquivo hibernate.cfg.xml que fica dentro de src/main/resources
 ```
 Projetos JSF - Hibernate - MySQl - PrimeFaces - JReport - JUnit.
 ### THibernate
-Projeto THibernate é um projeto teste de integração com banco de dados. Sua função é simplesmente um cadastro e autenticação do usuário via DB.
+Projeto THibernate é um projeto teste de integração com banco de dados. Sua função é simplesmente um cadastro e visualização dos cadastrados via DB.
+Projeto Finalizado. Cadastro simples e visualização dos cadastrados.
 
 ### Cadastro com Hibernate
 
