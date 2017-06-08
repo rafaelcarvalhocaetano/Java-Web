@@ -10,6 +10,7 @@
 	<h:outputStylesheet library="css" name="estilo.css" />
 </h:head>
 <h:body>
+<p:growl id="msg"/>
 	<h:form id="pnl">
 		<p:panel header="Ambiente Virtual">
 			<div align="center">
@@ -26,7 +27,7 @@
 			<br />
 			<div align="center">
 				<p:commandButton value="Entrar" icon="ui-icon-check"
-					validateClient="true" actionListener="#{cadastroBean.autenticar}"/>
+					validateClient="true" actionListener="#{cadastroBean.autenticar}" update=":msg"/>
 				<p:commandButton value="Cadastrar" icon="ui-icon-check"
 					validateClient="true" oncomplete="PF('dialogo').show();"/>
 			</div>
@@ -54,6 +55,5 @@
 			</div>
 		</h:form>
 	</p:dialog>
-	
 </h:body>
 </html>
