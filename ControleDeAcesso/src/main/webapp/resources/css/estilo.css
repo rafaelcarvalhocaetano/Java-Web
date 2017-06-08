@@ -1,7 +1,10 @@
 @CHARSET "ISO-8859-1";
 *{
 	margin: 0;
-	padding: 0;
+	padding: 0;	
+}
+body{
+	background-color: #313B3F;
 }
 #pnl{
 	width: 40%;
