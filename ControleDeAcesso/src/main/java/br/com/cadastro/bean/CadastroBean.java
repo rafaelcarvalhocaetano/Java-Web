@@ -1,11 +1,16 @@
 package br.com.cadastro.bean;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.view.ViewScoped;
+
+import org.omnifaces.util.Faces;
+import org.omnifaces.util.Messages;
 
 import br.com.cadastro.dao.CadastroDAO;
 import br.com.hibernate.domain.Cadastro;
@@ -13,6 +18,7 @@ import br.com.hibernate.domain.Cadastro;
 @SuppressWarnings("serial")
 @ManagedBean
 @ViewScoped
+@SessionScoped
 public class CadastroBean implements Serializable{
 	
 	private Cadastro cadastro;
@@ -66,6 +72,24 @@ public class CadastroBean implements Serializable{
 		}
 	}
 	// autenticação
+	public void autenticar(){
+		
+		try {
+			
+			CadastroDAO dao = new CadastroDAO();
+			Cadastro cad = 	dao.autenticar(cadastro.getRa(), cadastro.getSenha());
+			
+			if(cad == null){
+				Messages.addGlobalError("Erro ...");
+				return;
+			}
+			
+			
+			Faces.redirect("./pages/ambiente.xhtml");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 	

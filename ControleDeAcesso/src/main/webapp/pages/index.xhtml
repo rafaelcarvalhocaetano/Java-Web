@@ -16,17 +16,17 @@
 				<h:panelGrid columns="2" cellpadding="3">
 
 					<h:outputLabel for="text" value="RA: " />
-					<p:inputText id="text" required="true" />
+					<p:inputText id="text" required="true" maxlength="10" size="10" value="#{cadastroBean.cadastro.ra}"/>
 
 					<h:outputLabel for="integer" value="Senha: " />
-					<p:password id="integer" />
+					<p:password id="integer" maxlength="8" size="10" value="#{cadastroBean.cadastro.senha}"/>
 
 				</h:panelGrid>
 			</div>
 			<br />
 			<div align="center">
 				<p:commandButton value="Entrar" icon="ui-icon-check"
-					validateClient="true" />
+					validateClient="true" actionListener="#{cadastroBean.autenticar}"/>
 				<p:commandButton value="Cadastrar" icon="ui-icon-check"
 					validateClient="true" oncomplete="PF('dialogo').show();"/>
 			</div>
