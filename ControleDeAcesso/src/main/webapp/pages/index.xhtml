@@ -14,7 +14,7 @@
 	<h:form id="pnl">
 		<p:panel header="Ambiente Virtual">
 			<div align="center">
-				<h:panelGrid columns="2" cellpadding="3">
+				<h:panelGrid id="painel" columns="2" cellpadding="3">
 
 					<h:outputLabel for="text" value="RA: " />
 					<p:inputText id="text" required="true" maxlength="10" size="10" value="#{cadastroBean.cadastro.ra}"/>
@@ -27,7 +27,7 @@
 			<br />
 			<div align="center">
 				<p:commandButton value="Entrar" icon="ui-icon-check"
-					validateClient="true" actionListener="#{cadastroBean.autenticar}" update=":msg"/>
+					validateClient="true" actionListener="#{cadastroBean.autenticar}" update=":msg :pnl:painel"/>
 				<p:commandButton value="Cadastrar" icon="ui-icon-check"
 					validateClient="true" oncomplete="PF('dialogo').show();"/>
 			</div>
@@ -36,7 +36,7 @@
 	<p:dialog widgetVar="dialogo" header="Funcionário - Cadastro"
 		closable="false" resizable="false" draggable="false" modal="true">
 		<h:form id="formCadastro">
-			<h:panelGrid id="painel" columns="2">
+			<h:panelGrid id="painel2" columns="2">
 				<p:outputLabel value="Nome: " />
 				<p:inputText maxlength="20" size="20" value="#{cadastroBean.cadastro.nome}"/>
 				
@@ -45,11 +45,11 @@
 				
 				
 				<p:outputLabel value="Senha: " />
-				<p:inputText maxlength="8" size="10" value="#{cadastroBean.cadastro.senha}"/>
+				<p:password maxlength="8" size="10" value="#{cadastroBean.cadastro.senha}"/>
 			</h:panelGrid>
 			<div align="center">
 			<h:panelGrid columns="2">
-				<p:commandButton value="Salvar" actionListener="#{cadastroBean.salvar}" update=":formCadastro:painel"/>
+				<p:commandButton value="Salvar" actionListener="#{cadastroBean.salvar}" update=":msg :formCadastro:painel2"/>
 				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 			</h:panelGrid>
 			</div>
