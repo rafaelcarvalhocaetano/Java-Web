@@ -30,7 +30,7 @@ public class CadastroBean implements Serializable{
 	public void setCadastros(List<Cadastro> cadastros) {
 		this.cadastros = cadastros;
 	}
-	@PostConstruct
+	
 	public void listar(){
 		
 		try {
@@ -43,6 +43,7 @@ public class CadastroBean implements Serializable{
 			System.out.println("Erro ao listar ... ");
 		}
 	}
+	@PostConstruct
 	public void novo(){
 		cadastro = new Cadastro();
 	}
@@ -64,6 +65,9 @@ public class CadastroBean implements Serializable{
 			System.out.println("Erro ao salvar ");
 		}
 	}
+	// autenticação
+	
+	
 	
 	
 
