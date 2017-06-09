@@ -313,6 +313,11 @@ Projeto de Cadastro de usuário e controle de acesso simples.
 
 Projeto de controle de acesso de uma portaria, onde ficam armazenados nome, rg, cpf, empresa, horário e nome da pessoa a ser visitada por ele.
 
+<p>
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/ControleDeAcesso/src/main/webapp/resources/css/f1.png">HOME
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/ControleDeAcesso/src/main/webapp/resources/css/f2.png">Cadastro
+</p>
+
 ### Projeto JSP - Servlet - Bootstrap - Materialize - JQuery.
 
 Projetos Java Web com JSP Bootstrap JQuery e Materialize
