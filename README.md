@@ -339,10 +339,16 @@ Imagem do calculo final.
 ### User Authentication
 ### Cadastro Uninove
 
-<ul>
-<li><img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c1.png">HOME</li>
-<li><img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c2.png">CADASTRO</li>
-<li><img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c3.png">SESSÃO</li>
-<li><img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c4.png">ÁREA DE ACESSO</li>
-<li><img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c5.png">AVA</li>
-</ul>
+Realizando projeto envolvendo um ambiente virtual de aprendizagem AVA - onde o usuário cadastra-se e acessa sua área restrita.
+<p>
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c1.png">
+HOME
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c2.png">
+CADASTRO
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c3.png">
+SESSÃO
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c4.png">
+ÁREA DE ACESSO
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c5.png">
+Ambiente Virtual de Aprendizagem
+</p>
