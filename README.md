@@ -304,6 +304,10 @@ Projeto Finalizado. Cadastro simples e visualização dos cadastrados.
 ### Cadastro com Hibernate
 
 Projeto de Cadastro de usuário e controle de acesso simples.
+<ul>
+<li><img src="#">teste 1</li>
+<li><img src="#">teste 1</li>
+</ul>
 
 ### Controle de Acesso com Hibernate
 
