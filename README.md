@@ -326,13 +326,13 @@ CADASTRO - Nesta página o usuário criará um cadastro para poder ter acesso ao
 Projetos Java Web com JSP Bootstrap JQuery e Materialize
 
 ### JSP Bhaskara
-Imagem do index
+Projeto java web com JSP - BOOTSTRAP - JQUERY. Refere-se em uma calculadora de Bhaskara, onde são lançados os valores e recebe o resultado de delta, x1, x2 e tudo mais.
 
-<img  src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/Bhaskara/WebContent/resources/img/bhaskara%201.png"/>
+HOME - Imagem da aplicação rodando
+<img  src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/Bhaskara/WebContent/resources/img/b1.png"/>
 
-Imagem do calculo final.
-
-<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/Bhaskara/WebContent/resources/img/bhaskara%202.png"/>
+CALCULO - Imagem da aplicação fornecendo o resultado ao usuário.
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/Bhaskara/WebContent/resources/img/b2.png"/>
 
 ### JSP Cookies e Sessões
 ### Materialize - JSP
