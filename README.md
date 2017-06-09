@@ -4,8 +4,8 @@
 
 - [Projeto Front-End com java usando JSF - PrimeFaces - Ajax - Hibernate - jarsperReporter - Mysql](#projeto-front-end-com-java-usando-jsf---primefaces---ajax---hibernate---jarsperreporter---mysql)
 	- [THibernate ](#thibernate)
+	- [Cadastro e Controle de Acesso com Hibernate ](#cadastro-e-controle-de-acesso-com-hibernate)
 	- [Cadastro com Hibernate](#cadastro-com-hibernate)
-	- [Controle de Acesso com Hibernate](#controle-de-acesso-com-hibernate)
 
 
 - [Projetos Java Web com JSP Bootstrap JQuery e Materialize](#projetos-java-web-com-jsp-bootstrap-jquery-e-materialize)
@@ -309,13 +309,16 @@ Projeto de Cadastro de usuário e controle de acesso simples.
 <li><img src="#">teste 1</li>
 </ul>
 
-### Controle de Acesso com Hibernate
+### Cadastro com Hibernate
 
-Projeto de controle de acesso de uma portaria, onde ficam armazenados nome, rg, cpf, empresa, horário e nome da pessoa a ser visitada por ele.
+Projeto que envolve um simples controle de acesso através de um simples cadastro usando hibernate, banco de dados mysql, jsf, primefaces e como teste das classes o junit.
 
 <p>
-<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/ControleDeAcesso/src/main/webapp/resources/css/f1.png">HOME
-<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/ControleDeAcesso/src/main/webapp/resources/css/f2.png">Cadastro
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/ControleDeAcesso/src/main/webapp/resources/css/f1.png">
+HOME - Está página é simplesmente o home da aplicação, onde o usuário terá a opção de se cadastrar ou entrar no ambiente.
+
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/ControleDeAcesso/src/main/webapp/resources/css/f2.png">
+CADASTRO - Nesta página o usuário criará um cadastro para poder ter acesso ao ambiente.
 </p>
 
 ### Projeto JSP - Servlet - Bootstrap - Materialize - JQuery.
