@@ -341,14 +341,19 @@ CALCULO - Imagem da aplicação fornecendo o resultado ao usuário.
 
 Realizando projeto envolvendo um ambiente virtual de aprendizagem AVA - onde o usuário cadastra-se e acessa sua área restrita.
 <p>
+
+HOME PAGE.
 <img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c1.png">
-HOME
+
+CADASTRO - Área de Cadastro
 <img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c2.png">
-CADASTRO
+
+SESSÃO - Página contendo uma simples sessão com os dados fornecido pelo usuário no momento do cadastro.
 <img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c3.png">
-SESSÃO
+
+ÁREA DE ACESSO.
 <img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c4.png">
-ÁREA DE ACESSO
-<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c5.png">
+
 Ambiente Virtual de Aprendizagem
+<img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/CadastroAva/WebContent/resources/css/c5.png">
 </p>
