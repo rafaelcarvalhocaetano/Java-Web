@@ -26,9 +26,15 @@
 		<center>
 			<p>LOGIN</p>
 
-			<br/> 
-			RA: <input type="text" name="ra">
-			SENHA: <input type="password" class="validate" name="senha">
+			<br>
+			RA:
+			<br>
+			<input type="text" name="ra">
+			<br>
+			
+			SENHA:
+			<br>
+			<input type="password" class="validate" name="senha">
 			
 			<div>
 				<br />

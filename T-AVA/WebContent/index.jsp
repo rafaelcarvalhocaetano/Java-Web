@@ -12,11 +12,12 @@
 <title>HOME</title>
 </head>
 <body>
-	<div>
+	<div style="margin-top: 10%; color: red;" >
 		<center>
-		<h4>LOGIN</h4>
+		<h2>ACESSAR || CADASTRAR</h2>
 		<br>
 			<a href="cadastrar.jsp"	name="cadastrar"><button>Cadastrar</button></a>
+	
 			<a	class="waves-effect waves-light btn" href="login.jsp" name="entrar"><button>Entrar</button></a>
 		</center>
 	</div>
