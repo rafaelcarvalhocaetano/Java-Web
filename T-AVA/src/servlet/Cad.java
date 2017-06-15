@@ -14,10 +14,10 @@ import dao.CadastroDAO;
 import domain.Cadastro;
 
 @WebServlet("/CrudCadastro")
-public class CrudCadastro extends HttpServlet {
+public class Cad extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public CrudCadastro() {
+	public Cad() {
 		super();
 	}
 
