@@ -17,10 +17,10 @@ import factory.ConexaoFactory;
 
 
 @WebServlet("/Verificando")
-public class Verificando extends HttpServlet {
+public class Form extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public Verificando() {
+	public Form() {
 		super();
 	
 	}
@@ -33,7 +33,7 @@ public class Verificando extends HttpServlet {
 			String rah = request.getParameter("ra");
 			String senhah = request.getParameter("senha");
 			
-			request.getSession().setAttribute("rah", rah );
+			request.getSession().setAttribute("registro", rah );
 			
 			
 			try {

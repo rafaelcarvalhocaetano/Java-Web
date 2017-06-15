@@ -22,7 +22,7 @@
 </head>
 <body>
 
-	<form>
+	<form action="Form">
 		<center>
 			<p>LOGIN</p>
 
