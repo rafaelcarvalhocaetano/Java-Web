@@ -6,6 +6,7 @@
 	- [THibernate ](#thibernate)
 	- [Cadastro e Controle de Acesso com Hibernate ](#cadastro-e-controle-de-acesso-com-hibernate)
 	- [Cadastro com Hibernate](#cadastro-com-hibernate)
+	- [Lojinha](#lojinha)
 
 
 - [Projetos Java Web com JSP Bootstrap JQuery e Materialize](#projetos-java-web-com-jsp-bootstrap-jquery-e-materialize)
@@ -320,6 +321,9 @@ HOME - Está página é simplesmente o home da aplicação, onde o usuário ter�
 <img src="https://github.com/rafaelcarvalhocaetano/Java-Web/blob/master/ControleDeAcesso/src/main/webapp/resources/css/f2.png">
 CADASTRO - Nesta página o usuário criará um cadastro para poder ter acesso ao ambiente.
 </p>
+
+### Lojinha
+Sistema de e-commerce de uma lojinha de biju.
 
 ### Projeto JSP - Servlet - Bootstrap - Materialize - JQuery.
 
